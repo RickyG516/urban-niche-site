@@ -1,0 +1,594 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Got questions about contractor digital marketing? Urban Niche Co. answers the most common questions about SEO, PPC, social media & web design.">
+  <title>FAQ | Urban Niche Co.</title>
+  <link rel="stylesheet" href="/wp-content/themes/divi-child/unc/style.css" />
+  <link rel="icon" type="image/png" href="assets/favicon.png" />
+  <style>
+    .page-hero {
+      padding-top: calc(var(--nav-height) + var(--space-xl));
+      padding-bottom: var(--space-lg);
+      background: var(--color-dark);
+      position: relative;
+      overflow: hidden;
+      text-align: center;
+    }
+    .page-hero::before {
+      content: '';
+      position: absolute;
+      top: -180px; left: 50%;
+      transform: translateX(-50%);
+      width: 600px; height: 400px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(232,101,26,0.07) 0%, transparent 68%);
+      pointer-events: none;
+    }
+    .page-hero__inner { position: relative; max-width: 640px; margin: 0 auto; }
+    .page-hero h1 { margin: 0.75rem 0 1rem; }
+    .page-hero p  { font-size: 1rem; color: var(--color-white-dim); max-width: 52ch; margin: 0 auto; }
+
+    .faq-section { background: var(--color-black); }
+
+    .faq-inner {
+      display: grid;
+      grid-template-columns: 220px 1fr;
+      gap: var(--space-lg);
+      align-items: start;
+    }
+
+    /* Category nav */
+    .faq-nav {
+      position: sticky;
+      top: calc(var(--nav-height) + 2rem);
+      display: flex;
+      flex-direction: column;
+      gap: 0.35rem;
+    }
+
+    .faq-nav__label {
+      font-family: var(--font-display);
+      font-size: 0.6rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--color-accent);
+      margin-bottom: 0.5rem;
+      display: block;
+    }
+
+    .faq-nav__link {
+      font-family: var(--font-display);
+      font-size: 0.72rem;
+      font-weight: 600;
+      color: var(--color-white-dim);
+      padding: 0.5rem 0.85rem;
+      border-radius: var(--radius-sm);
+      transition: all var(--transition-fast);
+      border-left: 2px solid transparent;
+    }
+
+    .faq-nav__link:hover {
+      color: var(--color-white);
+      border-left-color: var(--color-accent);
+      background: var(--color-accent-glow);
+    }
+
+    /* FAQ groups */
+    .faq-groups { display: flex; flex-direction: column; gap: 3rem; }
+
+    .faq-group__title {
+      font-family: var(--font-display);
+      font-size: 0.65rem;
+      font-weight: 700;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--color-accent);
+      margin-bottom: 1.25rem;
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+
+    .faq-group__title::after {
+      content: '';
+      flex: 1;
+      height: 1px;
+      background: var(--color-border);
+    }
+
+    /* Accordion items */
+    .faq-item {
+      background: var(--color-dark-2);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-md);
+      margin-bottom: 0.75rem;
+      overflow: hidden;
+      transition: border-color var(--transition-base);
+    }
+
+    .faq-item:hover { border-color: rgba(232,101,26,0.25); }
+    .faq-item.open { border-color: rgba(232,101,26,0.35); }
+
+    .faq-question {
+      width: 100%;
+      background: none;
+      border: none;
+      padding: 1.25rem 1.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      cursor: pointer;
+      text-align: left;
+    }
+
+    .faq-question h5 {
+      font-family: var(--font-display);
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: var(--color-white);
+      line-height: 1.35;
+    }
+
+    .faq-question__icon {
+      width: 24px;
+      height: 24px;
+      border-radius: 50%;
+      background: var(--color-dark-3);
+      border: 1px solid var(--color-border);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      font-family: var(--font-display);
+      font-size: 1rem;
+      font-weight: 400;
+      color: var(--color-accent);
+      transition: all var(--transition-base);
+      line-height: 1;
+    }
+
+    .faq-item.open .faq-question__icon {
+      background: var(--color-accent-glow);
+      border-color: rgba(232,101,26,0.3);
+      transform: rotate(45deg);
+    }
+
+    .faq-answer {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.35s cubic-bezier(0.16,1,0.3,1);
+    }
+
+    .faq-item.open .faq-answer { max-height: 600px; }
+
+    .faq-answer__inner {
+      padding: 0 1.5rem 1.5rem;
+      font-size: 0.9rem;
+      color: var(--color-white-dim);
+      line-height: 1.75;
+    }
+
+    .faq-answer__inner a { color: var(--color-accent); text-decoration: underline; text-underline-offset: 3px; }
+
+    @media (max-width: 1024px) {
+      .faq-inner { grid-template-columns: 1fr; }
+      .faq-nav { position: static; flex-direction: row; flex-wrap: wrap; }
+    }
+  </style>
+</head>
+<body>
+  <nav class="nav" id="mainNav">
+  <div class="nav__inner">
+    <a href="https://urbannicheco.com" class="nav__logo">
+      <img class="nav__logo-img" src="https://urbannicheco.com/wp-content/uploads/2026/04/99f521e4-9887-408b-b987-5822ba896f1d.png" alt="Urban Niche Co.">
+      Urban<span>Niche</span>&nbsp;Co.
+    </a>
+    <ul class="nav__links">
+      <li><a href="https://urbannicheco.com" class="nav__link">Home</a></li>
+      <li class="nav__dropdown">
+        <a href="https://urbannicheco.com/marketing-services-iowa" class="nav__link">Services &#9660;</a>
+        <div class="nav__dropdown-menu">
+          <a href="https://urbannicheco.com/marketing-services-iowa" class="nav__dropdown-item">All Services</a>
+          <a href="https://urbannicheco.com/seo-services-des-moines-iowa" class="nav__dropdown-item">SEO</a>
+          <a href="https://urbannicheco.com/pay-per-click-advertising-iowa" class="nav__dropdown-item">Pay Per Click</a>
+          <a href="https://urbannicheco.com/social-media-marketing-iowa-grow-your-brand-urban-niche-co" class="nav__dropdown-item">Social Media Marketing</a>
+          <a href="https://urbannicheco.com/website-design-and-development" class="nav__dropdown-item">Website Design &amp; Dev</a>
+          <a href="https://urbannicheco.com/marketing" class="nav__dropdown-item">Marketing Services</a>
+          <a href="https://urbannicheco.com/branded-merchandise-iowa" class="nav__dropdown-item">Branded Merchandise</a>
+          <a href="https://urbannicheco.com/ai-consulting-services" class="nav__dropdown-item">AI Consulting</a>
+          <a href="https://urbannicheco.com/saas-custom-app-development" class="nav__dropdown-item">Custom App &amp; SaaS Dev</a>
+          <a href="https://urbannicheco.com/a-la-carte" class="nav__dropdown-item">A La Carte</a>
+        </div>
+      </li>
+      <li><a href="https://urbannicheco.com/pricing" class="nav__link">Pricing</a></li>
+      <li><a href="https://urbannicheco.com/about-digital-marketing-agency-midwest" class="nav__link">About</a></li>
+      <li><a href="https://urbannicheco.com/faq" class="nav__link">FAQ</a></li>
+    </ul>
+    <div class="nav__cta">
+      <a href="https://urbannicheco.com/contact-digital-marketing-agency" class="btn btn-outline btn-sm">Contact Us</a>
+      <a href="https://urbannicheco.com/contact-digital-marketing-agency/" class="btn btn-primary btn-sm">Free Website Audit</a>
+    </div>
+    <button class="nav__hamburger" id="hamburger" aria-label="Open menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+<div class="nav__mobile" id="mobileNav">
+  <a href="https://urbannicheco.com" class="nav__mobile-link">Home</a>
+  <a href="https://urbannicheco.com/marketing-services-iowa" class="nav__mobile-link">Services</a>
+  <a href="https://urbannicheco.com/marketing-services-iowa" class="nav__mobile-link nav__mobile-sub">&#8618; All Services</a>
+  <a href="https://urbannicheco.com/seo-services-des-moines-iowa" class="nav__mobile-link nav__mobile-sub">&#8618; SEO</a>
+  <a href="https://urbannicheco.com/pay-per-click-advertising-iowa" class="nav__mobile-link nav__mobile-sub">&#8618; Pay Per Click</a>
+  <a href="https://urbannicheco.com/social-media-marketing-iowa-grow-your-brand-urban-niche-co" class="nav__mobile-link nav__mobile-sub">&#8618; Social Media Marketing</a>
+  <a href="https://urbannicheco.com/website-design-and-development" class="nav__mobile-link nav__mobile-sub">&#8618; Website Design &amp; Dev</a>
+  <a href="https://urbannicheco.com/marketing" class="nav__mobile-link nav__mobile-sub">&#8618; Marketing Services</a>
+  <a href="https://urbannicheco.com/branded-merchandise-iowa" class="nav__mobile-link nav__mobile-sub">&#8618; Branded Merchandise</a>
+  <a href="https://urbannicheco.com/ai-consulting-services" class="nav__mobile-link nav__mobile-sub">&#8618; AI Consulting</a>
+  <a href="https://urbannicheco.com/saas-custom-app-development" class="nav__mobile-link nav__mobile-sub">&#8618; Custom App &amp; SaaS Dev</a>
+  <a href="https://urbannicheco.com/a-la-carte" class="nav__mobile-link nav__mobile-sub">&#8618; A La Carte</a>
+  <a href="https://urbannicheco.com/pricing" class="nav__mobile-link">Pricing</a>
+  <a href="https://urbannicheco.com/about-digital-marketing-agency-midwest" class="nav__mobile-link">About</a>
+  <a href="https://urbannicheco.com/faq" class="nav__mobile-link">FAQ</a>
+  <a href="https://urbannicheco.com/contact-digital-marketing-agency" class="nav__mobile-link">Contact Us</a>
+  <a href="https://urbannicheco.com/contact-digital-marketing-agency/" class="btn btn-primary">Free Website Audit</a>
+</div>
+
+  <section class="page-hero noise-overlay">
+    <div class="container page-hero__inner">
+      <span class="eyebrow reveal">Got Questions?</span>
+      <h1 class="reveal reveal-delay-1">Frequently Asked<br><span class="text-accent">Questions.</span></h1>
+      <p class="reveal reveal-delay-2">We've got answers. Browse by category below or <a href="/contact-digital-marketing-agency/" style="color:var(--color-accent);">contact us</a> if you don't see what you're looking for.</p>
+    </div>
+  </section>
+
+  <section class="section faq-section">
+    <div class="container">
+      <div class="faq-inner">
+
+        <nav class="faq-nav reveal">
+          <span class="faq-nav__label">Jump To</span>
+          <a href="#general" class="faq-nav__link">General</a>
+          <a href="#seo" class="faq-nav__link">SEO & Marketing</a>
+          <a href="#ai" class="faq-nav__link">AI Consulting</a>
+          <a href="#merchandise" class="faq-nav__link">Merchandise</a>
+          <a href="#pricing" class="faq-nav__link">Pricing & Process</a>
+        </nav>
+
+        <div class="faq-groups reveal reveal-delay-1">
+
+          <!-- GENERAL -->
+          <div id="general">
+            <div class="faq-group__title">General</div>
+
+            <div class="faq-item">
+              <button class="faq-question" onclick="toggleFaq(this)">
+                <h5>What services does Urban Niche Co. offer?</h5>
+                <span class="faq-question__icon">+</span>
+              </button>
+              <div class="faq-answer"><div class="faq-answer__inner">Urban Niche Co. is a full-service digital marketing agency specializing in SEO, Pay Per Click advertising, Social Media Marketing, Website Design & Development, AI Consulting, À La Carte marketing services, and Branded Merchandise. We focus exclusively on contractors and home service businesses — roofers, HVAC, plumbers, electricians, landscapers, general contractors, remodelers, and painters.</div></div>
+            </div>
+
+            <div class="faq-item">
+              <button class="faq-question" onclick="toggleFaq(this)">
+                <h5>Where is Urban Niche Co. located?</h5>
+                <span class="faq-question__icon">+</span>
+              </button>
+              <div class="faq-answer"><div class="faq-answer__inner">We are based in Des Moines, Iowa and serve clients both locally and nationwide. While we love working with Iowa businesses, our digital services allow us to partner with contractors across the United States. Text us at <a href="tel:15153444053">1-515-344-4053</a>.</div></div>
+            </div>
+
+            <div class="faq-item">
+              <button class="faq-question" onclick="toggleFaq(this)">
+                <h5>How do I get started?</h5>
+                <span class="faq-question__icon">+</span>
+              </button>
+              <div class="faq-answer"><div class="faq-answer__inner">Easy. Fill out the form on our <a href="/contact-digital-marketing-agency/">Contact page</a>, text us at 1-515-344-4053, or <a href="https://calendly.com/urbanniche" target="_blank" rel="noopener">schedule on Calendly</a>. We'll set up a free consultation, assess your current digital presence, and recommend a tailored strategy. No pressure, no obligation.</div></div>
+            </div>
+
+            <div class="faq-item">
+              <button class="faq-question" onclick="toggleFaq(this)">
+                <h5>Do you work with businesses outside Iowa?</h5>
+                <span class="faq-question__icon">+</span>
+              </button>
+              <div class="faq-answer"><div class="faq-answer__inner">Yes — we work with contractors across the US. Our contractor-first focus means we understand your trade regardless of where you're based. Location doesn't limit what we can do for your business.</div></div>
+            </div>
+          </div>
+
+          <!-- SEO -->
+          <div id="seo">
+            <div class="faq-group__title">SEO & Digital Marketing</div>
+
+            <div class="faq-item">
+              <button class="faq-question" onclick="toggleFaq(this)">
+                <h5>What is SEO and why does my business need it?</h5>
+                <span class="faq-question__icon">+</span>
+              </button>
+              <div class="faq-answer"><div class="faq-answer__inner">SEO (Search Engine Optimization) is the process of improving your website's visibility in search results like Google. When homeowners search for a roofer, plumber, or HVAC company near them, strong SEO ensures your business appears at the top of those results. This drives organic traffic to your site, increases brand awareness, and generates more leads — without paying for every click.</div></div>
+            </div>
+
+            <div class="faq-item">
+              <button class="faq-question" onclick="toggleFaq(this)">
+                <h5>How long does it take to see SEO results?</h5>
+                <span class="faq-question__icon">+</span>
+              </button>
+              <div class="faq-answer"><div class="faq-answer__inner">SEO is a long-term strategy. Most clients begin to see measurable improvements within 3–6 months, depending on the competitiveness of your market and the starting state of your website. Sustainable top rankings are built over time through consistent optimization, quality content, and link authority — but many clients see early wins within the first 30 days.</div></div>
+            </div>
+
+            <div class="faq-item">
+              <button class="faq-question" onclick="toggleFaq(this)">
+                <h5>What digital marketing services do you offer beyond SEO?</h5>
+                <span class="faq-question__icon">+</span>
+              </button>
+              <div class="faq-answer"><div class="faq-answer__inner">In addition to SEO, we offer Pay Per Click advertising (Google & Bing Ads), Social Media Marketing, Website Design & Development, AI Consulting and automation, and a full À La Carte menu of individual marketing services with no retainer required. See our <a href="/marketing-services-iowa/">Services page</a> for the full breakdown.</div></div>
+            </div>
+
+            <div class="faq-item">
+              <button class="faq-question" onclick="toggleFaq(this)">
+                <h5>How quickly can PPC campaigns go live?</h5>
+                <span class="faq-question__icon">+</span>
+              </button>
+              <div class="faq-answer"><div class="faq-answer__inner">Most clients are onboarded within 3–5 business days, and PPC campaigns can go live in under a week. Unlike SEO, Google Ads produce immediate visibility — your ads can appear at the top of search results as soon as the campaign launches.</div></div>
+            </div>
+          </div>
+
+          <!-- AI -->
+          <div id="ai">
+            <div class="faq-group__title">AI Consulting</div>
+
+            <div class="faq-item">
+              <button class="faq-question" onclick="toggleFaq(this)">
+                <h5>What is AI Consulting and how can it help my contracting business?</h5>
+                <span class="faq-question__icon">+</span>
+              </button>
+              <div class="faq-answer"><div class="faq-answer__inner">Our AI Consulting helps contractors implement practical AI tools that save time and close more jobs. We build automated lead capture chatbots, workflow automations, proposal generation systems, follow-up sequences, and reporting dashboards — all tailored to how your specific trade operates. You get the benefits of AI without the tech overwhelm.</div></div>
+            </div>
+
+            <div class="faq-item">
+              <button class="faq-question" onclick="toggleFaq(this)">
+                <h5>Do I need technical knowledge to use AI solutions?</h5>
+                <span class="faq-question__icon">+</span>
+              </button>
+              <div class="faq-answer"><div class="faq-answer__inner">Not at all. Our team handles all the technical setup, configuration, and testing. We then train you and your team with clear documentation and hands-on walkthroughs so you feel confident using what we build. Our goal is to make AI practical and accessible — not intimidating.</div></div>
+            </div>
+
+            <div class="faq-item">
+              <button class="faq-question" onclick="toggleFaq(this)">
+                <h5>What types of contractors benefit most from AI?</h5>
+                <span class="faq-question__icon">+</span>
+              </button>
+              <div class="faq-answer"><div class="faq-answer__inner">Any contractor who is missing after-hours leads, spending too much time on admin, or struggling with consistent follow-up will see immediate ROI from AI. Roofers, HVAC companies, plumbers, electricians, landscapers, remodelers, and general contractors are all excellent fits. If you're getting leads and losing them before they book — AI fixes that.</div></div>
+            </div>
+          </div>
+
+          <!-- MERCHANDISE -->
+          <div id="merchandise">
+            <div class="faq-group__title">Merchandise</div>
+
+            <div class="faq-item">
+              <button class="faq-question" onclick="toggleFaq(this)">
+                <h5>What kind of merchandise does Urban Niche Co. offer?</h5>
+                <span class="faq-question__icon">+</span>
+              </button>
+              <div class="faq-answer"><div class="faq-answer__inner">We offer branded merchandise including shirts, hats, workwear, vehicle decals, yard signs, job site banners, and promotional items for contractor businesses. Everything is designed to put your brand on every job site and every customer interaction. Visit our <a href="/branded-merchandise-iowa/">Merchandise page</a> to see available options.</div></div>
+            </div>
+
+            <div class="faq-item">
+              <button class="faq-question" onclick="toggleFaq(this)">
+                <h5>Can I order custom branded merchandise for my business?</h5>
+                <span class="faq-question__icon">+</span>
+              </button>
+              <div class="faq-answer"><div class="faq-answer__inner">Yes. We work with you to create custom branded apparel, promotional products, and marketing materials that represent your business professionally. Our founder started in screen printing and embroidery, so this is something we know deeply. <a href="/contact-digital-marketing-agency/">Contact us</a> to discuss your custom merchandise needs.</div></div>
+            </div>
+          </div>
+
+          <!-- PRICING -->
+          <div id="pricing">
+            <div class="faq-group__title">Pricing & Process</div>
+
+            <div class="faq-item">
+              <button class="faq-question" onclick="toggleFaq(this)">
+                <h5>How much do your services cost?</h5>
+                <span class="faq-question__icon">+</span>
+              </button>
+              <div class="faq-answer"><div class="faq-answer__inner">We publish all of our pricing transparently on our <a href="/pricing/">Pricing page</a>. SEO starts at $375/month, PPC management starts at $450/month, Social Media starts at $300/month, and website builds start at $1,000 one-time. À La Carte services start at $15. No hidden fees, no surprises.</div></div>
+            </div>
+
+            <div class="faq-item">
+              <button class="faq-question" onclick="toggleFaq(this)">
+                <h5>Are there long-term contracts?</h5>
+                <span class="faq-question__icon">+</span>
+              </button>
+              <div class="faq-answer"><div class="faq-answer__inner">No. All of our monthly services are month-to-month. We earn your business every month with results — not lock-in clauses. Cancel anytime with 30 days notice. We believe if we're doing our job, you won't want to leave.</div></div>
+            </div>
+
+            <div class="faq-item">
+              <button class="faq-question" onclick="toggleFaq(this)">
+                <h5>Do you mark up ad spend?</h5>
+                <span class="faq-question__icon">+</span>
+              </button>
+              <div class="faq-answer"><div class="faq-answer__inner">Never. Your Google and Bing ad spend goes directly to those platforms. You pay us a flat management fee — your advertising budget is 100% transparent and always goes where we say it goes.</div></div>
+            </div>
+
+            <div class="faq-item">
+              <button class="faq-question" onclick="toggleFaq(this)">
+                <h5>What is your typical project timeline?</h5>
+                <span class="faq-question__icon">+</span>
+              </button>
+              <div class="faq-answer"><div class="faq-answer__inner">Timelines vary by service. PPC campaigns can go live in under a week. SEO onboarding takes 3–5 business days with early results visible in 30–90 days. Website builds typically take 2–4 weeks depending on scope. We move fast and keep you informed at every step.</div></div>
+            </div>
+
+            <div class="faq-item">
+              <button class="faq-question" onclick="toggleFaq(this)">
+                <h5>Do you offer ongoing support?</h5>
+                <span class="faq-question__icon">+</span>
+              </button>
+              <div class="faq-answer"><div class="faq-answer__inner">Absolutely. We believe in long-term partnerships. Every monthly service includes regular performance reporting, strategy adjustments based on data, and direct access to our team. You're never left wondering what's happening with your campaigns.</div></div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta-banner noise-overlay">
+    <div class="container">
+      <div class="cta-banner__inner reveal">
+        <div>
+          <span class="eyebrow">Still Have Questions?</span>
+          <h2>We're Here to Help.</h2>
+          <p>Reach out directly — text, form, or Calendly. We respond fast and we give straight answers.</p>
+        </div>
+        <div class="cta-banner__actions">
+          <a href="/contact-digital-marketing-agency/" class="btn btn-primary btn-lg">Contact Us</a>
+          <a href="/contact-digital-marketing-agency/#audit" class="btn btn-outline btn-lg">Free Website Audit</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+
+  <div class="container">
+
+    <div class="footer__grid">
+
+      <div class="footer__brand">
+
+        <div class="footer__logo" style="display:flex;align-items:center;gap:10px;margin-bottom:12px;">
+
+          <img src="https://urbannicheco.com/wp-content/uploads/2026/04/99f521e4-9887-408b-b987-5822ba896f1d.png" alt="Urban Niche Co." style="height:36px;width:auto;">
+
+          <span style="font-family:'Syne',sans-serif;font-weight:800;font-size:18px;color:#fff;">Urban <span style="color:var(--color-accent)">Niche</span> Co.</span>
+
+        </div>
+
+        <p>Digital marketing built exclusively for contractors and home service businesses.</p>
+
+        <div class="footer__social">
+
+          <a href="https://www.facebook.com/UrbanNicheCo" aria-label="Facebook"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg></a>
+
+          <a href="https://www.instagram.com/urbanniche_co/" aria-label="Instagram"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg></a>
+
+          <a href="https://www.linkedin.com/company/urbannicheco" aria-label="LinkedIn"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg></a>
+
+          <a href="https://x.com/UrbanNiche_Co" aria-label="Twitter/X">&#120143;</a>
+
+        </div>
+
+      </div>
+
+      <div class="footer__col">
+
+        <h5>Services</h5>
+
+        <ul>
+
+          <li><a href="https://urbannicheco.com/seo-services-des-moines-iowa">SEO</a></li>
+
+          <li><a href="https://urbannicheco.com/pay-per-click-advertising-iowa">Pay Per Click</a></li>
+
+          <li><a href="https://urbannicheco.com/social-media-marketing-iowa-grow-your-brand-urban-niche-co">Social Media</a></li>
+
+          <li><a href="https://urbannicheco.com/website-design-and-development">Website Design</a></li>
+
+          <li><a href="https://urbannicheco.com/marketing">Marketing Services</a></li>
+
+          <li><a href="https://urbannicheco.com/ai-consulting-services">AI Consulting</a></li>
+
+        </ul>
+
+      </div>
+
+      <div class="footer__col">
+
+        <h5>Company</h5>
+
+        <ul>
+
+          <li><a href="https://urbannicheco.com/about-digital-marketing-agency-midwest">About Us</a></li>
+
+          <li><a href="https://urbannicheco.com/about-digital-marketing-agency-midwest/#careers">Careers</a></li>
+
+          <li><a href="https://urbannicheco.com/blog">Blog</a></li>
+
+          <li><a href="https://urbannicheco.com/pricing">Pricing</a></li>
+
+          <li><a href="https://urbannicheco.com/faq">FAQ</a></li>
+
+          <li><a href="https://urbannicheco.com/branded-merchandise-iowa">Merchandise</a></li>
+
+        </ul>
+
+      </div>
+
+      <div class="footer__col">
+
+        <h5>Get Started</h5>
+
+        <ul>
+
+          <li><a href="https://urbannicheco.com/contact-digital-marketing-agency/">Free Website Audit</a></li>
+
+          <li><a href="https://urbannicheco.com/contact-digital-marketing-agency">Contact Us</a></li>
+
+          <li><a href="https://urbannicheco.com/pricing">View Pricing</a></li>
+
+        </ul>
+
+        <div style="margin-top:20px;font-size:13px;color:rgba(255,255,255,0.4);line-height:1.8;">
+
+          <a href="sms:+15153444053" style="color:#e8651a;text-decoration:none;font-weight:500;">(515) 344-4053</a><br>
+
+          <span style="font-size:12px;">Text anytime &middot; No cold calls</span>
+
+        </div>
+
+        <div style="margin-top:1.5rem;">
+
+          <a href="https://urbannicheco.com/contact-digital-marketing-agency/" class="btn btn-primary btn-sm">Free Audit &#8594;</a>
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <div class="footer__bottom">
+
+      <p>&copy; 2026 Urban Niche Co. All rights reserved.</p>
+
+      <div class="footer__bottom-links">
+
+        <a href="https://urbannicheco.com/privacy-policy">Privacy Policy</a>
+
+        <a href="https://urbannicheco.com/sitemap">Sitemap</a>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</footer>
+
+  <script>
+    function toggleFaq(btn) {
+      const item = btn.closest('.faq-item');
+      const isOpen = item.classList.contains('open');
+      document.querySelectorAll('.faq-item.open').forEach(i => i.classList.remove('open'));
+      if (!isOpen) item.classList.add('open');
+    }
+    const nav = document.getElementById('mainNav');
+    window.addEventListener('scroll', () => { nav.classList.toggle('scrolled', window.scrollY > 40); });
+    document.getElementById('hamburger').addEventListener('click', () => { document.getElementById('mobileNav').classList.toggle('open'); });
+    document.querySelectorAll('.reveal').forEach(el => {
+      new IntersectionObserver((e) => { e.forEach(x => { if(x.isIntersecting) x.target.classList.add('visible'); }); }, {threshold:0.12}).observe(el);
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,554 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="AI is changing how contractors market in 2026. Urban Niche Co. breaks down the top trends Iowa home service businesses need to know right now.">
+  <title>AI Market Trends in 2026 | Urban Niche Co. Blog</title>
+  <link rel="stylesheet" href="/wp-content/themes/divi-child/unc/style.css" />
+  <link rel="icon" type="image/png" href="assets/favicon.png" />
+  <style>
+    .article-hero {
+      padding-top: calc(var(--nav-height) + var(--space-xl));
+      padding-bottom: var(--space-lg);
+      background: var(--color-dark);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .article-hero::before {
+      content: '';
+      position: absolute;
+      top: -150px; right: -150px;
+      width: 500px; height: 500px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(232,101,26,0.07) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    .article-hero__inner { max-width: 800px; }
+
+    .article-hero__back {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-family: var(--font-display);
+      font-size: 0.68rem;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--color-white-dim);
+      margin-bottom: 1.5rem;
+      transition: color var(--transition-fast);
+    }
+
+    .article-hero__back:hover { color: var(--color-accent); }
+
+    .article-hero__meta {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      margin-bottom: 1.25rem;
+    }
+
+    .article-hero__cat {
+      font-family: var(--font-display);
+      font-size: 0.6rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--color-accent);
+      background: var(--color-accent-glow);
+      border: 1px solid rgba(232,101,26,0.25);
+      border-radius: var(--radius-pill);
+      padding: 0.2rem 0.65rem;
+    }
+
+    .article-hero__date {
+      font-size: 0.72rem;
+      color: var(--color-white-dim);
+      opacity: 0.6;
+    }
+
+    .article-hero h1 {
+      font-size: clamp(1.8rem, 4vw, 3rem);
+      margin-bottom: 1.25rem;
+      line-height: 1.15;
+    }
+
+    .article-hero__intro {
+      font-size: 1.05rem;
+      color: var(--color-white-dim);
+      line-height: 1.7;
+      max-width: 65ch;
+    }
+
+    /* Article layout */
+    .article-body {
+      background: var(--color-black);
+    }
+
+    .article-body__inner {
+      display: grid;
+      grid-template-columns: 1fr 280px;
+      gap: var(--space-lg);
+      align-items: start;
+    }
+
+    /* Article content */
+    .article-content {
+      max-width: 680px;
+    }
+
+    .article-content h2 {
+      font-size: 1.5rem;
+      margin: 2.5rem 0 1rem;
+      padding-top: 2.5rem;
+      border-top: 1px solid var(--color-border);
+    }
+
+    .article-content h2:first-child { margin-top: 0; padding-top: 0; border-top: none; }
+
+    .article-content h3 {
+      font-size: 1.1rem;
+      margin: 1.75rem 0 0.75rem;
+      color: var(--color-white);
+    }
+
+    .article-content p {
+      font-size: 0.95rem;
+      line-height: 1.8;
+      color: var(--color-white-dim);
+      margin-bottom: 1.25rem;
+      max-width: none;
+    }
+
+    .article-content a {
+      color: var(--color-accent);
+      text-decoration: underline;
+      text-underline-offset: 3px;
+    }
+
+    .article-content a:hover { opacity: 0.8; }
+
+    .article-content strong {
+      color: var(--color-white);
+      font-weight: 500;
+    }
+
+    /* Sidebar */
+    .article-sidebar {
+      position: sticky;
+      top: calc(var(--nav-height) + 2rem);
+      display: flex;
+      flex-direction: column;
+      gap: 1.25rem;
+    }
+
+    .sidebar-widget {
+      background: var(--color-dark-2);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-md);
+      padding: 1.5rem;
+    }
+
+    .sidebar-widget__title {
+      font-family: var(--font-display);
+      font-size: 0.62rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--color-accent);
+      margin-bottom: 1rem;
+      display: block;
+    }
+
+    .sidebar-post {
+      display: flex;
+      gap: 0.65rem;
+      align-items: flex-start;
+      padding: 0.65rem 0;
+      border-bottom: 1px solid var(--color-border);
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .sidebar-post:last-child { border-bottom: none; padding-bottom: 0; }
+    .sidebar-post:first-child { padding-top: 0; }
+    .sidebar-post:hover h6 { color: var(--color-accent); }
+
+    .sidebar-post__icon { font-size: 1.1rem; flex-shrink: 0; margin-top: 1px; }
+
+    .sidebar-post h6 {
+      font-size: 0.78rem;
+      font-weight: 600;
+      line-height: 1.3;
+      color: var(--color-white);
+      margin-bottom: 0.15rem;
+      transition: color var(--transition-fast);
+    }
+
+    .sidebar-post__date { font-size: 0.65rem; color: var(--color-white-dim); opacity: 0.6; }
+
+    .sidebar-cta {
+      background: linear-gradient(135deg, var(--color-dark-2) 0%, rgba(232,101,26,0.06) 100%);
+      border-color: rgba(232,101,26,0.3);
+    }
+
+    .sidebar-cta h5 { margin-bottom: 0.5rem; font-size: 0.9rem; }
+    .sidebar-cta p  { font-size: 0.78rem; margin-bottom: 1rem; }
+    .sidebar-cta .btn { width: 100%; justify-content: center; font-size: 0.68rem; padding: 0.6rem 1rem; }
+
+    /* Post nav */
+    .post-nav {
+      display: flex;
+      justify-content: space-between;
+      gap: 1rem;
+      margin-top: 3rem;
+      padding-top: 2rem;
+      border-top: 1px solid var(--color-border);
+    }
+
+    .post-nav__link {
+      font-family: var(--font-display);
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--color-accent);
+      text-decoration: none;
+      transition: letter-spacing var(--transition-fast);
+    }
+
+    .post-nav__link:hover { letter-spacing: 0.12em; }
+
+    @media (max-width: 1024px) {
+      .article-body__inner { grid-template-columns: 1fr; }
+      .article-sidebar { position: static; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav class="nav" id="mainNav">
+  <div class="nav__inner">
+    <a href="https://urbannicheco.com" class="nav__logo">
+      <img class="nav__logo-img" src="https://urbannicheco.com/wp-content/uploads/2026/04/99f521e4-9887-408b-b987-5822ba896f1d.png" alt="Urban Niche Co.">
+      Urban<span>Niche</span>&nbsp;Co.
+    </a>
+    <ul class="nav__links">
+      <li><a href="https://urbannicheco.com" class="nav__link">Home</a></li>
+      <li class="nav__dropdown">
+        <a href="https://urbannicheco.com/marketing-services-iowa" class="nav__link">Services &#9660;</a>
+        <div class="nav__dropdown-menu">
+          <a href="https://urbannicheco.com/marketing-services-iowa" class="nav__dropdown-item">All Services</a>
+          <a href="https://urbannicheco.com/seo-services-des-moines-iowa" class="nav__dropdown-item">SEO</a>
+          <a href="https://urbannicheco.com/pay-per-click-advertising-iowa" class="nav__dropdown-item">Pay Per Click</a>
+          <a href="https://urbannicheco.com/social-media-marketing-iowa-grow-your-brand-urban-niche-co" class="nav__dropdown-item">Social Media Marketing</a>
+          <a href="https://urbannicheco.com/website-design-and-development" class="nav__dropdown-item">Website Design &amp; Dev</a>
+          <a href="https://urbannicheco.com/marketing" class="nav__dropdown-item">Marketing Services</a>
+          <a href="https://urbannicheco.com/branded-merchandise-iowa" class="nav__dropdown-item">Branded Merchandise</a>
+          <a href="https://urbannicheco.com/ai-consulting-services" class="nav__dropdown-item">AI Consulting</a>
+          <a href="https://urbannicheco.com/saas-custom-app-development" class="nav__dropdown-item">Custom App &amp; SaaS Dev</a>
+          <a href="https://urbannicheco.com/a-la-carte" class="nav__dropdown-item">A La Carte</a>
+        </div>
+      </li>
+      <li><a href="https://urbannicheco.com/pricing" class="nav__link">Pricing</a></li>
+      <li><a href="https://urbannicheco.com/about-digital-marketing-agency-midwest" class="nav__link">About</a></li>
+      <li><a href="https://urbannicheco.com/faq" class="nav__link">FAQ</a></li>
+    </ul>
+    <div class="nav__cta">
+      <a href="https://urbannicheco.com/contact-digital-marketing-agency" class="btn btn-outline btn-sm">Contact Us</a>
+      <a href="https://urbannicheco.com/contact-digital-marketing-agency/" class="btn btn-primary btn-sm">Free Website Audit</a>
+    </div>
+    <button class="nav__hamburger" id="hamburger" aria-label="Open menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+<div class="nav__mobile" id="mobileNav">
+  <a href="https://urbannicheco.com" class="nav__mobile-link">Home</a>
+  <a href="https://urbannicheco.com/marketing-services-iowa" class="nav__mobile-link">Services</a>
+  <a href="https://urbannicheco.com/marketing-services-iowa" class="nav__mobile-link nav__mobile-sub">&#8618; All Services</a>
+  <a href="https://urbannicheco.com/seo-services-des-moines-iowa" class="nav__mobile-link nav__mobile-sub">&#8618; SEO</a>
+  <a href="https://urbannicheco.com/pay-per-click-advertising-iowa" class="nav__mobile-link nav__mobile-sub">&#8618; Pay Per Click</a>
+  <a href="https://urbannicheco.com/social-media-marketing-iowa-grow-your-brand-urban-niche-co" class="nav__mobile-link nav__mobile-sub">&#8618; Social Media Marketing</a>
+  <a href="https://urbannicheco.com/website-design-and-development" class="nav__mobile-link nav__mobile-sub">&#8618; Website Design &amp; Dev</a>
+  <a href="https://urbannicheco.com/marketing" class="nav__mobile-link nav__mobile-sub">&#8618; Marketing Services</a>
+  <a href="https://urbannicheco.com/branded-merchandise-iowa" class="nav__mobile-link nav__mobile-sub">&#8618; Branded Merchandise</a>
+  <a href="https://urbannicheco.com/ai-consulting-services" class="nav__mobile-link nav__mobile-sub">&#8618; AI Consulting</a>
+  <a href="https://urbannicheco.com/saas-custom-app-development" class="nav__mobile-link nav__mobile-sub">&#8618; Custom App &amp; SaaS Dev</a>
+  <a href="https://urbannicheco.com/a-la-carte" class="nav__mobile-link nav__mobile-sub">&#8618; A La Carte</a>
+  <a href="https://urbannicheco.com/pricing" class="nav__mobile-link">Pricing</a>
+  <a href="https://urbannicheco.com/about-digital-marketing-agency-midwest" class="nav__mobile-link">About</a>
+  <a href="https://urbannicheco.com/faq" class="nav__mobile-link">FAQ</a>
+  <a href="https://urbannicheco.com/contact-digital-marketing-agency" class="nav__mobile-link">Contact Us</a>
+  <a href="https://urbannicheco.com/contact-digital-marketing-agency/" class="btn btn-primary">Free Website Audit</a>
+</div>
+
+
+  <!-- ARTICLE HERO -->
+  <section class="article-hero">
+    <div class="container article-hero__inner">
+      <a href="/blog/" class="article-hero__back">← Back to Blog</a>
+      <div class="article-hero__meta">
+        <span class="article-hero__cat">AI & Technology</span>
+        <span class="article-hero__date">Mar 30, 2026</span>
+      </div>
+      <h1>AI Market Trends in 2026: The Biggest Launches Shaping the Future</h1>
+      <p class="article-hero__intro">Explore the biggest AI market trends of 2026, from next-generation language models and autonomous AI agents to enterprise integration platforms. Discover how artificial intelligence is reshaping business strategy and what launches are driving innovation this year.</p>
+    </div>
+  </section>
+
+
+  <!-- ARTICLE BODY -->
+  <section class="section article-body">
+    <div class="container article-body__inner">
+
+      <article class="article-content">
+
+        <p>The AI market trends in 2026 have already made this one of the most transformative years in tech history. From groundbreaking model releases to enterprise-level AI integrations, the first quarter alone has reshaped how businesses and consumers interact with intelligent systems. Whether you're an entrepreneur, a marketer, or simply someone keeping a pulse on innovation, understanding these AI market trends 2026 is bringing is essential to staying ahead of the curve.</p>
+
+        <h2>The State of AI in 2026</h2>
+
+        <p>Artificial intelligence has moved well beyond the experimental phase. What was once a novelty reserved for tech giants has become a core business tool across every industry. In 2026, AI is embedded in everything from customer service workflows to creative content pipelines, supply chain management, and healthcare diagnostics. The market is projected to surpass $300 billion globally this year, driven by enterprise adoption and a new wave of consumer-facing AI products.</p>
+
+        <p>The shift from generalized AI tools to highly specialized, industry-specific solutions has been one of the defining trends so far. Companies are no longer asking whether they should adopt AI — they're asking which AI stack gives them the strongest competitive edge.</p>
+
+        <h2>Biggest AI Launches of 2026 So Far</h2>
+
+        <h3>Next-Generation Language Models</h3>
+
+        <p>The race among leading AI labs has intensified. We've seen major upgrades to large language models that now demonstrate significantly improved reasoning, factual accuracy, and multimodal capabilities. These models can seamlessly process text, images, audio, and video in a single conversation, making them far more useful for real-world business applications. The emphasis this year has shifted from raw scale to efficiency, safety, and practical reliability.</p>
+
+        <h3>AI-Powered Agents and Autonomous Workflows</h3>
+
+        <p>Perhaps the most exciting development in 2026 is the rise of AI agents — systems that don't just respond to prompts but can independently plan, execute, and iterate on complex tasks. From booking travel and managing calendars to conducting market research and drafting full project proposals, AI agents are becoming indispensable digital teammates. Several major platforms have launched agent frameworks that allow businesses to deploy custom AI workers tailored to their specific operations.</p>
+
+        <h3>Enterprise AI Integration Platforms</h3>
+
+        <p>Major cloud providers and SaaS companies have rolled out end-to-end AI integration suites designed to plug directly into existing business infrastructure. These platforms make it easier than ever for companies of any size to implement AI without needing a dedicated machine learning team. The focus has been on no-code and low-code AI deployment, making the technology accessible to small and mid-sized businesses that previously felt priced out of the AI revolution.</p>
+
+        <h3>AI in Creative and Marketing Tools</h3>
+
+        <p>Creative professionals have seen a massive leap in AI-assisted design, video production, and copywriting tools. New launches this year offer hyper-realistic image and video generation, brand-consistent content creation, and intelligent campaign optimization. For digital marketers, these tools are game changers — enabling faster content production cycles, better personalization, and data-driven creative decisions at a fraction of the traditional cost.</p>
+
+        <h2>AI Market Trends 2026: What to Watch</h2>
+
+        <h3>Specialization Over Generalization</h3>
+
+        <p>The era of one-size-fits-all AI is fading. In 2026, the most successful AI products are those built for specific verticals — legal AI for contract analysis, medical AI for diagnostic imaging, financial AI for risk modeling, and marketing AI for audience segmentation. Businesses that invest in specialized AI solutions are seeing significantly higher ROI compared to those relying on generic tools.</p>
+
+        <h3>AI Regulation and Responsible Development</h3>
+
+        <p>Governments around the world are catching up with the pace of AI innovation. New regulatory frameworks are emerging that require transparency in AI decision-making, data usage disclosures, and bias auditing. Forward-thinking companies are treating compliance not as a burden but as a competitive advantage, building trust with customers who are increasingly aware of how their data is being used.</p>
+
+        <h3>The Rise of Small and Efficient Models</h3>
+
+        <p>While large models still dominate headlines, there's a growing movement toward smaller, more efficient AI models that can run locally on devices. These lightweight models offer faster response times, better privacy, and lower operational costs. For businesses concerned about data security or operating in regions with limited connectivity, small models are proving to be a powerful alternative.</p>
+
+        <h2>What This Means for Your Business</h2>
+
+        <p>The AI market in 2026 is not slowing down — it's accelerating. Whether you're running a startup or managing an established brand, now is the time to evaluate how AI fits into your strategy. The businesses that thrive this year will be the ones that move beyond surface-level AI adoption and build intelligent systems into the core of their operations.</p>
+
+        <p>At Urban Niche Co., we help contractors and home service businesses navigate the evolving digital landscape — including AI strategy, implementation, and automation. If you're ready to explore how AI can elevate your business, <a href="/contact-digital-marketing-agency/">get in touch with our team</a> today.</p>
+
+        <div class="post-nav">
+          <span></span>
+          <a href="/screen-printing-embroidery-and-promotional-products-tips-to-grow-your-brand/" class="post-nav__link">Next Article →</a>
+        </div>
+
+      </article>
+
+      <!-- Sidebar -->
+      <aside class="article-sidebar">
+        <div class="sidebar-widget">
+          <span class="sidebar-widget__title">Recent Posts</span>
+          <a href="/screen-printing-embroidery-and-promotional-products-tips-to-grow-your-brand/" class="sidebar-post">
+            <span class="sidebar-post__icon">👕</span>
+            <div>
+              <h6>Screen Printing, Embroidery & Promotional Products</h6>
+              <span class="sidebar-post__date">Apr 7, 2026</span>
+            </div>
+          </a>
+          <a href="/ai-market-trends-2026/" class="sidebar-post">
+            <span class="sidebar-post__icon">🤖</span>
+            <div>
+              <h6>AI Market Trends in 2026</h6>
+              <span class="sidebar-post__date">Mar 30, 2026</span>
+            </div>
+          </a>
+        </div>
+
+        <div class="sidebar-widget sidebar-cta">
+          <h5>Ready to Use AI in Your Business?</h5>
+          <p>We build custom AI systems for contractors. Start with a free discovery call.</p>
+          <a href="/ai-consulting-services/" class="btn btn-primary">Learn More →</a>
+        </div>
+
+        <div class="sidebar-widget sidebar-cta">
+          <h5>Free Website Audit</h5>
+          <p>See exactly where your site stands — no cost, no commitment.</p>
+          <a href="/contact-digital-marketing-agency/#audit" class="btn btn-outline">Claim Free Audit →</a>
+        </div>
+      </aside>
+
+    </div>
+  </section>
+
+
+  <!-- CTA BANNER -->
+  <section class="cta-banner noise-overlay">
+    <div class="container">
+      <div class="cta-banner__inner reveal">
+        <div>
+          <span class="eyebrow">Stay Ahead of the Curve</span>
+          <h2>Let AI Work for Your Business.</h2>
+          <p>Book a free AI discovery call and find out exactly how automation can save you time and close more jobs.</p>
+        </div>
+        <div class="cta-banner__actions">
+          <a href="/ai-consulting-services/" class="btn btn-primary btn-lg">Explore AI Consulting</a>
+          <a href="/contact-digital-marketing-agency/" class="btn btn-outline btn-lg">Contact Us</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- FOOTER -->
+  <footer class="footer">
+
+  <div class="container">
+
+    <div class="footer__grid">
+
+      <div class="footer__brand">
+
+        <div class="footer__logo" style="display:flex;align-items:center;gap:10px;margin-bottom:12px;">
+
+          <img src="https://urbannicheco.com/wp-content/uploads/2026/04/99f521e4-9887-408b-b987-5822ba896f1d.png" alt="Urban Niche Co." style="height:36px;width:auto;">
+
+          <span style="font-family:'Syne',sans-serif;font-weight:800;font-size:18px;color:#fff;">Urban <span style="color:var(--color-accent)">Niche</span> Co.</span>
+
+        </div>
+
+        <p>Digital marketing built exclusively for contractors and home service businesses.</p>
+
+        <div class="footer__social">
+
+          <a href="https://www.facebook.com/UrbanNicheCo" aria-label="Facebook"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg></a>
+
+          <a href="https://www.instagram.com/urbanniche_co/" aria-label="Instagram"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg></a>
+
+          <a href="https://www.linkedin.com/company/urbannicheco" aria-label="LinkedIn"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg></a>
+
+          <a href="https://x.com/UrbanNiche_Co" aria-label="Twitter/X">&#120143;</a>
+
+        </div>
+
+      </div>
+
+      <div class="footer__col">
+
+        <h5>Services</h5>
+
+        <ul>
+
+          <li><a href="https://urbannicheco.com/seo-services-des-moines-iowa">SEO</a></li>
+
+          <li><a href="https://urbannicheco.com/pay-per-click-advertising-iowa">Pay Per Click</a></li>
+
+          <li><a href="https://urbannicheco.com/social-media-marketing-iowa-grow-your-brand-urban-niche-co">Social Media</a></li>
+
+          <li><a href="https://urbannicheco.com/website-design-and-development">Website Design</a></li>
+
+          <li><a href="https://urbannicheco.com/marketing">Marketing Services</a></li>
+
+          <li><a href="https://urbannicheco.com/ai-consulting-services">AI Consulting</a></li>
+
+        </ul>
+
+      </div>
+
+      <div class="footer__col">
+
+        <h5>Company</h5>
+
+        <ul>
+
+          <li><a href="https://urbannicheco.com/about-digital-marketing-agency-midwest">About Us</a></li>
+
+          <li><a href="https://urbannicheco.com/about-digital-marketing-agency-midwest/#careers">Careers</a></li>
+
+          <li><a href="https://urbannicheco.com/blog">Blog</a></li>
+
+          <li><a href="https://urbannicheco.com/pricing">Pricing</a></li>
+
+          <li><a href="https://urbannicheco.com/faq">FAQ</a></li>
+
+          <li><a href="https://urbannicheco.com/branded-merchandise-iowa">Merchandise</a></li>
+
+        </ul>
+
+      </div>
+
+      <div class="footer__col">
+
+        <h5>Get Started</h5>
+
+        <ul>
+
+          <li><a href="https://urbannicheco.com/contact-digital-marketing-agency/">Free Website Audit</a></li>
+
+          <li><a href="https://urbannicheco.com/contact-digital-marketing-agency">Contact Us</a></li>
+
+          <li><a href="https://urbannicheco.com/pricing">View Pricing</a></li>
+
+        </ul>
+
+        <div style="margin-top:20px;font-size:13px;color:rgba(255,255,255,0.4);line-height:1.8;">
+
+          <a href="sms:+15153444053" style="color:#e8651a;text-decoration:none;font-weight:500;">(515) 344-4053</a><br>
+
+          <span style="font-size:12px;">Text anytime &middot; No cold calls</span>
+
+        </div>
+
+        <div style="margin-top:1.5rem;">
+
+          <a href="https://urbannicheco.com/contact-digital-marketing-agency/" class="btn btn-primary btn-sm">Free Audit &#8594;</a>
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <div class="footer__bottom">
+
+      <p>&copy; 2026 Urban Niche Co. All rights reserved.</p>
+
+      <div class="footer__bottom-links">
+
+        <a href="https://urbannicheco.com/privacy-policy">Privacy Policy</a>
+
+        <a href="https://urbannicheco.com/sitemap">Sitemap</a>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</footer>
+
+  <script>
+    const nav = document.getElementById('mainNav');
+    window.addEventListener('scroll', () => { nav.classList.toggle('scrolled', window.scrollY > 40); });
+    const hamburger = document.getElementById('hamburger');
+    const mobileNav = document.getElementById('mobileNav');
+    hamburger.addEventListener('click', () => { mobileNav.classList.toggle('open'); });
+  </script>
+</body>
+</html>

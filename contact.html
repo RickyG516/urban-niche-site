@@ -1,0 +1,518 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Ready to grow your contracting business? Contact Urban Niche Co. in Dubuque, Iowa for a free digital marketing audit. No pressure, just results.">
+  <title>Contact Us | Urban Niche Co.</title>
+  <link rel="stylesheet" href="/wp-content/themes/divi-child/unc/style.css" />
+  <link rel="icon" type="image/png" href="assets/favicon.png" />
+  <style>
+    .page-hero {
+      padding-top: calc(var(--nav-height) + var(--space-xl));
+      padding-bottom: var(--space-lg);
+      background: var(--color-dark);
+      position: relative;
+      overflow: hidden;
+      text-align: center;
+    }
+    .page-hero::before {
+      content: '';
+      position: absolute;
+      top: -180px; left: 50%;
+      transform: translateX(-50%);
+      width: 600px; height: 400px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(232,101,26,0.07) 0%, transparent 68%);
+      pointer-events: none;
+    }
+    .page-hero__inner { position: relative; max-width: 640px; margin: 0 auto; }
+    .page-hero h1 { margin: 0.75rem 0 1rem; }
+    .page-hero p { font-size: 1rem; color: var(--color-white-dim); max-width: 52ch; margin: 0 auto; }
+
+    .contact-section { background: var(--color-black); }
+
+    .contact-inner {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: var(--space-xl);
+      align-items: start;
+    }
+
+    /* Contact info */
+    .contact-info {
+      display: flex;
+      flex-direction: column;
+      gap: 1.25rem;
+    }
+    .contact-card {
+      background: var(--color-dark-2);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-md);
+      padding: 1.75rem;
+      display: flex;
+      gap: 1.25rem;
+      align-items: flex-start;
+      transition: border-color var(--transition-base);
+    }
+    .contact-card:hover { border-color: rgba(232,101,26,0.3); }
+    .contact-card__icon {
+      font-size: 1.5rem;
+      flex-shrink: 0;
+      width: 44px; height: 44px;
+      background: var(--color-accent-glow);
+      border: 1px solid rgba(232,101,26,0.25);
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+    }
+    .contact-card__label {
+      font-family: var(--font-display);
+      font-size: 0.62rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--color-accent);
+      margin-bottom: 0.35rem;
+      display: block;
+    }
+    .contact-card h4 { font-size: 1rem; margin-bottom: 0.25rem; }
+    .contact-card p  { font-size: 0.875rem; margin: 0; }
+    .contact-card a  { color: var(--color-accent); font-family: var(--font-display); font-size: 1rem; font-weight: 700; }
+
+    /* Form panel */
+    .form-panel {
+      background: var(--color-dark-2);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-lg);
+      padding: 2.5rem;
+      position: relative;
+      overflow: hidden;
+    }
+    .form-panel::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 3px;
+      background: linear-gradient(to right, var(--color-accent), transparent);
+    }
+    .form-panel__title {
+      font-family: var(--font-display);
+      font-size: 1.25rem;
+      font-weight: 800;
+      color: var(--color-white);
+      margin-bottom: 0.4rem;
+    }
+    .form-panel__sub {
+      font-size: 0.875rem;
+      color: var(--color-white-dim);
+      margin-bottom: 1.75rem;
+    }
+    .form-group { margin-bottom: 1.25rem; }
+    .form-label {
+      display: block;
+      font-family: var(--font-display);
+      font-size: 0.65rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--color-white-dim);
+      margin-bottom: 0.5rem;
+    }
+    .form-input, .form-select, .form-textarea {
+      width: 100%;
+      background: var(--color-dark-3);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-sm);
+      padding: 0.75rem 1rem;
+      font-family: var(--font-body);
+      font-size: 0.9rem;
+      color: var(--color-white);
+      transition: border-color var(--transition-fast);
+      appearance: none;
+    }
+    .form-input::placeholder, .form-textarea::placeholder {
+      color: var(--color-white-dim);
+      opacity: 0.4;
+    }
+    .form-input:focus, .form-select:focus, .form-textarea:focus {
+      outline: none;
+      border-color: var(--color-accent);
+    }
+    .form-textarea { resize: vertical; min-height: 120px; }
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+    }
+    .form-submit { width: 100%; margin-top: 0.5rem; justify-content: center; }
+    .form-note {
+      font-size: 0.72rem;
+      color: var(--color-white-dim);
+      opacity: 0.5;
+      text-align: center;
+      margin-top: 0.75rem;
+    }
+
+    /* Audit section */
+    .audit-section { background: var(--color-dark-2); }
+    .audit-inner {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: var(--space-xl);
+      align-items: center;
+    }
+    .audit-steps {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      margin-top: 1.5rem;
+    }
+    .audit-step {
+      display: flex;
+      gap: 1rem;
+      align-items: flex-start;
+    }
+    .audit-step__num {
+      font-family: var(--font-display);
+      font-size: 0.65rem;
+      font-weight: 800;
+      color: var(--color-accent);
+      background: var(--color-accent-glow);
+      border: 1px solid rgba(232,101,26,0.25);
+      width: 28px; height: 28px;
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+    .audit-step h5 { margin-bottom: 0.2rem; }
+    .audit-step p  { font-size: 0.875rem; max-width: none; }
+    .audit-card {
+      background: var(--color-dark-3);
+      border: 1px solid var(--color-accent);
+      border-radius: var(--radius-lg);
+      padding: 2.5rem;
+      text-align: center;
+    }
+    .audit-card__icon { font-size: 2.5rem; margin-bottom: 1rem; }
+    .audit-card h3  { margin-bottom: 0.75rem; }
+    .audit-card p   { font-size: 0.9rem; margin-bottom: 1.75rem; }
+    .audit-card .btn { display: inline-flex; }
+
+    @media (max-width: 1024px) {
+      .contact-inner, .audit-inner { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 768px) {
+      .form-row { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+<nav class="nav" id="mainNav">
+  <div class="nav__inner">
+    <a href="https://urbannicheco.com" class="nav__logo">
+      <img class="nav__logo-img" src="https://urbannicheco.com/wp-content/uploads/2026/04/99f521e4-9887-408b-b987-5822ba896f1d.png" alt="Urban Niche Co.">
+      Urban<span>Niche</span>&nbsp;Co.
+    </a>
+    <ul class="nav__links">
+      <li><a href="https://urbannicheco.com" class="nav__link">Home</a></li>
+      <li class="nav__dropdown">
+        <a href="https://urbannicheco.com/marketing-services-iowa" class="nav__link">Services &#9660;</a>
+        <div class="nav__dropdown-menu">
+          <a href="https://urbannicheco.com/marketing-services-iowa" class="nav__dropdown-item">All Services</a>
+          <a href="https://urbannicheco.com/seo-services-des-moines-iowa" class="nav__dropdown-item">SEO</a>
+          <a href="https://urbannicheco.com/pay-per-click-advertising-iowa" class="nav__dropdown-item">Pay Per Click</a>
+          <a href="https://urbannicheco.com/social-media-marketing-iowa-grow-your-brand-urban-niche-co" class="nav__dropdown-item">Social Media Marketing</a>
+          <a href="https://urbannicheco.com/website-design-and-development" class="nav__dropdown-item">Website Design &amp; Dev</a>
+          <a href="https://urbannicheco.com/marketing" class="nav__dropdown-item">Marketing Services</a>
+          <a href="https://urbannicheco.com/branded-merchandise-iowa" class="nav__dropdown-item">Branded Merchandise</a>
+          <a href="https://urbannicheco.com/ai-consulting-services" class="nav__dropdown-item">AI Consulting</a>
+          <a href="https://urbannicheco.com/saas-custom-app-development" class="nav__dropdown-item">Custom App &amp; SaaS Dev</a>
+          <a href="https://urbannicheco.com/a-la-carte" class="nav__dropdown-item">A La Carte</a>
+        </div>
+      </li>
+      <li><a href="https://urbannicheco.com/pricing" class="nav__link">Pricing</a></li>
+      <li><a href="https://urbannicheco.com/about-digital-marketing-agency-midwest" class="nav__link">About</a></li>
+      <li><a href="https://urbannicheco.com/faq" class="nav__link">FAQ</a></li>
+    </ul>
+    <div class="nav__cta">
+      <a href="https://urbannicheco.com/contact-digital-marketing-agency" class="btn btn-outline btn-sm">Contact Us</a>
+      <a href="https://urbannicheco.com/contact-digital-marketing-agency/" class="btn btn-primary btn-sm">Free Website Audit</a>
+    </div>
+    <button class="nav__hamburger" id="hamburger" aria-label="Open menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<div class="nav__mobile" id="mobileNav">
+  <a href="https://urbannicheco.com" class="nav__mobile-link">Home</a>
+  <a href="https://urbannicheco.com/marketing-services-iowa" class="nav__mobile-link">Services</a>
+  <a href="https://urbannicheco.com/marketing-services-iowa" class="nav__mobile-link nav__mobile-sub">&#8618; All Services</a>
+  <a href="https://urbannicheco.com/seo-services-des-moines-iowa" class="nav__mobile-link nav__mobile-sub">&#8618; SEO</a>
+  <a href="https://urbannicheco.com/pay-per-click-advertising-iowa" class="nav__mobile-link nav__mobile-sub">&#8618; Pay Per Click</a>
+  <a href="https://urbannicheco.com/social-media-marketing-iowa-grow-your-brand-urban-niche-co" class="nav__mobile-link nav__mobile-sub">&#8618; Social Media Marketing</a>
+  <a href="https://urbannicheco.com/website-design-and-development" class="nav__mobile-link nav__mobile-sub">&#8618; Website Design &amp; Dev</a>
+  <a href="https://urbannicheco.com/marketing" class="nav__mobile-link nav__mobile-sub">&#8618; Marketing Services</a>
+  <a href="https://urbannicheco.com/branded-merchandise-iowa" class="nav__mobile-link nav__mobile-sub">&#8618; Branded Merchandise</a>
+  <a href="https://urbannicheco.com/ai-consulting-services" class="nav__mobile-link nav__mobile-sub">&#8618; AI Consulting</a>
+  <a href="https://urbannicheco.com/saas-custom-app-development" class="nav__mobile-link nav__mobile-sub">&#8618; Custom App &amp; SaaS Dev</a>
+  <a href="https://urbannicheco.com/a-la-carte" class="nav__mobile-link nav__mobile-sub">&#8618; A La Carte</a>
+  <a href="https://urbannicheco.com/pricing" class="nav__mobile-link">Pricing</a>
+  <a href="https://urbannicheco.com/about-digital-marketing-agency-midwest" class="nav__mobile-link">About</a>
+  <a href="https://urbannicheco.com/faq" class="nav__mobile-link">FAQ</a>
+  <a href="https://urbannicheco.com/contact-digital-marketing-agency" class="nav__mobile-link">Contact Us</a>
+  <a href="https://urbannicheco.com/contact-digital-marketing-agency/" class="btn btn-primary">Free Website Audit</a>
+</div>
+
+<section class="page-hero noise-overlay">
+  <div class="container page-hero__inner">
+    <span class="eyebrow reveal">Get in Touch</span>
+    <h1 class="reveal reveal-delay-1">Let's Talk About<br><span class="text-accent">Growing Your Business.</span></h1>
+    <p class="reveal reveal-delay-2">Whether you want a free audit, a consultation, or just have a question — we respond fast and we don't waste your time.</p>
+  </div>
+</section>
+
+<section class="section contact-section">
+  <div class="container">
+    <div class="contact-inner">
+
+      <div class="contact-info reveal">
+        <div class="contact-card">
+          <div class="contact-card__icon">📱</div>
+          <div>
+            <span class="contact-card__label">Text Us</span>
+            <h4>1-515-344-4053</h4>
+            <p>Text anytime — we respond during business hours. Fastest way to reach us.</p>
+          </div>
+        </div>
+        <div class="contact-card">
+          <div class="contact-card__icon">📍</div>
+          <div>
+            <span class="contact-card__label">Location</span>
+            <h4>Des Moines, Iowa</h4>
+            <p>Serving contractors across Iowa and nationwide. Location doesn't limit what we can do.</p>
+          </div>
+        </div>
+        <div class="contact-card">
+          <div class="contact-card__icon">📅</div>
+          <div>
+            <span class="contact-card__label">Book a Call</span>
+            <h4><a href="https://calendly.com/urbanniche" target="_blank" rel="noopener">Schedule on Calendly</a></h4>
+            <p>Pick a time that works for you. We'll be ready.</p>
+          </div>
+        </div>
+        <div class="contact-card">
+          <div class="contact-card__icon">⚡</div>
+          <div>
+            <span class="contact-card__label">Response Time</span>
+            <h4>Within 24 Hours</h4>
+            <p>We respond to every inquiry within one business day — usually much faster.</p>
+          </div>
+        </div>
+        <div style="margin-top:0.5rem;">
+          <span class="eyebrow">Follow Us</span>
+          <div style="display:flex;gap:0.75rem;margin-top:0.75rem;">
+            <a href="https://www.facebook.com/UrbanNicheCo" target="_blank" rel="noopener" class="btn btn-ghost btn-sm">Facebook</a>
+            <a href="https://www.instagram.com/urbanniche_co/" target="_blank" rel="noopener" class="btn btn-ghost btn-sm">Instagram</a>
+            <a href="https://x.com/UrbanNiche_Co" target="_blank" rel="noopener" class="btn btn-ghost btn-sm">Twitter/X</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="reveal reveal-delay-2">
+        <div class="form-panel">
+          <div class="form-panel__title">Send Us a Message</div>
+          <p class="form-panel__sub">Tell us about your business and what you're looking for. We'll get back to you within 24 hours.</p>
+          <form action="https://unc-inbound-responder-production.up.railway.app/inbound-lead" method="POST">
+            <div class="form-row">
+              <div class="form-group">
+                <label class="form-label" for="first-name">First Name</label>
+                <input class="form-input" type="text" id="first-name" name="first_name" placeholder="John" required />
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="last-name">Last Name</label>
+                <input class="form-input" type="text" id="last-name" name="last_name" placeholder="Smith" required />
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="business-name">Business Name</label>
+              <input class="form-input" type="text" id="business-name" name="business_name" placeholder="Smith Roofing LLC" />
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="email">Email Address</label>
+              <input class="form-input" type="email" id="email" name="email" placeholder="john@yourcompany.com" required />
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="city">City</label>
+              <input class="form-input" type="text" id="city" name="city" placeholder="Dubuque, IA" />
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="phone">Phone Number</label>
+              <input class="form-input" type="tel" id="phone" name="phone" placeholder="(515) 555-0100" />
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="trade">Your Trade / Business Type</label>
+              <select class="form-select" id="trade" name="trade">
+                <option value="">Select your trade...</option>
+                <option>Roofing</option>
+                <option>HVAC</option>
+                <option>Plumbing</option>
+                <option>Electrical</option>
+                <option>Landscaping</option>
+                <option>General Contracting</option>
+                <option>Remodeling</option>
+                <option>Painting</option>
+                <option>Other Home Service</option>
+                <option>Other Business</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="service">What Are You Looking For?</label>
+              <select class="form-select" id="service" name="service">
+                <option value="">Select a service...</option>
+                <option>Free Website Audit</option>
+                <option>SEO Services</option>
+                <option>PPC / Google Ads</option>
+                <option>Social Media Management</option>
+                <option>Website Design & Development</option>
+                <option>AI Consulting</option>
+                <option>À La Carte Services</option>
+                <option>Branded Merchandise</option>
+                <option>General Inquiry</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="message">Message</label>
+              <textarea class="form-textarea" id="message" name="message" placeholder="Tell us about your business, your goals, or any questions you have..."></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary btn-lg form-submit">Send Message →</button>
+            <p class="form-note">We respond within 24 hours. No spam, ever.</p>
+          </form>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section class="section audit-section" id="audit">
+  <div class="container">
+    <div class="audit-inner">
+      <div class="reveal">
+        <span class="eyebrow">Free Website Audit</span>
+        <h2>See Exactly Where You Stand.</h2>
+        <p style="margin-bottom:0;">No cost. No commitment. We grade your site on every metric that matters — and show you a clear path to more leads.</p>
+        <div class="audit-steps">
+          <div class="audit-step">
+            <div class="audit-step__num">1</div>
+            <div><h5>Submit Your Info</h5><p>Tell us your website URL and a little about your business.</p></div>
+          </div>
+          <div class="audit-step">
+            <div class="audit-step__num">2</div>
+            <div><h5>We Run the Audit</h5><p>Speed, SEO, mobile performance, local presence, and conversion analysis.</p></div>
+          </div>
+          <div class="audit-step">
+            <div class="audit-step__num">3</div>
+            <div><h5>You Get a Clear Report</h5><p>A plain-English breakdown of where you stand and exactly what we'd fix first.</p></div>
+          </div>
+          <div class="audit-step">
+            <div class="audit-step__num">4</div>
+            <div><h5>Zero Pressure</h5><p>No obligation to buy anything. The audit is valuable whether you hire us or not.</p></div>
+          </div>
+        </div>
+      </div>
+      <div class="reveal reveal-delay-2">
+        <div class="audit-card">
+          <div class="audit-card__icon">🔍</div>
+          <h3>Claim Your Free Website Audit</h3>
+          <p>Fill out the contact form above and select "Free Website Audit" — or text us directly at 1-515-344-4053 with your website URL.</p>
+          <a onclick="document.getElementById('service').value='Free Website Audit';document.getElementById('service').closest('form').scrollIntoView({behavior:'smooth'});return false;" class="btn btn-primary btn-lg">Request Free Audit →</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer__grid">
+      <div class="footer__brand">
+        <div class="footer__logo" style="display:flex;align-items:center;gap:10px;margin-bottom:12px;">
+          <img src="https://urbannicheco.com/wp-content/uploads/2026/04/99f521e4-9887-408b-b987-5822ba896f1d.png" alt="Urban Niche Co." style="height:36px;width:auto;">
+          <span style="font-family:'Syne',sans-serif;font-weight:800;font-size:18px;color:#fff;">Urban <span style="color:var(--color-accent)">Niche</span> Co.</span>
+        </div>
+        <p>Digital marketing built exclusively for contractors and home service businesses.</p>
+        <div class="footer__social">
+          <a href="https://www.facebook.com/UrbanNicheCo" aria-label="Facebook"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg></a>
+          <a href="https://www.instagram.com/urbanniche_co/" aria-label="Instagram"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg></a>
+          <a href="https://www.linkedin.com/company/urbannicheco" aria-label="LinkedIn"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg></a>
+          <a href="https://x.com/UrbanNiche_Co" aria-label="Twitter/X">&#120143;</a>
+        </div>
+      </div>
+      <div class="footer__col">
+        <h5>Services</h5>
+        <ul>
+          <li><a href="https://urbannicheco.com/seo-services-des-moines-iowa">SEO</a></li>
+          <li><a href="https://urbannicheco.com/pay-per-click-advertising-iowa">Pay Per Click</a></li>
+          <li><a href="https://urbannicheco.com/social-media-marketing-iowa-grow-your-brand-urban-niche-co">Social Media</a></li>
+          <li><a href="https://urbannicheco.com/website-design-and-development">Website Design</a></li>
+          <li><a href="https://urbannicheco.com/marketing">Marketing Services</a></li>
+          <li><a href="https://urbannicheco.com/ai-consulting-services">AI Consulting</a></li>
+        </ul>
+      </div>
+      <div class="footer__col">
+        <h5>Company</h5>
+        <ul>
+          <li><a href="https://urbannicheco.com/about-digital-marketing-agency-midwest">About Us</a></li>
+          <li><a href="https://urbannicheco.com/about-digital-marketing-agency-midwest/#careers">Careers</a></li>
+          <li><a href="https://urbannicheco.com/blog">Blog</a></li>
+          <li><a href="https://urbannicheco.com/pricing">Pricing</a></li>
+          <li><a href="https://urbannicheco.com/faq">FAQ</a></li>
+          <li><a href="https://urbannicheco.com/branded-merchandise-iowa">Merchandise</a></li>
+        </ul>
+      </div>
+      <div class="footer__col">
+        <h5>Get Started</h5>
+        <ul>
+          <li><a href="https://urbannicheco.com/contact-digital-marketing-agency/">Free Website Audit</a></li>
+          <li><a href="https://urbannicheco.com/contact-digital-marketing-agency">Contact Us</a></li>
+          <li><a href="https://urbannicheco.com/pricing">View Pricing</a></li>
+        </ul>
+        <div style="margin-top:20px;font-size:13px;color:rgba(255,255,255,0.4);line-height:1.8;">
+          <a href="sms:+15153444053" style="color:#e8651a;text-decoration:none;font-weight:500;">(515) 344-4053</a><br>
+          <span style="font-size:12px;">Text anytime &middot; No cold calls</span>
+        </div>
+        <div style="margin-top:1.5rem;">
+          <a href="https://urbannicheco.com/contact-digital-marketing-agency/" class="btn btn-primary btn-sm">Free Audit &#8594;</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <p>&copy; 2026 Urban Niche Co. All rights reserved.</p>
+      <div class="footer__bottom-links">
+        <a href="https://urbannicheco.com/privacy-policy">Privacy Policy</a>
+        <a href="https://urbannicheco.com/sitemap">Sitemap</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+  const nav = document.getElementById('mainNav');
+  window.addEventListener('scroll', () => {
+    nav.classList.toggle('scrolled', window.scrollY > 40);
+  });
+  document.getElementById('hamburger').addEventListener('click', () => {
+    document.getElementById('mobileNav').classList.toggle('open');
+  });
+  document.querySelectorAll('.reveal').forEach(el => {
+    new IntersectionObserver((e) => {
+      e.forEach(x => { if(x.isIntersecting) x.target.classList.add('visible'); });
+    }, {threshold:0.12}).observe(el);
+  });
+</script>
+
+</body>
+</html>

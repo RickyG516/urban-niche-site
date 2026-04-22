@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Branded merchandise for Iowa businesses. Urban Niche Co. offers custom screen printing, embroidery & promotional products. Request a quote today." />
+  <title>Branded Merchandise | Urban Niche Co.</title>
+  <link rel="stylesheet" href="/wp-content/themes/divi-child/unc/style.css" />
+  <link rel="icon" type="image/png" href="assets/favicon.png" />
+  <style>
+    .page-hero {h
+      padding-top: calc(var(--nav-height) + var(--space-xl));
+      padding-bottom: var(--space-xl);
+      background: var(--color-dark);
+      position: relative;
+      overflow: hidden;
+    }
+    .page-hero::before {
+      content: '';
+      position: absolute;
+      top: -200px; right: -150px;
+      width: 600px; height: 600px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(232,101,26,0.07) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .page-hero__inner {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: var(--space-xl);
+      align-items: center;
+    }
+    .page-hero h1 { margin: 0.5rem 0 1.5rem; }
+    .page-hero__sub { font-size: 1.05rem; color: var(--color-white-dim); max-width: 50ch; margin-bottom: 2rem; line-height: 1.7; }
+    .page-hero__actions { display: flex; gap: 1rem; flex-wrap: wrap; }
+
+    /* Hero visual */
+    .merch-preview {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.75rem;
+    }
+    .merch-tile {
+      background: var(--color-dark-2);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-md);
+      padding: 1.5rem;
+      text-align: center;
+      transition: all var(--transition-base);
+    }
+    .merch-tile:hover { border-color: var(--color-accent); transform: translateY(-3px); }
+    .merch-tile__icon { font-size: 2rem; margin-bottom: 0.5rem; }
+    .merch-tile h5 { font-size: 0.82rem; color: var(--color-white); }
+
+    /* Products grid */
+    .products { background: var(--color-black); }
+    .products__grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.25rem;
+      margin-top: var(--space-lg);
+    }
+    .product-card {
+      background: var(--color-dark-2);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-md);
+      padding: 2rem 1.75rem;
+      transition: all var(--transition-base);
+      position: relative;
+      overflow: hidden;
+    }
+    .product-card::after {
+      content: '';
+      position: absolute;
+      bottom: 0; left: 0; right: 0;
+      height: 2px;
+      background: var(--color-accent);
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform var(--transition-slow);
+    }
+    .product-card:hover::after { transform: scaleX(1); }
+    .product-card:hover { border-color: rgba(232,101,26,0.3); transform: translateY(-4px); }
+    .product-card__icon { font-size: 2rem; margin-bottom: 1rem; }
+    .product-card h4 { margin-bottom: 0.6rem; }
+    .product-card p  { font-size: 0.875rem; margin-bottom: 1rem; }
+    .product-card__items {
+      display: flex;
+      flex-direction: column;
+      gap: 0.35rem;
+    }
+    .product-card__item {
+      display: flex;
+      gap: 0.5rem;
+      font-size: 0.78rem;
+      color: var(--color-white-dim);
+    }
+    .product-card__item::before { content: '→'; color: var(--color-accent); font-size: 0.68rem; flex-shrink: 0; margin-top: 1px; }
+
+    /* Iowa Trading Co callout */
+    .iowa-callout { background: var(--color-dark-2); }
+    .iowa-callout__inner {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: var(--space-xl);
+      align-items: center;
+    }
+    .iowa-card {
+      background: var(--color-dark-3);
+      border: 1px solid rgba(232,101,26,0.3);
+      border-radius: var(--radius-lg);
+      padding: 2.5rem;
+      text-align: center;
+    }
+    .iowa-card__icon { font-size: 2.5rem; margin-bottom: 1rem; }
+    .iowa-card h3 { margin-bottom: 0.75rem; }
+    .iowa-card p  { font-size: 0.9rem; margin-bottom: 1.75rem; }
+
+    @media (max-width: 1024px) {
+      .page-hero__inner, .iowa-callout__inner { grid-template-columns: 1fr; }
+      .products__grid { grid-template-columns: 1fr 1fr; }
+    }
+    @media (max-width: 768px) {
+      .page-hero__actions { flex-direction: column; }
+      .products__grid { grid-template-columns: 1fr; }
+      .merch-preview { grid-template-columns: 1fr 1fr; }
+    }
+  </style>
+</head>
+<body>
+  <nav class="nav" id="mainNav">
+  <div class="nav__inner">
+    <a href="https://urbannicheco.com" class="nav__logo">
+      <img class="nav__logo-img" src="https://urbannicheco.com/wp-content/uploads/2026/04/99f521e4-9887-408b-b987-5822ba896f1d.png" alt="Urban Niche Co.">
+      Urban<span>Niche</span>&nbsp;Co.
+    </a>
+    <ul class="nav__links">
+      <li><a href="https://urbannicheco.com" class="nav__link">Home</a></li>
+      <li class="nav__dropdown">
+        <a href="https://urbannicheco.com/marketing-services-iowa" class="nav__link">Services &#9660;</a>
+        <div class="nav__dropdown-menu">
+          <a href="https://urbannicheco.com/marketing-services-iowa" class="nav__dropdown-item">All Services</a>
+          <a href="https://urbannicheco.com/seo-services-des-moines-iowa" class="nav__dropdown-item">SEO</a>
+          <a href="https://urbannicheco.com/pay-per-click-advertising-iowa" class="nav__dropdown-item">Pay Per Click</a>
+          <a href="https://urbannicheco.com/social-media-marketing-iowa-grow-your-brand-urban-niche-co" class="nav__dropdown-item">Social Media Marketing</a>
+          <a href="https://urbannicheco.com/website-design-and-development" class="nav__dropdown-item">Website Design &amp; Dev</a>
+          <a href="https://urbannicheco.com/marketing" class="nav__dropdown-item">Marketing Services</a>
+          <a href="https://urbannicheco.com/branded-merchandise-iowa" class="nav__dropdown-item">Branded Merchandise</a>
+          <a href="https://urbannicheco.com/ai-consulting-services" class="nav__dropdown-item">AI Consulting</a>
+          <a href="https://urbannicheco.com/saas-custom-app-development" class="nav__dropdown-item">Custom App &amp; SaaS Dev</a>
+          <a href="https://urbannicheco.com/a-la-carte" class="nav__dropdown-item">A La Carte</a>
+        </div>
+      </li>
+      <li><a href="https://urbannicheco.com/pricing" class="nav__link">Pricing</a></li>
+      <li><a href="https://urbannicheco.com/about-digital-marketing-agency-midwest" class="nav__link">About</a></li>
+      <li><a href="/faq/" class="nav__link">FAQ</a></li>
+    </ul>
+    <div class="nav__cta">
+      <a href="https://urbannicheco.com/contact-digital-marketing-agency" class="btn btn-outline btn-sm">Contact Us</a>
+      <a href="https://urbannicheco.com/contact-digital-marketing-agency/" class="btn btn-primary btn-sm">Free Website Audit</a>
+    </div>
+    <button class="nav__hamburger" id="hamburger" aria-label="Open menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+<div class="nav__mobile" id="mobileNav">
+  <a href="https://urbannicheco.com" class="nav__mobile-link">Home</a>
+  <a href="https://urbannicheco.com/marketing-services-iowa" class="nav__mobile-link">Services</a>
+  <a href="https://urbannicheco.com/marketing-services-iowa" class="nav__mobile-link nav__mobile-sub">&#8618; All Services</a>
+  <a href="https://urbannicheco.com/seo-services-des-moines-iowa" class="nav__mobile-link nav__mobile-sub">&#8618; SEO</a>
+  <a href="https://urbannicheco.com/pay-per-click-advertising-iowa" class="nav__mobile-link nav__mobile-sub">&#8618; Pay Per Click</a>
+  <a href="https://urbannicheco.com/social-media-marketing-iowa-grow-your-brand-urban-niche-co" class="nav__mobile-link nav__mobile-sub">&#8618; Social Media Marketing</a>
+  <a href="https://urbannicheco.com/website-design-and-development" class="nav__mobile-link nav__mobile-sub">&#8618; Website Design &amp; Dev</a>
+  <a href="https://urbannicheco.com/marketing" class="nav__mobile-link nav__mobile-sub">&#8618; Marketing Services</a>
+  <a href="https://urbannicheco.com/branded-merchandise-iowa" class="nav__mobile-link nav__mobile-sub">&#8618; Branded Merchandise</a>
+  <a href="https://urbannicheco.com/ai-consulting-services" class="nav__mobile-link nav__mobile-sub">&#8618; AI Consulting</a>
+  <a href="https://urbannicheco.com/saas-custom-app-development" class="nav__mobile-link nav__mobile-sub">&#8618; Custom App &amp; SaaS Dev</a>
+  <a href="https://urbannicheco.com/a-la-carte" class="nav__mobile-link nav__mobile-sub">&#8618; A La Carte</a>
+  <a href="https://urbannicheco.com/pricing" class="nav__mobile-link">Pricing</a>
+  <a href="https://urbannicheco.com/about-digital-marketing-agency-midwest" class="nav__mobile-link">About</a>
+  <a href="https://urbannicheco.com/faq" class="nav__mobile-link">FAQ</a>
+  <a href="https://urbannicheco.com/contact-digital-marketing-agency" class="nav__mobile-link">Contact Us</a>
+  <a href="https://urbannicheco.com/contact-digital-marketing-agency/" class="btn btn-primary">Free Website Audit</a>
+</div>
+
+  <section class="page-hero noise-overlay">
+    <div class="container page-hero__inner">
+      <div class="reveal">
+        <span class="eyebrow">Branded Merchandise</span>
+        <h1>Branded Merchandise for Midwest Contractors — <br><span class="text-accent">On Every Job Site, Truck & Customer.</span></h1>
+        <p class="page-hero__sub">High-quality branded gear that turns your crew and clients into walking billboards. Custom apparel, vehicle decals, yard signs, and promotional products built for contractors.</p>
+        <div class="page-hero__actions">
+          <a href="/contact-digital-marketing-agency/" class="btn btn-primary btn-lg">Request a Quote</a>
+          <a href="https://print.iowatradingco.com/" class="btn btn-outline btn-lg" target="_blank" rel="noopener">Shop Iowa Trading Co. →</a>
+        </div>
+      </div>
+      <div class="reveal reveal-delay-2">
+        <div class="merch-preview">
+          <div class="merch-tile"><div class="merch-tile__icon">👕</div><h5>Apparel</h5></div>
+          <div class="merch-tile"><div class="merch-tile__icon">🧢</div><h5>Hats</h5></div>
+          <div class="merch-tile"><div class="merch-tile__icon">🚗</div><h5>Vehicle Decals</h5></div>
+          <div class="merch-tile"><div class="merch-tile__icon">🪧</div><h5>Yard Signs</h5></div>
+          <div class="merch-tile"><div class="merch-tile__icon">🎁</div><h5>Promo Items</h5></div>
+          <div class="merch-tile"><div class="merch-tile__icon">🎨</div><h5>Custom Design</h5></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section products">
+    <div class="container">
+      <div class="section-header section-header--center reveal">
+        <span class="eyebrow">What We Offer</span>
+        <h2>Branded Products Built<br>for the Trades.</h2>
+        <p>Everything designed to look sharp, represent your brand professionally, and hold up on the job site.</p>
+      </div>
+      <div class="products__grid">
+        <div class="product-card reveal reveal-delay-1">
+          <div class="product-card__icon">👕</div>
+          <h4>Shirts & Workwear</h4>
+          <p>Custom screen-printed and embroidered apparel your crew will actually want to wear — and that look professional on every job.</p>
+          <div class="product-card__items">
+            <div class="product-card__item">T-shirts & long sleeves</div>
+            <div class="product-card__item">Polo shirts</div>
+            <div class="product-card__item">Hoodies & sweatshirts</div>
+            <div class="product-card__item">Hi-vis safety shirts</div>
+            <div class="product-card__item">Performance work shirts</div>
+          </div>
+        </div>
+        <div class="product-card reveal reveal-delay-2">
+          <div class="product-card__icon">🧢</div>
+          <h4>Hats & Headwear</h4>
+          <p>Structured and unstructured caps with embroidered logos — one of the most visible and cost-effective ways to brand your crew.</p>
+          <div class="product-card__items">
+            <div class="product-card__item">Structured snapbacks</div>
+            <div class="product-card__item">Unstructured dad hats</div>
+            <div class="product-card__item">Beanies & winter hats</div>
+            <div class="product-card__item">Mesh trucker hats</div>
+          </div>
+        </div>
+        <div class="product-card reveal reveal-delay-3">
+          <div class="product-card__icon">🚗</div>
+          <h4>Vehicle Decals & Wraps</h4>
+          <p>Turn your work trucks into rolling billboards. Full vehicle wraps, partial wraps, door decals, and magnetic signs.</p>
+          <div class="product-card__items">
+            <div class="product-card__item">Full vehicle wraps</div>
+            <div class="product-card__item">Partial wraps</div>
+            <div class="product-card__item">Door & tailgate decals</div>
+            <div class="product-card__item">Magnetic signs</div>
+            <div class="product-card__item">Trailer graphics</div>
+          </div>
+        </div>
+        <div class="product-card reveal reveal-delay-1">
+          <div class="product-card__icon">🪧</div>
+          <h4>Yard Signs & Banners</h4>
+          <p>On-site branding that builds recognition in every neighborhood you work in. Every yard sign is free advertising.</p>
+          <div class="product-card__items">
+            <div class="product-card__item">Corrugated yard signs</div>
+            <div class="product-card__item">Job site banners</div>
+            <div class="product-card__item">Retractable banners</div>
+            <div class="product-card__item">A-frame signs</div>
+          </div>
+        </div>
+        <div class="product-card reveal reveal-delay-2">
+          <div class="product-card__icon">🎁</div>
+          <h4>Promotional Items</h4>
+          <p>Leave-behinds and giveaways that keep your brand in front of customers long after the job is done.</p>
+          <div class="product-card__items">
+            <div class="product-card__item">Branded pens & notebooks</div>
+            <div class="product-card__item">Water bottles & tumblers</div>
+            <div class="product-card__item">Keychains & magnets</div>
+            <div class="product-card__item">Tote bags & coolers</div>
+            <div class="product-card__item">Custom tape measures</div>
+          </div>
+        </div>
+        <div class="product-card reveal reveal-delay-3">
+          <div class="product-card__icon">🎨</div>
+          <h4>Custom Design</h4>
+          <p>Don't have a logo or need a refresh? Our design team creates professional branded assets that work across all your merchandise.</p>
+          <div class="product-card__items">
+            <div class="product-card__item">Logo design & refinement</div>
+            <div class="product-card__item">Brand color & font systems</div>
+            <div class="product-card__item">Print-ready artwork files</div>
+            <div class="product-card__item">Brand consistency across all items</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section iowa-callout">
+    <div class="container">
+      <div class="iowa-callout__inner">
+        <div class="reveal">
+          <span class="eyebrow">Our Production Partner</span>
+          <h2>Backed by Real Print Experience.</h2>
+          <p style="margin-bottom:1.25rem;">Our founder started in the screen printing and embroidery industry back in 2015, running a full production operation out of Dubuque, Iowa. That business — originally FGC Creative — has grown into Iowa Trading Company, a Midwest-based custom apparel and promotional products provider.</p>
+          <p style="margin-bottom:1.5rem;">When you order branded merchandise through Urban Niche Co., you're backed by real print knowledge — not a middleman who's never touched a press. We know what looks good, what holds up, and what's worth the investment.</p>
+          <a href="https://print.iowatradingco.com/" class="btn btn-outline" target="_blank" rel="noopener">Visit Iowa Trading Co. →</a>
+        </div>
+        <div class="reveal reveal-delay-2">
+          <div class="iowa-card">
+            <div class="iowa-card__icon">🖨️</div>
+            <h3>Ready to Brand Your Business?</h3>
+            <p>Tell us what you need — quantity, items, and your logo — and we'll send you a quote. Fast turnaround, real quality.</p>
+            <a href="/contact-digital-marketing-agency/" class="btn btn-primary btn-lg" style="display:inline-flex;width:100%;justify-content:center;">Request a Quote →</a>
+            <p style="font-size:0.78rem;margin-top:1rem;opacity:0.6;">Or shop directly at Iowa Trading Co. for ready-to-order items.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta-banner noise-overlay">
+    <div class="container">
+      <div class="cta-banner__inner reveal">
+        <div>
+          <span class="eyebrow">Brand Every Job</span>
+          <h2>Get a Custom Merchandise Quote.</h2>
+          <p>Tell us what you need and we'll get you pricing fast. No minimums on custom quotes.</p>
+        </div>
+        <div class="cta-banner__actions">
+          <a href="/contact-digital-marketing-agency/" class="btn btn-primary btn-lg">Request a Quote</a>
+          <a href="/contact-digital-marketing-agency/#audit" class="btn btn-outline btn-lg">Free Website Audit</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+
+  <div class="container">
+
+    <div class="footer__grid">
+
+      <div class="footer__brand">
+
+        <div class="footer__logo" style="display:flex;align-items:center;gap:10px;margin-bottom:12px;">
+
+          <img src="https://urbannicheco.com/wp-content/uploads/2026/04/99f521e4-9887-408b-b987-5822ba896f1d.png" alt="Urban Niche Co." style="height:36px;width:auto;">
+
+          <span style="font-family:'Syne',sans-serif;font-weight:800;font-size:18px;color:#fff;">Urban <span style="color:var(--color-accent)">Niche</span> Co.</span>
+
+        </div>
+
+        <p>Digital marketing built exclusively for contractors and home service businesses.</p>
+
+        <div class="footer__social">
+
+          <a href="https://www.facebook.com/UrbanNicheCo" aria-label="Facebook"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg></a>
+
+          <a href="https://www.instagram.com/urbanniche_co/" aria-label="Instagram"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg></a>
+
+          <a href="https://www.linkedin.com/company/urbannicheco" aria-label="LinkedIn"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg></a>
+
+          <a href="https://x.com/UrbanNiche_Co" aria-label="Twitter/X">&#120143;</a>
+
+        </div>
+
+      </div>
+
+      <div class="footer__col">
+
+        <h5>Services</h5>
+
+        <ul>
+
+          <li><a href="https://urbannicheco.com/seo-services-des-moines-iowa">SEO</a></li>
+
+          <li><a href="https://urbannicheco.com/pay-per-click-advertising-iowa">Pay Per Click</a></li>
+
+          <li><a href="https://urbannicheco.com/social-media-marketing-iowa-grow-your-brand-urban-niche-co">Social Media</a></li>
+
+          <li><a href="https://urbannicheco.com/website-design-and-development">Website Design</a></li>
+
+          <li><a href="https://urbannicheco.com/marketing">Marketing Services</a></li>
+
+          <li><a href="https://urbannicheco.com/ai-consulting-services">AI Consulting</a></li>
+
+        </ul>
+
+      </div>
+
+      <div class="footer__col">
+
+        <h5>Company</h5>
+
+        <ul>
+
+          <li><a href="https://urbannicheco.com/about-digital-marketing-agency-midwest">About Us</a></li>
+
+          <li><a href="https://urbannicheco.com/about-digital-marketing-agency-midwest/#careers">Careers</a></li>
+
+          <li><a href="https://urbannicheco.com/blog">Blog</a></li>
+
+          <li><a href="https://urbannicheco.com/pricing">Pricing</a></li>
+
+          <li><a href="https://urbannicheco.com/faq">FAQ</a></li>
+
+          <li><a href="https://urbannicheco.com/branded-merchandise-iowa">Merchandise</a></li>
+
+        </ul>
+
+      </div>
+
+      <div class="footer__col">
+
+        <h5>Get Started</h5>
+
+        <ul>
+
+          <li><a href="https://urbannicheco.com/contact-digital-marketing-agency/">Free Website Audit</a></li>
+
+          <li><a href="https://urbannicheco.com/contact-digital-marketing-agency">Contact Us</a></li>
+
+          <li><a href="https://urbannicheco.com/pricing">View Pricing</a></li>
+
+        </ul>
+
+        <div style="margin-top:20px;font-size:13px;color:rgba(255,255,255,0.4);line-height:1.8;">
+
+          <a href="sms:+15153444053" style="color:#e8651a;text-decoration:none;font-weight:500;">(515) 344-4053</a><br>
+
+          <span style="font-size:12px;">Text anytime &middot; No cold calls</span>
+
+        </div>
+
+        <div style="margin-top:1.5rem;">
+
+          <a href="https://urbannicheco.com/contact-digital-marketing-agency/" class="btn btn-primary btn-sm">Free Audit &#8594;</a>
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <div class="footer__bottom">
+
+      <p>&copy; 2026 Urban Niche Co. All rights reserved.</p>
+
+      <div class="footer__bottom-links">
+
+        <a href="https://urbannicheco.com/privacy-policy">Privacy Policy</a>
+
+        <a href="https://urbannicheco.com/sitemap">Sitemap</a>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</footer>
+
+  <script>
+    const nav = document.getElementById('mainNav');
+    window.addEventListener('scroll', () => { nav.classList.toggle('scrolled', window.scrollY > 40); });
+    document.getElementById('hamburger').addEventListener('click', () => { document.getElementById('mobileNav').classList.toggle('open'); });
+    document.querySelectorAll('.reveal').forEach(el => { new IntersectionObserver((e) => { e.forEach(x => { if(x.isIntersecting) x.target.classList.add('visible'); }); }, {threshold:0.12}).observe(el); });
+  </script>
+</body>
+</html>

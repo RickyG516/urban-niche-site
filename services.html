@@ -1,0 +1,891 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Urban Niche Co. digital marketing services for contractors — SEO, PPC, social media, website design, marketing, and AI consulting built exclusively for the trades." />
+  <title>Services | Urban Niche Co.</title>
+  <link rel="stylesheet" href="/wp-content/themes/divi-child/unc/style.css" />
+  <link rel="icon" type="image/png" href="assets/favicon.png" />
+
+  <style>
+    /* ── Services Page Specific Styles ───────────────────── */
+
+    /* Hero */
+    .services-hero {
+      padding-top: calc(var(--nav-height) + var(--space-xl));
+      padding-bottom: var(--space-xl);
+      background: var(--color-dark);
+      position: relative;
+      overflow: hidden;
+      text-align: center;
+    }
+
+    .services-hero::before {
+      content: '';
+      position: absolute;
+      top: -180px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 700px;
+      height: 500px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(232,101,26,0.07) 0%, transparent 68%);
+      pointer-events: none;
+    }
+
+    .services-hero__inner {
+      position: relative;
+      max-width: 720px;
+      margin: 0 auto;
+    }
+
+    .services-hero h1 {
+      margin: 0.75rem 0 1.5rem;
+    }
+
+    .services-hero__sub {
+      font-size: 1.05rem;
+      color: var(--color-white-dim);
+      max-width: 56ch;
+      margin: 0 auto 2.5rem;
+    }
+
+    .services-hero__actions {
+      display: flex;
+      gap: 1rem;
+      justify-content: center;
+    }
+
+    /* Services Grid */
+    .services-main {
+      background: var(--color-black);
+    }
+
+    .services-full-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+      margin-top: var(--space-lg);
+    }
+
+    .svc-card {
+      background: var(--color-dark-2);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-lg);
+      padding: 2.5rem 2rem;
+      display: flex;
+      flex-direction: column;
+      text-decoration: none;
+      color: inherit;
+      position: relative;
+      overflow: hidden;
+      transition: all var(--transition-slow);
+    }
+
+    .svc-card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 2px;
+      background: var(--color-accent);
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform var(--transition-slow);
+    }
+
+    .svc-card:hover {
+      border-color: rgba(232,101,26,0.30);
+      transform: translateY(-6px);
+      box-shadow: var(--shadow-lg);
+    }
+
+    .svc-card:hover::before {
+      transform: scaleX(1);
+    }
+
+    .svc-card__icon {
+      font-size: 2.25rem;
+      margin-bottom: 1.25rem;
+    }
+
+    .svc-card h3 {
+      font-size: 1.25rem;
+      margin-bottom: 0.75rem;
+    }
+
+    .svc-card p {
+      font-size: 0.9rem;
+      flex: 1;
+      margin-bottom: 1.5rem;
+    }
+
+    .svc-card__includes {
+      display: flex;
+      flex-direction: column;
+      gap: 0.45rem;
+      margin-bottom: 2rem;
+      padding-top: 1.25rem;
+      border-top: 1px solid var(--color-border);
+    }
+
+    .svc-card__include-item {
+      display: flex;
+      gap: 0.6rem;
+      align-items: flex-start;
+      font-size: 0.8rem;
+      color: var(--color-white-dim);
+    }
+
+    .svc-card__include-item::before {
+      content: '✓';
+      color: var(--color-accent);
+      font-size: 0.72rem;
+      font-weight: 700;
+      margin-top: 1px;
+      flex-shrink: 0;
+    }
+
+    .svc-card__cta {
+      font-family: var(--font-display);
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--color-accent);
+      transition: letter-spacing var(--transition-fast);
+      margin-top: auto;
+    }
+
+    .svc-card:hover .svc-card__cta {
+      letter-spacing: 0.14em;
+    }
+
+    /* Featured card */
+    .svc-card--featured {
+      border-color: rgba(232,101,26,0.25);
+      background: linear-gradient(135deg, var(--color-dark-2) 0%, rgba(232,101,26,0.04) 100%);
+    }
+
+    .svc-card--featured::before {
+      transform: scaleX(1);
+    }
+
+    .svc-card__badge {
+      position: absolute;
+      top: 1.25rem;
+      right: 1.25rem;
+      font-family: var(--font-display);
+      font-size: 0.6rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      padding: 0.25rem 0.7rem;
+      border-radius: var(--radius-pill);
+      background: var(--color-accent-glow);
+      border: 1px solid rgba(232,101,26,0.3);
+      color: var(--color-accent);
+    }
+
+    /* Why All-In-One */
+    .all-in-one {
+      background: var(--color-dark-2);
+    }
+
+    .all-in-one__inner {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: var(--space-xl);
+      align-items: center;
+    }
+
+    .all-in-one__list {
+      display: flex;
+      flex-direction: column;
+      gap: 1.25rem;
+      margin-top: 2rem;
+    }
+
+    .all-in-one__item {
+      display: flex;
+      gap: 1rem;
+      align-items: flex-start;
+    }
+
+    .all-in-one__num {
+      font-family: var(--font-display);
+      font-size: 0.7rem;
+      font-weight: 800;
+      color: var(--color-accent);
+      background: var(--color-accent-glow);
+      border: 1px solid rgba(232,101,26,0.25);
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+
+    .all-in-one__item h5 { margin-bottom: 0.2rem; }
+    .all-in-one__item p  { font-size: 0.875rem; max-width: none; }
+
+    /* Visual side */
+    .all-in-one__visual {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+    }
+
+    .all-in-one__stat {
+      background: var(--color-dark-3);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-md);
+      padding: 1.5rem 1.25rem;
+      text-align: center;
+    }
+
+    .all-in-one__stat-val {
+      font-family: var(--font-display);
+      font-size: 2rem;
+      font-weight: 800;
+      color: var(--color-accent);
+      line-height: 1;
+      display: block;
+    }
+
+    .all-in-one__stat-lbl {
+      font-size: 0.78rem;
+      color: var(--color-white-dim);
+      margin-top: 0.3rem;
+      display: block;
+    }
+
+    /* Process */
+    .process {
+      background: var(--color-dark);
+    }
+
+    .process__grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1.5rem;
+      margin-top: var(--space-lg);
+      position: relative;
+    }
+
+    .process__grid::before {
+      content: '';
+      position: absolute;
+      top: 40px;
+      left: calc(12.5% + 16px);
+      right: calc(12.5% + 16px);
+      height: 1px;
+      background: linear-gradient(to right, var(--color-accent), rgba(232,101,26,0.15));
+      z-index: 0;
+    }
+
+    .process__step {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      position: relative;
+      z-index: 1;
+    }
+
+    .process__num {
+      width: 52px;
+      height: 52px;
+      border-radius: 50%;
+      background: var(--color-dark-2);
+      border: 1px solid var(--color-border);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: var(--font-display);
+      font-size: 1.1rem;
+      font-weight: 800;
+      color: var(--color-accent);
+      margin-bottom: 1.25rem;
+      transition: all var(--transition-base);
+    }
+
+    .process__step:hover .process__num {
+      background: var(--color-accent-glow);
+      border-color: var(--color-accent);
+    }
+
+    .process__step h4 {
+      font-size: 1rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .process__step p {
+      font-size: 0.82rem;
+      margin: 0 auto;
+      max-width: 20ch;
+    }
+
+    /* Industries CTA strip */
+    .industries-strip {
+      background: var(--color-black);
+      padding: var(--space-lg) 0;
+    }
+
+    .industries-strip__inner {
+      display: flex;
+      align-items: center;
+      gap: var(--space-lg);
+    }
+
+    .industries-strip__left {
+      flex-shrink: 0;
+      max-width: 320px;
+    }
+
+    .industries-strip__left h3 {
+      margin: 0.5rem 0 0.75rem;
+    }
+
+    .industries-strip__pills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.6rem;
+      flex: 1;
+    }
+
+    /* Responsive */
+    @media (max-width: 1024px) {
+      .services-full-grid { grid-template-columns: repeat(2, 1fr); }
+      .all-in-one__inner { grid-template-columns: 1fr; }
+      .process__grid { grid-template-columns: repeat(2, 1fr); }
+      .process__grid::before { display: none; }
+      .industries-strip__inner { flex-direction: column; }
+      .industries-strip__left { max-width: none; }
+    }
+
+    @media (max-width: 768px) {
+      .services-full-grid { grid-template-columns: 1fr; }
+      .services-hero__actions { flex-direction: column; align-items: center; }
+      .all-in-one__visual { grid-template-columns: 1fr 1fr; }
+      .process__grid { grid-template-columns: 1fr 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ═══════════════════════════════════════════
+       NAVIGATION
+  ═══════════════════════════════════════════ -->
+  <nav class="nav" id="mainNav">
+    <div class="nav__inner">
+      <a href="/" class="nav__logo">
+        <img src="https://urbannicheco.com/wp-content/uploads/2026/04/99f521e4-9887-408b-b987-5822ba896f1d.png" alt="Urban Niche Co." class="nav__logo-img" />
+        Urban<span>Niche</span>&nbsp;Co.
+      </a>
+
+      <ul class="nav__links">
+        <li><a href="/" class="nav__link">Home</a></li>
+        <li class="nav__dropdown">
+          <a href="/marketing-services-iowa/" class="nav__link active">Services ▾</a>
+          <div class="nav__dropdown-menu">
+            <a href="/marketing-services-iowa/" class="nav__dropdown-item">All Services</a>
+            <a href="/seo-services-des-moines-iowa/" class="nav__dropdown-item">Search Engine Optimization</a>
+            <a href="/pay-per-click-advertising-iowa/" class="nav__dropdown-item">Pay Per Click</a>
+            <a href="/social-media-marketing-iowa-grow-your-brand-urban-niche-co/" class="nav__dropdown-item">Social Media Marketing</a>
+            <a href="/website-design-and-development/" class="nav__dropdown-item">Website Design & Dev</a>
+            <a href="/marketing/" class="nav__dropdown-item">Marketing Services</a>
+          </div>
+        </li>
+        <li><a href="/ai-consulting-services/" class="nav__link">AI Consulting</a></li>
+        <li><a href="/pricing/" class="nav__link">Pricing</a></li>
+        <li><a href="/about-digital-marketing-agency-midwest/" class="nav__link">About</a></li>
+        <li><a href="/blog/" class="nav__link">Blog</a></li>
+      </ul>
+
+      <div class="nav__cta">
+        <a href="/contact-digital-marketing-agency/" class="btn btn-ghost btn-sm">Contact Us</a>
+        <a href="/contact-digital-marketing-agency/#audit" class="btn btn-primary btn-sm">Free Website Audit</a>
+      </div>
+
+      <button class="nav__hamburger" id="hamburger" aria-label="Open menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Mobile Nav -->
+  <div class="nav__mobile" id="mobileNav">
+    <a href="/" class="nav__mobile-link">Home</a>
+    <a href="/marketing-services-iowa/" class="nav__mobile-link">Services</a>
+    <a href="/seo-services-des-moines-iowa/" class="nav__mobile-link nav__mobile-sub">↳ SEO</a>
+    <a href="/pay-per-click-advertising-iowa/" class="nav__mobile-link nav__mobile-sub">↳ Pay Per Click</a>
+    <a href="/social-media-marketing-iowa-grow-your-brand-urban-niche-co/" class="nav__mobile-link nav__mobile-sub">↳ Social Media</a>
+    <a href="/website-design-and-development/" class="nav__mobile-link nav__mobile-sub">↳ Website Design & Dev</a>
+    <a href="/marketing/" class="nav__mobile-link nav__mobile-sub">↳ Marketing Services</a>
+    <a href="/ai-consulting-services/" class="nav__mobile-link">AI Consulting</a>
+    <a href="/pricing/" class="nav__mobile-link">Pricing</a>
+    <a href="/about-digital-marketing-agency-midwest/" class="nav__mobile-link">About</a>
+    <a href="/blog/" class="nav__mobile-link">Blog</a>
+    <div class="nav__mobile-cta">
+      <a href="/contact-digital-marketing-agency/" class="btn btn-outline">Contact Us</a>
+      <a href="/contact-digital-marketing-agency/#audit" class="btn btn-primary">Free Website Audit</a>
+    </div>
+  </div>
+
+
+  <!-- ═══════════════════════════════════════════
+       HERO
+  ═══════════════════════════════════════════ -->
+  <section class="services-hero noise-overlay">
+    <div class="container services-hero__inner">
+      <span class="eyebrow reveal">What We Do</span>
+      <h1 class="reveal reveal-delay-1">
+        Iowa Contractor Digital Marketing Services — Every Tool You Need.<br>
+        <span class="text-accent">One Agency That Gets It.</span>
+      </h1>
+      <p class="services-hero__sub reveal reveal-delay-2">
+        From getting found on Google to closing leads on social — we run the full digital operation so you can stay on the job while we fill your pipeline.
+      </p>
+      <div class="services-hero__actions reveal reveal-delay-3">
+        <a href="/contact-digital-marketing-agency/#audit" class="btn btn-primary btn-lg">Get Your Free Website Audit</a>
+        <a href="/pricing/" class="btn btn-outline btn-lg">View Pricing</a>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ═══════════════════════════════════════════
+       SERVICES GRID
+  ═══════════════════════════════════════════ -->
+  <section class="section services-main">
+    <div class="container">
+      <div class="section-header section-header--center reveal">
+        <span class="eyebrow">Our Services</span>
+        <h2>Six Ways We Grow Your Business.</h2>
+        <p>Each service is built specifically for contractors. Not adapted, not repurposed — built from scratch for the trades.</p>
+      </div>
+
+      <div class="services-full-grid">
+
+        <!-- SEO -->
+        <a href="/seo-services-des-moines-iowa/" class="svc-card svc-card--featured reveal reveal-delay-1">
+          <span class="svc-card__badge">Most Popular</span>
+          <div class="svc-card__icon">🔍</div>
+          <h3>Search Engine Optimization</h3>
+          <p>Rank at the top of Google when homeowners search for your services. Local SEO that drives real calls from real people in your service area.</p>
+          <div class="svc-card__includes">
+            <div class="svc-card__include-item">Local SEO & Google Business Profile</div>
+            <div class="svc-card__include-item">On-page & technical optimization</div>
+            <div class="svc-card__include-item">Keyword strategy for your trade & market</div>
+            <div class="svc-card__include-item">Citation building & link acquisition</div>
+            <div class="svc-card__include-item">Monthly ranking & traffic reports</div>
+          </div>
+          <span class="svc-card__cta">Learn More →</span>
+        </a>
+
+        <!-- PPC -->
+        <a href="/pay-per-click-advertising-iowa/" class="svc-card reveal reveal-delay-2">
+          <div class="svc-card__icon">🎯</div>
+          <h3>Pay Per Click Ads</h3>
+          <p>Google & Meta ad campaigns engineered for contractors. Every dollar tracked, every lead counted. We don't run ads — we run systems.</p>
+          <div class="svc-card__includes">
+            <div class="svc-card__include-item">Google Search & Local Services Ads</div>
+            <div class="svc-card__include-item">Meta (Facebook & Instagram) campaigns</div>
+            <div class="svc-card__include-item">Landing page design & optimization</div>
+            <div class="svc-card__include-item">Conversion tracking & call recording</div>
+            <div class="svc-card__include-item">Weekly performance reporting</div>
+          </div>
+          <span class="svc-card__cta">Learn More →</span>
+        </a>
+
+        <!-- Social Media -->
+        <a href="/social-media-marketing-iowa-grow-your-brand-urban-niche-co/" class="svc-card reveal reveal-delay-3">
+          <div class="svc-card__icon">📱</div>
+          <h3>Social Media Marketing</h3>
+          <p>Build a brand that commands respect in your local market. Content, ads, and community management that turns followers into booked jobs.</p>
+          <div class="svc-card__includes">
+            <div class="svc-card__include-item">Content creation & scheduling</div>
+            <div class="svc-card__include-item">Facebook & Instagram management</div>
+            <div class="svc-card__include-item">Paid social ad campaigns</div>
+            <div class="svc-card__include-item">Review generation strategy</div>
+            <div class="svc-card__include-item">Engagement & community management</div>
+          </div>
+          <span class="svc-card__cta">Learn More →</span>
+        </a>
+
+        <!-- Website Design -->
+        <a href="/website-design-and-development/" class="svc-card reveal reveal-delay-1">
+          <div class="svc-card__icon">💻</div>
+          <h3>Website Design & Development</h3>
+          <p>Fast, clean, conversion-focused contractor websites. No bloated builders, no templates — custom-built to rank, load fast, and turn visitors into leads.</p>
+          <div class="svc-card__includes">
+            <div class="svc-card__include-item">Custom HTML/CSS design & build</div>
+            <div class="svc-card__include-item">Mobile-first, speed-optimized</div>
+            <div class="svc-card__include-item">SEO-ready site structure baked in</div>
+            <div class="svc-card__include-item">Lead capture forms & CTA strategy</div>
+            <div class="svc-card__include-item">Hosting setup & ongoing maintenance</div>
+          </div>
+          <span class="svc-card__cta">Learn More →</span>
+        </a>
+
+        <!-- Marketing Services -->
+        <a href="/marketing/" class="svc-card reveal reveal-delay-2">
+          <div class="svc-card__icon">📣</div>
+          <h3>Marketing Services</h3>
+          <p>Full-spectrum marketing support for contractors who want to dominate their local market — email, reputation, content, and brand strategy all under one roof.</p>
+          <div class="svc-card__includes">
+            <div class="svc-card__include-item">Email marketing & automation</div>
+            <div class="svc-card__include-item">Reputation management & reviews</div>
+            <div class="svc-card__include-item">Brand identity & messaging</div>
+            <div class="svc-card__include-item">Direct mail & print coordination</div>
+            <div class="svc-card__include-item">Seasonal campaign planning</div>
+          </div>
+          <span class="svc-card__cta">Learn More →</span>
+        </a>
+
+        <!-- AI Consulting -->
+        <a href="/ai-consulting-services/" class="svc-card reveal reveal-delay-3">
+          <div class="svc-card__icon">🤖</div>
+          <h3>AI Consulting</h3>
+          <p>Get ahead of every competitor by integrating AI into your sales, operations, and marketing. We build the systems — you reap the results.</p>
+          <div class="svc-card__includes">
+            <div class="svc-card__include-item">AI-powered lead follow-up automation</div>
+            <div class="svc-card__include-item">Custom chatbot & intake workflows</div>
+            <div class="svc-card__include-item">CRM & pipeline automation</div>
+            <div class="svc-card__include-item">AI content generation systems</div>
+            <div class="svc-card__include-item">Team training & implementation</div>
+          </div>
+          <span class="svc-card__cta">Learn More →</span>
+        </a>
+
+        <!-- Merchandise -->
+        <a href="/branded-merchandise-iowa/" class="svc-card reveal reveal-delay-1">
+          <div class="svc-card__icon">👕</div>
+          <h3>Branded Merchandise</h3>
+          <p>Put your brand on every job site, truck, and customer interaction. High-quality branded gear that turns your crew and clients into walking billboards.</p>
+          <div class="svc-card__includes">
+            <div class="svc-card__include-item">Shirts, hats & workwear</div>
+            <div class="svc-card__include-item">Truck decals & vehicle wraps</div>
+            <div class="svc-card__include-item">Yard signs & job site banners</div>
+            <div class="svc-card__include-item">Promotional items & giveaways</div>
+            <div class="svc-card__include-item">Custom design & brand consistency</div>
+          </div>
+          <span class="svc-card__cta">Shop Merchandise →</span>
+        </a>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ═══════════════════════════════════════════
+       WHY ALL-IN-ONE
+  ═══════════════════════════════════════════ -->
+  <section class="section all-in-one">
+    <div class="container">
+      <div class="all-in-one__inner">
+
+        <div class="all-in-one__left reveal">
+          <span class="eyebrow">The Advantage</span>
+          <h2>One Agency. Every Channel. Zero Gaps.</h2>
+          <p>When your SEO, ads, social, and website are all managed by different vendors, they don't talk to each other. Your data is scattered. Your strategy is inconsistent. Your results suffer.</p>
+          <div class="all-in-one__list">
+            <div class="all-in-one__item">
+              <div class="all-in-one__num">1</div>
+              <div>
+                <h5>Unified Strategy</h5>
+                <p>Every channel we manage works toward the same goal — more booked jobs. No siloed thinking, no wasted spend.</p>
+              </div>
+            </div>
+            <div class="all-in-one__item">
+              <div class="all-in-one__num">2</div>
+              <div>
+                <h5>One Point of Contact</h5>
+                <p>No chasing down multiple agencies. One team, one report, one conversation. Simple.</p>
+              </div>
+            </div>
+            <div class="all-in-one__item">
+              <div class="all-in-one__num">3</div>
+              <div>
+                <h5>Everything Compounds</h5>
+                <p>SEO drives organic traffic that retargets on social. Ads bring leads that email nurtures. It all stacks.</p>
+              </div>
+            </div>
+            <div class="all-in-one__item">
+              <div class="all-in-one__num">4</div>
+              <div>
+                <h5>Contractor-Only Focus</h5>
+                <p>We built every service for your industry. The strategy isn't adapted — it's native to the trades.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="all-in-one__visual reveal reveal-delay-2">
+          <div class="all-in-one__stat">
+            <span class="all-in-one__stat-val">+340%</span>
+            <span class="all-in-one__stat-lbl">Avg. lead increase within 90 days</span>
+          </div>
+          <div class="all-in-one__stat">
+            <span class="all-in-one__stat-val">↓52%</span>
+            <span class="all-in-one__stat-lbl">Average cost per lead reduction</span>
+          </div>
+          <div class="all-in-one__stat">
+            <span class="all-in-one__stat-val">Page 1</span>
+            <span class="all-in-one__stat-lbl">Google rankings for clients in target markets</span>
+          </div>
+          <div class="all-in-one__stat">
+            <span class="all-in-one__stat-val">30</span>
+            <span class="all-in-one__stat-lbl">Days to first measurable results</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ═══════════════════════════════════════════
+       PROCESS
+  ═══════════════════════════════════════════ -->
+  <section class="section process">
+    <div class="container">
+      <div class="section-header section-header--center reveal">
+        <span class="eyebrow">How It Works</span>
+        <h2>From Audit to Full Pipeline.<br>Here's the Playbook.</h2>
+      </div>
+
+      <div class="process__grid">
+        <div class="process__step reveal reveal-delay-1">
+          <div class="process__num">01</div>
+          <h4>Free Audit</h4>
+          <p>We assess your current digital presence and find the gaps costing you leads.</p>
+        </div>
+        <div class="process__step reveal reveal-delay-2">
+          <div class="process__num">02</div>
+          <h4>Custom Strategy</h4>
+          <p>We build a plan specific to your trade, market, and growth goals.</p>
+        </div>
+        <div class="process__step reveal reveal-delay-3">
+          <div class="process__num">03</div>
+          <h4>We Execute</h4>
+          <p>Our team launches your campaigns. You stay on the job — we handle the rest.</p>
+        </div>
+        <div class="process__step reveal reveal-delay-4">
+          <div class="process__num">04</div>
+          <h4>Results & Scale</h4>
+          <p>Leads grow, we report everything, and we scale what's working.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ═══════════════════════════════════════════
+       INDUSTRIES STRIP
+  ═══════════════════════════════════════════ -->
+  <section class="industries-strip">
+    <div class="container">
+      <div class="industries-strip__inner">
+        <div class="industries-strip__left reveal">
+          <span class="eyebrow">We Serve</span>
+          <h3>The Trades We Know Inside & Out.</h3>
+          <p style="font-size:0.875rem;">Every service we offer is built around how these businesses actually operate.</p>
+        </div>
+        <div class="industries-strip__pills reveal reveal-delay-1">
+          <div class="industry-pill">🏠 Roofers</div>
+          <div class="industry-pill">❄️ HVAC</div>
+          <div class="industry-pill">🔧 Plumbers</div>
+          <div class="industry-pill">⚡ Electricians</div>
+          <div class="industry-pill">🌿 Landscapers</div>
+          <div class="industry-pill">🏗️ General Contractors</div>
+          <div class="industry-pill">🪟 Remodelers</div>
+          <div class="industry-pill">🖌️ Painters</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ═══════════════════════════════════════════
+       CTA BANNER
+  ═══════════════════════════════════════════ -->
+  <section class="cta-banner noise-overlay">
+    <div class="container">
+      <div class="cta-banner__inner reveal">
+        <div>
+          <span class="eyebrow">Ready to Grow?</span>
+          <h2>Get Your Free Website Audit Today.</h2>
+          <p>No cost. No commitment. Just a clear picture of where you stand and how to get more leads.</p>
+        </div>
+        <div class="cta-banner__actions">
+          <a href="/contact-digital-marketing-agency/#audit" class="btn btn-primary btn-lg">Claim Free Audit</a>
+          <a href="/pricing/" class="btn btn-outline btn-lg">View Pricing</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ═══════════════════════════════════════════
+       FOOTER
+  ═══════════════════════════════════════════ -->
+  <footer class="footer">
+
+  <div class="container">
+
+    <div class="footer__grid">
+
+      <div class="footer__brand">
+
+        <div class="footer__logo" style="display:flex;align-items:center;gap:10px;margin-bottom:12px;">
+
+          <img src="https://urbannicheco.com/wp-content/uploads/2026/04/99f521e4-9887-408b-b987-5822ba896f1d.png" alt="Urban Niche Co." style="height:36px;width:auto;">
+
+          <span style="font-family:'Syne',sans-serif;font-weight:800;font-size:18px;color:#fff;">Urban <span style="color:var(--color-accent)">Niche</span> Co.</span>
+
+        </div>
+
+        <p>Digital marketing built exclusively for contractors and home service businesses.</p>
+
+        <div class="footer__social">
+
+          <a href="https://www.facebook.com/UrbanNicheCo" aria-label="Facebook"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg></a>
+
+          <a href="https://www.instagram.com/urbanniche_co/" aria-label="Instagram"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg></a>
+
+          <a href="https://www.linkedin.com/company/urbannicheco" aria-label="LinkedIn"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg></a>
+
+          <a href="https://x.com/UrbanNiche_Co" aria-label="Twitter/X">&#120143;</a>
+
+        </div>
+
+      </div>
+
+      <div class="footer__col">
+
+        <h5>Services</h5>
+
+        <ul>
+
+          <li><a href="https://urbannicheco.com/seo-services-des-moines-iowa">SEO</a></li>
+
+          <li><a href="https://urbannicheco.com/pay-per-click-advertising-iowa">Pay Per Click</a></li>
+
+          <li><a href="https://urbannicheco.com/social-media-marketing-iowa-grow-your-brand-urban-niche-co">Social Media</a></li>
+
+          <li><a href="https://urbannicheco.com/website-design-and-development">Website Design</a></li>
+
+          <li><a href="https://urbannicheco.com/marketing">Marketing Services</a></li>
+
+          <li><a href="https://urbannicheco.com/ai-consulting-services">AI Consulting</a></li>
+
+        </ul>
+
+      </div>
+
+      <div class="footer__col">
+
+        <h5>Company</h5>
+
+        <ul>
+
+          <li><a href="https://urbannicheco.com/about-digital-marketing-agency-midwest">About Us</a></li>
+
+          <li><a href="https://urbannicheco.com/about-digital-marketing-agency-midwest/#careers">Careers</a></li>
+
+          <li><a href="https://urbannicheco.com/blog">Blog</a></li>
+
+          <li><a href="https://urbannicheco.com/pricing">Pricing</a></li>
+
+          <li><a href="/faq/">FAQ</a></li>
+
+          <li><a href="https://urbannicheco.com/branded-merchandise-iowa">Merchandise</a></li>
+
+        </ul>
+
+      </div>
+
+      <div class="footer__col">
+
+        <h5>Get Started</h5>
+
+        <ul>
+
+          <li><a href="https://urbannicheco.com/contact-digital-marketing-agency/">Free Website Audit</a></li>
+
+          <li><a href="https://urbannicheco.com/contact-digital-marketing-agency">Contact Us</a></li>
+
+          <li><a href="https://urbannicheco.com/pricing">View Pricing</a></li>
+
+        </ul>
+
+        <div style="margin-top:20px;font-size:13px;color:rgba(255,255,255,0.4);line-height:1.8;">
+
+          <a href="sms:+15153444053" style="color:#e8651a;text-decoration:none;font-weight:500;">(515) 344-4053</a><br>
+
+          <span style="font-size:12px;">Text anytime &middot; No cold calls</span>
+
+        </div>
+
+        <div style="margin-top:1.5rem;">
+
+          <a href="https://urbannicheco.com/contact-digital-marketing-agency/" class="btn btn-primary btn-sm">Free Audit &#8594;</a>
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <div class="footer__bottom">
+
+      <p>&copy; 2026 Urban Niche Co. All rights reserved.</p>
+
+      <div class="footer__bottom-links">
+
+        <a href="https://urbannicheco.com/privacy-policy">Privacy Policy</a>
+
+        <a href="https://urbannicheco.com/sitemap">Sitemap</a>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</footer>
+
+
+  <!-- ═══════════════════════════════════════════
+       SCRIPTS
+  ═══════════════════════════════════════════ -->
+  <script>
+    const nav = document.getElementById('mainNav');
+    window.addEventListener('scroll', () => {
+      nav.classList.toggle('scrolled', window.scrollY > 40);
+    });
+
+    const hamburger = document.getElementById('hamburger');
+    const mobileNav = document.getElementById('mobileNav');
+    hamburger.addEventListener('click', () => {
+      mobileNav.classList.toggle('open');
+    });
+
+    const reveals = document.querySelectorAll('.reveal');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, { threshold: 0.12 });
+    reveals.forEach(el => observer.observe(el));
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,1530 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Transparent pricing for all Urban Niche Co. digital marketing services — SEO, PPC, social media, website design, AI consulting, and à la carte options for contractors." />
+  <title>Pricing | Urban Niche Co.</title>
+  <link rel="stylesheet" href="/wp-content/themes/divi-child/unc/style.css" />
+  <link rel="icon" type="image/png" href="assets/favicon.png" />
+
+  <style>
+    /* ── Pricing Page Styles ─────────────────────────────── */
+
+    .page-hero {
+      padding-top: calc(var(--nav-height) + var(--space-xl));
+      padding-bottom: var(--space-xl);
+      background: var(--color-dark);
+      position: relative;
+      overflow: hidden;
+      text-align: center;
+    }
+
+    .page-hero::before {
+      content: '';
+      position: absolute;
+      top: -180px; left: 50%;
+      transform: translateX(-50%);
+      width: 700px; height: 500px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(232,101,26,0.07) 0%, transparent 68%);
+      pointer-events: none;
+    }
+
+    .page-hero__inner {
+      position: relative;
+      max-width: 720px;
+      margin: 0 auto;
+    }
+
+    .page-hero h1 { margin: 0.75rem 0 1.5rem; }
+
+    .page-hero__sub {
+      font-size: 1.05rem;
+      color: var(--color-white-dim);
+      max-width: 56ch;
+      margin: 0 auto 2rem;
+      line-height: 1.7;
+    }
+
+    .page-hero__pills {
+      display: flex;
+      gap: 0.75rem;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .hero-pill {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: var(--color-accent-glow);
+      border: 1px solid rgba(232,101,26,0.25);
+      border-radius: var(--radius-pill);
+      padding: 0.4rem 1rem;
+      font-family: var(--font-display);
+      font-size: 0.68rem;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--color-accent);
+    }
+
+    /* Jump nav */
+    .jump-nav {
+      background: var(--color-black);
+      border-bottom: 1px solid var(--color-border);
+      position: sticky;
+      top: var(--nav-height);
+      z-index: 100;
+      padding: 0;
+    }
+
+    .jump-nav__inner {
+      display: flex;
+      overflow-x: auto;
+      scrollbar-width: none;
+    }
+
+    .jump-nav__inner::-webkit-scrollbar { display: none; }
+
+    .jump-link {
+      font-family: var(--font-display);
+      font-size: 0.68rem;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--color-white-dim);
+      padding: 1rem 1.25rem;
+      white-space: nowrap;
+      border-bottom: 2px solid transparent;
+      transition: all var(--transition-fast);
+      display: block;
+    }
+
+    .jump-link:hover {
+      color: var(--color-white);
+      border-bottom-color: var(--color-accent);
+    }
+
+    /* Pricing section shared */
+    .pricing-block {
+      padding: var(--space-xl) 0;
+    }
+
+    .pricing-block--alt { background: var(--color-black); }
+    .pricing-block--dark { background: var(--color-dark-2); }
+    .pricing-block--base { background: var(--color-dark); }
+
+    .pricing-block__header {
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+      margin-bottom: var(--space-lg);
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+
+    .pricing-block__header-left { max-width: 600px; }
+    .pricing-block__header-left h2 { margin: 0.35rem 0 0.6rem; }
+    .pricing-block__header-left p  { font-size: 0.9rem; }
+
+    .pricing-block__link {
+      font-family: var(--font-display);
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--color-accent);
+      white-space: nowrap;
+      transition: letter-spacing var(--transition-fast);
+    }
+
+    .pricing-block__link:hover { letter-spacing: 0.1em; }
+
+    /* Price card grid */
+    .price-grid {
+      display: grid;
+      gap: 1rem;
+    }
+
+    .price-grid--5 { grid-template-columns: repeat(5, 1fr); }
+    .price-grid--3 { grid-template-columns: repeat(3, 1fr); }
+    .price-grid--4 { grid-template-columns: repeat(4, 1fr); }
+    .price-grid--2 { grid-template-columns: repeat(2, 1fr); }
+
+    .price-card {
+      background: var(--color-dark-2);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-md);
+      padding: 1.75rem 1.5rem;
+      display: flex;
+      flex-direction: column;
+      position: relative;
+      transition: all var(--transition-base);
+    }
+
+    .price-grid--5 .price-card { padding: 1.5rem 1.25rem; }
+
+    .price-card:hover {
+      border-color: rgba(232,101,26,0.3);
+      transform: translateY(-4px);
+    }
+
+    .price-card--featured {
+      border-color: var(--color-accent);
+      background: linear-gradient(135deg, var(--color-dark-2) 0%, rgba(232,101,26,0.05) 100%);
+    }
+
+    .price-card--dark {
+      background: var(--color-dark-3);
+    }
+
+    .price-card__badge {
+      position: absolute;
+      top: -11px; left: 50%;
+      transform: translateX(-50%);
+      font-family: var(--font-display);
+      font-size: 0.58rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      padding: 0.22rem 0.8rem;
+      border-radius: var(--radius-pill);
+      background: var(--color-accent);
+      color: var(--color-white);
+      white-space: nowrap;
+    }
+
+    .price-card__tier {
+      font-family: var(--font-display);
+      font-size: 0.6rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--color-white-dim);
+      margin-bottom: 0.4rem;
+    }
+
+    .price-card h4 { font-size: 1rem; margin-bottom: 0.5rem; }
+    .price-grid--5 .price-card h4 { font-size: 0.9rem; }
+
+    .price-card__amount {
+      font-family: var(--font-display);
+      font-size: 1.75rem;
+      font-weight: 800;
+      color: var(--color-accent);
+      line-height: 1;
+      margin-bottom: 0.2rem;
+    }
+
+    .price-grid--5 .price-card__amount { font-size: 1.5rem; }
+
+    .price-card__cycle {
+      font-size: 0.7rem;
+      color: var(--color-white-dim);
+      margin-bottom: 0.75rem;
+    }
+
+    .price-card__sub {
+      font-family: var(--font-display);
+      font-size: 0.62rem;
+      font-weight: 700;
+      color: var(--color-white);
+      background: var(--color-dark-3);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-sm);
+      padding: 0.28rem 0.55rem;
+      margin-bottom: 1rem;
+      display: inline-block;
+    }
+
+    .price-card__divider {
+      width: 100%;
+      height: 1px;
+      background: var(--color-border);
+      margin-bottom: 1rem;
+    }
+
+    .price-card__features {
+      display: flex;
+      flex-direction: column;
+      gap: 0.4rem;
+      flex: 1;
+      margin-bottom: 1.25rem;
+    }
+
+    .price-card__feature {
+      display: flex;
+      gap: 0.55rem;
+      font-size: 0.75rem;
+      color: var(--color-white-dim);
+    }
+
+    .price-card__feature::before {
+      content: '✓';
+      color: var(--color-accent);
+      font-size: 0.68rem;
+      font-weight: 700;
+      flex-shrink: 0;
+      margin-top: 1px;
+    }
+
+    .price-card .btn {
+      width: 100%;
+      justify-content: center;
+      font-size: 0.68rem;
+      padding: 0.6rem 1rem;
+    }
+
+    /* SEO tabs */
+    .pricing-tabs {
+      display: flex;
+      gap: 0.5rem;
+      margin-bottom: var(--space-md);
+      background: var(--color-dark-3);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-pill);
+      padding: 0.35rem;
+      width: fit-content;
+    }
+
+    .pricing-tab {
+      font-family: var(--font-display);
+      font-size: 0.68rem;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      padding: 0.5rem 1.1rem;
+      border-radius: var(--radius-pill);
+      border: none;
+      background: transparent;
+      color: var(--color-white-dim);
+      cursor: pointer;
+      transition: all var(--transition-base);
+    }
+
+    .pricing-tab.active {
+      background: var(--color-accent);
+      color: var(--color-white);
+    }
+
+    .tab-content { display: none; }
+    .tab-content.active { display: block; }
+
+    /* A La Carte table */
+    .alacarte-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 0.75rem;
+    }
+
+    .alacarte-item {
+      background: var(--color-dark-2);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-md);
+      padding: 1.1rem 1.25rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      transition: border-color var(--transition-base);
+    }
+
+    .alacarte-item:hover { border-color: rgba(232,101,26,0.3); }
+
+    .alacarte-item__name {
+      font-size: 0.82rem;
+      color: var(--color-white);
+      font-weight: 500;
+    }
+
+    .alacarte-item__right {
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+      flex-shrink: 0;
+    }
+
+    .alacarte-item__price {
+      font-family: var(--font-display);
+      font-size: 0.95rem;
+      font-weight: 800;
+      color: var(--color-accent);
+    }
+
+    .alacarte-item__type {
+      font-family: var(--font-display);
+      font-size: 0.55rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      padding: 0.18rem 0.55rem;
+      border-radius: var(--radius-pill);
+      border: 1px solid var(--color-border);
+      color: var(--color-white-dim);
+      white-space: nowrap;
+    }
+
+    .alacarte-item__type--monthly {
+      background: var(--color-accent-glow);
+      border-color: rgba(232,101,26,0.3);
+      color: var(--color-accent);
+    }
+
+    /* CTA section */
+    .pricing-cta {
+      background: var(--color-dark);
+    }
+
+    .pricing-cta__inner {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: var(--space-lg);
+    }
+
+    .cta-option {
+      background: var(--color-dark-2);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-lg);
+      padding: 2.5rem;
+      text-align: center;
+      transition: all var(--transition-base);
+    }
+
+    .cta-option:hover { border-color: rgba(232,101,26,0.3); transform: translateY(-4px); }
+
+    .cta-option--featured {
+      border-color: var(--color-accent);
+      background: linear-gradient(135deg, var(--color-dark-2) 0%, rgba(232,101,26,0.05) 100%);
+    }
+
+    .cta-option__icon { font-size: 2rem; margin-bottom: 1rem; }
+    .cta-option h3 { margin-bottom: 0.75rem; }
+    .cta-option p  { font-size: 0.875rem; margin-bottom: 1.75rem; }
+
+    .cta-option .btn { display: inline-flex; }
+
+    /* FAQ */
+    .pricing-faq {
+      background: var(--color-black);
+    }
+
+    .faq-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+      margin-top: var(--space-lg);
+    }
+
+    .faq-item {
+      background: var(--color-dark-2);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-md);
+      padding: 1.5rem;
+      transition: border-color var(--transition-base);
+    }
+
+    .faq-item:hover { border-color: rgba(232,101,26,0.25); }
+
+    .faq-item h5 {
+      margin-bottom: 0.6rem;
+      font-size: 0.95rem;
+      color: var(--color-white);
+    }
+
+    .faq-item p { font-size: 0.875rem; }
+
+    /* Responsive */
+    @media (max-width: 1200px) {
+      .price-grid--5 { grid-template-columns: repeat(3, 1fr); }
+    }
+
+    @media (max-width: 1024px) {
+      .price-grid--4 { grid-template-columns: repeat(2, 1fr); }
+      .price-grid--3 { grid-template-columns: repeat(2, 1fr); }
+      .alacarte-grid { grid-template-columns: 1fr 1fr; }
+      .faq-grid { grid-template-columns: 1fr; }
+      .pricing-cta__inner { grid-template-columns: 1fr; max-width: 480px; margin: 0 auto; }
+      .pricing-block__header { flex-direction: column; align-items: flex-start; }
+    }
+
+    @media (max-width: 768px) {
+      .price-grid--5,
+      .price-grid--4,
+      .price-grid--3,
+      .price-grid--2 { grid-template-columns: 1fr; }
+      .alacarte-grid { grid-template-columns: 1fr; }
+      .pricing-tabs { flex-wrap: wrap; width: 100%; }
+      .jump-nav__inner { gap: 0; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ═══════════════════════════════════════════
+       NAVIGATION
+  ═══════════════════════════════════════════ -->
+  <?php include '/dom746073/wp-content/themes/divi-child/unc-nav.php'; ?>
+
+
+  <!-- ═══════════════════════════════════════════
+       HERO
+  ═══════════════════════════════════════════ -->
+  <section class="page-hero noise-overlay">
+    <div class="container page-hero__inner">
+      <span class="eyebrow reveal">Transparent Pricing</span>
+      <h1 class="reveal reveal-delay-1">
+        Contractor Marketing Pricing — Every Price.<br>
+        Right Here.<br>
+        <span class="text-accent">No Surprises.</span>
+      </h1>
+      <p class="page-hero__sub reveal reveal-delay-2">
+        We publish our pricing because we have nothing to hide. Pick the services that fit where you are right now — and scale as you grow.
+      </p>
+      <div class="page-hero__pills reveal reveal-delay-3">
+        <span class="hero-pill">✓ No long-term contracts</span>
+        <span class="hero-pill">✓ Month-to-month flexibility</span>
+        <span class="hero-pill">✓ Ad spend never marked up</span>
+        <span class="hero-pill">✓ Cancel anytime</span>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ═══════════════════════════════════════════
+       JUMP NAV
+  ═══════════════════════════════════════════ -->
+  <nav class="jump-nav">
+    <div class="container jump-nav__inner">
+      <a href="#seo" class="jump-link">SEO</a>
+      <a href="#ppc" class="jump-link">PPC</a>
+      <a href="#social" class="jump-link">Social Media</a>
+      <a href="#email" class="jump-link">Email Marketing</a>
+      <a href="#reputation" class="jump-link">Reputation Management</a>
+      <a href="#web" class="jump-link">Website Design</a>
+      <a href="#maintenance" class="jump-link">Maintenance</a>
+      <a href="#alacarte" class="jump-link">À La Carte</a>
+      <a href="#ai" class="jump-link">AI Consulting</a>
+      <a href="#ailead" class="jump-link">AI Lead Capture</a>
+    </div>
+  </nav>
+
+
+  <!-- ═══════════════════════════════════════════
+       SEO PRICING
+  ═══════════════════════════════════════════ -->
+  <section class="pricing-block pricing-block--alt" id="seo">
+    <div class="container">
+      <div class="pricing-block__header reveal">
+        <div class="pricing-block__header-left">
+          <span class="eyebrow">Search Engine Optimization</span>
+          <h2>SEO Plans</h2>
+          <p>Local and national SEO packages built for contractors. Month-to-month, no lock-in.</p>
+        </div>
+        <a href="/seo-services-des-moines-iowa/" class="pricing-block__link">Full SEO Details →</a>
+      </div>
+
+      <div class="pricing-tabs reveal reveal-delay-1">
+        <button class="pricing-tab active" onclick="showTab('seo-local', this, 'seo')">Local SEO</button>
+        <button class="pricing-tab" onclick="showTab('seo-national', this, 'seo')">National SEO</button>
+        <button class="pricing-tab" onclick="showTab('seo-presence', this, 'seo')">Local Presence</button>
+      </div>
+
+      <div class="tab-content active" id="seo-local">
+        <div class="price-grid price-grid--5 reveal reveal-delay-1">
+          <div class="price-card price-card--dark">
+            <div class="price-card__tier">Entry Level</div>
+            <h4>Starter</h4>
+            <div class="price-card__amount">$375</div>
+            <div class="price-card__cycle">/month</div>
+            <div class="price-card__divider"></div>
+            <div class="price-card__features">
+              <div class="price-card__feature">Ideal for startups</div>
+              <div class="price-card__feature">1 keyword category</div>
+              <div class="price-card__feature">GBP optimization</div>
+              <div class="price-card__feature">Monthly report</div>
+            </div>
+            <a href="/contact-digital-marketing-agency/#audit" class="btn btn-outline">Get Started</a>
+          </div>
+          <div class="price-card price-card--dark">
+            <div class="price-card__tier">Entry Level</div>
+            <h4>Value</h4>
+            <div class="price-card__amount">$600</div>
+            <div class="price-card__cycle">/month</div>
+            <div class="price-card__divider"></div>
+            <div class="price-card__features">
+              <div class="price-card__feature">Great for local businesses</div>
+              <div class="price-card__feature">2 keyword categories</div>
+              <div class="price-card__feature">Citations & links</div>
+              <div class="price-card__feature">Monthly report</div>
+            </div>
+            <a href="/contact-digital-marketing-agency/#audit" class="btn btn-outline">Get Started</a>
+          </div>
+          <div class="price-card price-card--featured price-card--dark">
+            <div class="price-card__badge">Top Seller</div>
+            <div class="price-card__tier">Moderate Level</div>
+            <h4>Silver</h4>
+            <div class="price-card__amount">$800</div>
+            <div class="price-card__cycle">/month</div>
+            <div class="price-card__divider"></div>
+            <div class="price-card__features">
+              <div class="price-card__feature">3 keyword categories</div>
+              <div class="price-card__feature">Advanced GBP & organic</div>
+              <div class="price-card__feature">On-page optimization</div>
+              <div class="price-card__feature">Monthly report</div>
+            </div>
+            <a href="/contact-digital-marketing-agency/#audit" class="btn btn-primary">Get Started</a>
+          </div>
+          <div class="price-card price-card--dark">
+            <div class="price-card__tier">Competitive</div>
+            <h4>Gold</h4>
+            <div class="price-card__amount">$1,000</div>
+            <div class="price-card__cycle">/month</div>
+            <div class="price-card__divider"></div>
+            <div class="price-card__features">
+              <div class="price-card__feature">4 keyword categories</div>
+              <div class="price-card__feature">Quarterly audits</div>
+              <div class="price-card__feature">Advanced link building</div>
+              <div class="price-card__feature">Content strategy</div>
+            </div>
+            <a href="/contact-digital-marketing-agency/#audit" class="btn btn-outline">Get Started</a>
+          </div>
+          <div class="price-card price-card--dark">
+            <div class="price-card__tier">Competitive</div>
+            <h4>Platinum</h4>
+            <div class="price-card__amount">$1,200</div>
+            <div class="price-card__cycle">/month</div>
+            <div class="price-card__divider"></div>
+            <div class="price-card__features">
+              <div class="price-card__feature">6 keyword categories</div>
+              <div class="price-card__feature">Bi-monthly audits</div>
+              <div class="price-card__feature">Full content & links</div>
+              <div class="price-card__feature">Priority support</div>
+            </div>
+            <a href="/contact-digital-marketing-agency/#audit" class="btn btn-outline">Get Started</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="tab-content" id="seo-national">
+        <div class="price-grid price-grid--5 reveal reveal-delay-1">
+          <div class="price-card price-card--dark">
+            <div class="price-card__tier">Single Niche</div>
+            <h4>Starter</h4>
+            <div class="price-card__amount">$750</div>
+            <div class="price-card__cycle">/month</div>
+            <div class="price-card__divider"></div>
+            <div class="price-card__features">
+              <div class="price-card__feature">1 keyword category</div>
+              <div class="price-card__feature">On-page optimization</div>
+              <div class="price-card__feature">Content creation</div>
+              <div class="price-card__feature">Backlink building</div>
+            </div>
+            <a href="/contact-digital-marketing-agency/#audit" class="btn btn-outline">Get Started</a>
+          </div>
+          <div class="price-card price-card--dark">
+            <div class="price-card__tier">Moderately Competitive</div>
+            <h4>Value</h4>
+            <div class="price-card__amount">$1,250</div>
+            <div class="price-card__cycle">/month</div>
+            <div class="price-card__divider"></div>
+            <div class="price-card__features">
+              <div class="price-card__feature">2 keyword categories</div>
+              <div class="price-card__feature">On-page optimization</div>
+              <div class="price-card__feature">Content creation</div>
+              <div class="price-card__feature">Backlink building</div>
+            </div>
+            <a href="/contact-digital-marketing-agency/#audit" class="btn btn-outline">Get Started</a>
+          </div>
+          <div class="price-card price-card--featured price-card--dark">
+            <div class="price-card__badge">Top Seller</div>
+            <div class="price-card__tier">Competitive Markets</div>
+            <h4>Silver</h4>
+            <div class="price-card__amount">$2,000</div>
+            <div class="price-card__cycle">/month</div>
+            <div class="price-card__divider"></div>
+            <div class="price-card__features">
+              <div class="price-card__feature">3 keyword categories</div>
+              <div class="price-card__feature">On-page optimization</div>
+              <div class="price-card__feature">Content creation</div>
+              <div class="price-card__feature">Backlink building</div>
+            </div>
+            <a href="/contact-digital-marketing-agency/#audit" class="btn btn-primary">Get Started</a>
+          </div>
+          <div class="price-card price-card--dark">
+            <div class="price-card__tier">Highly Competitive</div>
+            <h4>Gold</h4>
+            <div class="price-card__amount">$3,000</div>
+            <div class="price-card__cycle">/month</div>
+            <div class="price-card__divider"></div>
+            <div class="price-card__features">
+              <div class="price-card__feature">5 keyword categories</div>
+              <div class="price-card__feature">On-page optimization</div>
+              <div class="price-card__feature">Content creation</div>
+              <div class="price-card__feature">Backlink building</div>
+            </div>
+            <a href="/contact-digital-marketing-agency/#audit" class="btn btn-outline">Get Started</a>
+          </div>
+          <div class="price-card price-card--dark">
+            <div class="price-card__tier">Cut-Throat Markets</div>
+            <h4>Platinum</h4>
+            <div class="price-card__amount">$4,500</div>
+            <div class="price-card__cycle">/month</div>
+            <div class="price-card__divider"></div>
+            <div class="price-card__features">
+              <div class="price-card__feature">8 keyword categories</div>
+              <div class="price-card__feature">On-page optimization</div>
+              <div class="price-card__feature">Content creation</div>
+              <div class="price-card__feature">Backlink building</div>
+            </div>
+            <a href="/contact-digital-marketing-agency/#audit" class="btn btn-outline">Get Started</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="tab-content" id="seo-presence">
+        <div class="price-grid price-grid--4 reveal reveal-delay-1">
+          <div class="price-card price-card--dark">
+            <div class="price-card__tier">One-Time</div>
+            <h4>Google My Business Setup</h4>
+            <div class="price-card__amount">$100</div>
+            <div class="price-card__cycle">one-time</div>
+            <div class="price-card__divider"></div>
+            <div class="price-card__features">
+              <div class="price-card__feature">Full GBP profile setup</div>
+              <div class="price-card__feature">Category & service optimization</div>
+              <div class="price-card__feature">Photo upload & optimization</div>
+            </div>
+            <a href="/contact-digital-marketing-agency/" class="btn btn-outline">Get Started</a>
+          </div>
+          <div class="price-card price-card--dark">
+            <div class="price-card__tier">Monthly</div>
+            <h4>GMB Management</h4>
+            <div class="price-card__amount">$150</div>
+            <div class="price-card__cycle">/month</div>
+            <div class="price-card__divider"></div>
+            <div class="price-card__features">
+              <div class="price-card__feature">Weekly posts & updates</div>
+              <div class="price-card__feature">Review monitoring</div>
+              <div class="price-card__feature">Q&A management</div>
+            </div>
+            <a href="/contact-digital-marketing-agency/" class="btn btn-outline">Get Started</a>
+          </div>
+          <div class="price-card price-card--featured price-card--dark">
+            <div class="price-card__badge">Most Popular</div>
+            <div class="price-card__tier">Monthly</div>
+            <h4>GBP Authority</h4>
+            <div class="price-card__amount">$200</div>
+            <div class="price-card__cycle">/month</div>
+            <div class="price-card__divider"></div>
+            <div class="price-card__features">
+              <div class="price-card__feature">Weekly posts &amp; updates</div>
+              <div class="price-card__feature">Review monitoring &amp; alerts</div>
+              <div class="price-card__feature">Q&amp;A management</div>
+              <div class="price-card__feature">Photo optimization</div>
+              <div class="price-card__feature">Monthly performance report</div>
+              <div class="price-card__feature">Competitor GBP tracking</div>
+            </div>
+            <a href="/contact-digital-marketing-agency/#audit" class="btn btn-primary">Get Started</a>
+          </div>
+          <div class="price-card price-card--dark">
+            <div class="price-card__tier">One-Time</div>
+            <h4>Local Citations</h4>
+            <div class="price-card__amount">$200</div>
+            <div class="price-card__cycle">one-time</div>
+            <div class="price-card__divider"></div>
+            <div class="price-card__features">
+              <div class="price-card__feature">NAP consistency across 50+ directories</div>
+              <div class="price-card__feature">Yelp, BBB, Houzz & more</div>
+              <div class="price-card__feature">Citation audit included</div>
+            </div>
+            <a href="/contact-digital-marketing-agency/" class="btn btn-outline">Get Started</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ═══════════════════════════════════════════
+       PPC PRICING
+  ═══════════════════════════════════════════ -->
+  <section class="pricing-block pricing-block--base" id="ppc">
+    <div class="container">
+      <div class="pricing-block__header reveal">
+        <div class="pricing-block__header-left">
+          <span class="eyebrow">Pay Per Click</span>
+          <h2>PPC Management Plans</h2>
+          <p>Flat monthly management fee. Ad spend goes directly to Google — we never mark it up.</p>
+        </div>
+        <a href="/pay-per-click-advertising-iowa/" class="pricing-block__link">Full PPC Details →</a>
+      </div>
+
+      <div class="price-grid price-grid--5 reveal reveal-delay-1">
+        <div class="price-card">
+          <div class="price-card__tier">Entry</div>
+          <h4>Traffic</h4>
+          <div class="price-card__amount">$450</div>
+          <div class="price-card__cycle">/month mgmt</div>
+          <div class="price-card__sub">Up to $1,500/mo spend</div>
+          <div class="price-card__divider"></div>
+          <div class="price-card__features">
+            <div class="price-card__feature">Google Search Network</div>
+            <div class="price-card__feature">Campaign setup</div>
+            <div class="price-card__feature">Ad copy creation</div>
+            <div class="price-card__feature">Monthly reporting</div>
+          </div>
+          <a href="/contact-digital-marketing-agency/#audit" class="btn btn-outline">Get Started</a>
+        </div>
+        <div class="price-card">
+          <div class="price-card__tier">Growth</div>
+          <h4>Standard</h4>
+          <div class="price-card__amount">$850</div>
+          <div class="price-card__cycle">/month mgmt</div>
+          <div class="price-card__sub">Up to $4,000/mo spend</div>
+          <div class="price-card__divider"></div>
+          <div class="price-card__features">
+            <div class="price-card__feature">Google Search Network</div>
+            <div class="price-card__feature">Landing page optimization</div>
+            <div class="price-card__feature">Call tracking</div>
+            <div class="price-card__feature">Weekly reporting</div>
+          </div>
+          <a href="/contact-digital-marketing-agency/#audit" class="btn btn-outline">Get Started</a>
+        </div>
+        <div class="price-card price-card--featured">
+          <div class="price-card__badge">Most Popular</div>
+          <div class="price-card__tier">Accelerate</div>
+          <h4>Power</h4>
+          <div class="price-card__amount">$1,500</div>
+          <div class="price-card__cycle">/month mgmt</div>
+          <div class="price-card__sub">Up to $10,000/mo spend</div>
+          <div class="price-card__divider"></div>
+          <div class="price-card__features">
+            <div class="price-card__feature">Google + Bing Ads</div>
+            <div class="price-card__feature">Retargeting campaigns</div>
+            <div class="price-card__feature">Landing page design</div>
+            <div class="price-card__feature">Weekly reporting + call</div>
+          </div>
+          <a href="/contact-digital-marketing-agency/#audit" class="btn btn-primary">Get Started</a>
+        </div>
+        <div class="price-card">
+          <div class="price-card__tier">Scale</div>
+          <h4>Dynamic</h4>
+          <div class="price-card__amount">$2,500</div>
+          <div class="price-card__cycle">/month mgmt</div>
+          <div class="price-card__sub">Up to $20,000/mo spend</div>
+          <div class="price-card__divider"></div>
+          <div class="price-card__features">
+            <div class="price-card__feature">Google + Bing Ads</div>
+            <div class="price-card__feature">Multi-campaign mgmt</div>
+            <div class="price-card__feature">Display & retargeting</div>
+            <div class="price-card__feature">Bi-weekly strategy calls</div>
+          </div>
+          <a href="/contact-digital-marketing-agency/#audit" class="btn btn-outline">Get Started</a>
+        </div>
+        <div class="price-card">
+          <div class="price-card__tier">Dominate</div>
+          <h4>Ultimate</h4>
+          <div class="price-card__amount">$4,000</div>
+          <div class="price-card__cycle">/month mgmt</div>
+          <div class="price-card__sub">Up to $40,000/mo spend</div>
+          <div class="price-card__divider"></div>
+          <div class="price-card__features">
+            <div class="price-card__feature">Google + Bing Ads</div>
+            <div class="price-card__feature">Full funnel management</div>
+            <div class="price-card__feature">Dedicated strategist</div>
+            <div class="price-card__feature">Weekly strategy calls</div>
+          </div>
+          <a href="/contact-digital-marketing-agency/#audit" class="btn btn-outline">Get Started</a>
+        </div>
+      </div>
+      <p style="margin-top:1rem;font-size:0.78rem;color:var(--color-white-dim);">Ad spend is paid directly to Google/Bing — never marked up by Urban Niche Co.</p>
+    </div>
+  </section>
+
+
+  <!-- ═══════════════════════════════════════════
+       SOCIAL MEDIA PRICING
+  ═══════════════════════════════════════════ -->
+  <section class="pricing-block pricing-block--alt" id="social">
+    <div class="container">
+      <div class="pricing-block__header reveal">
+        <div class="pricing-block__header-left">
+          <span class="eyebrow">Social Media Marketing</span>
+          <h2>Social Media Plans</h2>
+          <p>Full-service social management — content, graphics, copy, and community. No hidden fees.</p>
+        </div>
+        <a href="/social-media-marketing-iowa-grow-your-brand-urban-niche-co/" class="pricing-block__link">Full Social Details →</a>
+      </div>
+
+      <div class="price-grid price-grid--3 reveal reveal-delay-1">
+        <div class="price-card price-card--dark">
+          <div class="price-card__tier">Starter</div>
+          <h4>Basic</h4>
+          <div class="price-card__amount">$300</div>
+          <div class="price-card__cycle">/month</div>
+          <div class="price-card__divider"></div>
+          <div class="price-card__features">
+            <div class="price-card__feature">1 platform managed</div>
+            <div class="price-card__feature">8 posts per month</div>
+            <div class="price-card__feature">Custom graphics & copy</div>
+            <div class="price-card__feature">Monthly report</div>
+          </div>
+          <a href="/contact-digital-marketing-agency/#audit" class="btn btn-outline">Get Started</a>
+        </div>
+        <div class="price-card price-card--featured price-card--dark">
+          <div class="price-card__badge">Most Popular</div>
+          <div class="price-card__tier">Growth</div>
+          <h4>Growth</h4>
+          <div class="price-card__amount">$550</div>
+          <div class="price-card__cycle">/month</div>
+          <div class="price-card__divider"></div>
+          <div class="price-card__features">
+            <div class="price-card__feature">2 platforms managed</div>
+            <div class="price-card__feature">16 posts per month</div>
+            <div class="price-card__feature">Custom graphics & copy</div>
+            <div class="price-card__feature">Community management</div>
+            <div class="price-card__feature">Monthly report</div>
+          </div>
+          <a href="/contact-digital-marketing-agency/#audit" class="btn btn-primary">Get Started</a>
+        </div>
+        <div class="price-card price-card--dark">
+          <div class="price-card__tier">Pro</div>
+          <h4>Authority</h4>
+          <div class="price-card__amount">$900</div>
+          <div class="price-card__cycle">/month</div>
+          <div class="price-card__divider"></div>
+          <div class="price-card__features">
+            <div class="price-card__feature">3 platforms managed</div>
+            <div class="price-card__feature">24 posts per month</div>
+            <div class="price-card__feature">Video content included</div>
+            <div class="price-card__feature">Full community management</div>
+            <div class="price-card__feature">Bi-weekly reports</div>
+          </div>
+          <a href="/contact-digital-marketing-agency/#audit" class="btn btn-outline">Get Started</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ═══════════════════════════════════════════ EMAIL MARKETING PRICING ═══════════════════════════════════════════ -->
+  <section class="pricing-block pricing-block--dark" id="email">
+    <div class="container">
+      <div class="pricing-block__header reveal">
+        <div class="pricing-block__header-left">
+          <span class="eyebrow">Email Marketing</span>
+          <h2>Email Marketing Plans</h2>
+          <p>Keep your name in front of every past and potential customer. Monthly campaigns that drive repeat calls and referrals.</p>
+        </div>
+        <a href="https://urbannicheco.com/email-marketing/" class="pricing-block__link">Full Email Marketing Details &rarr;</a>
+      </div>
+      <div class="price-grid price-grid--3 reveal reveal-delay-1">
+        <div class="price-card price-card--dark">
+          <div class="price-card__tier">Starter</div>
+          <h4>Basic</h4>
+          <div class="price-card__amount">$200</div>
+          <div class="price-card__cycle">/month</div>
+          <div class="price-card__divider"></div>
+          <div class="price-card__features">
+            <div class="price-card__feature">1 campaign per month</div>
+            <div class="price-card__feature">Custom email copy &amp; design</div>
+            <div class="price-card__feature">List management</div>
+            <div class="price-card__feature">Monthly performance report</div>
+          </div>
+          <a href="/contact-digital-marketing-agency/#audit" class="btn btn-outline">Get Started</a>
+        </div>
+        <div class="price-card price-card--featured price-card--dark">
+          <div class="price-card__badge">Most Popular</div>
+          <div class="price-card__tier">Growth</div>
+          <h4>Growth</h4>
+          <div class="price-card__amount">$350</div>
+          <div class="price-card__cycle">/month</div>
+          <div class="price-card__divider"></div>
+          <div class="price-card__features">
+            <div class="price-card__feature">2 campaigns per month</div>
+            <div class="price-card__feature">Custom email copy &amp; design</div>
+            <div class="price-card__feature">List segmentation</div>
+            <div class="price-card__feature">Automated follow-up sequence</div>
+            <div class="price-card__feature">Monthly performance report</div>
+          </div>
+          <a href="/contact-digital-marketing-agency/#audit" class="btn btn-primary">Get Started</a>
+        </div>
+        <div class="price-card price-card--dark">
+          <div class="price-card__tier">Authority</div>
+          <h4>Authority</h4>
+          <div class="price-card__amount">$550</div>
+          <div class="price-card__cycle">/month</div>
+          <div class="price-card__divider"></div>
+          <div class="price-card__features">
+            <div class="price-card__feature">4 campaigns per month</div>
+            <div class="price-card__feature">Full nurture sequence management</div>
+            <div class="price-card__feature">List segmentation &amp; cleanup</div>
+            <div class="price-card__feature">Automated follow-up sequences</div>
+            <div class="price-card__feature">A/B subject line testing</div>
+            <div class="price-card__feature">Bi-monthly performance report</div>
+          </div>
+          <a href="/contact-digital-marketing-agency/#audit" class="btn btn-outline">Get Started</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ═══════════════════════════════════════════ REPUTATION MANAGEMENT PRICING ═══════════════════════════════════════════ -->
+  <section class="pricing-block pricing-block--alt" id="reputation">
+    <div class="container">
+      <div class="pricing-block__header reveal">
+        <div class="pricing-block__header-left">
+          <span class="eyebrow">Reputation Management</span>
+          <h2>Reputation Management Plans</h2>
+          <p>Your online reputation is your most valuable sales tool. We monitor, protect, and build it every single month.</p>
+        </div>
+        <a href="https://urbannicheco.com/reputation-management/" class="pricing-block__link">Full Reputation Management Details &rarr;</a>
+      </div>
+      <div class="price-grid price-grid--3 reveal reveal-delay-1">
+        <div class="price-card price-card--dark">
+          <div class="price-card__tier">Starter</div>
+          <h4>Basic</h4>
+          <div class="price-card__amount">$150</div>
+          <div class="price-card__cycle">/month</div>
+          <div class="price-card__divider"></div>
+          <div class="price-card__features">
+            <div class="price-card__feature">Review platform monitoring</div>
+            <div class="price-card__feature">Monthly reputation report</div>
+            <div class="price-card__feature">Alert on new reviews</div>
+            <div class="price-card__feature">Guidance on response strategy</div>
+          </div>
+          <a href="/contact-digital-marketing-agency/#audit" class="btn btn-outline">Get Started</a>
+        </div>
+        <div class="price-card price-card--featured price-card--dark">
+          <div class="price-card__badge">Most Popular</div>
+          <div class="price-card__tier">Growth</div>
+          <h4>Growth</h4>
+          <div class="price-card__amount">$250</div>
+          <div class="price-card__cycle">/month</div>
+          <div class="price-card__divider"></div>
+          <div class="price-card__features">
+            <div class="price-card__feature">Review request campaigns</div>
+            <div class="price-card__feature">Response management</div>
+            <div class="price-card__feature">Review platform monitoring</div>
+            <div class="price-card__feature">Competitor reputation tracking</div>
+            <div class="price-card__feature">Monthly reputation report</div>
+          </div>
+          <a href="/contact-digital-marketing-agency/#audit" class="btn btn-primary">Get Started</a>
+        </div>
+        <div class="price-card price-card--dark">
+          <div class="price-card__tier">Authority</div>
+          <h4>Authority</h4>
+          <div class="price-card__amount">$400</div>
+          <div class="price-card__cycle">/month</div>
+          <div class="price-card__divider"></div>
+          <div class="price-card__features">
+            <div class="price-card__feature">Full reputation operations</div>
+            <div class="price-card__feature">Review request campaigns</div>
+            <div class="price-card__feature">Response management on all platforms</div>
+            <div class="price-card__feature">Competitor reputation tracking</div>
+            <div class="price-card__feature">Negative review suppression strategy</div>
+            <div class="price-card__feature">Bi-monthly reputation report</div>
+          </div>
+          <a href="/contact-digital-marketing-agency/#audit" class="btn btn-outline">Get Started</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ═══════════════════════════════════════════ WEBSITE DESIGN PRICING ═══════════════════════════════════════════ -->
+  <section class="pricing-block pricing-block--base" id="web">
+    <div class="container">
+      <div class="pricing-block__header reveal">
+        <div class="pricing-block__header-left">
+          <span class="eyebrow">Website Design &amp; Development</span>
+          <h2>Website Packages</h2>
+          <p>One-time build fees. Every package includes mobile-first design, SEO structure, and go-live support.</p>
+        </div>
+        <a href="/website-design-and-development/" class="pricing-block__link">Full Web Design Details &rarr;</a>
+      </div>
+      <div class="price-grid price-grid--4 reveal reveal-delay-1">
+        <div class="price-card">
+          <div class="price-card__tier">Starter</div>
+          <h4>HTML Starter</h4>
+          <div class="price-card__amount">$1,500</div>
+          <div class="price-card__cycle">one-time</div>
+          <div class="price-card__divider"></div>
+          <div class="price-card__features">
+            <div class="price-card__feature">3&ndash;5 custom pages</div>
+            <div class="price-card__feature">Mobile-first design</div>
+            <div class="price-card__feature">SEO-ready structure</div>
+            <div class="price-card__feature">Contact forms &amp; CTAs</div>
+            <div class="price-card__feature">Hosting &amp; go-live support</div>
+          </div>
+          <a href="https://urbannicheco.com/contact-digital-marketing-agency/" class="btn btn-outline">Get Started</a>
+        </div>
+        <div class="price-card price-card--featured">
+          <div class="price-card__badge">Most Popular</div>
+          <div class="price-card__tier">Small Business</div>
+          <h4>HTML Standard</h4>
+          <div class="price-card__amount">$2,500</div>
+          <div class="price-card__cycle">one-time</div>
+          <div class="price-card__divider"></div>
+          <div class="price-card__features">
+            <div class="price-card__feature">6&ndash;10 custom pages</div>
+            <div class="price-card__feature">Mobile-first design</div>
+            <div class="price-card__feature">JavaScript interactions</div>
+            <div class="price-card__feature">Advanced SEO structure</div>
+            <div class="price-card__feature">Lead capture &amp; forms</div>
+            <div class="price-card__feature">Hosting &amp; go-live support</div>
+          </div>
+          <a href="https://urbannicheco.com/contact-digital-marketing-agency/" class="btn btn-primary">Get Started</a>
+        </div>
+        <div class="price-card">
+          <div class="price-card__tier">Custom Build</div>
+          <h4>HTML Advanced</h4>
+          <div class="price-card__amount">$4,000</div>
+          <div class="price-card__cycle">one-time</div>
+          <div class="price-card__divider"></div>
+          <div class="price-card__features">
+            <div class="price-card__feature">10+ fully custom pages</div>
+            <div class="price-card__feature">Animations &amp; interactions</div>
+            <div class="price-card__feature">CRM integration</div>
+            <div class="price-card__feature">Custom forms &amp; lead capture</div>
+            <div class="price-card__feature">Advanced SEO structure</div>
+            <div class="price-card__feature">Priority go-live support</div>
+          </div>
+          <a href="https://urbannicheco.com/contact-digital-marketing-agency/" class="btn btn-outline">Get Started</a>
+        </div>
+        <div class="price-card">
+          <div class="price-card__tier">One-Time</div>
+          <h4>Landing Page</h4>
+          <div class="price-card__amount">$500</div>
+          <div class="price-card__cycle">one-time</div>
+          <div class="price-card__divider"></div>
+          <div class="price-card__features">
+            <div class="price-card__feature">Single conversion page</div>
+            <div class="price-card__feature">Custom HTML/CSS</div>
+            <div class="price-card__feature">Mobile-first design</div>
+            <div class="price-card__feature">SEO-ready structure</div>
+            <div class="price-card__feature">Go-live support</div>
+          </div>
+          <a href="https://urbannicheco.com/contact-digital-marketing-agency/" class="btn btn-outline">Get Started</a>
+        </div>
+      </div>
+      <p style="margin-top:1rem;font-size:0.78rem;color:var(--color-white-dim);">Also available: Shopify store builds starting at $2,500. <a href="https://urbannicheco.com/contact-digital-marketing-agency/" style="color:var(--color-accent);">Contact us &rarr;</a></p>
+    </div>
+  </section>
+
+
+  <!-- ═══════════════════════════════════════════
+       MAINTENANCE PRICING
+  ═══════════════════════════════════════════ -->
+  <section class="pricing-block pricing-block--alt" id="maintenance">
+    <div class="container">
+      <div class="pricing-block__header reveal">
+        <div class="pricing-block__header-left">
+          <span class="eyebrow">Website Maintenance & Optimization</span>
+          <h2>Maintenance Plans</h2>
+          <p>Keep your site fast, secure, and up to date every month without lifting a finger.</p>
+        </div>
+        <a href="/website-design-and-development/#maintenance" class="pricing-block__link">Full Maintenance Details →</a>
+      </div>
+
+      <div class="price-grid price-grid--4 reveal reveal-delay-1">
+        <div class="price-card price-card--dark">
+          <div class="price-card__tier">WordPress</div>
+          <h4>WP Maintenance — Starter</h4>
+          <div class="price-card__amount">$40</div>
+          <div class="price-card__cycle">/month</div>
+          <div class="price-card__divider"></div>
+          <div class="price-card__features">
+            <div class="price-card__feature">Plugin & theme updates</div>
+            <div class="price-card__feature">Uptime monitoring</div>
+            <div class="price-card__feature">Monthly backups</div>
+            <div class="price-card__feature">Basic security</div>
+          </div>
+          <a href="/contact-digital-marketing-agency/" class="btn btn-outline">Get Started</a>
+        </div>
+        <div class="price-card price-card--dark">
+          <div class="price-card__tier">WordPress</div>
+          <h4>WP Maintenance — Specialized</h4>
+          <div class="price-card__amount">$75</div>
+          <div class="price-card__cycle">/month</div>
+          <div class="price-card__divider"></div>
+          <div class="price-card__features">
+            <div class="price-card__feature">Everything in Starter</div>
+            <div class="price-card__feature">Performance optimization</div>
+            <div class="price-card__feature">Content updates</div>
+            <div class="price-card__feature">Quarterly SEO audit</div>
+          </div>
+          <a href="/contact-digital-marketing-agency/" class="btn btn-outline">Get Started</a>
+        </div>
+        <div class="price-card price-card--dark">
+          <div class="price-card__tier">Speed</div>
+          <h4>Page Speed — Starter</h4>
+          <div class="price-card__amount">$75</div>
+          <div class="price-card__cycle">/month</div>
+          <div class="price-card__divider"></div>
+          <div class="price-card__features">
+            <div class="price-card__feature">Monthly speed audit</div>
+            <div class="price-card__feature">Image compression</div>
+            <div class="price-card__feature">Caching config</div>
+            <div class="price-card__feature">Core Web Vitals monitoring</div>
+          </div>
+          <a href="/contact-digital-marketing-agency/" class="btn btn-outline">Get Started</a>
+        </div>
+        <div class="price-card price-card--dark">
+          <div class="price-card__tier">Speed</div>
+          <h4>Page Speed — Specialized</h4>
+          <div class="price-card__amount">$100</div>
+          <div class="price-card__cycle">/month</div>
+          <div class="price-card__divider"></div>
+          <div class="price-card__features">
+            <div class="price-card__feature">Everything in Starter Speed</div>
+            <div class="price-card__feature">Server-level optimization</div>
+            <div class="price-card__feature">CDN setup & management</div>
+            <div class="price-card__feature">Monthly performance report</div>
+          </div>
+          <a href="/contact-digital-marketing-agency/" class="btn btn-outline">Get Started</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ═══════════════════════════════════════════
+       À LA CARTE PRICING
+  ═══════════════════════════════════════════ -->
+  <section class="pricing-block pricing-block--dark" id="alacarte">
+    <div class="container">
+      <div class="pricing-block__header reveal">
+        <div class="pricing-block__header-left">
+          <span class="eyebrow">À La Carte Marketing Services</span>
+          <h2>Individual Services</h2>
+          <p>No retainer, no minimums. Order exactly what you need — one item or ten.</p>
+        </div>
+        <a href="/marketing/" class="pricing-block__link">Full À La Carte Details →</a>
+      </div>
+
+      <div class="alacarte-grid reveal reveal-delay-1">
+                <div class="alacarte-item">
+          <span class="alacarte-item__name">Social Profiles Creation</span>
+          <div class="alacarte-item__right">
+            <span class="alacarte-item__price">$40</span>
+            <span class="alacarte-item__type">One-Time</span>
+          </div>
+        </div>
+        <div class="alacarte-item">
+          <span class="alacarte-item__name">Keyword Research</span>
+          <div class="alacarte-item__right">
+            <span class="alacarte-item__price">$50</span>
+            <span class="alacarte-item__type">One-Time</span>
+          </div>
+        </div>
+        <div class="alacarte-item">
+          <span class="alacarte-item__name">Website Content (per page)</span>
+          <div class="alacarte-item__right">
+            <span class="alacarte-item__price">$75</span>
+            <span class="alacarte-item__type">One-Time</span>
+          </div>
+        </div>
+        <div class="alacarte-item">
+          <span class="alacarte-item__name">On-Page SEO Optimization</span>
+          <div class="alacarte-item__right">
+            <span class="alacarte-item__price">$100</span>
+            <span class="alacarte-item__type">One-Time</span>
+          </div>
+        </div>
+        <div class="alacarte-item">
+          <span class="alacarte-item__name">Guest Blog Post Writing & Posting</span>
+          <div class="alacarte-item__right">
+            <span class="alacarte-item__price">$100</span>
+            <span class="alacarte-item__type">One-Time</span>
+          </div>
+        </div>
+        <div class="alacarte-item">
+          <span class="alacarte-item__name">Informational Content Writing & Distribution</span>
+          <div class="alacarte-item__right">
+            <span class="alacarte-item__price">$100</span>
+            <span class="alacarte-item__type">One-Time</span>
+          </div>
+        </div>
+        <div class="alacarte-item">
+          <span class="alacarte-item__name">Q&A Writing & Posting</span>
+          <div class="alacarte-item__right">
+            <span class="alacarte-item__price">$100</span>
+            <span class="alacarte-item__type">One-Time</span>
+          </div>
+        </div>
+        <div class="alacarte-item">
+          <span class="alacarte-item__name">Social Posts (batch)</span>
+          <div class="alacarte-item__right">
+            <span class="alacarte-item__price">$100</span>
+            <span class="alacarte-item__type">One-Time</span>
+          </div>
+        </div>
+        <div class="alacarte-item">
+          <span class="alacarte-item__name">Additional Website Features</span>
+          <div class="alacarte-item__right">
+            <span class="alacarte-item__price">$50</span>
+            <span class="alacarte-item__type">One-Time</span>
+          </div>
+        </div>
+        <div class="alacarte-item">
+          <span class="alacarte-item__name">Press Release Creation & Distribution</span>
+          <div class="alacarte-item__right">
+            <span class="alacarte-item__price">$125</span>
+            <span class="alacarte-item__type">One-Time</span>
+          </div>
+        </div>
+                        <div class="alacarte-item">
+          <span class="alacarte-item__name">Directory Submission (50+ directories)</span>
+          <div class="alacarte-item__right">
+            <span class="alacarte-item__price">$250</span>
+            <span class="alacarte-item__type">One-Time</span>
+          </div>
+        </div>
+                                <div class="alacarte-item">
+          <span class="alacarte-item__name">1-Hour Private Consulting</span>
+          <div class="alacarte-item__right">
+            <span class="alacarte-item__price">$500</span>
+            <span class="alacarte-item__type">One-Time</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ═══════════════════════════════════════════
+       AI CONSULTING
+  ═══════════════════════════════════════════ -->
+  <section class="pricing-block pricing-block--base" id="ai">
+    <div class="container">
+      <div class="pricing-block__header reveal">
+        <div class="pricing-block__header-left">
+          <span class="eyebrow">AI Consulting</span>
+          <h2>AI Strategy & Implementation</h2>
+          <p>Custom-scoped per project. Every engagement starts with a free discovery call.</p>
+        </div>
+        <a href="/ai-consulting-services/" class="pricing-block__link">Full AI Consulting Details →</a>
+      </div>
+
+      <div class="price-grid price-grid--3 reveal reveal-delay-1">
+        <div class="price-card">
+          <div class="price-card__tier">Start Here</div>
+          <h4>Free Discovery Call</h4>
+          <div class="price-card__amount">$0</div>
+          <div class="price-card__cycle">30-minute session</div>
+          <div class="price-card__divider"></div>
+          <div class="price-card__features">
+            <div class="price-card__feature">Assess your current tools & workflow</div>
+            <div class="price-card__feature">Identify your biggest time leaks</div>
+            <div class="price-card__feature">Outline the right AI systems</div>
+            <div class="price-card__feature">Walk away with a clear action plan</div>
+          </div>
+          <a href="https://calendly.com/urbanniche" class="btn btn-primary" target="_blank" rel="noopener">Book Free Call →</a>
+        </div>
+        <div class="price-card price-card--featured">
+          <div class="price-card__badge">Most Requested</div>
+          <div class="price-card__tier">Full Implementation</div>
+          <h4>Custom AI Build</h4>
+          <div class="price-card__amount">Custom</div>
+          <div class="price-card__cycle">scoped per project</div>
+          <div class="price-card__divider"></div>
+          <div class="price-card__features">
+            <div class="price-card__feature">Chatbot & lead capture systems</div>
+            <div class="price-card__feature">Workflow & CRM automation</div>
+            <div class="price-card__feature">Proposal & document automation</div>
+            <div class="price-card__feature">Reporting dashboard setup</div>
+            <div class="price-card__feature">Team training & documentation</div>
+          </div>
+          <a href="/contact-digital-marketing-agency/" class="btn btn-primary">Get a Quote →</a>
+        </div>
+        <div class="price-card">
+          <div class="price-card__tier">One-On-One</div>
+          <h4>Private Consulting Hour</h4>
+          <div class="price-card__amount">$500</div>
+          <div class="price-card__cycle">per session</div>
+          <div class="price-card__divider"></div>
+          <div class="price-card__features">
+            <div class="price-card__feature">Focused strategy session</div>
+            <div class="price-card__feature">Bring your specific problems</div>
+            <div class="price-card__feature">Clear prioritized action plan</div>
+            <div class="price-card__feature">Recorded & documented</div>
+          </div>
+          <a href="/contact-digital-marketing-agency/" class="btn btn-outline">Book Session</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ═══════════════════════════════════════════ AI LEAD CAPTURE PRICING ═══════════════════════════════════════════ -->
+  <section class="pricing-block pricing-block--dark" id="ailead">
+    <div class="container">
+      <div class="pricing-block__header reveal">
+        <div class="pricing-block__header-left">
+          <span class="eyebrow">AI Lead Capture &amp; Follow-Up</span>
+          <h2>AI Lead Capture &amp; Follow-Up</h2>
+          <p>Never lose a lead because you were on a job site. We build and run automated systems that respond to every inquiry in minutes — 24/7, even when you're knee deep in a project.</p>
+        </div>
+        <a href="https://urbannicheco.com/ai-consulting-services/" class="pricing-block__link">Full AI Consulting Details &rarr;</a>
+      </div>
+      <div class="price-grid price-grid--3 reveal reveal-delay-1">
+        <div class="price-card price-card--dark">
+          <div class="price-card__tier">Starter</div>
+          <h4>Basic Automation</h4>
+          <div class="price-card__amount">$300</div>
+          <div class="price-card__cycle">/month</div>
+          <div class="price-card__divider"></div>
+          <div class="price-card__features">
+            <div class="price-card__feature">Automated text &amp; email follow-up</div>
+            <div class="price-card__feature">Lead notification system</div>
+            <div class="price-card__feature">Basic CRM integration</div>
+            <div class="price-card__feature">Monthly performance report</div>
+          </div>
+          <a href="/contact-digital-marketing-agency/#audit" class="btn btn-outline">Get Started</a>
+        </div>
+        <div class="price-card price-card--featured price-card--dark">
+          <div class="price-card__badge">Most Popular</div>
+          <div class="price-card__tier">Growth</div>
+          <h4>Smart Follow-Up</h4>
+          <div class="price-card__amount">$500</div>
+          <div class="price-card__cycle">/month</div>
+          <div class="price-card__divider"></div>
+          <div class="price-card__features">
+            <div class="price-card__feature">Website chatbot installation</div>
+            <div class="price-card__feature">Automated text &amp; email sequences</div>
+            <div class="price-card__feature">Lead scoring &amp; routing</div>
+            <div class="price-card__feature">CRM integration &amp; management</div>
+            <div class="price-card__feature">Bi-monthly performance report</div>
+          </div>
+          <a href="/contact-digital-marketing-agency/#audit" class="btn btn-primary">Get Started</a>
+        </div>
+        <div class="price-card price-card--dark">
+          <div class="price-card__tier">Authority</div>
+          <h4>Full AI Stack</h4>
+          <div class="price-card__amount">$800</div>
+          <div class="price-card__cycle">/month</div>
+          <div class="price-card__divider"></div>
+          <div class="price-card__features">
+            <div class="price-card__feature">Custom website chatbot</div>
+            <div class="price-card__feature">Multi-channel automated follow-up</div>
+            <div class="price-card__feature">Lead scoring &amp; routing</div>
+            <div class="price-card__feature">Full CRM integration &amp; management</div>
+            <div class="price-card__feature">Appointment booking automation</div>
+            <div class="price-card__feature">After-hours response system</div>
+            <div class="price-card__feature">Monthly strategy call</div>
+            <div class="price-card__feature">Bi-monthly performance report</div>
+          </div>
+          <a href="/contact-digital-marketing-agency/#audit" class="btn btn-outline">Get Started</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ═══════════════════════════════════════════
+       PRICING FAQ
+  ═══════════════════════════════════════════ -->
+  <section class="section pricing-faq">
+    <div class="container">
+      <div class="section-header section-header--center reveal">
+        <span class="eyebrow">Common Questions</span>
+        <h2>Pricing FAQ.</h2>
+      </div>
+
+      <div class="faq-grid">
+        <div class="faq-item reveal reveal-delay-1">
+          <h5>Are there long-term contracts?</h5>
+          <p>No. All of our monthly services are month-to-month. We earn your business with results, not lock-in clauses. Cancel anytime with 30 days notice.</p>
+        </div>
+        <div class="faq-item reveal reveal-delay-2">
+          <h5>Do you mark up ad spend?</h5>
+          <p>Never. Your Google and Bing ad spend goes directly to those platforms. You pay us a flat management fee — your ad budget is yours and always 100% transparent.</p>
+        </div>
+        <div class="faq-item reveal reveal-delay-1">
+          <h5>Can I combine multiple services?</h5>
+          <p>Absolutely — and we'd recommend it. Clients who bundle SEO with PPC or social media see compounding results. Contact us to discuss a custom package.</p>
+        </div>
+        <div class="faq-item reveal reveal-delay-2">
+          <h5>What's included in the free audit?</h5>
+          <p>A full review of your website speed, SEO health, local presence, and competitor positioning. No cost, no commitment — just a clear picture of where you stand.</p>
+        </div>
+        <div class="faq-item reveal reveal-delay-1">
+          <h5>How quickly can I get started?</h5>
+          <p>Fast. Most clients are onboarded within 3–5 business days. PPC campaigns can go live in under a week. Start with a free audit and we move immediately.</p>
+        </div>
+        <div class="faq-item reveal reveal-delay-2">
+          <h5>Do you work with businesses outside Iowa?</h5>
+          <p>Yes — we work with contractors across the US. Our contractor-first focus means we understand your trade regardless of where you're based. Location doesn't limit what we can do.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ═══════════════════════════════════════════
+       BOTTOM CTA
+  ═══════════════════════════════════════════ -->
+  <section class="section pricing-cta">
+    <div class="container">
+      <div class="section-header section-header--center reveal">
+        <span class="eyebrow">Ready to Start?</span>
+        <h2>Not Sure Where to Begin?<br>We'll Figure It Out Together.</h2>
+        <p style="margin: 0 auto;">Start with a free audit and we'll tell you exactly which services will move the needle most for your business — no pressure, no guesswork.</p>
+      </div>
+
+      <div class="pricing-cta__inner" style="margin-top: var(--space-lg);">
+        <div class="cta-option cta-option--featured reveal reveal-delay-1">
+          <div class="cta-option__icon">🔍</div>
+          <h3>Get a Free Website Audit</h3>
+          <p>We'll grade your site on speed, SEO, mobile, and conversion — and tell you exactly what we'd do first.</p>
+          <a href="/contact-digital-marketing-agency/#audit" class="btn btn-primary btn-lg">Claim Free Audit →</a>
+        </div>
+        <div class="cta-option reveal reveal-delay-2">
+          <div class="cta-option__icon">💬</div>
+          <h3>Just Want to Talk?</h3>
+          <p>No audit needed. Tell us where you are and what you're trying to achieve — we'll point you in the right direction.</p>
+          <a href="/contact-digital-marketing-agency/" class="btn btn-outline btn-lg">Contact Our Team →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ═══════════════════════════════════════════
+       FOOTER
+  ═══════════════════════════════════════════ -->
+  <?php include '/dom746073/wp-content/themes/divi-child/unc-footer.php'; ?>
+
+
+  <script>
+    function showTab(tabId, btn, group) {
+      document.querySelectorAll('#' + group + ' .tab-content').forEach(c => c.classList.remove('active'));
+      document.querySelectorAll('#' + group + ' .pricing-tab').forEach(t => t.classList.remove('active'));
+      document.getElementById(tabId).classList.add('active');
+      btn.classList.add('active');
+    }
+
+    const nav = document.getElementById('mainNav');
+    window.addEventListener('scroll', () => {
+      nav.classList.toggle('scrolled', window.scrollY > 40);
+    });
+    const hamburger = document.getElementById('hamburger');
+    const mobileNav = document.getElementById('mobileNav');
+    hamburger.addEventListener('click', () => {
+      mobileNav.classList.toggle('open');
+    });
+    const reveals = document.querySelectorAll('.reveal');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) entry.target.classList.add('visible');
+      });
+    }, { threshold: 0.12 });
+    reveals.forEach(el => observer.observe(el));
+  </script>
+
+</body>
+</html>

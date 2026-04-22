@@ -1,0 +1,616 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Marketing tips, strategies & insights for Iowa contractors. The Urban Niche Co. blog covers SEO, ads, AI tools & growing your home service business.">
+  <title>Blog | Urban Niche Co.</title>
+  <link rel="stylesheet" href="/wp-content/themes/divi-child/unc/style.css" />
+  <link rel="icon" type="image/png" href="assets/favicon.png" />
+
+  <style>
+    .page-hero {
+      padding-top: calc(var(--nav-height) + var(--space-xl));
+      padding-bottom: var(--space-lg);
+      background: var(--color-dark);
+      position: relative;
+      overflow: hidden;
+      text-align: center;
+    }
+
+    .page-hero::before {
+      content: '';
+      position: absolute;
+      top: -180px; left: 50%;
+      transform: translateX(-50%);
+      width: 600px; height: 400px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(232,101,26,0.07) 0%, transparent 68%);
+      pointer-events: none;
+    }
+
+    .page-hero__inner { position: relative; max-width: 640px; margin: 0 auto; }
+    .page-hero h1 { margin: 0.75rem 0 1rem; }
+    .page-hero p  { font-size: 1rem; color: var(--color-white-dim); max-width: 50ch; margin: 0 auto; }
+
+    /* Blog layout */
+    .blog-section { background: var(--color-black); }
+
+    .blog-inner {
+      display: grid;
+      grid-template-columns: 1fr 320px;
+      gap: var(--space-lg);
+      align-items: start;
+    }
+
+    /* Post cards */
+    .post-card {
+      background: var(--color-dark-2);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      transition: all var(--transition-base);
+      display: block;
+      text-decoration: none;
+      color: inherit;
+      margin-bottom: 1.5rem;
+    }
+
+    .post-card:hover {
+      border-color: rgba(232,101,26,0.3);
+      transform: translateY(-4px);
+    }
+
+    .post-card--featured {
+      border-color: var(--color-accent);
+    }
+
+    .post-card__image {
+      width: 100%;
+      height: 220px;
+      background: var(--color-dark-3);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 3rem;
+      border-bottom: 1px solid var(--color-border);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .post-card--featured .post-card__image {
+      height: 280px;
+    }
+
+    .post-card__image-bg {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, var(--color-dark-3) 0%, rgba(232,101,26,0.08) 100%);
+    }
+
+    .post-card__image-icon {
+      position: relative;
+      z-index: 1;
+      font-size: 3.5rem;
+    }
+
+    .post-card__featured-badge {
+      position: absolute;
+      top: 1rem; left: 1rem;
+      font-family: var(--font-display);
+      font-size: 0.58rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      padding: 0.25rem 0.75rem;
+      border-radius: var(--radius-pill);
+      background: var(--color-accent);
+      color: var(--color-white);
+      z-index: 2;
+    }
+
+    .post-card__body { padding: 1.75rem 2rem; }
+
+    .post-card__meta {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      margin-bottom: 0.85rem;
+    }
+
+    .post-card__category {
+      font-family: var(--font-display);
+      font-size: 0.6rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--color-accent);
+      background: var(--color-accent-glow);
+      border: 1px solid rgba(232,101,26,0.25);
+      border-radius: var(--radius-pill);
+      padding: 0.2rem 0.65rem;
+    }
+
+    .post-card__date {
+      font-size: 0.72rem;
+      color: var(--color-white-dim);
+      opacity: 0.6;
+    }
+
+    .post-card h2 {
+      font-size: clamp(1.1rem, 2.5vw, 1.5rem);
+      margin-bottom: 0.75rem;
+      line-height: 1.25;
+      transition: color var(--transition-fast);
+    }
+
+    .post-card:hover h2 { color: var(--color-accent); }
+
+    .post-card p {
+      font-size: 0.9rem;
+      margin-bottom: 1.25rem;
+    }
+
+    .post-card__read {
+      font-family: var(--font-display);
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--color-accent);
+      transition: letter-spacing var(--transition-fast);
+    }
+
+    .post-card:hover .post-card__read { letter-spacing: 0.14em; }
+
+    /* Sidebar */
+    .blog-sidebar {
+      position: sticky;
+      top: calc(var(--nav-height) + 2rem);
+      display: flex;
+      flex-direction: column;
+      gap: 1.25rem;
+    }
+
+    .sidebar-widget {
+      background: var(--color-dark-2);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-md);
+      padding: 1.5rem;
+    }
+
+    .sidebar-widget__title {
+      font-family: var(--font-display);
+      font-size: 0.65rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--color-accent);
+      margin-bottom: 1.1rem;
+      display: block;
+    }
+
+    .sidebar-post {
+      display: flex;
+      gap: 0.75rem;
+      align-items: flex-start;
+      padding: 0.75rem 0;
+      border-bottom: 1px solid var(--color-border);
+      text-decoration: none;
+      color: inherit;
+      transition: all var(--transition-fast);
+    }
+
+    .sidebar-post:last-child { border-bottom: none; padding-bottom: 0; }
+    .sidebar-post:first-child { padding-top: 0; }
+    .sidebar-post:hover h6 { color: var(--color-accent); }
+
+    .sidebar-post__icon {
+      font-size: 1.25rem;
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+
+    .sidebar-post h6 {
+      font-size: 0.82rem;
+      font-weight: 600;
+      line-height: 1.3;
+      color: var(--color-white);
+      margin-bottom: 0.2rem;
+      transition: color var(--transition-fast);
+    }
+
+    .sidebar-post__date {
+      font-size: 0.68rem;
+      color: var(--color-white-dim);
+      opacity: 0.6;
+    }
+
+    .sidebar-cat {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0.6rem 0;
+      border-bottom: 1px solid var(--color-border);
+      font-size: 0.82rem;
+      color: var(--color-white-dim);
+      text-decoration: none;
+      transition: color var(--transition-fast);
+    }
+
+    .sidebar-cat:last-child { border-bottom: none; }
+    .sidebar-cat:hover { color: var(--color-accent); }
+
+    .sidebar-cat__count {
+      font-family: var(--font-display);
+      font-size: 0.68rem;
+      font-weight: 700;
+      color: var(--color-accent);
+    }
+
+    .sidebar-cta {
+      background: linear-gradient(135deg, var(--color-dark-2) 0%, rgba(232,101,26,0.06) 100%);
+      border-color: rgba(232,101,26,0.3);
+    }
+
+    .sidebar-cta h5 { margin-bottom: 0.5rem; font-size: 0.95rem; }
+    .sidebar-cta p  { font-size: 0.8rem; margin-bottom: 1.1rem; }
+    .sidebar-cta .btn { width: 100%; justify-content: center; font-size: 0.7rem; padding: 0.6rem 1rem; }
+
+    /* Responsive */
+    @media (max-width: 1024px) {
+      .blog-inner { grid-template-columns: 1fr; }
+      .blog-sidebar { position: static; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav class="nav" id="mainNav">
+  <div class="nav__inner">
+    <a href="https://urbannicheco.com" class="nav__logo">
+      <img class="nav__logo-img" src="https://urbannicheco.com/wp-content/uploads/2026/04/99f521e4-9887-408b-b987-5822ba896f1d.png" alt="Urban Niche Co.">
+      Urban<span>Niche</span>&nbsp;Co.
+    </a>
+    <ul class="nav__links">
+      <li><a href="https://urbannicheco.com" class="nav__link">Home</a></li>
+      <li class="nav__dropdown">
+        <a href="https://urbannicheco.com/marketing-services-iowa" class="nav__link">Services &#9660;</a>
+        <div class="nav__dropdown-menu">
+          <a href="https://urbannicheco.com/marketing-services-iowa" class="nav__dropdown-item">All Services</a>
+          <a href="https://urbannicheco.com/seo-services-des-moines-iowa" class="nav__dropdown-item">SEO</a>
+          <a href="https://urbannicheco.com/pay-per-click-advertising-iowa" class="nav__dropdown-item">Pay Per Click</a>
+          <a href="https://urbannicheco.com/social-media-marketing-iowa-grow-your-brand-urban-niche-co" class="nav__dropdown-item">Social Media Marketing</a>
+          <a href="https://urbannicheco.com/website-design-and-development" class="nav__dropdown-item">Website Design &amp; Dev</a>
+          <a href="https://urbannicheco.com/marketing" class="nav__dropdown-item">Marketing Services</a>
+          <a href="https://urbannicheco.com/branded-merchandise-iowa" class="nav__dropdown-item">Branded Merchandise</a>
+          <a href="https://urbannicheco.com/ai-consulting-services" class="nav__dropdown-item">AI Consulting</a>
+          <a href="https://urbannicheco.com/saas-custom-app-development" class="nav__dropdown-item">Custom App &amp; SaaS Dev</a>
+          <a href="https://urbannicheco.com/a-la-carte" class="nav__dropdown-item">A La Carte</a>
+        </div>
+      </li>
+      <li><a href="https://urbannicheco.com/pricing" class="nav__link">Pricing</a></li>
+      <li><a href="https://urbannicheco.com/about-digital-marketing-agency-midwest" class="nav__link">About</a></li>
+      <li><a href="/faq/" class="nav__link">FAQ</a></li>
+    </ul>
+    <div class="nav__cta">
+      <a href="https://urbannicheco.com/contact-digital-marketing-agency" class="btn btn-outline btn-sm">Contact Us</a>
+      <a href="https://urbannicheco.com/contact-digital-marketing-agency/" class="btn btn-primary btn-sm">Free Website Audit</a>
+    </div>
+    <button class="nav__hamburger" id="hamburger" aria-label="Open menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+<div class="nav__mobile" id="mobileNav">
+  <a href="https://urbannicheco.com" class="nav__mobile-link">Home</a>
+  <a href="https://urbannicheco.com/marketing-services-iowa" class="nav__mobile-link">Services</a>
+  <a href="https://urbannicheco.com/marketing-services-iowa" class="nav__mobile-link nav__mobile-sub">&#8618; All Services</a>
+  <a href="https://urbannicheco.com/seo-services-des-moines-iowa" class="nav__mobile-link nav__mobile-sub">&#8618; SEO</a>
+  <a href="https://urbannicheco.com/pay-per-click-advertising-iowa" class="nav__mobile-link nav__mobile-sub">&#8618; Pay Per Click</a>
+  <a href="https://urbannicheco.com/social-media-marketing-iowa-grow-your-brand-urban-niche-co" class="nav__mobile-link nav__mobile-sub">&#8618; Social Media Marketing</a>
+  <a href="https://urbannicheco.com/website-design-and-development" class="nav__mobile-link nav__mobile-sub">&#8618; Website Design &amp; Dev</a>
+  <a href="https://urbannicheco.com/marketing" class="nav__mobile-link nav__mobile-sub">&#8618; Marketing Services</a>
+  <a href="https://urbannicheco.com/branded-merchandise-iowa" class="nav__mobile-link nav__mobile-sub">&#8618; Branded Merchandise</a>
+  <a href="https://urbannicheco.com/ai-consulting-services" class="nav__mobile-link nav__mobile-sub">&#8618; AI Consulting</a>
+  <a href="https://urbannicheco.com/saas-custom-app-development" class="nav__mobile-link nav__mobile-sub">&#8618; Custom App &amp; SaaS Dev</a>
+  <a href="https://urbannicheco.com/a-la-carte" class="nav__mobile-link nav__mobile-sub">&#8618; A La Carte</a>
+  <a href="https://urbannicheco.com/pricing" class="nav__mobile-link">Pricing</a>
+  <a href="https://urbannicheco.com/about-digital-marketing-agency-midwest" class="nav__mobile-link">About</a>
+  <a href="https://urbannicheco.com/faq" class="nav__mobile-link">FAQ</a>
+  <a href="https://urbannicheco.com/contact-digital-marketing-agency" class="nav__mobile-link">Contact Us</a>
+  <a href="https://urbannicheco.com/contact-digital-marketing-agency/" class="btn btn-primary">Free Website Audit</a>
+</div>
+
+
+  <!-- HERO -->
+  <section class="page-hero noise-overlay">
+    <div class="container page-hero__inner">
+      <span class="eyebrow reveal">Insights & Strategy</span>
+      <h1 class="reveal reveal-delay-1">Contractor Marketing Tips & Strategies — The Urban Niche <span class="text-accent">Blog</span></h1>
+      <p class="reveal reveal-delay-2">Digital marketing tips, AI strategy, contractor growth insights, and real talk from the team building it all.</p>
+    </div>
+  </section>
+
+
+  <!-- BLOG -->
+  <section class="section blog-section">
+    <div class="container">
+      <div class="blog-inner">
+
+        <!-- Posts -->
+        <main>
+
+          <a href="/blog-contractor-invisible-online/" class="post-card reveal">
+            <div class="post-card__image">
+              <div class="post-card__image-bg"></div>
+              <div class="post-card__image-icon">🔍</div>
+            </div>
+            <div class="post-card__body">
+              <div class="post-card__meta">
+                <span class="post-card__category">SEO &amp; Marketing</span>
+                <span class="post-card__date">Apr 14, 2026</span>
+              </div>
+              <h2>Why Your Contracting Business Is Invisible Online (And How to Fix It)</h2>
+              <p>Most contractors are invisible online and don't even know it. Here's exactly why it's happening and what you can do to fix it starting today.</p>
+              <span class="post-card__link">Read Article →</span>
+            </div>
+          </a>
+
+          <!-- Post 2 — Newest first -->
+          <a href="/screen-printing-embroidery-and-promotional-products-tips-to-grow-your-brand/" class="post-card post-card--featured reveal">
+            <div class="post-card__image">
+              <div class="post-card__image-bg"></div>
+              <div class="post-card__image-icon">👕</div>
+            </div>
+            <div class="post-card__body">
+              <div class="post-card__meta">
+                <span class="post-card__category">Promotional Products</span>
+                <span class="post-card__date">Apr 7, 2026</span>
+              </div>
+              <h2>Screen Printing, Embroidery and Promotional Products: Tips to Grow Your Brand</h2>
+              <p>Promotional products remain one of the most effective ways to keep your brand in front of customers. From custom screen-printed t-shirts to embroidered hats and branded merchandise, these tangible marketing tools create lasting impressions that digital ads simply cannot match.</p>
+              <span class="post-card__read">Read Article →</span>
+            </div>
+          </a>
+
+          <!-- Post 1 -->
+          <a href="/ai-market-trends-2026/" class="post-card reveal reveal-delay-1">
+            <div class="post-card__image">
+              <div class="post-card__image-bg"></div>
+              <div class="post-card__image-icon">🤖</div>
+            </div>
+            <div class="post-card__body">
+              <div class="post-card__meta">
+                <span class="post-card__category">AI & Technology</span>
+                <span class="post-card__date">Mar 30, 2026</span>
+              </div>
+              <h2>AI Market Trends in 2026: The Biggest Launches Shaping the Future</h2>
+              <p>The AI market in 2026 has already made this one of the most transformative years in tech history. From groundbreaking model releases to enterprise-level AI integrations, understanding these trends is essential to staying ahead of the curve.</p>
+              <span class="post-card__read">Read Article →</span>
+            </div>
+          </a>
+
+        </main>
+
+        <!-- Sidebar -->
+        <aside class="blog-sidebar">
+
+          <div class="sidebar-widget reveal">
+            <span class="sidebar-widget__title">Recent Posts</span>
+            <a href="/screen-printing-embroidery-and-promotional-products-tips-to-grow-your-brand/" class="sidebar-post">
+              <span class="sidebar-post__icon">👕</span>
+              <div>
+                <h6>Screen Printing, Embroidery & Promotional Products</h6>
+                <span class="sidebar-post__date">Apr 7, 2026</span>
+              </div>
+            </a>
+            <a href="/ai-market-trends-2026/" class="sidebar-post">
+              <span class="sidebar-post__icon">🤖</span>
+              <div>
+                <h6>AI Market Trends in 2026: The Biggest Launches</h6>
+                <span class="sidebar-post__date">Mar 30, 2026</span>
+              </div>
+            </a>
+          </div>
+
+          <div class="sidebar-widget reveal">
+            <span class="sidebar-widget__title">Categories</span>
+            <a href="https://urbannicheco.com/category/ai-technology/" class="sidebar-cat">
+              <span>AI & Technology</span>
+              <span class="sidebar-cat__count">1</span>
+            </a>
+            <a href="https://urbannicheco.com/category/promotional-products/" class="sidebar-cat">
+              <span>Promotional Products</span>
+              <span class="sidebar-cat__count">1</span>
+            </a>
+          </div>
+
+          <div class="sidebar-widget sidebar-cta reveal">
+            <h5>Get a Free Audit</h5>
+            <p>See exactly where your site stands — speed, SEO, mobile, and conversion. No cost, no commitment.</p>
+            <a href="/contact-digital-marketing-agency/#audit" class="btn btn-primary">Claim Free Audit →</a>
+          </div>
+
+        </aside>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- CTA BANNER -->
+  <section class="cta-banner noise-overlay">
+    <div class="container">
+      <div class="cta-banner__inner reveal">
+        <div>
+          <span class="eyebrow">Ready to Grow?</span>
+          <h2>Get Your Free Website Audit Today.</h2>
+          <p>No cost. No commitment. Just a clear picture of where you stand and how to get more leads.</p>
+        </div>
+        <div class="cta-banner__actions">
+          <a href="/contact-digital-marketing-agency/#audit" class="btn btn-primary btn-lg">Claim Free Audit</a>
+          <a href="/contact-digital-marketing-agency/" class="btn btn-outline btn-lg">Contact Us</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- FOOTER -->
+  <footer class="footer">
+
+  <div class="container">
+
+    <div class="footer__grid">
+
+      <div class="footer__brand">
+
+        <div class="footer__logo" style="display:flex;align-items:center;gap:10px;margin-bottom:12px;">
+
+          <img src="https://urbannicheco.com/wp-content/uploads/2026/04/99f521e4-9887-408b-b987-5822ba896f1d.png" alt="Urban Niche Co." style="height:36px;width:auto;">
+
+          <span style="font-family:'Syne',sans-serif;font-weight:800;font-size:18px;color:#fff;">Urban <span style="color:var(--color-accent)">Niche</span> Co.</span>
+
+        </div>
+
+        <p>Digital marketing built exclusively for contractors and home service businesses.</p>
+
+        <div class="footer__social">
+
+          <a href="https://www.facebook.com/UrbanNicheCo" aria-label="Facebook"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg></a>
+
+          <a href="https://www.instagram.com/urbanniche_co/" aria-label="Instagram"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg></a>
+
+          <a href="https://www.linkedin.com/company/urbannicheco" aria-label="LinkedIn"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg></a>
+
+          <a href="https://x.com/UrbanNiche_Co" aria-label="Twitter/X">&#120143;</a>
+
+        </div>
+
+      </div>
+
+      <div class="footer__col">
+
+        <h5>Services</h5>
+
+        <ul>
+
+          <li><a href="https://urbannicheco.com/seo-services-des-moines-iowa">SEO</a></li>
+
+          <li><a href="https://urbannicheco.com/pay-per-click-advertising-iowa">Pay Per Click</a></li>
+
+          <li><a href="https://urbannicheco.com/social-media-marketing-iowa-grow-your-brand-urban-niche-co">Social Media</a></li>
+
+          <li><a href="https://urbannicheco.com/website-design-and-development">Website Design</a></li>
+
+          <li><a href="https://urbannicheco.com/marketing">Marketing Services</a></li>
+
+          <li><a href="https://urbannicheco.com/ai-consulting-services">AI Consulting</a></li>
+
+        </ul>
+
+      </div>
+
+      <div class="footer__col">
+
+        <h5>Company</h5>
+
+        <ul>
+
+          <li><a href="https://urbannicheco.com/about-digital-marketing-agency-midwest">About Us</a></li>
+
+          <li><a href="https://urbannicheco.com/about-digital-marketing-agency-midwest/#careers">Careers</a></li>
+
+          <li><a href="https://urbannicheco.com/blog">Blog</a></li>
+
+          <li><a href="https://urbannicheco.com/pricing">Pricing</a></li>
+
+          <li><a href="https://urbannicheco.com/faq">FAQ</a></li>
+
+          <li><a href="https://urbannicheco.com/branded-merchandise-iowa">Merchandise</a></li>
+
+        </ul>
+
+      </div>
+
+      <div class="footer__col">
+
+        <h5>Get Started</h5>
+
+        <ul>
+
+          <li><a href="https://urbannicheco.com/contact-digital-marketing-agency/">Free Website Audit</a></li>
+
+          <li><a href="https://urbannicheco.com/contact-digital-marketing-agency">Contact Us</a></li>
+
+          <li><a href="https://urbannicheco.com/pricing">View Pricing</a></li>
+
+        </ul>
+
+        <div style="margin-top:20px;font-size:13px;color:rgba(255,255,255,0.4);line-height:1.8;">
+
+          <a href="sms:+15153444053" style="color:#e8651a;text-decoration:none;font-weight:500;">(515) 344-4053</a><br>
+
+          <span style="font-size:12px;">Text anytime &middot; No cold calls</span>
+
+        </div>
+
+        <div style="margin-top:1.5rem;">
+
+          <a href="https://urbannicheco.com/contact-digital-marketing-agency/" class="btn btn-primary btn-sm">Free Audit &#8594;</a>
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <div class="footer__bottom">
+
+      <p>&copy; 2026 Urban Niche Co. All rights reserved.</p>
+
+      <div class="footer__bottom-links">
+
+        <a href="https://urbannicheco.com/privacy-policy">Privacy Policy</a>
+
+        <a href="https://urbannicheco.com/sitemap">Sitemap</a>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</footer>
+
+  <script>
+    const nav = document.getElementById('mainNav');
+    window.addEventListener('scroll', () => { nav.classList.toggle('scrolled', window.scrollY > 40); });
+    const hamburger = document.getElementById('hamburger');
+    const mobileNav = document.getElementById('mobileNav');
+    hamburger.addEventListener('click', () => { mobileNav.classList.toggle('open'); });
+    const reveals = document.querySelectorAll('.reveal');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('visible'); });
+    }, { threshold: 0.12 });
+    reveals.forEach(el => observer.observe(el));
+  </script>
+
+
+  <script>
+    // Auto Latest Post badge — always applies to the first post card
+    (function() {
+      var first = document.querySelector('.post-card');
+      if (!first) return;
+      var imgDiv = first.querySelector('.post-card__image');
+      if (!imgDiv) return;
+      var badge = document.createElement('span');
+      badge.className = 'post-card__featured-badge';
+      badge.textContent = 'Latest Post';
+      imgDiv.appendChild(badge);
+    })();
+  </script>
+</body>
+</html>

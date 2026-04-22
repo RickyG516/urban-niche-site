@@ -1,0 +1,1182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="AI tools built for small business. Urban Niche Co. helps Iowa contractors automate, scale & compete smarter with practical AI consulting. Learn more." />
+  <title>AI Consulting | Urban Niche Co.</title>
+  <link rel="stylesheet" href="/wp-content/themes/divi-child/unc/style.css" />
+  <link rel="icon" type="image/png" href="assets/favicon.png" />
+
+  <style>
+    /* ── AI Consulting Page Styles ───────────────────────── */
+
+    .page-hero {
+      padding-top: calc(var(--nav-height) + var(--space-xl));
+      padding-bottom: var(--space-xl);
+      background: var(--color-dark);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .page-hero::before {
+      content: '';
+      position: absolute;
+      top: -200px; right: -150px;
+      width: 700px; height: 700px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(232,101,26,0.08) 0%, transparent 65%);
+      pointer-events: none;
+    }
+
+    .page-hero::after {
+      content: '';
+      position: absolute;
+      bottom: -100px; left: -100px;
+      width: 400px; height: 400px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(232,101,26,0.04) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    .page-hero__inner {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: var(--space-xl);
+      align-items: center;
+    }
+
+    .page-hero__breadcrumb {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-family: var(--font-display);
+      font-size: 0.68rem;
+      font-weight: 600;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--color-white-dim);
+      margin-bottom: 1.25rem;
+    }
+
+    .page-hero__breadcrumb a { color: var(--color-white-dim); transition: color var(--transition-fast); }
+    .page-hero__breadcrumb a:hover { color: var(--color-accent); }
+    .page-hero__breadcrumb span { color: var(--color-accent); }
+
+    .page-hero h1 { margin: 0.5rem 0 1.5rem; }
+
+    .page-hero__sub {
+      font-size: 1.05rem;
+      color: var(--color-white-dim);
+      max-width: 52ch;
+      margin-bottom: 2.5rem;
+      line-height: 1.7;
+    }
+
+    .page-hero__actions {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .page-hero__trust {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      margin-top: 1.75rem;
+      font-family: var(--font-display);
+      font-size: 0.68rem;
+      font-weight: 600;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--color-white-dim);
+      opacity: 0.6;
+    }
+
+    .page-hero__trust::before {
+      content: '';
+      display: block;
+      width: 24px;
+      height: 1px;
+      background: var(--color-accent);
+    }
+
+    /* AI flow visual */
+    .ai-flow {
+      display: flex;
+      flex-direction: column;
+      gap: 0.6rem;
+    }
+
+    .ai-flow__node {
+      background: var(--color-dark-2);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-md);
+      padding: 1rem 1.25rem;
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      transition: all var(--transition-base);
+    }
+
+    .ai-flow__node:hover { border-color: var(--color-border-bright); transform: translateX(4px); }
+
+    .ai-flow__node--active {
+      border-color: var(--color-accent);
+      background: linear-gradient(135deg, var(--color-dark-2) 0%, rgba(232,101,26,0.06) 100%);
+    }
+
+    .ai-flow__icon {
+      font-size: 1.25rem;
+      flex-shrink: 0;
+      width: 36px;
+      text-align: center;
+    }
+
+    .ai-flow__content { flex: 1; }
+
+    .ai-flow__label {
+      font-family: var(--font-display);
+      font-size: 0.78rem;
+      font-weight: 700;
+      color: var(--color-white);
+      margin-bottom: 0.15rem;
+    }
+
+    .ai-flow__desc {
+      font-size: 0.7rem;
+      color: var(--color-white-dim);
+    }
+
+    .ai-flow__status {
+      font-family: var(--font-display);
+      font-size: 0.58rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      padding: 0.2rem 0.6rem;
+      border-radius: var(--radius-pill);
+    }
+
+    .ai-flow__status--live {
+      background: rgba(74,222,128,0.12);
+      border: 1px solid rgba(74,222,128,0.3);
+      color: #4ade80;
+    }
+
+    .ai-flow__status--idle {
+      background: var(--color-dark-3);
+      border: 1px solid var(--color-border);
+      color: var(--color-white-dim);
+    }
+
+    .ai-flow__connector {
+      width: 2px;
+      height: 16px;
+      background: linear-gradient(to bottom, var(--color-accent), rgba(232,101,26,0.2));
+      margin-left: 29px;
+      border-radius: 1px;
+    }
+
+    /* Urgency banner */
+    .urgency-banner {
+      background: var(--color-accent);
+      padding: 1rem 0;
+    }
+
+    .urgency-banner__inner {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 1rem;
+      text-align: center;
+    }
+
+    .urgency-banner p {
+      font-family: var(--font-display);
+      font-size: 0.82rem;
+      font-weight: 700;
+      color: var(--color-white);
+      letter-spacing: 0.03em;
+      max-width: none;
+    }
+
+    .urgency-banner a {
+      font-family: var(--font-display);
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      padding: 0.45rem 1.1rem;
+      border-radius: var(--radius-pill);
+      background: var(--color-white);
+      color: var(--color-accent);
+      flex-shrink: 0;
+      white-space: nowrap;
+    }
+
+    /* What AI Does */
+    .what-ai {
+      background: var(--color-black);
+    }
+
+    .what-ai__grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.25rem;
+      margin-top: var(--space-lg);
+    }
+
+    .ai-card {
+      background: var(--color-dark-2);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-md);
+      padding: 2rem 1.75rem;
+      transition: all var(--transition-base);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .ai-card::after {
+      content: '';
+      position: absolute;
+      bottom: 0; left: 0; right: 0;
+      height: 2px;
+      background: var(--color-accent);
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform var(--transition-slow);
+    }
+
+    .ai-card:hover::after { transform: scaleX(1); }
+    .ai-card:hover { border-color: rgba(232,101,26,0.3); transform: translateY(-4px); }
+
+    .ai-card__icon { font-size: 1.75rem; margin-bottom: 1rem; }
+    .ai-card h4 { margin-bottom: 0.6rem; }
+    .ai-card p  { font-size: 0.875rem; margin-bottom: 1rem; }
+
+    .ai-card__tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem;
+    }
+
+    .ai-tag {
+      font-family: var(--font-display);
+      font-size: 0.58rem;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      padding: 0.2rem 0.55rem;
+      border-radius: var(--radius-pill);
+      background: var(--color-dark-3);
+      border: 1px solid var(--color-border);
+      color: var(--color-white-dim);
+    }
+
+    /* Before / After */
+    .before-after {
+      background: var(--color-dark-2);
+    }
+
+    .before-after__inner {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: var(--space-xl);
+      align-items: start;
+    }
+
+    .ba-panel {
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+    }
+
+    .ba-panel__header {
+      padding: 1rem 1.5rem;
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+
+    .ba-panel--before .ba-panel__header {
+      background: var(--color-dark-3);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-lg) var(--radius-lg) 0 0;
+    }
+
+    .ba-panel--after .ba-panel__header {
+      background: var(--color-accent);
+      border-radius: var(--radius-lg) var(--radius-lg) 0 0;
+    }
+
+    .ba-panel__title {
+      font-family: var(--font-display);
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+    }
+
+    .ba-panel--before .ba-panel__title { color: var(--color-white-dim); }
+    .ba-panel--after  .ba-panel__title { color: var(--color-white); }
+
+    .ba-panel__body {
+      padding: 0;
+    }
+
+    .ba-item {
+      display: flex;
+      gap: 0.85rem;
+      align-items: flex-start;
+      padding: 1rem 1.5rem;
+      border-bottom: 1px solid var(--color-border);
+    }
+
+    .ba-item:last-child { border-bottom: none; }
+
+    .ba-panel--before .ba-item { background: var(--color-dark-3); }
+    .ba-panel--before .ba-item:first-child { background: var(--color-dark-3); }
+    .ba-panel--after  .ba-item { background: var(--color-dark-2); border-color: var(--color-border); }
+
+    .ba-icon {
+      font-size: 1rem;
+      flex-shrink: 0;
+      margin-top: 1px;
+    }
+
+    .ba-item__label {
+      font-family: var(--font-display);
+      font-size: 0.78rem;
+      font-weight: 700;
+      color: var(--color-white);
+      margin-bottom: 0.2rem;
+    }
+
+    .ba-item__desc { font-size: 0.75rem; color: var(--color-white-dim); }
+
+    .ba-panel--before { border: 1px solid var(--color-border); border-radius: var(--radius-lg); overflow: hidden; }
+    .ba-panel--after  { border: 1px solid var(--color-accent); border-radius: var(--radius-lg); overflow: hidden; }
+
+    /* Process */
+    .ai-process {
+      background: var(--color-dark);
+    }
+
+    .process-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1.5rem;
+      margin-top: var(--space-lg);
+      position: relative;
+    }
+
+    .process-grid::before {
+      content: '';
+      position: absolute;
+      top: 38px;
+      left: calc(12.5% + 14px);
+      right: calc(12.5% + 14px);
+      height: 1px;
+      background: linear-gradient(to right, var(--color-accent), rgba(232,101,26,0.1));
+      z-index: 0;
+    }
+
+    .process-step {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      position: relative;
+      z-index: 1;
+    }
+
+    .process-step__num {
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      background: var(--color-dark-2);
+      border: 1px solid var(--color-border);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: var(--font-display);
+      font-size: 1rem;
+      font-weight: 800;
+      color: var(--color-accent);
+      margin-bottom: 1.25rem;
+      transition: all var(--transition-base);
+    }
+
+    .process-step:hover .process-step__num {
+      background: var(--color-accent-glow);
+      border-color: var(--color-accent);
+    }
+
+    .process-step h4 { font-size: 0.95rem; margin-bottom: 0.5rem; }
+    .process-step p  { font-size: 0.82rem; margin: 0 auto; max-width: 22ch; }
+
+    /* Trades */
+    .ai-trades {
+      background: var(--color-black);
+    }
+
+    .trades-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 0.85rem;
+      margin-top: var(--space-lg);
+    }
+
+    .trade-card {
+      background: var(--color-dark-2);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-md);
+      padding: 1.25rem 1rem;
+      transition: all var(--transition-base);
+    }
+
+    .trade-card:hover {
+      border-color: var(--color-accent);
+      transform: translateY(-3px);
+    }
+
+    .trade-card__icon { font-size: 1.25rem; margin-bottom: 0.5rem; }
+    .trade-card h5 { font-size: 0.8rem; margin-bottom: 0.3rem; }
+    .trade-card p  { font-size: 0.72rem; }
+
+    /* CTA consultation */
+    .consult-cta {
+      background: var(--color-dark-2);
+    }
+
+    .consult-cta__inner {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: var(--space-xl);
+      align-items: center;
+    }
+
+    .consult-card {
+      background: var(--color-dark-3);
+      border: 1px solid var(--color-accent);
+      border-radius: var(--radius-lg);
+      padding: 2.5rem;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .consult-card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 3px;
+      background: linear-gradient(to right, var(--color-accent), rgba(232,101,26,0.2));
+    }
+
+    .consult-card__icon { font-size: 2.25rem; margin-bottom: 1rem; }
+    .consult-card h3 { margin-bottom: 0.75rem; }
+    .consult-card p  { font-size: 0.9rem; margin-bottom: 1.75rem; }
+
+    .consult-card__steps {
+      display: flex;
+      flex-direction: column;
+      gap: 0.65rem;
+      margin-bottom: 1.75rem;
+    }
+
+    .consult-step {
+      display: flex;
+      gap: 0.75rem;
+      align-items: flex-start;
+      font-size: 0.82rem;
+      color: var(--color-white-dim);
+    }
+
+    .consult-step::before {
+      content: '→';
+      color: var(--color-accent);
+      font-size: 0.72rem;
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+
+    .consult-card .btn {
+      width: 100%;
+      justify-content: center;
+    }
+
+    /* Responsive */
+    @media (max-width: 1024px) {
+      .page-hero__inner,
+      .before-after__inner,
+      .consult-cta__inner { grid-template-columns: 1fr; }
+      .what-ai__grid { grid-template-columns: 1fr 1fr; }
+      .process-grid { grid-template-columns: repeat(2, 1fr); }
+      .process-grid::before { display: none; }
+      .trades-grid { grid-template-columns: repeat(4, 1fr); }
+    }
+
+    @media (max-width: 768px) {
+      .page-hero__actions { flex-direction: column; }
+      .what-ai__grid { grid-template-columns: 1fr; }
+      .trades-grid { grid-template-columns: repeat(2, 1fr); }
+      .urgency-banner__inner { flex-direction: column; gap: 0.75rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ═══════════════════════════════════════════
+       NAVIGATION
+  ═══════════════════════════════════════════ -->
+  <nav class="nav" id="mainNav">
+  <div class="nav__inner">
+    <a href="https://urbannicheco.com" class="nav__logo">
+      <img class="nav__logo-img" src="https://urbannicheco.com/wp-content/uploads/2026/04/99f521e4-9887-408b-b987-5822ba896f1d.png" alt="Urban Niche Co.">
+      Urban<span>Niche</span>&nbsp;Co.
+    </a>
+    <ul class="nav__links">
+      <li><a href="https://urbannicheco.com" class="nav__link">Home</a></li>
+      <li class="nav__dropdown">
+        <a href="https://urbannicheco.com/marketing-services-iowa" class="nav__link">Services &#9660;</a>
+        <div class="nav__dropdown-menu">
+          <a href="https://urbannicheco.com/marketing-services-iowa" class="nav__dropdown-item">All Services</a>
+          <a href="https://urbannicheco.com/seo-services-des-moines-iowa" class="nav__dropdown-item">SEO</a>
+          <a href="https://urbannicheco.com/pay-per-click-advertising-iowa" class="nav__dropdown-item">Pay Per Click</a>
+          <a href="https://urbannicheco.com/social-media-marketing-iowa-grow-your-brand-urban-niche-co" class="nav__dropdown-item">Social Media Marketing</a>
+          <a href="https://urbannicheco.com/website-design-and-development" class="nav__dropdown-item">Website Design &amp; Dev</a>
+          <a href="https://urbannicheco.com/marketing" class="nav__dropdown-item">Marketing Services</a>
+          <a href="https://urbannicheco.com/branded-merchandise-iowa" class="nav__dropdown-item">Branded Merchandise</a>
+          <a href="https://urbannicheco.com/ai-consulting-services" class="nav__dropdown-item">AI Consulting</a>
+          <a href="https://urbannicheco.com/saas-custom-app-development" class="nav__dropdown-item">Custom App &amp; SaaS Dev</a>
+          <a href="https://urbannicheco.com/a-la-carte" class="nav__dropdown-item">A La Carte</a>
+        </div>
+      </li>
+      <li><a href="https://urbannicheco.com/pricing" class="nav__link">Pricing</a></li>
+      <li><a href="https://urbannicheco.com/about-digital-marketing-agency-midwest" class="nav__link">About</a></li>
+      <li><a href="/faq/" class="nav__link">FAQ</a></li>
+    </ul>
+    <div class="nav__cta">
+      <a href="https://urbannicheco.com/contact-digital-marketing-agency" class="btn btn-outline btn-sm">Contact Us</a>
+      <a href="https://urbannicheco.com/contact-digital-marketing-agency/" class="btn btn-primary btn-sm">Free Website Audit</a>
+    </div>
+    <button class="nav__hamburger" id="hamburger" aria-label="Open menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+<div class="nav__mobile" id="mobileNav">
+  <a href="https://urbannicheco.com" class="nav__mobile-link">Home</a>
+  <a href="https://urbannicheco.com/marketing-services-iowa" class="nav__mobile-link">Services</a>
+  <a href="https://urbannicheco.com/marketing-services-iowa" class="nav__mobile-link nav__mobile-sub">&#8618; All Services</a>
+  <a href="https://urbannicheco.com/seo-services-des-moines-iowa" class="nav__mobile-link nav__mobile-sub">&#8618; SEO</a>
+  <a href="https://urbannicheco.com/pay-per-click-advertising-iowa" class="nav__mobile-link nav__mobile-sub">&#8618; Pay Per Click</a>
+  <a href="https://urbannicheco.com/social-media-marketing-iowa-grow-your-brand-urban-niche-co" class="nav__mobile-link nav__mobile-sub">&#8618; Social Media Marketing</a>
+  <a href="https://urbannicheco.com/website-design-and-development" class="nav__mobile-link nav__mobile-sub">&#8618; Website Design &amp; Dev</a>
+  <a href="https://urbannicheco.com/marketing" class="nav__mobile-link nav__mobile-sub">&#8618; Marketing Services</a>
+  <a href="https://urbannicheco.com/branded-merchandise-iowa" class="nav__mobile-link nav__mobile-sub">&#8618; Branded Merchandise</a>
+  <a href="https://urbannicheco.com/ai-consulting-services" class="nav__mobile-link nav__mobile-sub">&#8618; AI Consulting</a>
+  <a href="https://urbannicheco.com/saas-custom-app-development" class="nav__mobile-link nav__mobile-sub">&#8618; Custom App &amp; SaaS Dev</a>
+  <a href="https://urbannicheco.com/a-la-carte" class="nav__mobile-link nav__mobile-sub">&#8618; A La Carte</a>
+  <a href="https://urbannicheco.com/pricing" class="nav__mobile-link">Pricing</a>
+  <a href="https://urbannicheco.com/about-digital-marketing-agency-midwest" class="nav__mobile-link">About</a>
+  <a href="https://urbannicheco.com/faq" class="nav__mobile-link">FAQ</a>
+  <a href="https://urbannicheco.com/contact-digital-marketing-agency" class="nav__mobile-link">Contact Us</a>
+  <a href="https://urbannicheco.com/contact-digital-marketing-agency/" class="btn btn-primary">Free Website Audit</a>
+</div>
+
+
+  <!-- ═══════════════════════════════════════════
+       HERO
+  ═══════════════════════════════════════════ -->
+  <section class="page-hero noise-overlay">
+    <div class="container page-hero__inner">
+
+      <div class="reveal">
+        <div class="page-hero__breadcrumb">
+          <a href="/marketing-services-iowa/">Services</a>
+          <span>/ AI Consulting</span>
+        </div>
+        <span class="eyebrow">AI Consulting for Contractors</span>
+        <h1>
+          AI Consulting for Midwest Small Businesses — Work Smarter &amp; Scale Faster
+        </h1>
+        <p class="page-hero__sub">
+          AI consulting built for contractors — eliminate scheduling headaches, reduce paperwork, and close jobs faster with intelligent automation designed specifically for the trades.
+        </p>
+        <div class="page-hero__actions">
+          <a href="https://calendly.com/urbanniche" class="btn btn-primary btn-lg" target="_blank" rel="noopener">Schedule Free Consultation</a>
+          <a href="/contact-digital-marketing-agency/" class="btn btn-outline btn-lg">Contact Our Team</a>
+        </div>
+        <div class="page-hero__trust">AI adoption in 2026 is no longer optional. Every month you wait, your competitors gain ground.</div>
+      </div>
+
+      <div class="reveal reveal-delay-2">
+        <div class="ai-flow">
+
+          <div class="ai-flow__node ai-flow__node--active">
+            <div class="ai-flow__icon">🤖</div>
+            <div class="ai-flow__content">
+              <div class="ai-flow__label">AI Lead Chatbot</div>
+              <div class="ai-flow__desc">Homeowner asks about roof replacement — captured instantly</div>
+            </div>
+            <span class="ai-flow__status ai-flow__status--live">Live</span>
+          </div>
+
+          <div class="ai-flow__connector"></div>
+
+          <div class="ai-flow__node ai-flow__node--active">
+            <div class="ai-flow__icon">⚡</div>
+            <div class="ai-flow__content">
+              <div class="ai-flow__label">Auto-Qualification</div>
+              <div class="ai-flow__desc">ZIP code, timeline, and job type collected automatically</div>
+            </div>
+            <span class="ai-flow__status ai-flow__status--live">Live</span>
+          </div>
+
+          <div class="ai-flow__connector"></div>
+
+          <div class="ai-flow__node ai-flow__node--active">
+            <div class="ai-flow__icon">📅</div>
+            <div class="ai-flow__content">
+              <div class="ai-flow__label">Appointment Booked</div>
+              <div class="ai-flow__desc">Estimate scheduled directly to your calendar</div>
+            </div>
+            <span class="ai-flow__status ai-flow__status--live">Live</span>
+          </div>
+
+          <div class="ai-flow__connector"></div>
+
+          <div class="ai-flow__node">
+            <div class="ai-flow__icon">📄</div>
+            <div class="ai-flow__content">
+              <div class="ai-flow__label">Auto-Generated Proposal</div>
+              <div class="ai-flow__desc">Quote drafted and emailed before you arrive on site</div>
+            </div>
+            <span class="ai-flow__status ai-flow__status--idle">Automated</span>
+          </div>
+
+          <div class="ai-flow__connector"></div>
+
+          <div class="ai-flow__node">
+            <div class="ai-flow__icon">✅</div>
+            <div class="ai-flow__content">
+              <div class="ai-flow__label">Follow-Up Sequence</div>
+              <div class="ai-flow__desc">5-touch nurture sequence fires if no response in 24 hrs</div>
+            </div>
+            <span class="ai-flow__status ai-flow__status--idle">Automated</span>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ═══════════════════════════════════════════
+       URGENCY BANNER
+  ═══════════════════════════════════════════ -->
+  <div class="urgency-banner">
+    <div class="container urgency-banner__inner">
+      <p>🔥 In 2026, businesses using AI are running leaner, responding faster, and winning more jobs. The gap is widening every month.</p>
+      <a href="https://calendly.com/urbanniche" target="_blank" rel="noopener">Book Free Call →</a>
+    </div>
+  </div>
+
+
+  <!-- ═══════════════════════════════════════════
+       WHAT AI DOES FOR YOUR BUSINESS
+  ═══════════════════════════════════════════ -->
+  <section class="section what-ai">
+    <div class="container">
+      <div class="section-header section-header--center reveal">
+        <span class="eyebrow">What We Build</span>
+        <h2>Tailored AI Solutions for<br>Your Contracting Business.</h2>
+        <p>We help contractors implement practical AI that actually works in the field — not theoretical tools that collect dust.</p>
+      </div>
+
+      <div class="what-ai__grid">
+
+        <div class="ai-card reveal reveal-delay-1">
+          <div class="ai-card__icon">⚙️</div>
+          <h4>Workflow Automation</h4>
+          <p>Streamline repetitive tasks with AI-powered automation. Free your team to focus on high-value work while AI handles data entry, scheduling, email management, and follow-ups.</p>
+          <div class="ai-card__tags">
+            <span class="ai-tag">Zapier</span>
+            <span class="ai-tag">Make</span>
+            <span class="ai-tag">n8n</span>
+            <span class="ai-tag">Custom APIs</span>
+          </div>
+        </div>
+
+        <div class="ai-card reveal reveal-delay-2">
+          <div class="ai-card__icon">🛠️</div>
+          <h4>AI Tool Onboarding</h4>
+          <p>We guide you through implementing the right AI tools for your business — from ChatGPT and Claude to industry-specific solutions. No tech overwhelm, just results that stick.</p>
+          <div class="ai-card__tags">
+            <span class="ai-tag">ChatGPT</span>
+            <span class="ai-tag">Claude</span>
+            <span class="ai-tag">Cowork</span>
+            <span class="ai-tag">Custom GPTs</span>
+          </div>
+        </div>
+
+        <div class="ai-card reveal reveal-delay-3">
+          <div class="ai-card__icon">📈</div>
+          <h4>AI Strategy & Integration</h4>
+          <p>Develop a custom AI roadmap aligned with your business goals. We identify where AI creates the most value and integrate it seamlessly into your daily operations.</p>
+          <div class="ai-card__tags">
+            <span class="ai-tag">Roadmapping</span>
+            <span class="ai-tag">ROI Analysis</span>
+            <span class="ai-tag">Integration</span>
+          </div>
+        </div>
+
+        <div class="ai-card reveal reveal-delay-1">
+          <div class="ai-card__icon">🤖</div>
+          <h4>AI Chatbot & Lead Capture</h4>
+          <p>Deploy intelligent chatbots that capture leads 24/7, answer customer questions, and book consultations — even while you're on a job site or asleep. Never miss a lead again.</p>
+          <div class="ai-card__tags">
+            <span class="ai-tag">Lead Capture</span>
+            <span class="ai-tag">24/7 Response</span>
+            <span class="ai-tag">Booking</span>
+            <span class="ai-tag">Qualification</span>
+          </div>
+        </div>
+
+        <div class="ai-card reveal reveal-delay-2">
+          <div class="ai-card__icon">📋</div>
+          <h4>Document & Proposal Automation</h4>
+          <p>Auto-generate estimates, proposals, and follow-up emails using AI — cut the time you spend on paperwork from hours to minutes so you can focus on closing more jobs.</p>
+          <div class="ai-card__tags">
+            <span class="ai-tag">Auto-Estimates</span>
+            <span class="ai-tag">Proposals</span>
+            <span class="ai-tag">Follow-Ups</span>
+            <span class="ai-tag">CRM Sync</span>
+          </div>
+        </div>
+
+        <div class="ai-card reveal reveal-delay-3">
+          <div class="ai-card__icon">📊</div>
+          <h4>Data & Reporting Dashboards</h4>
+          <p>Get AI-powered dashboards that surface the numbers that matter — lead sources, close rates, revenue per job — so you make smarter business decisions faster with real data.</p>
+          <div class="ai-card__tags">
+            <span class="ai-tag">Lead Analytics</span>
+            <span class="ai-tag">Revenue Tracking</span>
+            <span class="ai-tag">Close Rates</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ═══════════════════════════════════════════
+       BEFORE / AFTER
+  ═══════════════════════════════════════════ -->
+  <section class="section before-after">
+    <div class="container">
+      <div class="section-header section-header--center reveal">
+        <span class="eyebrow">The Difference</span>
+        <h2>Your Business Before AI.<br>Your Business After AI.</h2>
+      </div>
+
+      <div class="before-after__inner" style="margin-top: var(--space-lg);">
+
+        <div class="ba-panel ba-panel--before reveal reveal-delay-1">
+          <div class="ba-panel__header">
+            <span style="font-size:1.1rem;">😰</span>
+            <span class="ba-panel__title">Without AI — Today</span>
+          </div>
+          <div class="ba-panel__body">
+            <div class="ba-item">
+              <span class="ba-icon">📞</span>
+              <div>
+                <div class="ba-item__label">Missed after-hours leads</div>
+                <div class="ba-item__desc">Phone rings at 9pm — no answer, they call a competitor</div>
+              </div>
+            </div>
+            <div class="ba-item">
+              <span class="ba-icon">⏰</span>
+              <div>
+                <div class="ba-item__label">Hours on admin every day</div>
+                <div class="ba-item__desc">Manually entering jobs, following up, writing proposals</div>
+              </div>
+            </div>
+            <div class="ba-item">
+              <span class="ba-icon">📋</span>
+              <div>
+                <div class="ba-item__label">Slow proposal turnaround</div>
+                <div class="ba-item__desc">Quotes take 24–48 hours — leads go cold waiting</div>
+              </div>
+            </div>
+            <div class="ba-item">
+              <span class="ba-icon">🔁</span>
+              <div>
+                <div class="ba-item__label">Inconsistent follow-up</div>
+                <div class="ba-item__desc">Half your leads never get a second touch</div>
+              </div>
+            </div>
+            <div class="ba-item">
+              <span class="ba-icon">❓</span>
+              <div>
+                <div class="ba-item__label">No visibility into what's working</div>
+                <div class="ba-item__desc">Guessing which leads came from where</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="ba-panel ba-panel--after reveal reveal-delay-2">
+          <div class="ba-panel__header">
+            <span style="font-size:1.1rem;">🚀</span>
+            <span class="ba-panel__title">With AI — After We Build It</span>
+          </div>
+          <div class="ba-panel__body">
+            <div class="ba-item">
+              <span class="ba-icon">🤖</span>
+              <div>
+                <div class="ba-item__label">24/7 lead capture, never misses</div>
+                <div class="ba-item__desc">AI chatbot qualifies and books estimates while you sleep</div>
+              </div>
+            </div>
+            <div class="ba-item">
+              <span class="ba-icon">⚡</span>
+              <div>
+                <div class="ba-item__label">Admin runs itself</div>
+                <div class="ba-item__desc">Scheduling, data entry, and follow-ups fully automated</div>
+              </div>
+            </div>
+            <div class="ba-item">
+              <span class="ba-icon">📄</span>
+              <div>
+                <div class="ba-item__label">Proposals in minutes, not days</div>
+                <div class="ba-item__desc">AI drafts quotes from your intake data instantly</div>
+              </div>
+            </div>
+            <div class="ba-item">
+              <span class="ba-icon">✅</span>
+              <div>
+                <div class="ba-item__label">5-touch follow-up on autopilot</div>
+                <div class="ba-item__desc">Every lead gets nurtured until they book or opt out</div>
+              </div>
+            </div>
+            <div class="ba-item">
+              <span class="ba-icon">📊</span>
+              <div>
+                <div class="ba-item__label">Dashboard shows everything</div>
+                <div class="ba-item__desc">Source, close rate, revenue per job — live, always accurate</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ═══════════════════════════════════════════
+       PROCESS
+  ═══════════════════════════════════════════ -->
+  <section class="section ai-process">
+    <div class="container">
+      <div class="section-header section-header--center reveal">
+        <span class="eyebrow">How It Works</span>
+        <h2>From Discovery Call<br>to Full Implementation.</h2>
+      </div>
+
+      <div class="process-grid">
+        <div class="process-step reveal reveal-delay-1">
+          <div class="process-step__num">01</div>
+          <h4>Free Discovery Call</h4>
+          <p>We learn your business, your tools, and where you're losing the most time and money.</p>
+        </div>
+        <div class="process-step reveal reveal-delay-2">
+          <div class="process-step__num">02</div>
+          <h4>Custom AI Roadmap</h4>
+          <p>We map out exactly which AI tools and automations will have the biggest ROI for your business.</p>
+        </div>
+        <div class="process-step reveal reveal-delay-3">
+          <div class="process-step__num">03</div>
+          <h4>Setup & Integration</h4>
+          <p>We handle the technical side. Tools get configured, connected, and tested before handoff.</p>
+        </div>
+        <div class="process-step reveal reveal-delay-4">
+          <div class="process-step__num">04</div>
+          <h4>Training & Ongoing Support</h4>
+          <p>We train you and your team with clear documentation — and we're here as you grow.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ═══════════════════════════════════════════
+       TRADES
+  ═══════════════════════════════════════════ -->
+  <section class="section ai-trades">
+    <div class="container">
+      <div class="section-header section-header--center reveal">
+        <span class="eyebrow">Who We Help</span>
+        <h2>AI Solutions for Every Trade.</h2>
+        <p>Businesses of all sizes across every home service vertical benefit from what we build. Here are the trades we work with regularly.</p>
+      </div>
+
+      <div class="trades-grid reveal reveal-delay-1">
+        <div class="trade-card">
+          <div class="trade-card__icon">🏠</div>
+          <h5>Roofers</h5>
+          <p>Storm lead capture, insurance claim automation, estimate follow-up</p>
+        </div>
+        <div class="trade-card">
+          <div class="trade-card__icon">🏗️</div>
+          <h5>General Contractors</h5>
+          <p>Project intake, bid automation, subcontractor coordination</p>
+        </div>
+        <div class="trade-card">
+          <div class="trade-card__icon">❄️</div>
+          <h5>HVAC</h5>
+          <p>Seasonal campaign automation, maintenance plan renewals, emergency dispatch</p>
+        </div>
+        <div class="trade-card">
+          <div class="trade-card__icon">🔧</div>
+          <h5>Plumbers</h5>
+          <p>24/7 emergency lead capture, service agreement follow-up, scheduling</p>
+        </div>
+        <div class="trade-card">
+          <div class="trade-card__icon">⚡</div>
+          <h5>Electricians</h5>
+          <p>Permit documentation, inspection scheduling, commercial client outreach</p>
+        </div>
+        <div class="trade-card">
+          <div class="trade-card__icon">🪟</div>
+          <h5>Remodelers</h5>
+          <p>Project timeline automation, material ordering triggers, client communication</p>
+        </div>
+        <div class="trade-card">
+          <div class="trade-card__icon">🌿</div>
+          <h5>Landscapers</h5>
+          <p>Seasonal renewal automation, route optimization, crew scheduling</p>
+        </div>
+        <div class="trade-card">
+          <div class="trade-card__icon">🖌️</div>
+          <h5>Painters</h5>
+          <p>Quote automation, color consultation intake, referral follow-up systems</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ═══════════════════════════════════════════
+       CONSULTATION CTA
+  ═══════════════════════════════════════════ -->
+  <section class="section consult-cta">
+    <div class="container">
+      <div class="consult-cta__inner">
+
+        <div class="reveal">
+          <span class="eyebrow">Get Started</span>
+          <h2>Request Your Free AI Consultation.</h2>
+          <p style="margin-bottom:1.25rem;">Let's talk about how AI can transform your business. No pressure, no pitch — just an honest conversation about where you're leaving time and money on the table and what we'd do about it.</p>
+          <p style="margin-bottom:1.5rem;">We typically respond within 24 hours during business days. You can also schedule directly on Calendly if you prefer to pick a time now.</p>
+          <div style="display:flex;gap:1rem;flex-wrap:wrap;">
+            <a href="https://calendly.com/urbanniche" class="btn btn-primary" target="_blank" rel="noopener">Schedule on Calendly →</a>
+            <a href="/contact-digital-marketing-agency/" class="btn btn-outline">Contact Our Team</a>
+          </div>
+        </div>
+
+        <div class="reveal reveal-delay-2">
+          <div class="consult-card">
+            <div class="consult-card__icon">🧠</div>
+            <h3>Free AI Discovery Call</h3>
+            <p>A focused 30-minute session to map out exactly how AI can make your business faster, leaner, and more profitable.</p>
+            <div class="consult-card__steps">
+              <div class="consult-step">We learn about your current tools and workflow</div>
+              <div class="consult-step">We identify your biggest time and money leaks</div>
+              <div class="consult-step">We outline the exact AI systems that would fix them</div>
+              <div class="consult-step">You leave with a clear, prioritized action plan</div>
+            </div>
+            <a href="https://calendly.com/urbanniche" class="btn btn-primary" target="_blank" rel="noopener">Book Your Free Call →</a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ═══════════════════════════════════════════
+       CTA BANNER
+  ═══════════════════════════════════════════ -->
+  <section class="cta-banner noise-overlay">
+    <div class="container">
+      <div class="cta-banner__inner reveal">
+        <div>
+          <span class="eyebrow">The AI Advantage Waits for No One</span>
+          <h2>Every Month You Wait,<br>Your Competitors Pull Ahead.</h2>
+          <p>Start today. The discovery call is free, the roadmap is clear, and the results compound from day one.</p>
+        </div>
+        <div class="cta-banner__actions">
+          <a href="https://calendly.com/urbanniche" class="btn btn-primary btn-lg" target="_blank" rel="noopener">Book Free Consultation</a>
+          <a href="/contact-digital-marketing-agency/" class="btn btn-outline btn-lg">Contact Us</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ═══════════════════════════════════════════
+       FOOTER
+  ═══════════════════════════════════════════ -->
+  <footer class="footer">
+
+  <div class="container">
+
+    <div class="footer__grid">
+
+      <div class="footer__brand">
+
+        <div class="footer__logo" style="display:flex;align-items:center;gap:10px;margin-bottom:12px;">
+
+          <img src="https://urbannicheco.com/wp-content/uploads/2026/04/99f521e4-9887-408b-b987-5822ba896f1d.png" alt="Urban Niche Co." style="height:36px;width:auto;">
+
+          <span style="font-family:'Syne',sans-serif;font-weight:800;font-size:18px;color:#fff;">Urban <span style="color:var(--color-accent)">Niche</span> Co.</span>
+
+        </div>
+
+        <p>Digital marketing built exclusively for contractors and home service businesses.</p>
+
+        <div class="footer__social">
+
+          <a href="https://www.facebook.com/UrbanNicheCo" aria-label="Facebook"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg></a>
+
+          <a href="https://www.instagram.com/urbanniche_co/" aria-label="Instagram"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg></a>
+
+          <a href="https://www.linkedin.com/company/urbannicheco" aria-label="LinkedIn"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg></a>
+
+          <a href="https://x.com/UrbanNiche_Co" aria-label="Twitter/X">&#120143;</a>
+
+        </div>
+
+      </div>
+
+      <div class="footer__col">
+
+        <h5>Services</h5>
+
+        <ul>
+
+          <li><a href="https://urbannicheco.com/seo-services-des-moines-iowa">SEO</a></li>
+
+          <li><a href="https://urbannicheco.com/pay-per-click-advertising-iowa">Pay Per Click</a></li>
+
+          <li><a href="https://urbannicheco.com/social-media-marketing-iowa-grow-your-brand-urban-niche-co">Social Media</a></li>
+
+          <li><a href="https://urbannicheco.com/website-design-and-development">Website Design</a></li>
+
+          <li><a href="https://urbannicheco.com/marketing">Marketing Services</a></li>
+
+          <li><a href="https://urbannicheco.com/ai-consulting-services">AI Consulting</a></li>
+
+        </ul>
+
+      </div>
+
+      <div class="footer__col">
+
+        <h5>Company</h5>
+
+        <ul>
+
+          <li><a href="https://urbannicheco.com/about-digital-marketing-agency-midwest">About Us</a></li>
+
+          <li><a href="https://urbannicheco.com/about-digital-marketing-agency-midwest/#careers">Careers</a></li>
+
+          <li><a href="https://urbannicheco.com/blog">Blog</a></li>
+
+          <li><a href="https://urbannicheco.com/pricing">Pricing</a></li>
+
+          <li><a href="https://urbannicheco.com/faq">FAQ</a></li>
+
+          <li><a href="https://urbannicheco.com/branded-merchandise-iowa">Merchandise</a></li>
+
+        </ul>
+
+      </div>
+
+      <div class="footer__col">
+
+        <h5>Get Started</h5>
+
+        <ul>
+
+          <li><a href="https://urbannicheco.com/contact-digital-marketing-agency/">Free Website Audit</a></li>
+
+          <li><a href="https://urbannicheco.com/contact-digital-marketing-agency">Contact Us</a></li>
+
+          <li><a href="https://urbannicheco.com/pricing">View Pricing</a></li>
+
+        </ul>
+
+        <div style="margin-top:20px;font-size:13px;color:rgba(255,255,255,0.4);line-height:1.8;">
+
+          <a href="sms:+15153444053" style="color:#e8651a;text-decoration:none;font-weight:500;">(515) 344-4053</a><br>
+
+          <span style="font-size:12px;">Text anytime &middot; No cold calls</span>
+
+        </div>
+
+        <div style="margin-top:1.5rem;">
+
+          <a href="https://urbannicheco.com/contact-digital-marketing-agency/" class="btn btn-primary btn-sm">Free Audit &#8594;</a>
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <div class="footer__bottom">
+
+      <p>&copy; 2026 Urban Niche Co. All rights reserved.</p>
+
+      <div class="footer__bottom-links">
+
+        <a href="https://urbannicheco.com/privacy-policy">Privacy Policy</a>
+
+        <a href="https://urbannicheco.com/sitemap">Sitemap</a>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</footer>
+
+
+  <script>
+    const nav = document.getElementById('mainNav');
+    window.addEventListener('scroll', () => {
+      nav.classList.toggle('scrolled', window.scrollY > 40);
+    });
+    const hamburger = document.getElementById('hamburger');
+    const mobileNav = document.getElementById('mobileNav');
+    hamburger.addEventListener('click', () => {
+      mobileNav.classList.toggle('open');
+    });
+    const reveals = document.querySelectorAll('.reveal');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) entry.target.classList.add('visible');
+      });
+    }, { threshold: 0.12 });
+    reveals.forEach(el => observer.observe(el));
+  </script>
+
+</body>
+</html>

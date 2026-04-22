@@ -1,0 +1,1088 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="We're Urban Niche Co. — a Dubuque, Iowa digital marketing agency obsessed with helping contractors grow. Meet the team behind your results.">
+  <title>About Us | Urban Niche Co.</title>
+  <link rel="stylesheet" href="/wp-content/themes/divi-child/unc/style.css" />
+  <link rel="icon" type="image/png" hrefh="assets/favicon.png" />
+
+  <style>
+    /* ── About Page Specific Styles ─────────────────────── */
+
+    /* Hero */
+    .about-hero {
+      padding-top: calc(var(--nav-height) + var(--space-xl));
+      padding-bottom: var(--space-xl);
+      background: var(--color-dark);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .about-hero::before {
+      content: '';
+      position: absolute;
+      top: -200px;
+      right: -200px;
+      width: 700px;
+      height: 700px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(232,101,26,0.07) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    .about-hero__inner {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: var(--space-xl);
+      align-items: center;
+    }
+
+    .about-hero__label {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: var(--color-accent-glow);
+      border: 1px solid rgba(232,101,26,0.25);
+      border-radius: var(--radius-pill);
+      padding: 0.4rem 1rem;
+      font-family: var(--font-display);
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--color-accent);
+      margin-bottom: 1.5rem;
+    }
+
+    .about-hero h1 {
+      margin-bottom: 1.5rem;
+    }
+
+    .about-hero__sub {
+      font-size: 1.05rem;
+      line-height: 1.7;
+      color: var(--color-white-dim);
+      max-width: 52ch;
+      margin-bottom: 2.5rem;
+    }
+
+    .about-hero__stats {
+      display: flex;
+      gap: 2.5rem;
+    }
+
+    .about-hero__stat-item {
+      display: flex;
+      flex-direction: column;
+      gap: 0.15rem;
+    }
+
+    .about-hero__stat-value {
+      font-family: var(--font-display);
+      font-size: 2rem;
+      font-weight: 800;
+      color: var(--color-accent);
+      line-height: 1;
+    }
+
+    .about-hero__stat-label {
+      font-size: 0.78rem;
+      color: var(--color-white-dim);
+    }
+
+    /* Identity Card */
+    .about-identity-card {
+      background: var(--color-dark-2);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-lg);
+      padding: 2.5rem;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .about-identity-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 3px;
+      background: linear-gradient(to right, var(--color-accent), transparent);
+    }
+
+    .about-identity-card__tag {
+      font-family: var(--font-display);
+      font-size: 0.65rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--color-accent);
+      margin-bottom: 1.25rem;
+      display: block;
+    }
+
+    .about-identity-card__name {
+      font-family: var(--font-display);
+      font-size: 1.5rem;
+      font-weight: 800;
+      color: var(--color-white);
+      margin-bottom: 0.25rem;
+    }
+
+    .about-identity-card__title {
+      font-size: 0.875rem;
+      color: var(--color-white-dim);
+      margin-bottom: 1.5rem;
+    }
+
+    .about-identity-card__divider {
+      width: 100%;
+      height: 1px;
+      background: var(--color-border);
+      margin: 1.5rem 0;
+    }
+
+    .about-identity-card__list {
+      display: flex;
+      flex-direction: column;
+      gap: 0.85rem;
+    }
+
+    .about-identity-card__item {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.75rem;
+      font-size: 0.875rem;
+      color: var(--color-white-dim);
+    }
+
+    .about-identity-card__item-icon {
+      color: var(--color-accent);
+      font-size: 0.75rem;
+      font-weight: 800;
+      margin-top: 2px;
+      flex-shrink: 0;
+    }
+
+    .about-identity-card__bottom {
+      margin-top: 1.75rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid var(--color-border);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .about-identity-card__location {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 0.8rem;
+      color: var(--color-white-dim);
+    }
+
+    /* Mission Section */
+    .mission {
+      background: var(--color-black);
+    }
+
+    .mission__inner {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: var(--space-xl);
+      align-items: start;
+    }
+
+    .mission__left {
+      position: sticky;
+      top: calc(var(--nav-height) + 2rem);
+    }
+
+    .mission__left h2 {
+      margin: 0.5rem 0 1.5rem;
+    }
+
+    .mission__left p {
+      margin-bottom: 1.25rem;
+    }
+
+    .mission__right {
+      display: flex;
+      flex-direction: column;
+      gap: 1.25rem;
+    }
+
+    .mission__block {
+      background: var(--color-dark-2);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-md);
+      padding: 1.75rem;
+      transition: border-color var(--transition-base);
+    }
+
+    .mission__block:hover {
+      border-color: rgba(232,101,26,0.35);
+    }
+
+    .mission__block-icon {
+      font-size: 1.5rem;
+      margin-bottom: 0.75rem;
+    }
+
+    .mission__block h4 {
+      margin-bottom: 0.5rem;
+    }
+
+    .mission__block p {
+      font-size: 0.875rem;
+      margin: 0;
+    }
+
+    /* Values */
+    .values {
+      background: var(--color-dark);
+    }
+
+    .values__grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: var(--space-md);
+      margin-top: var(--space-lg);
+    }
+
+    .value-card {
+      background: var(--color-dark-2);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-md);
+      padding: 2rem;
+      transition: all var(--transition-base);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .value-card::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 2px;
+      background: var(--color-accent);
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform var(--transition-slow);
+    }
+
+    .value-card:hover::after {
+      transform: scaleX(1);
+    }
+
+    .value-card:hover {
+      border-color: var(--color-border-bright);
+      transform: translateY(-4px);
+    }
+
+    .value-card__num {
+      font-family: var(--font-display);
+      font-size: 0.65rem;
+      font-weight: 700;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--color-accent);
+      opacity: 0.6;
+      margin-bottom: 1rem;
+    }
+
+    .value-card h4 {
+      margin-bottom: 0.75rem;
+      font-size: 1.1rem;
+    }
+
+    .value-card p {
+      font-size: 0.875rem;
+      margin: 0;
+    }
+
+    /* Who We Serve Detail */
+    .who-we-serve {
+      background: var(--color-dark-2);
+    }
+
+    .trades-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1rem;
+      margin-top: var(--space-lg);
+    }
+
+    .trade-card {
+      background: var(--color-dark-3);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-md);
+      padding: 1.5rem 1.25rem;
+      text-align: center;
+      transition: all var(--transition-base);
+      cursor: default;
+    }
+
+    .trade-card:hover {
+      border-color: var(--color-accent);
+      background: var(--color-accent-glow);
+      transform: translateY(-3px);
+    }
+
+    .trade-card__icon {
+      font-size: 1.75rem;
+      margin-bottom: 0.75rem;
+    }
+
+    .trade-card h5 {
+      font-size: 0.875rem;
+      color: var(--color-white);
+      margin-bottom: 0.35rem;
+    }
+
+    .trade-card p {
+      font-size: 0.75rem;
+      margin: 0;
+    }
+
+    /* Difference Section */
+    .difference {
+      background: var(--color-black);
+    }
+
+    .difference__inner {
+      display: grid;
+      grid-template-columns: 1fr 1.2fr;
+      gap: var(--space-xl);
+      align-items: center;
+    }
+
+    .difference__table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+
+    .difference__table thead th {
+      font-family: var(--font-display);
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      padding: 0.75rem 1.25rem;
+      text-align: left;
+      border-bottom: 1px solid var(--color-border);
+      color: var(--color-white-dim);
+    }
+
+    .difference__table thead th:last-child {
+      color: var(--color-accent);
+    }
+
+    .difference__table tbody td {
+      padding: 1rem 1.25rem;
+      font-size: 0.875rem;
+      color: var(--color-white-dim);
+      border-bottom: 1px solid var(--color-border);
+    }
+
+    .difference__table tbody tr:last-child td {
+      border-bottom: none;
+    }
+
+    .difference__table tbody td:first-child {
+      color: var(--color-white);
+      font-weight: 500;
+    }
+
+    .difference__table .check {
+      color: var(--color-accent);
+      font-size: 1rem;
+    }
+
+    .difference__table .cross {
+      color: rgba(245,245,240,0.25);
+      font-size: 1rem;
+    }
+
+    /* Careers */
+    .careers {
+      background: var(--color-dark);
+    }
+
+    .careers__inner {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: var(--space-xl);
+      align-items: start;
+    }
+
+    .careers__roles {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    .career-card {
+      background: var(--color-dark-2);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-md);
+      padding: 1.5rem 1.75rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      transition: all var(--transition-base);
+    }
+
+    .career-card:hover {
+      border-color: rgba(232,101,26,0.35);
+      transform: translateX(4px);
+    }
+
+    .career-card__left h5 {
+      margin-bottom: 0.25rem;
+    }
+
+    .career-card__left p {
+      font-size: 0.8rem;
+      margin: 0;
+    }
+
+    .career-card__badge {
+      font-family: var(--font-display);
+      font-size: 0.65rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      padding: 0.3rem 0.8rem;
+      border-radius: var(--radius-pill);
+      background: var(--color-accent-glow);
+      border: 1px solid rgba(232,101,26,0.25);
+      color: var(--color-accent);
+      white-space: nowrap;
+    }
+
+    /* Responsive */
+    @media (max-width: 1024px) {
+      .about-hero__inner,
+      .mission__inner,
+      .difference__inner,
+      .careers__inner {
+        grid-template-columns: 1fr;
+      }
+      .mission__left { position: static; }
+      .values__grid { grid-template-columns: 1fr 1fr; }
+      .trades-grid { grid-template-columns: repeat(4, 1fr); }
+    }
+
+    @media (max-width: 768px) {
+      .about-hero__stats { flex-wrap: wrap; gap: 1.5rem; }
+      .values__grid { grid-template-columns: 1fr; }
+      .trades-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ═══════════════════════════════════════════
+       NAVIGATION
+  ═══════════════════════════════════════════ -->
+  <nav class="nav" id="mainNav">
+  <div class="nav__inner">
+    <a href="https://urbannicheco.com" class="nav__logo">
+      <img class="nav__logo-img" src="https://urbannicheco.com/wp-content/uploads/2026/04/99f521e4-9887-408b-b987-5822ba896f1d.png" alt="Urban Niche Co.">
+      <span style="font-family:'Syne',sans-serif;font-weight:800;font-size:17px;color:#ffffff;margin-left:10px;vertical-align:middle;letter-spacing:-0.01em;white-space:nowrap;">Urban <span style="color:var(--color-accent)">Niche</span> Co.</span>
+    </a>
+    <ul class="nav__links">
+      <li><a href="https://urbannicheco.com" class="nav__link">Home</a></li>
+      <li class="nav__dropdown">
+        <a href="https://urbannicheco.com/marketing-services-iowa" class="nav__link">Services &#9660;</a>
+        <div class="nav__dropdown-menu">
+          <a href="https://urbannicheco.com/marketing-services-iowa" class="nav__dropdown-item">All Services</a>
+          <a href="https://urbannicheco.com/seo-services-des-moines-iowa" class="nav__dropdown-item">SEO</a>
+          <a href="https://urbannicheco.com/pay-per-click-advertising-iowa" class="nav__dropdown-item">Pay Per Click</a>
+          <a href="https://urbannicheco.com/social-media-marketing-iowa-grow-your-brand-urban-niche-co" class="nav__dropdown-item">Social Media Marketing</a>
+          <a href="https://urbannicheco.com/website-design-and-development" class="nav__dropdown-item">Website Design &amp; Dev</a>
+          <a href="https://urbannicheco.com/marketing" class="nav__dropdown-item">Marketing Services</a>
+          <a href="https://urbannicheco.com/branded-merchandise-iowa" class="nav__dropdown-item">Branded Merchandise</a>
+          <a href="https://urbannicheco.com/ai-consulting-services" class="nav__dropdown-item">AI Consulting</a>
+          <a href="https://urbannicheco.com/saas-custom-app-development" class="nav__dropdown-item">Custom App &amp; SaaS Dev</a>
+          <a href="https://urbannicheco.com/a-la-carte" class="nav__dropdown-item">A La Carte</a>
+        </div>
+      </li>
+      <li><a href="https://urbannicheco.com/pricing" class="nav__link">Pricing</a></li>
+      <li><a href="https://urbannicheco.com/about-digital-marketing-agency-midwest" class="nav__link active">About</a></li>
+      <li><a href="/faq/" class="nav__link">FAQ</a></li>
+    </ul>
+    <div class="nav__cta">
+      <a href="https://urbannicheco.com/contact-digital-marketing-agency" class="btn btn-outline btn-sm">Contact Us</a>
+      <a href="https://urbannicheco.com/contact-digital-marketing-agency/" class="btn btn-primary btn-sm">Free Website Audit</a>
+    </div>
+    <button class="nav__hamburger" id="hamburger" aria-label="Open menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+  <!-- Mobile Nav -->
+  <div class="nav__mobile" id="mobileNav">
+    <a href="https://urbannicheco.com" class="nav__mobile-link">Home</a>
+    <a href="https://urbannicheco.com/marketing-services-iowa" class="nav__mobile-link">Services</a>
+    <a href="https://urbannicheco.com/marketing-services-iowa" class="nav__mobile-link nav__mobile-sub">&#8618; All Services</a>
+    <a href="https://urbannicheco.com/seo-services-des-moines-iowa" class="nav__mobile-link nav__mobile-sub">&#8618; SEO</a>
+    <a href="https://urbannicheco.com/pay-per-click-advertising-iowa" class="nav__mobile-link nav__mobile-sub">&#8618; Pay Per Click</a>
+    <a href="https://urbannicheco.com/social-media-marketing-iowa-grow-your-brand-urban-niche-co" class="nav__mobile-link nav__mobile-sub">&#8618; Social Media Marketing</a>
+    <a href="https://urbannicheco.com/website-design-and-development" class="nav__mobile-link nav__mobile-sub">&#8618; Website Design &amp; Dev</a>
+    <a href="https://urbannicheco.com/marketing" class="nav__mobile-link nav__mobile-sub">&#8618; Marketing Services</a>
+    <a href="https://urbannicheco.com/branded-merchandise-iowa" class="nav__mobile-link nav__mobile-sub">&#8618; Branded Merchandise</a>
+    <a href="https://urbannicheco.com/ai-consulting-services" class="nav__mobile-link nav__mobile-sub">&#8618; AI Consulting</a>
+    <a href="https://urbannicheco.com/saas-custom-app-development" class="nav__mobile-link nav__mobile-sub">&#8618; Custom App &amp; SaaS Dev</a>
+    <a href="https://urbannicheco.com/a-la-carte" class="nav__mobile-link nav__mobile-sub">&#8618; A La Carte</a>
+    <a href="https://urbannicheco.com/pricing" class="nav__mobile-link">Pricing</a>
+    <a href="https://urbannicheco.com/about-digital-marketing-agency-midwest" class="nav__mobile-link">About</a>
+    <a href="https://urbannicheco.com/faq" class="nav__mobile-link">FAQ</a>
+    <a href="https://urbannicheco.com/contact-digital-marketing-agency" class="nav__mobile-link">Contact Us</a>
+    <a href="https://urbannicheco.com/contact-digital-marketing-agency/" class="btn btn-primary">Free Website Audit</a>
+  </div>
+
+
+  <!-- ═══════════════════════════════════════════
+       HERO
+  ═══════════════════════════════════════════ -->
+  <section class="about-hero noise-overlay">
+    <div class="container about-hero__inner">
+
+      <div class="about-hero__left">
+        <div class="about-hero__label reveal">
+          <span>●</span> Our Story
+        </div>
+        <h1 class="reveal reveal-delay-1">
+          Midwest Contractor Marketing Agency — Built for the Trades.<br>
+          <span class="text-accent">Period.</span>
+        </h1>
+        <p class="about-hero__sub reveal reveal-delay-2">
+          Urban Niche Co. isn't trying to be everything to everyone. We made a decision early on — go deep, not wide. Serve one industry, master it completely, and deliver results that generalist agencies never could.
+        </p>
+        <div class="about-hero__stats reveal reveal-delay-3">
+          <div class="about-hero__stat-item">
+            <span class="about-hero__stat-value">100%</span>
+            <span class="about-hero__stat-label">Contractor-focused</span>
+          </div>
+          <div class="about-hero__stat-item">
+            <span class="about-hero__stat-value">8+</span>
+            <span class="about-hero__stat-label">Trades served</span>
+          </div>
+          <div class="about-hero__stat-item">
+            <span class="about-hero__stat-value">30</span>
+            <span class="about-hero__stat-label">Days to first results</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="about-hero__right reveal reveal-delay-2">
+        <div class="about-identity-card">
+          <span class="about-identity-card__tag">Founder & CEO</span>
+          <div class="about-identity-card__name">Ricky</div>
+          <div class="about-identity-card__title">Urban Niche Co. — Des Moines, Iowa</div>
+          <div class="about-identity-card__divider"></div>
+          <div class="about-identity-card__list">
+            <div class="about-identity-card__item">
+              <span class="about-identity-card__item-icon">→</span>
+              <span>Built every system from the ground up — no corporate playbook, no shortcuts</span>
+            </div>
+            <div class="about-identity-card__item">
+              <span class="about-identity-card__item-icon">→</span>
+              <span>Obsessed with contractor marketing because it's the most underserved space in digital</span>
+            </div>
+            <div class="about-identity-card__item">
+              <span class="about-identity-card__item-icon">→</span>
+              <span>Deploying AI-powered outreach and automation that big agencies charge triple for</span>
+            </div>
+            <div class="about-identity-card__item">
+              <span class="about-identity-card__item-icon">→</span>
+              <span>Every client gets the same energy — whether you're just starting or ready to scale</span>
+            </div>
+          </div>
+          <div class="about-identity-card__bottom">
+            <div class="about-identity-card__location">
+              <span>📍</span>
+              <span>Des Moines, Iowa</span>
+            </div>
+            <a href="/contact-digital-marketing-agency/" class="btn btn-primary btn-sm">Work With Us →</a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ═══════════════════════════════════════════
+       MISSION
+  ═══════════════════════════════════════════ -->
+  <section class="section mission">
+    <div class="container">
+      <div class="mission__inner">
+
+        <div class="mission__left reveal">
+          <span class="eyebrow">Our Mission</span>
+          <h2>Give Contractors the Marketing Firepower They've Always Deserved.</h2>
+          <p>The trades industry runs the world — roofers keep families dry, plumbers keep water flowing, electricians keep the lights on. These businesses deserve marketing that actually works, not cookie-cutter campaigns built for dentists and coffee shops.</p>
+          <p>We built Urban Niche Co. to close that gap. To bring real strategy, real systems, and real results to the people doing real work.</p>
+          <a href="/marketing-services-iowa/" class="btn btn-outline" style="margin-top: 2rem;">See Our Services →</a>
+        </div>
+
+        <div class="mission__right reveal reveal-delay-1">
+
+          <div class="mission__block">
+            <div class="mission__block-icon">🎯</div>
+            <h4>We Only Serve the Trades</h4>
+            <p>No restaurants. No retail. No tech startups. Our entire operation — every tool, every strategy, every campaign — is built around contractors and home service businesses. That focus compounds. You get the benefit of everything we've learned across every client in your space.</p>
+          </div>
+
+          <div class="mission__block">
+            <div class="mission__block-icon">⚡</div>
+            <h4>We Move Fast</h4>
+            <p>Most agencies take weeks to onboard, months to show results. We operate differently. You'll see real momentum within your first 30 days — not because we cut corners, but because we already know your industry inside and out.</p>
+          </div>
+
+          <div class="mission__block">
+            <div class="mission__block-icon">🤖</div>
+            <h4>We Use AI to Outpace Everyone</h4>
+            <p>We're not chasing trends — we're building AI-powered systems into everything we do. Automated lead follow-up. Smarter ad targeting. Content at scale. The contractors who adopt this now will dominate their markets for the next decade.</p>
+          </div>
+
+          <div class="mission__block">
+            <div class="mission__block-icon">📊</div>
+            <h4>Everything is Transparent</h4>
+            <p>You'll always know where your money is going and what it's producing. Real reporting, plain language, no smoke and mirrors. If something isn't working, we say so and fix it — no waiting for a contract to expire.</p>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ═══════════════════════════════════════════
+       VALUES
+  ═══════════════════════════════════════════ -->
+  <section class="section values">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="eyebrow">What We Stand For</span>
+        <h2>The Principles We<br>Don't Compromise On.</h2>
+      </div>
+
+      <div class="values__grid">
+
+        <div class="value-card reveal reveal-delay-1">
+          <div class="value-card__num">01</div>
+          <h4>Specialization Over Scale</h4>
+          <p>We could take on more industries and grow faster. We choose not to. Being the best at one thing beats being average at everything.</p>
+        </div>
+
+        <div class="value-card reveal reveal-delay-2">
+          <div class="value-card__num">02</div>
+          <h4>Results, Not Retainers</h4>
+          <p>We don't hide behind long-term contracts. We earn your business every single month by doing the job we said we'd do.</p>
+        </div>
+
+        <div class="value-card reveal reveal-delay-3">
+          <div class="value-card__num">03</div>
+          <h4>Speed is a Strategy</h4>
+          <p>In this market, slow is expensive. We move fast on launches, fast on pivots, and fast on communication. You'll never wonder what's happening.</p>
+        </div>
+
+        <div class="value-card reveal reveal-delay-1">
+          <div class="value-card__num">04</div>
+          <h4>Honesty Above All</h4>
+          <p>If a channel isn't working, we tell you. If your budget needs to shift, we say so. You'll never get a rosy report that doesn't match your reality.</p>
+        </div>
+
+        <div class="value-card reveal reveal-delay-2">
+          <div class="value-card__num">05</div>
+          <h4>Build for the Long Game</h4>
+          <p>We're not here to run a campaign and disappear. We build systems that grow with your business — marketing infrastructure you'll own for years.</p>
+        </div>
+
+        <div class="value-card reveal reveal-delay-3">
+          <div class="value-card__num">06</div>
+          <h4>Technology as an Advantage</h4>
+          <p>AI, automation, and data are leveling the playing field. We make sure our clients are always on the right side of that shift — ahead of the curve, not catching up.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ═══════════════════════════════════════════
+       WHO WE SERVE
+  ═══════════════════════════════════════════ -->
+  <section class="section who-we-serve">
+    <div class="container">
+      <div class="section-header section-header--center reveal">
+        <span class="eyebrow">Our Clients</span>
+        <h2>If You Work with Your Hands,<br>We Work for You.</h2>
+        <p>We understand the seasonality, the local competition, the customer psychology, and the sales cycles for every trade we serve. No guessing. No learning curve.</p>
+      </div>
+
+      <div class="trades-grid reveal reveal-delay-1">
+
+        <div class="trade-card">
+          <div class="trade-card__icon">🏠</div>
+          <h5>Roofers</h5>
+          <p>Storm season, inspections, residential and commercial roofing</p>
+        </div>
+
+        <div class="trade-card">
+          <div class="trade-card__icon">❄️</div>
+          <h5>HVAC</h5>
+          <p>Seasonal demand spikes, maintenance plans, emergency calls</p>
+        </div>
+
+        <div class="trade-card">
+          <div class="trade-card__icon">🔧</div>
+          <h5>Plumbers</h5>
+          <p>Emergency services, remodels, drain cleaning, water heaters</p>
+        </div>
+
+        <div class="trade-card">
+          <div class="trade-card__icon">⚡</div>
+          <h5>Electricians</h5>
+          <p>Residential panels, commercial buildouts, EV chargers, inspections</p>
+        </div>
+
+        <div class="trade-card">
+          <div class="trade-card__icon">🌿</div>
+          <h5>Landscapers</h5>
+          <p>Seasonal packages, lawn care, hardscape, snow removal</p>
+        </div>
+
+        <div class="trade-card">
+          <div class="trade-card__icon">🏗️</div>
+          <h5>General Contractors</h5>
+          <p>Full remodels, new builds, project bidding and lead flow</p>
+        </div>
+
+        <div class="trade-card">
+          <div class="trade-card__icon">🪟</div>
+          <h5>Remodelers</h5>
+          <p>Kitchens, bathrooms, basements, additions and renovations</p>
+        </div>
+
+        <div class="trade-card">
+          <div class="trade-card__icon">🖌️</div>
+          <h5>Painters</h5>
+          <p>Interior, exterior, commercial, cabinet refinishing</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ═══════════════════════════════════════════
+       THE DIFFERENCE
+  ═══════════════════════════════════════════ -->
+  <section class="section difference">
+    <div class="container">
+      <div class="difference__inner">
+
+        <div class="difference__left reveal">
+          <span class="eyebrow">Why It Matters</span>
+          <h2>The Specialist<br>Advantage.</h2>
+          <p style="margin-bottom: 1.25rem;">General agencies have to relearn your industry with every campaign. We already know it. That's not a small difference — it's the difference between wasted budget and a full pipeline.</p>
+          <p>When you call us, you're not explaining what a roofing lead looks like or why HVAC spikes in July. We already know. We're already building for it.</p>
+        </div>
+
+        <div class="difference__right reveal reveal-delay-2">
+          <table class="difference__table">
+            <thead>
+              <tr>
+                <th>What You're Comparing</th>
+                <th>Generic Agency</th>
+                <th>Urban Niche Co.</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Contractor-Specific Experience</td>
+                <td><span class="cross">✕</span></td>
+                <td><span class="check">✓</span></td>
+              </tr>
+              <tr>
+                <td>Month-to-Month Flexibility</td>
+                <td><span class="cross">✕</span></td>
+                <td><span class="check">✓</span></td>
+              </tr>
+              <tr>
+                <td>AI-Powered Lead Systems</td>
+                <td><span class="cross">✕</span></td>
+                <td><span class="check">✓</span></td>
+              </tr>
+              <tr>
+                <td>Results in First 30 Days</td>
+                <td><span class="cross">✕</span></td>
+                <td><span class="check">✓</span></td>
+              </tr>
+              <tr>
+                <td>Full Campaign Transparency</td>
+                <td><span class="cross">✕</span></td>
+                <td><span class="check">✓</span></td>
+              </tr>
+              <tr>
+                <td>Understands Your Seasonality</td>
+                <td><span class="cross">✕</span></td>
+                <td><span class="check">✓</span></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ═══════════════════════════════════════════
+       CAREERS
+  ═══════════════════════════════════════════ -->
+  <section class="section careers" id="careers">
+    <div class="container">
+      <div class="careers__inner">
+
+        <div class="careers__left reveal">
+          <span class="eyebrow">Join the Team</span>
+          <h2>We're Building<br>Something Real.</h2>
+          <p style="margin-bottom: 1.25rem;">Urban Niche Co. is growing fast. We're looking for people who are hungry, sharp, and want to be part of an agency that's doing things differently — not a corporate machine, not a freelance side hustle. Something in between, and better than both.</p>
+          <p>If you want to be on the ground floor of something that matters, we want to hear from you.</p>
+          <a href="/contact-digital-marketing-agency/" class="btn btn-outline" style="margin-top: 2rem;">Get In Touch →</a>
+        </div>
+
+        <div class="careers__right reveal reveal-delay-2">
+          <div class="careers__roles">
+
+            <div class="career-card">
+              <div class="career-card__left">
+                <h5>Sales & Client Relations</h5>
+                <p>Outbound outreach, lead qualification, onboarding new clients</p>
+              </div>
+              <span class="career-card__badge">Hiring Soon</span>
+            </div>
+
+            <div class="career-card">
+              <div class="career-card__left">
+                <h5>AI Developer / Automation Engineer</h5>
+                <p>Building workflows with Claude, Cowork, Zapier, and custom AI tools</p>
+              </div>
+              <span class="career-card__badge">Hiring Soon</span>
+            </div>
+
+            <div class="career-card">
+              <div class="career-card__left">
+                <h5>Digital Marketing Specialist</h5>
+                <p>SEO, PPC, and social strategy for contractor clients</p>
+              </div>
+              <span class="career-card__badge">Future Role</span>
+            </div>
+
+            <div class="career-card">
+              <div class="career-card__left">
+                <h5>Content & Copywriter</h5>
+                <p>Trade-focused content, case studies, ad copy, and email</p>
+              </div>
+              <span class="career-card__badge">Future Role</span>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ═══════════════════════════════════════════
+       CTA BANNER
+  ═══════════════════════════════════════════ -->
+  <section class="cta-banner noise-overlay">
+    <div class="container">
+      <div class="cta-banner__inner reveal">
+        <div>
+          <span class="eyebrow">Ready to Grow?</span>
+          <h2>Let's Build Your Pipeline.</h2>
+          <p>No cost. No commitment. Just a clear look at where you stand and exactly how we'd grow your business.</p>
+        </div>
+        <div class="cta-banner__actions">
+          <a href="/contact-digital-marketing-agency/#audit" class="btn btn-primary btn-lg">Get Free Website Audit</a>
+          <a href="/contact-digital-marketing-agency/" class="btn btn-outline btn-lg">Contact Us</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ═══════════════════════════════════════════
+       FOOTER
+  ═══════════════════════════════════════════ -->
+  <footer class="footer">
+
+  <div class="container">
+
+    <div class="footer__grid">
+
+      <div class="footer__brand">
+
+        <div class="footer__logo" style="display:flex;align-items:center;gap:10px;margin-bottom:12px;">
+
+          <img src="https://urbannicheco.com/wp-content/uploads/2026/04/99f521e4-9887-408b-b987-5822ba896f1d.png" alt="Urban Niche Co." style="height:36px;width:auto;">
+
+          <span style="font-family:'Syne',sans-serif;font-weight:800;font-size:18px;color:#fff;">Urban <span style="color:var(--color-accent)">Niche</span> Co.</span>
+
+        </div>
+
+        <p>Digital marketing built exclusively for contractors and home service businesses.</p>
+
+        <div class="footer__social">
+
+          <a href="https://www.facebook.com/UrbanNicheCo" aria-label="Facebook"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg></a>
+
+          <a href="https://www.instagram.com/urbanniche_co/" aria-label="Instagram"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg></a>
+
+          <a href="https://www.linkedin.com/company/urbannicheco" aria-label="LinkedIn"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg></a>
+
+          <a href="https://x.com/UrbanNiche_Co" aria-label="Twitter/X">&#120143;</a>
+
+        </div>
+
+      </div>
+
+      <div class="footer__col">
+
+        <h5>Services</h5>
+
+        <ul>
+
+          <li><a href="https://urbannicheco.com/seo-services-des-moines-iowa">SEO</a></li>
+
+          <li><a href="https://urbannicheco.com/pay-per-click-advertising-iowa">Pay Per Click</a></li>
+
+          <li><a href="https://urbannicheco.com/social-media-marketing-iowa-grow-your-brand-urban-niche-co">Social Media</a></li>
+
+          <li><a href="https://urbannicheco.com/website-design-and-development">Website Design</a></li>
+
+          <li><a href="https://urbannicheco.com/marketing">Marketing Services</a></li>
+
+          <li><a href="https://urbannicheco.com/ai-consulting-services">AI Consulting</a></li>
+
+        </ul>
+
+      </div>
+
+      <div class="footer__col">
+
+        <h5>Company</h5>
+
+        <ul>
+
+          <li><a href="https://urbannicheco.com/about-digital-marketing-agency-midwest">About Us</a></li>
+
+          <li><a href="https://urbannicheco.com/about-digital-marketing-agency-midwest/#careers">Careers</a></li>
+
+          <li><a href="https://urbannicheco.com/blog">Blog</a></li>
+
+          <li><a href="https://urbannicheco.com/pricing">Pricing</a></li>
+
+          <li><a href="https://urbannicheco.com/faq">FAQ</a></li>
+
+          <li><a href="https://urbannicheco.com/branded-merchandise-iowa">Merchandise</a></li>
+
+        </ul>
+
+      </div>
+
+      <div class="footer__col">
+
+        <h5>Get Started</h5>
+
+        <ul>
+
+          <li><a href="https://urbannicheco.com/contact-digital-marketing-agency/">Free Website Audit</a></li>
+
+          <li><a href="https://urbannicheco.com/contact-digital-marketing-agency">Contact Us</a></li>
+
+          <li><a href="https://urbannicheco.com/pricing">View Pricing</a></li>
+
+        </ul>
+
+        <div style="margin-top:20px;font-size:13px;color:rgba(255,255,255,0.4);line-height:1.8;">
+
+          <a href="sms:+15153444053" style="color:#e8651a;text-decoration:none;font-weight:500;">(515) 344-4053</a><br>
+
+          <span style="font-size:12px;">Text anytime &middot; No cold calls</span>
+
+        </div>
+
+        <div style="margin-top:1.5rem;">
+
+          <a href="https://urbannicheco.com/contact-digital-marketing-agency/" class="btn btn-primary btn-sm">Free Audit &#8594;</a>
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <div class="footer__bottom">
+
+      <p>&copy; 2026 Urban Niche Co. All rights reserved.</p>
+
+      <div class="footer__bottom-links">
+
+        <a href="https://urbannicheco.com/privacy-policy">Privacy Policy</a>
+
+        <a href="https://urbannicheco.com/sitemap">Sitemap</a>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</footer>
+
+
+  <!-- ═══════════════════════════════════════════
+       SCRIPTS
+  ═══════════════════════════════════════════ -->
+  <script>
+    const nav = document.getElementById('mainNav');
+    window.addEventListener('scroll', () => {
+      nav.classList.toggle('scrolled', window.scrollY > 40);
+    });
+
+    const hamburger = document.getElementById('hamburger');
+    const mobileNav = document.getElementById('mobileNav');
+    hamburger.addEventListener('click', () => {
+      mobileNav.classList.toggle('open');
+    });
+
+    const reveals = document.querySelectorAll('.reveal');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, { threshold: 0.12 });
+    reveals.forEach(el => observer.observe(el));
+  </script>
+
+</body>
+</html>

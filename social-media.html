@@ -1,0 +1,1079 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Social media marketing for contractors — Facebook, Instagram, and video management built exclusively for roofers, HVAC, plumbers, electricians, and home service businesses by Urban Niche Co." />
+  <title>Social Media Marketing | Urban Niche Co.</title>
+  <link rel="stylesheet" href="/wp-content/themes/divi-child/unc/style.css" />
+  <link rel="icon" type="image/png" href="assets/favicon.png" />
+
+  <style>
+    /* ── Social Media Page Styles ────────────────────────── */
+
+    .page-hero {
+      padding-top: calc(var(--nav-height) + var(--space-xl));
+      padding-bottom: var(--space-xl);
+      background: var(--color-dark);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .page-hero::before {
+      content: '';
+      position: absolute;
+      top: -200px; right: -150px;
+      width: 600px; height: 600px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(232,101,26,0.07) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    .page-hero__inner {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: var(--space-xl);
+      align-items: center;
+    }
+
+    .page-hero__breadcrumb {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-family: var(--font-display);
+      font-size: 0.68rem;
+      font-weight: 600;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--color-white-dim);
+      margin-bottom: 1.25rem;
+    }
+
+    .page-hero__breadcrumb a { color: var(--color-white-dim); transition: color var(--transition-fast); }
+    .page-hero__breadcrumb a:hover { color: var(--color-accent); }
+    .page-hero__breadcrumb span { color: var(--color-accent); }
+
+    .page-hero h1 { margin: 0.5rem 0 1.5rem; }
+
+    .page-hero__sub {
+      font-size: 1.05rem;
+      color: var(--color-white-dim);
+      max-width: 52ch;
+      margin-bottom: 2.5rem;
+      line-height: 1.7;
+    }
+
+    .page-hero__actions {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    /* Social feed mockup */
+    .social-feed {
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+    }
+
+    .feed-card {
+      background: var(--color-dark-2);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-md);
+      padding: 1rem 1.25rem;
+      transition: border-color var(--transition-base);
+    }
+
+    .feed-card:hover { border-color: var(--color-border-bright); }
+
+    .feed-card__header {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      margin-bottom: 0.65rem;
+    }
+
+    .feed-avatar {
+      width: 34px;
+      height: 34px;
+      border-radius: 50%;
+      background: var(--color-accent);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: var(--font-display);
+      font-size: 0.7rem;
+      font-weight: 800;
+      color: var(--color-white);
+      flex-shrink: 0;
+    }
+
+    .feed-meta { flex: 1; }
+
+    .feed-name {
+      font-family: var(--font-display);
+      font-size: 0.78rem;
+      font-weight: 700;
+      color: var(--color-white);
+    }
+
+    .feed-time {
+      font-size: 0.65rem;
+      color: var(--color-white-dim);
+      opacity: 0.6;
+    }
+
+    .feed-platform {
+      font-size: 0.8rem;
+      color: var(--color-white-dim);
+      opacity: 0.5;
+    }
+
+    .feed-text {
+      font-size: 0.8rem;
+      color: var(--color-white-dim);
+      line-height: 1.5;
+      margin-bottom: 0.75rem;
+    }
+
+    .feed-image {
+      width: 100%;
+      height: 80px;
+      background: var(--color-dark-3);
+      border-radius: var(--radius-sm);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.5rem;
+      margin-bottom: 0.75rem;
+      border: 1px solid var(--color-border);
+    }
+
+    .feed-stats {
+      display: flex;
+      gap: 1.25rem;
+    }
+
+    .feed-stat {
+      font-family: var(--font-display);
+      font-size: 0.65rem;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      color: var(--color-white-dim);
+      opacity: 0.6;
+    }
+
+    .feed-stat span { color: var(--color-accent); opacity: 1; }
+
+    /* Why Social */
+    .why-social {
+      background: var(--color-black);
+    }
+
+    .why-social__inner {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: var(--space-xl);
+      align-items: center;
+    }
+
+    .why-social__points {
+      display: flex;
+      flex-direction: column;
+      gap: 1.25rem;
+      margin-top: 1.5rem;
+    }
+
+    .why-point {
+      display: flex;
+      gap: 1rem;
+      align-items: flex-start;
+    }
+
+    .why-point__num {
+      font-family: var(--font-display);
+      font-size: 0.65rem;
+      font-weight: 800;
+      color: var(--color-accent);
+      background: var(--color-accent-glow);
+      border: 1px solid rgba(232,101,26,0.25);
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+
+    .why-point h5 { margin-bottom: 0.25rem; }
+    .why-point p  { font-size: 0.875rem; max-width: none; }
+
+    /* Stats panel */
+    .social-stats {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+    }
+
+    .social-stat-card {
+      background: var(--color-dark-2);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-md);
+      padding: 1.5rem 1.25rem;
+      text-align: center;
+    }
+
+    .social-stat-card__val {
+      font-family: var(--font-display);
+      font-size: 1.8rem;
+      font-weight: 800;
+      color: var(--color-accent);
+      line-height: 1;
+      display: block;
+      margin-bottom: 0.3rem;
+    }
+
+    .social-stat-card__lbl {
+      font-size: 0.78rem;
+      color: var(--color-white-dim);
+      display: block;
+    }
+
+    /* Platforms */
+    .platforms {
+      background: var(--color-dark-2);
+    }
+
+    .platforms__grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1.25rem;
+      margin-top: var(--space-lg);
+    }
+
+    .platform-card {
+      background: var(--color-dark-3);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-md);
+      padding: 2rem;
+      display: flex;
+      gap: 1.25rem;
+      align-items: flex-start;
+      transition: all var(--transition-base);
+    }
+
+    .platform-card:hover {
+      border-color: rgba(232,101,26,0.3);
+      transform: translateY(-3px);
+    }
+
+    .platform-card__icon { font-size: 1.75rem; flex-shrink: 0; }
+    .platform-card h4 { margin-bottom: 0.5rem; }
+    .platform-card p  { font-size: 0.875rem; margin-bottom: 1rem; }
+
+    .platform-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem;
+    }
+
+    .platform-tag {
+      font-family: var(--font-display);
+      font-size: 0.6rem;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      padding: 0.2rem 0.6rem;
+      border-radius: var(--radius-pill);
+      background: var(--color-dark-2);
+      border: 1px solid var(--color-border);
+      color: var(--color-white-dim);
+    }
+
+    /* What's Included */
+    .included {
+      background: var(--color-dark);
+    }
+
+    .included__grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.25rem;
+      margin-top: var(--space-lg);
+    }
+
+    .included__card {
+      background: var(--color-dark-2);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-md);
+      padding: 1.75rem;
+      transition: all var(--transition-base);
+    }
+
+    .included__card:hover {
+      border-color: rgba(232,101,26,0.3);
+      transform: translateY(-4px);
+    }
+
+    .included__icon { font-size: 1.5rem; margin-bottom: 0.85rem; }
+    .included__card h4 { margin-bottom: 0.5rem; }
+    .included__card p  { font-size: 0.875rem; }
+
+    /* Pricing */
+    .pricing {
+      background: var(--color-black);
+    }
+
+    .pricing__grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+      margin-top: var(--space-lg);
+    }
+
+    .price-card {
+      background: var(--color-dark-2);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-lg);
+      padding: 2.25rem 2rem;
+      display: flex;
+      flex-direction: column;
+      position: relative;
+      transition: all var(--transition-base);
+    }
+
+    .price-card:hover {
+      border-color: rgba(232,101,26,0.3);
+      transform: translateY(-5px);
+    }
+
+    .price-card--featured {
+      border-color: var(--color-accent);
+      background: linear-gradient(135deg, var(--color-dark-2) 0%, rgba(232,101,26,0.05) 100%);
+    }
+
+    .price-card__badge {
+      position: absolute;
+      top: -12px;
+      left: 50%;
+      transform: translateX(-50%);
+      font-family: var(--font-display);
+      font-size: 0.58rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      padding: 0.25rem 0.9rem;
+      border-radius: var(--radius-pill);
+      background: var(--color-accent);
+      color: var(--color-white);
+      white-space: nowrap;
+    }
+
+    .price-card__tier {
+      font-family: var(--font-display);
+      font-size: 0.62rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--color-white-dim);
+      margin-bottom: 0.5rem;
+    }
+
+    .price-card h3 { font-size: 1.4rem; margin-bottom: 1rem; }
+
+    .price-card__amount {
+      font-family: var(--font-display);
+      font-size: 2.5rem;
+      font-weight: 800;
+      color: var(--color-accent);
+      line-height: 1;
+      margin-bottom: 0.2rem;
+    }
+
+    .price-card__cycle {
+      font-size: 0.78rem;
+      color: var(--color-white-dim);
+      margin-bottom: 1.75rem;
+    }
+
+    .price-card__divider {
+      width: 100%;
+      height: 1px;
+      background: var(--color-border);
+      margin-bottom: 1.5rem;
+    }
+
+    .price-card__features {
+      display: flex;
+      flex-direction: column;
+      gap: 0.65rem;
+      flex: 1;
+      margin-bottom: 2rem;
+    }
+
+    .price-card__feature {
+      display: flex;
+      gap: 0.75rem;
+      font-size: 0.875rem;
+      color: var(--color-white-dim);
+      align-items: flex-start;
+    }
+
+    .price-card__feature::before {
+      content: '✓';
+      color: var(--color-accent);
+      font-size: 0.75rem;
+      font-weight: 700;
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+
+    .price-card .btn {
+      width: 100%;
+      justify-content: center;
+    }
+
+    /* Results */
+    .results {
+      background: var(--color-dark-2);
+    }
+
+    .results__grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1rem;
+      margin-top: var(--space-lg);
+    }
+
+    .result-card {
+      background: var(--color-dark-3);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-md);
+      padding: 1.75rem 1.5rem;
+      text-align: center;
+      transition: all var(--transition-base);
+    }
+
+    .result-card:hover {
+      border-color: var(--color-accent);
+      transform: translateY(-3px);
+    }
+
+    .result-card__val {
+      font-family: var(--font-display);
+      font-size: 2rem;
+      font-weight: 800;
+      color: var(--color-accent);
+      line-height: 1;
+      display: block;
+      margin-bottom: 0.4rem;
+    }
+
+    .result-card__label {
+      font-size: 0.82rem;
+      color: var(--color-white-dim);
+    }
+
+    /* Responsive */
+    @media (max-width: 1024px) {
+      .page-hero__inner,
+      .why-social__inner { grid-template-columns: 1fr; }
+      .included__grid { grid-template-columns: 1fr 1fr; }
+      .pricing__grid { grid-template-columns: 1fr; max-width: 480px; margin-left: auto; margin-right: auto; }
+      .results__grid { grid-template-columns: repeat(2, 1fr); }
+    }
+
+    @media (max-width: 768px) {
+      .page-hero__actions { flex-direction: column; }
+      .platforms__grid { grid-template-columns: 1fr; }
+      .included__grid { grid-template-columns: 1fr; }
+      .social-stats { grid-template-columns: 1fr 1fr; }
+      .results__grid { grid-template-columns: repeat(2, 1fr); }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ═══════════════════════════════════════════
+       NAVIGATION
+  ═══════════════════════════════════════════ -->
+  <nav class="nav" id="mainNav">
+  <div class="nav__inner">
+    <a href="https://urbannicheco.com" class="nav__logo">
+      <img class="nav__logo-img" src="https://urbannicheco.com/wp-content/uploads/2026/04/99f521e4-9887-408b-b987-5822ba896f1d.png" alt="Urban Niche Co.">
+      Urban<span>Niche</span>&nbsp;Co.
+    </a>
+    <ul class="nav__links">
+      <li><a href="https://urbannicheco.com" class="nav__link">Home</a></li>
+      <li class="nav__dropdown">
+        <a href="https://urbannicheco.com/marketing-services-iowa" class="nav__link">Services &#9660;</a>
+        <div class="nav__dropdown-menu">
+          <a href="https://urbannicheco.com/marketing-services-iowa" class="nav__dropdown-item">All Services</a>
+          <a href="https://urbannicheco.com/seo-services-des-moines-iowa" class="nav__dropdown-item">SEO</a>
+          <a href="https://urbannicheco.com/pay-per-click-advertising-iowa" class="nav__dropdown-item">Pay Per Click</a>
+          <a href="https://urbannicheco.com/social-media-marketing-iowa-grow-your-brand-urban-niche-co" class="nav__dropdown-item">Social Media Marketing</a>
+          <a href="https://urbannicheco.com/website-design-and-development" class="nav__dropdown-item">Website Design &amp; Dev</a>
+          <a href="https://urbannicheco.com/marketing" class="nav__dropdown-item">Marketing Services</a>
+          <a href="https://urbannicheco.com/branded-merchandise-iowa" class="nav__dropdown-item">Branded Merchandise</a>
+          <a href="https://urbannicheco.com/ai-consulting-services" class="nav__dropdown-item">AI Consulting</a>
+          <a href="https://urbannicheco.com/saas-custom-app-development" class="nav__dropdown-item">Custom App &amp; SaaS Dev</a>
+          <a href="https://urbannicheco.com/a-la-carte" class="nav__dropdown-item">A La Carte</a>
+        </div>
+      </li>
+      <li><a href="https://urbannicheco.com/pricing" class="nav__link">Pricing</a></li>
+      <li><a href="https://urbannicheco.com/about-digital-marketing-agency-midwest" class="nav__link">About</a></li>
+      <li><a href="/faq/" class="nav__link">FAQ</a></li>
+    </ul>
+    <div class="nav__cta">
+      <a href="https://urbannicheco.com/contact-digital-marketing-agency" class="btn btn-outline btn-sm">Contact Us</a>
+      <a href="https://urbannicheco.com/contact-digital-marketing-agency/" class="btn btn-primary btn-sm">Free Website Audit</a>
+    </div>
+    <button class="nav__hamburger" id="hamburger" aria-label="Open menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+<div class="nav__mobile" id="mobileNav">
+  <a href="https://urbannicheco.com" class="nav__mobile-link">Home</a>
+  <a href="https://urbannicheco.com/marketing-services-iowa" class="nav__mobile-link">Services</a>
+  <a href="https://urbannicheco.com/marketing-services-iowa" class="nav__mobile-link nav__mobile-sub">&#8618; All Services</a>
+  <a href="https://urbannicheco.com/seo-services-des-moines-iowa" class="nav__mobile-link nav__mobile-sub">&#8618; SEO</a>
+  <a href="https://urbannicheco.com/pay-per-click-advertising-iowa" class="nav__mobile-link nav__mobile-sub">&#8618; Pay Per Click</a>
+  <a href="https://urbannicheco.com/social-media-marketing-iowa-grow-your-brand-urban-niche-co" class="nav__mobile-link nav__mobile-sub">&#8618; Social Media Marketing</a>
+  <a href="https://urbannicheco.com/website-design-and-development" class="nav__mobile-link nav__mobile-sub">&#8618; Website Design &amp; Dev</a>
+  <a href="https://urbannicheco.com/marketing" class="nav__mobile-link nav__mobile-sub">&#8618; Marketing Services</a>
+  <a href="https://urbannicheco.com/branded-merchandise-iowa" class="nav__mobile-link nav__mobile-sub">&#8618; Branded Merchandise</a>
+  <a href="https://urbannicheco.com/ai-consulting-services" class="nav__mobile-link nav__mobile-sub">&#8618; AI Consulting</a>
+  <a href="https://urbannicheco.com/saas-custom-app-development" class="nav__mobile-link nav__mobile-sub">&#8618; Custom App &amp; SaaS Dev</a>
+  <a href="https://urbannicheco.com/a-la-carte" class="nav__mobile-link nav__mobile-sub">&#8618; A La Carte</a>
+  <a href="https://urbannicheco.com/pricing" class="nav__mobile-link">Pricing</a>
+  <a href="https://urbannicheco.com/about-digital-marketing-agency-midwest" class="nav__mobile-link">About</a>
+  <a href="https://urbannicheco.com/faq" class="nav__mobile-link">FAQ</a>
+  <a href="https://urbannicheco.com/contact-digital-marketing-agency" class="nav__mobile-link">Contact Us</a>
+  <a href="https://urbannicheco.com/contact-digital-marketing-agency/" class="btn btn-primary">Free Website Audit</a>
+</div>
+
+
+  <!-- ═══════════════════════════════════════════
+       HERO
+  ═══════════════════════════════════════════ -->
+  <section class="page-hero noise-overlay">
+    <div class="container page-hero__inner">
+
+      <div class="reveal">
+        <div class="page-hero__breadcrumb">
+          <a href="/marketing-services-iowa/">Services</a>
+          <span>/ Social Media</span>
+        </div>
+        <span class="eyebrow">Social Media Marketing</span>
+        <h1>
+          Midwest Contractor Social Media Marketing — Turn Job-Site Photos Into Leads
+        </h1>
+        <p class="page-hero__sub">
+          We manage your Facebook, Instagram, and more — turning before/after work and project photos into content that builds trust and gets your phone ringing from people in your service area.
+        </p>
+        <div class="page-hero__actions">
+          <a href="/contact-digital-marketing-agency/#audit" class="btn btn-primary btn-lg">Get a Free Social Audit</a>
+          <a href="#pricing" class="btn btn-outline btn-lg">View Pricing</a>
+        </div>
+      </div>
+
+      <div class="reveal reveal-delay-2">
+        <div class="social-feed">
+
+          <div class="feed-card">
+            <div class="feed-card__header">
+              <div class="feed-avatar">UN</div>
+              <div class="feed-meta">
+                <div class="feed-name">Your Roofing Co.</div>
+                <div class="feed-time">2 hours ago</div>
+              </div>
+              <span class="feed-platform">📘</span>
+            </div>
+            <div class="feed-text">Just wrapped up this full replacement in Waukee — storm damage to full tear-off in 2 days. New GAF shingles, new flashing, new ridge cap. Homeowner couldn't be happier. 🏠✅</div>
+            <div class="feed-image">📸 Before / After</div>
+            <div class="feed-stats">
+              <span class="feed-stat">❤️ <span>142</span> likes</span>
+              <span class="feed-stat">💬 <span>38</span> comments</span>
+              <span class="feed-stat">↗ <span>67</span> shares</span>
+            </div>
+          </div>
+
+          <div class="feed-card" style="opacity:0.65;">
+            <div class="feed-card__header">
+              <div class="feed-avatar" style="background:var(--color-dark-3);border:1px solid var(--color-border);">UN</div>
+              <div class="feed-meta">
+                <div class="feed-name">Your Roofing Co.</div>
+                <div class="feed-time">3 days ago</div>
+              </div>
+              <span class="feed-platform">📸</span>
+            </div>
+            <div class="feed-text">5-star review from a happy homeowner in Ankeny. This is why we do what we do. 🙌</div>
+            <div class="feed-stats">
+              <span class="feed-stat">❤️ <span>89</span> likes</span>
+              <span class="feed-stat">💬 <span>14</span> comments</span>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ═══════════════════════════════════════════
+       WHY SOCIAL
+  ═══════════════════════════════════════════ -->
+  <section class="section why-social">
+    <div class="container">
+      <div class="why-social__inner">
+
+        <div class="reveal">
+          <span class="eyebrow">Why It Works</span>
+          <h2>Your Best Salesperson Is the Work You've Already Done.</h2>
+          <p>Homeowners hire contractors they trust. Nothing builds that trust faster than seeing your real work in their feed — before and afters, job sites, happy customers. We make that happen consistently so you never have to think about it.</p>
+          <div class="why-social__points">
+            <div class="why-point">
+              <div class="why-point__num">1</div>
+              <div>
+                <h5>Build Trust Before They Call</h5>
+                <p>Consistent social presence means homeowners already feel like they know you before they ever pick up the phone. That's a warmer lead every time.</p>
+              </div>
+            </div>
+            <div class="why-point">
+              <div class="why-point__num">2</div>
+              <div>
+                <h5>Stay Top of Mind in Your Market</h5>
+                <p>Most homeowners don't need a contractor today — but they will in 6 months. Regular posts keep you in their feed until they're ready to hire.</p>
+              </div>
+            </div>
+            <div class="why-point">
+              <div class="why-point__num">3</div>
+              <div>
+                <h5>Turn Followers Into Referrals</h5>
+                <p>Happy customers share your posts. Their friends see your work. Social media is word-of-mouth at scale — and we run it for you.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="reveal reveal-delay-2">
+          <div class="social-stats">
+            <div class="social-stat-card">
+              <span class="social-stat-card__val">74%</span>
+              <span class="social-stat-card__lbl">of homeowners check a contractor's social before hiring</span>
+            </div>
+            <div class="social-stat-card">
+              <span class="social-stat-card__val">3.2x</span>
+              <span class="social-stat-card__lbl">more leads from businesses that post consistently</span>
+            </div>
+            <div class="social-stat-card">
+              <span class="social-stat-card__val">68%</span>
+              <span class="social-stat-card__lbl">of local service decisions are influenced by social content</span>
+            </div>
+            <div class="social-stat-card">
+              <span class="social-stat-card__val">5x</span>
+              <span class="social-stat-card__lbl">higher engagement for before/after project posts vs. generic content</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ═══════════════════════════════════════════
+       PLATFORMS
+  ═══════════════════════════════════════════ -->
+  <section class="section platforms">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="eyebrow">Platforms We Manage</span>
+        <h2>Everywhere Your Customers<br>Are Scrolling.</h2>
+        <p>Different platforms serve different purposes for contractors. We manage the right mix for your trade and market.</p>
+      </div>
+
+      <div class="platforms__grid">
+        <div class="platform-card reveal reveal-delay-1">
+          <div class="platform-card__icon">📘</div>
+          <div>
+            <h4>Facebook</h4>
+            <p>The #1 platform for local contractor visibility. We post consistently, manage your page, and run targeted local content that keeps your business top of mind in your service area. Community groups, local ads, and review management all in one place.</p>
+            <div class="platform-tags">
+              <span class="platform-tag">Page Management</span>
+              <span class="platform-tag">Local Targeting</span>
+              <span class="platform-tag">Community Groups</span>
+              <span class="platform-tag">Review Monitoring</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="platform-card reveal reveal-delay-2">
+          <div class="platform-card__icon">📸</div>
+          <div>
+            <h4>Instagram</h4>
+            <p>Before/afters, project spotlights, and behind-the-scenes content that showcases your craftsmanship to homeowners actively researching contractors. Visual proof of your quality — posted on a consistent schedule without you lifting a finger.</p>
+            <div class="platform-tags">
+              <span class="platform-tag">Project Showcases</span>
+              <span class="platform-tag">Before & After</span>
+              <span class="platform-tag">Reels & Stories</span>
+              <span class="platform-tag">Hashtag Strategy</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="platform-card reveal reveal-delay-1">
+          <div class="platform-card__icon">▶️</div>
+          <div>
+            <h4>YouTube & Video</h4>
+            <p>Short-form video content for Reels and YouTube Shorts — the fastest-growing way to reach new local audiences without paid ads. Job walkthroughs, time-lapses, and educational content that positions you as the expert in your trade.</p>
+            <div class="platform-tags">
+              <span class="platform-tag">YouTube Shorts</span>
+              <span class="platform-tag">Instagram Reels</span>
+              <span class="platform-tag">Job Walkthroughs</span>
+              <span class="platform-tag">Time-Lapses</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="platform-card reveal reveal-delay-2">
+          <div class="platform-card__icon">💼</div>
+          <div>
+            <h4>LinkedIn</h4>
+            <p>For commercial contractors and B2B relationships. We position you as the go-to expert in your trade for property managers, developers, and commercial clients. Build professional authority in your market beyond just residential leads.</p>
+            <div class="platform-tags">
+              <span class="platform-tag">B2B Outreach</span>
+              <span class="platform-tag">Thought Leadership</span>
+              <span class="platform-tag">Commercial Clients</span>
+              <span class="platform-tag">Network Growth</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ═══════════════════════════════════════════
+       WHAT'S INCLUDED
+  ═══════════════════════════════════════════ -->
+  <section class="section included">
+    <div class="container">
+      <div class="section-header section-header--center reveal">
+        <span class="eyebrow">What's Included</span>
+        <h2>Full-Service Social Media.<br>Done for You, Every Month.</h2>
+        <p>We handle everything — strategy, content, design, posting, and engagement. You send us job photos, we handle the rest.</p>
+      </div>
+
+      <div class="included__grid">
+        <div class="included__card reveal reveal-delay-1">
+          <div class="included__icon">🗓️</div>
+          <h4>Content Calendar & Scheduling</h4>
+          <p>We plan and schedule your posts in advance so your pages stay active and consistent without you lifting a finger. Every post approved before it goes live.</p>
+        </div>
+        <div class="included__card reveal reveal-delay-2">
+          <div class="included__icon">✍️</div>
+          <h4>Custom Copywriting</h4>
+          <p>Every caption is written to sound like you — professional, trustworthy, and relevant to local homeowners. No generic AI slop, no copy-pasted templates.</p>
+        </div>
+        <div class="included__card reveal reveal-delay-3">
+          <div class="included__icon">🖼️</div>
+          <h4>Graphic Design & Creative</h4>
+          <p>Branded graphics, project highlights, and promotional content that looks polished and on-brand every single time — consistent look across every platform.</p>
+        </div>
+        <div class="included__card reveal reveal-delay-1">
+          <div class="included__icon">💬</div>
+          <h4>Community Management</h4>
+          <p>We monitor comments and messages so inquiries get responded to quickly. Turning social engagement into booked jobs requires speed — we're on it.</p>
+        </div>
+        <div class="included__card reveal reveal-delay-2">
+          <div class="included__icon">📊</div>
+          <h4>Monthly Performance Reports</h4>
+          <p>Clear reporting on reach, engagement, follower growth, and lead activity so you always know what your investment is doing and where we're doubling down.</p>
+        </div>
+        <div class="included__card reveal reveal-delay-3">
+          <div class="included__icon">🎯</div>
+          <h4>Targeted Local Strategy</h4>
+          <p>Everything is tailored to your service area — we're not posting generic contractor content. We're speaking directly to your local customers about local work.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ═══════════════════════════════════════════
+       PRICING
+  ═══════════════════════════════════════════ -->
+  <section class="section pricing" id="pricing">
+    <div class="container">
+      <div class="section-header section-header--center reveal">
+        <span class="eyebrow">Transparent Pricing</span>
+        <h2>Social Media Management Plans.</h2>
+        <p>Simple, flat-rate packages — no hidden fees, no long-term lock-in contracts. Pick the plan that fits where you are right now.</p>
+      </div>
+
+      <div class="pricing__grid">
+
+        <div class="price-card reveal reveal-delay-1">
+          <div class="price-card__tier">Starter</div>
+          <h3>Basic</h3>
+          <div class="price-card__amount">$300</div>
+          <div class="price-card__cycle">/month</div>
+          <div class="price-card__divider"></div>
+          <div class="price-card__features">
+            <div class="price-card__feature">1 platform managed</div>
+            <div class="price-card__feature">8 posts per month</div>
+            <div class="price-card__feature">Custom graphics & copy</div>
+            <div class="price-card__feature">Content calendar</div>
+            <div class="price-card__feature">Monthly performance report</div>
+          </div>
+          <a href="/contact-digital-marketing-agency/#audit" class="btn btn-outline">Get Started</a>
+        </div>
+
+        <div class="price-card price-card--featured reveal reveal-delay-2">
+          <div class="price-card__badge">Most Popular</div>
+          <div class="price-card__tier">Growth</div>
+          <h3>Growth</h3>
+          <div class="price-card__amount">$550</div>
+          <div class="price-card__cycle">/month</div>
+          <div class="price-card__divider"></div>
+          <div class="price-card__features">
+            <div class="price-card__feature">2 platforms managed</div>
+            <div class="price-card__feature">16 posts per month</div>
+            <div class="price-card__feature">Custom graphics & copy</div>
+            <div class="price-card__feature">Community management</div>
+            <div class="price-card__feature">Content calendar</div>
+            <div class="price-card__feature">Monthly performance report</div>
+          </div>
+          <a href="/contact-digital-marketing-agency/#audit" class="btn btn-primary">Get Started</a>
+        </div>
+
+        <div class="price-card reveal reveal-delay-3">
+          <div class="price-card__tier">Pro</div>
+          <h3>Authority</h3>
+          <div class="price-card__amount">$900</div>
+          <div class="price-card__cycle">/month</div>
+          <div class="price-card__divider"></div>
+          <div class="price-card__features">
+            <div class="price-card__feature">3 platforms managed</div>
+            <div class="price-card__feature">24 posts per month</div>
+            <div class="price-card__feature">Video content included</div>
+            <div class="price-card__feature">Full community management</div>
+            <div class="price-card__feature">Content calendar</div>
+            <div class="price-card__feature">Bi-weekly performance reports</div>
+          </div>
+          <a href="/contact-digital-marketing-agency/#audit" class="btn btn-outline">Get Started</a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ═══════════════════════════════════════════
+       RESULTS
+  ═══════════════════════════════════════════ -->
+  <section class="section results">
+    <div class="container">
+      <div class="section-header section-header--center reveal">
+        <span class="eyebrow">What to Expect</span>
+        <h2>What Consistent Social Media<br>Does for Contractor Businesses.</h2>
+      </div>
+
+      <div class="results__grid">
+        <div class="result-card reveal reveal-delay-1">
+          <span class="result-card__val">+180%</span>
+          <span class="result-card__label">Average increase in page reach within 90 days</span>
+        </div>
+        <div class="result-card reveal reveal-delay-2">
+          <span class="result-card__val">4.7x</span>
+          <span class="result-card__label">More profile visits from consistent posting vs. sporadic activity</span>
+        </div>
+        <div class="result-card reveal reveal-delay-3">
+          <span class="result-card__val">+60%</span>
+          <span class="result-card__label">Average increase in inbound DM inquiries within 60 days</span>
+        </div>
+        <div class="result-card reveal reveal-delay-4">
+          <span class="result-card__val">30</span>
+          <span class="result-card__label">Days to first measurable engagement growth after launch</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ═══════════════════════════════════════════
+       CTA BANNER
+  ═══════════════════════════════════════════ -->
+  <section class="cta-banner noise-overlay">
+    <div class="container">
+      <div class="cta-banner__inner reveal">
+        <div>
+          <span class="eyebrow">Build Your Presence</span>
+          <h2>Get a Free Social Media Audit.</h2>
+          <p>We'll review your current profiles, show you what's missing, and tell you exactly how we'd grow your local presence.</p>
+        </div>
+        <div class="cta-banner__actions">
+          <a href="/contact-digital-marketing-agency/#audit" class="btn btn-primary btn-lg">Claim Free Social Audit</a>
+          <a href="/pricing/" class="btn btn-outline btn-lg">View All Pricing</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ═══════════════════════════════════════════
+       FOOTER
+  ═══════════════════════════════════════════ -->
+  <footer class="footer">
+
+  <div class="container">
+
+    <div class="footer__grid">
+
+      <div class="footer__brand">
+
+        <div class="footer__logo" style="display:flex;align-items:center;gap:10px;margin-bottom:12px;">
+
+          <img src="https://urbannicheco.com/wp-content/uploads/2026/04/99f521e4-9887-408b-b987-5822ba896f1d.png" alt="Urban Niche Co." style="height:36px;width:auto;">
+
+          <span style="font-family:'Syne',sans-serif;font-weight:800;font-size:18px;color:#fff;">Urban <span style="color:var(--color-accent)">Niche</span> Co.</span>
+
+        </div>
+
+        <p>Digital marketing built exclusively for contractors and home service businesses.</p>
+
+        <div class="footer__social">
+
+          <a href="https://www.facebook.com/UrbanNicheCo" aria-label="Facebook"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg></a>
+
+          <a href="https://www.instagram.com/urbanniche_co/" aria-label="Instagram"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg></a>
+
+          <a href="https://www.linkedin.com/company/urbannicheco" aria-label="LinkedIn"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg></a>
+
+          <a href="https://x.com/UrbanNiche_Co" aria-label="Twitter/X">&#120143;</a>
+
+        </div>
+
+      </div>
+
+      <div class="footer__col">
+
+        <h5>Services</h5>
+
+        <ul>
+
+          <li><a href="https://urbannicheco.com/seo-services-des-moines-iowa">SEO</a></li>
+
+          <li><a href="https://urbannicheco.com/pay-per-click-advertising-iowa">Pay Per Click</a></li>
+
+          <li><a href="https://urbannicheco.com/social-media-marketing-iowa-grow-your-brand-urban-niche-co">Social Media</a></li>
+
+          <li><a href="https://urbannicheco.com/website-design-and-development">Website Design</a></li>
+
+          <li><a href="https://urbannicheco.com/marketing">Marketing Services</a></li>
+
+          <li><a href="https://urbannicheco.com/ai-consulting-services">AI Consulting</a></li>
+
+        </ul>
+
+      </div>
+
+      <div class="footer__col">
+
+        <h5>Company</h5>
+
+        <ul>
+
+          <li><a href="https://urbannicheco.com/about-digital-marketing-agency-midwest">About Us</a></li>
+
+          <li><a href="https://urbannicheco.com/about-digital-marketing-agency-midwest/#careers">Careers</a></li>
+
+          <li><a href="https://urbannicheco.com/blog">Blog</a></li>
+
+          <li><a href="https://urbannicheco.com/pricing">Pricing</a></li>
+
+          <li><a href="https://urbannicheco.com/faq">FAQ</a></li>
+
+          <li><a href="https://urbannicheco.com/branded-merchandise-iowa">Merchandise</a></li>
+
+        </ul>
+
+      </div>
+
+      <div class="footer__col">
+
+        <h5>Get Started</h5>
+
+        <ul>
+
+          <li><a href="https://urbannicheco.com/contact-digital-marketing-agency/">Free Website Audit</a></li>
+
+          <li><a href="https://urbannicheco.com/contact-digital-marketing-agency">Contact Us</a></li>
+
+          <li><a href="https://urbannicheco.com/pricing">View Pricing</a></li>
+
+        </ul>
+
+        <div style="margin-top:20px;font-size:13px;color:rgba(255,255,255,0.4);line-height:1.8;">
+
+          <a href="sms:+15153444053" style="color:#e8651a;text-decoration:none;font-weight:500;">(515) 344-4053</a><br>
+
+          <span style="font-size:12px;">Text anytime &middot; No cold calls</span>
+
+        </div>
+
+        <div style="margin-top:1.5rem;">
+
+          <a href="https://urbannicheco.com/contact-digital-marketing-agency/" class="btn btn-primary btn-sm">Free Audit &#8594;</a>
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <div class="footer__bottom">
+
+      <p>&copy; 2026 Urban Niche Co. All rights reserved.</p>
+
+      <div class="footer__bottom-links">
+
+        <a href="https://urbannicheco.com/privacy-policy">Privacy Policy</a>
+
+        <a href="https://urbannicheco.com/sitemap">Sitemap</a>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</footer>
+
+
+  <script>
+    const nav = document.getElementById('mainNav');
+    window.addEventListener('scroll', () => {
+      nav.classList.toggle('scrolled', window.scrollY > 40);
+    });
+    const hamburger = document.getElementById('hamburger');
+    const mobileNav = document.getElementById('mobileNav');
+    hamburger.addEventListener('click', () => {
+      mobileNav.classList.toggle('open');
+    });
+    const reveals = document.querySelectorAll('.reveal');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) entry.target.classList.add('visible');
+      });
+    }, { threshold: 0.12 });
+    reveals.forEach(el => observer.observe(el));
+  </script>
+
+</body>
+</html>

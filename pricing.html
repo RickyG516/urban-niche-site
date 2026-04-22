@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="description" content="Transparent pricing for all Urban Niche Co. digital marketing services — SEO, PPC, social media, website design, AI consulting, and à la carte options for contractors." />
   <title>Pricing | Urban Niche Co.</title>
-  <link rel="stylesheet" href="/wp-content/themes/divi-child/unc/style.css" />
+  <link rel="stylesheet" href="/style.css" />
   <link rel="icon" type="image/png" href="assets/favicon.png" />
 
   <style>
@@ -465,7 +465,59 @@
   <!-- ═══════════════════════════════════════════
        NAVIGATION
   ═══════════════════════════════════════════ -->
-  <?php include '/dom746073/wp-content/themes/divi-child/unc-nav.php'; ?>
+  <nav class="nav" id="mainNav">
+  <div class="nav__inner">
+    <a href="/" class="nav__logo">
+      <img src="https://urbannicheco.com/wp-content/uploads/2026/04/99f521e4-9887-408b-b987-5822ba896f1d.png" alt="Urban Niche Co." class="nav__logo-img" />
+      Urban<span>Niche</span>&nbsp;Co.
+    </a>
+    <ul class="nav__links">
+      <li><a href="/" class="nav__link">Home</a></li>
+      <li class="nav__dropdown">
+        <a href="/services/" class="nav__link">Services &#9662;</a>
+        <div class="nav__dropdown-menu">
+          <a href="/services/" class="nav__dropdown-item">All Services</a>
+          <a href="/seo/" class="nav__dropdown-item">Search Engine Optimization</a>
+          <a href="/ppc/" class="nav__dropdown-item">Pay Per Click</a>
+          <a href="/social-media/" class="nav__dropdown-item">Social Media Marketing</a>
+          <a href="/website-design/" class="nav__dropdown-item">Website Design &amp; Dev</a>
+          <a href="/email-marketing/" class="nav__dropdown-item">Email Marketing</a>
+          <a href="/reputation-management/" class="nav__dropdown-item">Reputation Management</a>
+          <a href="/ai-consulting/" class="nav__dropdown-item">AI Consulting</a>
+        </div>
+      </li>
+      <li><a href="/pricing/" class="nav__link">Pricing</a></li>
+      <li><a href="/about/" class="nav__link">About</a></li>
+      <li><a href="/blog/" class="nav__link">Blog</a></li>
+    </ul>
+    <div class="nav__cta">
+      <a href="sms:+15153444053" class="unc-nav-text">Text (515) 344-4053</a>
+      <a href="/contact/" class="btn btn-ghost btn-sm">Contact Us</a>
+      <a href="/contact/" class="btn btn-primary btn-sm">Free Website Audit</a>
+    </div>
+    <button class="nav__hamburger" id="hamburger" aria-label="Open menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+<div class="nav__mobile" id="mobileNav">
+  <a href="/" class="nav__mobile-link">Home</a>
+  <a href="/services/" class="nav__mobile-link">Services</a>
+  <a href="/seo/" class="nav__mobile-link nav__mobile-sub">&#8627; SEO</a>
+  <a href="/ppc/" class="nav__mobile-link nav__mobile-sub">&#8627; Pay Per Click</a>
+  <a href="/social-media/" class="nav__mobile-link nav__mobile-sub">&#8627; Social Media</a>
+  <a href="/website-design/" class="nav__mobile-link nav__mobile-sub">&#8627; Website Design &amp; Dev</a>
+  <a href="/email-marketing/" class="nav__mobile-link nav__mobile-sub">&#8627; Email Marketing</a>
+  <a href="/reputation-management/" class="nav__mobile-link nav__mobile-sub">&#8627; Reputation Management</a>
+  <a href="/ai-consulting/" class="nav__mobile-link nav__mobile-sub">&#8627; AI Consulting</a>
+  <a href="/pricing/" class="nav__mobile-link">Pricing</a>
+  <a href="/about/" class="nav__mobile-link">About</a>
+  <a href="/blog/" class="nav__mobile-link">Blog</a>
+  <div class="nav__mobile-cta">
+    <a href="/contact/" class="btn btn-outline">Contact Us</a>
+    <a href="/contact/" class="btn btn-primary">Free Website Audit</a>
+  </div>
+</div>
 
 
   <!-- ═══════════════════════════════════════════
@@ -522,7 +574,7 @@
           <h2>SEO Plans</h2>
           <p>Local and national SEO packages built for contractors. Month-to-month, no lock-in.</p>
         </div>
-        <a href="/seo-services-des-moines-iowa/" class="pricing-block__link">Full SEO Details →</a>
+        <a href="/seo/" class="pricing-block__link">Full SEO Details →</a>
       </div>
 
       <div class="pricing-tabs reveal reveal-delay-1">
@@ -545,7 +597,7 @@
               <div class="price-card__feature">GBP optimization</div>
               <div class="price-card__feature">Monthly report</div>
             </div>
-            <a href="/contact-digital-marketing-agency/#audit" class="btn btn-outline">Get Started</a>
+            <a href="/contact/#audit" class="btn btn-outline">Get Started</a>
           </div>
           <div class="price-card price-card--dark">
             <div class="price-card__tier">Entry Level</div>
@@ -559,7 +611,7 @@
               <div class="price-card__feature">Citations & links</div>
               <div class="price-card__feature">Monthly report</div>
             </div>
-            <a href="/contact-digital-marketing-agency/#audit" class="btn btn-outline">Get Started</a>
+            <a href="/contact/#audit" class="btn btn-outline">Get Started</a>
           </div>
           <div class="price-card price-card--featured price-card--dark">
             <div class="price-card__badge">Top Seller</div>
@@ -574,7 +626,7 @@
               <div class="price-card__feature">On-page optimization</div>
               <div class="price-card__feature">Monthly report</div>
             </div>
-            <a href="/contact-digital-marketing-agency/#audit" class="btn btn-primary">Get Started</a>
+            <a href="/contact/#audit" class="btn btn-primary">Get Started</a>
           </div>
           <div class="price-card price-card--dark">
             <div class="price-card__tier">Competitive</div>
@@ -588,7 +640,7 @@
               <div class="price-card__feature">Advanced link building</div>
               <div class="price-card__feature">Content strategy</div>
             </div>
-            <a href="/contact-digital-marketing-agency/#audit" class="btn btn-outline">Get Started</a>
+            <a href="/contact/#audit" class="btn btn-outline">Get Started</a>
           </div>
           <div class="price-card price-card--dark">
             <div class="price-card__tier">Competitive</div>
@@ -602,7 +654,7 @@
               <div class="price-card__feature">Full content & links</div>
               <div class="price-card__feature">Priority support</div>
             </div>
-            <a href="/contact-digital-marketing-agency/#audit" class="btn btn-outline">Get Started</a>
+            <a href="/contact/#audit" class="btn btn-outline">Get Started</a>
           </div>
         </div>
       </div>
@@ -621,7 +673,7 @@
               <div class="price-card__feature">Content creation</div>
               <div class="price-card__feature">Backlink building</div>
             </div>
-            <a href="/contact-digital-marketing-agency/#audit" class="btn btn-outline">Get Started</a>
+            <a href="/contact/#audit" class="btn btn-outline">Get Started</a>
           </div>
           <div class="price-card price-card--dark">
             <div class="price-card__tier">Moderately Competitive</div>
@@ -635,7 +687,7 @@
               <div class="price-card__feature">Content creation</div>
               <div class="price-card__feature">Backlink building</div>
             </div>
-            <a href="/contact-digital-marketing-agency/#audit" class="btn btn-outline">Get Started</a>
+            <a href="/contact/#audit" class="btn btn-outline">Get Started</a>
           </div>
           <div class="price-card price-card--featured price-card--dark">
             <div class="price-card__badge">Top Seller</div>
@@ -650,7 +702,7 @@
               <div class="price-card__feature">Content creation</div>
               <div class="price-card__feature">Backlink building</div>
             </div>
-            <a href="/contact-digital-marketing-agency/#audit" class="btn btn-primary">Get Started</a>
+            <a href="/contact/#audit" class="btn btn-primary">Get Started</a>
           </div>
           <div class="price-card price-card--dark">
             <div class="price-card__tier">Highly Competitive</div>
@@ -664,7 +716,7 @@
               <div class="price-card__feature">Content creation</div>
               <div class="price-card__feature">Backlink building</div>
             </div>
-            <a href="/contact-digital-marketing-agency/#audit" class="btn btn-outline">Get Started</a>
+            <a href="/contact/#audit" class="btn btn-outline">Get Started</a>
           </div>
           <div class="price-card price-card--dark">
             <div class="price-card__tier">Cut-Throat Markets</div>
@@ -678,7 +730,7 @@
               <div class="price-card__feature">Content creation</div>
               <div class="price-card__feature">Backlink building</div>
             </div>
-            <a href="/contact-digital-marketing-agency/#audit" class="btn btn-outline">Get Started</a>
+            <a href="/contact/#audit" class="btn btn-outline">Get Started</a>
           </div>
         </div>
       </div>
@@ -696,7 +748,7 @@
               <div class="price-card__feature">Category & service optimization</div>
               <div class="price-card__feature">Photo upload & optimization</div>
             </div>
-            <a href="/contact-digital-marketing-agency/" class="btn btn-outline">Get Started</a>
+            <a href="/contact/" class="btn btn-outline">Get Started</a>
           </div>
           <div class="price-card price-card--dark">
             <div class="price-card__tier">Monthly</div>
@@ -709,7 +761,7 @@
               <div class="price-card__feature">Review monitoring</div>
               <div class="price-card__feature">Q&A management</div>
             </div>
-            <a href="/contact-digital-marketing-agency/" class="btn btn-outline">Get Started</a>
+            <a href="/contact/" class="btn btn-outline">Get Started</a>
           </div>
           <div class="price-card price-card--featured price-card--dark">
             <div class="price-card__badge">Most Popular</div>
@@ -726,7 +778,7 @@
               <div class="price-card__feature">Monthly performance report</div>
               <div class="price-card__feature">Competitor GBP tracking</div>
             </div>
-            <a href="/contact-digital-marketing-agency/#audit" class="btn btn-primary">Get Started</a>
+            <a href="/contact/#audit" class="btn btn-primary">Get Started</a>
           </div>
           <div class="price-card price-card--dark">
             <div class="price-card__tier">One-Time</div>
@@ -739,7 +791,7 @@
               <div class="price-card__feature">Yelp, BBB, Houzz & more</div>
               <div class="price-card__feature">Citation audit included</div>
             </div>
-            <a href="/contact-digital-marketing-agency/" class="btn btn-outline">Get Started</a>
+            <a href="/contact/" class="btn btn-outline">Get Started</a>
           </div>
         </div>
       </div>
@@ -758,7 +810,7 @@
           <h2>PPC Management Plans</h2>
           <p>Flat monthly management fee. Ad spend goes directly to Google — we never mark it up.</p>
         </div>
-        <a href="/pay-per-click-advertising-iowa/" class="pricing-block__link">Full PPC Details →</a>
+        <a href="/ppc/" class="pricing-block__link">Full PPC Details →</a>
       </div>
 
       <div class="price-grid price-grid--5 reveal reveal-delay-1">
@@ -775,7 +827,7 @@
             <div class="price-card__feature">Ad copy creation</div>
             <div class="price-card__feature">Monthly reporting</div>
           </div>
-          <a href="/contact-digital-marketing-agency/#audit" class="btn btn-outline">Get Started</a>
+          <a href="/contact/#audit" class="btn btn-outline">Get Started</a>
         </div>
         <div class="price-card">
           <div class="price-card__tier">Growth</div>
@@ -790,7 +842,7 @@
             <div class="price-card__feature">Call tracking</div>
             <div class="price-card__feature">Weekly reporting</div>
           </div>
-          <a href="/contact-digital-marketing-agency/#audit" class="btn btn-outline">Get Started</a>
+          <a href="/contact/#audit" class="btn btn-outline">Get Started</a>
         </div>
         <div class="price-card price-card--featured">
           <div class="price-card__badge">Most Popular</div>
@@ -806,7 +858,7 @@
             <div class="price-card__feature">Landing page design</div>
             <div class="price-card__feature">Weekly reporting + call</div>
           </div>
-          <a href="/contact-digital-marketing-agency/#audit" class="btn btn-primary">Get Started</a>
+          <a href="/contact/#audit" class="btn btn-primary">Get Started</a>
         </div>
         <div class="price-card">
           <div class="price-card__tier">Scale</div>
@@ -821,7 +873,7 @@
             <div class="price-card__feature">Display & retargeting</div>
             <div class="price-card__feature">Bi-weekly strategy calls</div>
           </div>
-          <a href="/contact-digital-marketing-agency/#audit" class="btn btn-outline">Get Started</a>
+          <a href="/contact/#audit" class="btn btn-outline">Get Started</a>
         </div>
         <div class="price-card">
           <div class="price-card__tier">Dominate</div>
@@ -836,7 +888,7 @@
             <div class="price-card__feature">Dedicated strategist</div>
             <div class="price-card__feature">Weekly strategy calls</div>
           </div>
-          <a href="/contact-digital-marketing-agency/#audit" class="btn btn-outline">Get Started</a>
+          <a href="/contact/#audit" class="btn btn-outline">Get Started</a>
         </div>
       </div>
       <p style="margin-top:1rem;font-size:0.78rem;color:var(--color-white-dim);">Ad spend is paid directly to Google/Bing — never marked up by Urban Niche Co.</p>
@@ -855,7 +907,7 @@
           <h2>Social Media Plans</h2>
           <p>Full-service social management — content, graphics, copy, and community. No hidden fees.</p>
         </div>
-        <a href="/social-media-marketing-iowa-grow-your-brand-urban-niche-co/" class="pricing-block__link">Full Social Details →</a>
+        <a href="/social-media/" class="pricing-block__link">Full Social Details →</a>
       </div>
 
       <div class="price-grid price-grid--3 reveal reveal-delay-1">
@@ -871,7 +923,7 @@
             <div class="price-card__feature">Custom graphics & copy</div>
             <div class="price-card__feature">Monthly report</div>
           </div>
-          <a href="/contact-digital-marketing-agency/#audit" class="btn btn-outline">Get Started</a>
+          <a href="/contact/#audit" class="btn btn-outline">Get Started</a>
         </div>
         <div class="price-card price-card--featured price-card--dark">
           <div class="price-card__badge">Most Popular</div>
@@ -887,7 +939,7 @@
             <div class="price-card__feature">Community management</div>
             <div class="price-card__feature">Monthly report</div>
           </div>
-          <a href="/contact-digital-marketing-agency/#audit" class="btn btn-primary">Get Started</a>
+          <a href="/contact/#audit" class="btn btn-primary">Get Started</a>
         </div>
         <div class="price-card price-card--dark">
           <div class="price-card__tier">Pro</div>
@@ -902,7 +954,7 @@
             <div class="price-card__feature">Full community management</div>
             <div class="price-card__feature">Bi-weekly reports</div>
           </div>
-          <a href="/contact-digital-marketing-agency/#audit" class="btn btn-outline">Get Started</a>
+          <a href="/contact/#audit" class="btn btn-outline">Get Started</a>
         </div>
       </div>
     </div>
@@ -918,7 +970,7 @@
           <h2>Email Marketing Plans</h2>
           <p>Keep your name in front of every past and potential customer. Monthly campaigns that drive repeat calls and referrals.</p>
         </div>
-        <a href="https://urbannicheco.com/email-marketing/" class="pricing-block__link">Full Email Marketing Details &rarr;</a>
+        <a href="/email-marketing/" class="pricing-block__link">Full Email Marketing Details &rarr;</a>
       </div>
       <div class="price-grid price-grid--3 reveal reveal-delay-1">
         <div class="price-card price-card--dark">
@@ -933,7 +985,7 @@
             <div class="price-card__feature">List management</div>
             <div class="price-card__feature">Monthly performance report</div>
           </div>
-          <a href="/contact-digital-marketing-agency/#audit" class="btn btn-outline">Get Started</a>
+          <a href="/contact/#audit" class="btn btn-outline">Get Started</a>
         </div>
         <div class="price-card price-card--featured price-card--dark">
           <div class="price-card__badge">Most Popular</div>
@@ -949,7 +1001,7 @@
             <div class="price-card__feature">Automated follow-up sequence</div>
             <div class="price-card__feature">Monthly performance report</div>
           </div>
-          <a href="/contact-digital-marketing-agency/#audit" class="btn btn-primary">Get Started</a>
+          <a href="/contact/#audit" class="btn btn-primary">Get Started</a>
         </div>
         <div class="price-card price-card--dark">
           <div class="price-card__tier">Authority</div>
@@ -965,7 +1017,7 @@
             <div class="price-card__feature">A/B subject line testing</div>
             <div class="price-card__feature">Bi-monthly performance report</div>
           </div>
-          <a href="/contact-digital-marketing-agency/#audit" class="btn btn-outline">Get Started</a>
+          <a href="/contact/#audit" class="btn btn-outline">Get Started</a>
         </div>
       </div>
     </div>
@@ -981,7 +1033,7 @@
           <h2>Reputation Management Plans</h2>
           <p>Your online reputation is your most valuable sales tool. We monitor, protect, and build it every single month.</p>
         </div>
-        <a href="https://urbannicheco.com/reputation-management/" class="pricing-block__link">Full Reputation Management Details &rarr;</a>
+        <a href="/reputation-management/" class="pricing-block__link">Full Reputation Management Details &rarr;</a>
       </div>
       <div class="price-grid price-grid--3 reveal reveal-delay-1">
         <div class="price-card price-card--dark">
@@ -996,7 +1048,7 @@
             <div class="price-card__feature">Alert on new reviews</div>
             <div class="price-card__feature">Guidance on response strategy</div>
           </div>
-          <a href="/contact-digital-marketing-agency/#audit" class="btn btn-outline">Get Started</a>
+          <a href="/contact/#audit" class="btn btn-outline">Get Started</a>
         </div>
         <div class="price-card price-card--featured price-card--dark">
           <div class="price-card__badge">Most Popular</div>
@@ -1012,7 +1064,7 @@
             <div class="price-card__feature">Competitor reputation tracking</div>
             <div class="price-card__feature">Monthly reputation report</div>
           </div>
-          <a href="/contact-digital-marketing-agency/#audit" class="btn btn-primary">Get Started</a>
+          <a href="/contact/#audit" class="btn btn-primary">Get Started</a>
         </div>
         <div class="price-card price-card--dark">
           <div class="price-card__tier">Authority</div>
@@ -1028,7 +1080,7 @@
             <div class="price-card__feature">Negative review suppression strategy</div>
             <div class="price-card__feature">Bi-monthly reputation report</div>
           </div>
-          <a href="/contact-digital-marketing-agency/#audit" class="btn btn-outline">Get Started</a>
+          <a href="/contact/#audit" class="btn btn-outline">Get Started</a>
         </div>
       </div>
     </div>
@@ -1044,7 +1096,7 @@
           <h2>Website Packages</h2>
           <p>One-time build fees. Every package includes mobile-first design, SEO structure, and go-live support.</p>
         </div>
-        <a href="/website-design-and-development/" class="pricing-block__link">Full Web Design Details &rarr;</a>
+        <a href="/website-design/" class="pricing-block__link">Full Web Design Details &rarr;</a>
       </div>
       <div class="price-grid price-grid--4 reveal reveal-delay-1">
         <div class="price-card">
@@ -1060,7 +1112,7 @@
             <div class="price-card__feature">Contact forms &amp; CTAs</div>
             <div class="price-card__feature">Hosting &amp; go-live support</div>
           </div>
-          <a href="https://urbannicheco.com/contact-digital-marketing-agency/" class="btn btn-outline">Get Started</a>
+          <a href="/contact/" class="btn btn-outline">Get Started</a>
         </div>
         <div class="price-card price-card--featured">
           <div class="price-card__badge">Most Popular</div>
@@ -1077,7 +1129,7 @@
             <div class="price-card__feature">Lead capture &amp; forms</div>
             <div class="price-card__feature">Hosting &amp; go-live support</div>
           </div>
-          <a href="https://urbannicheco.com/contact-digital-marketing-agency/" class="btn btn-primary">Get Started</a>
+          <a href="/contact/" class="btn btn-primary">Get Started</a>
         </div>
         <div class="price-card">
           <div class="price-card__tier">Custom Build</div>
@@ -1093,7 +1145,7 @@
             <div class="price-card__feature">Advanced SEO structure</div>
             <div class="price-card__feature">Priority go-live support</div>
           </div>
-          <a href="https://urbannicheco.com/contact-digital-marketing-agency/" class="btn btn-outline">Get Started</a>
+          <a href="/contact/" class="btn btn-outline">Get Started</a>
         </div>
         <div class="price-card">
           <div class="price-card__tier">One-Time</div>
@@ -1108,10 +1160,10 @@
             <div class="price-card__feature">SEO-ready structure</div>
             <div class="price-card__feature">Go-live support</div>
           </div>
-          <a href="https://urbannicheco.com/contact-digital-marketing-agency/" class="btn btn-outline">Get Started</a>
+          <a href="/contact/" class="btn btn-outline">Get Started</a>
         </div>
       </div>
-      <p style="margin-top:1rem;font-size:0.78rem;color:var(--color-white-dim);">Also available: Shopify store builds starting at $2,500. <a href="https://urbannicheco.com/contact-digital-marketing-agency/" style="color:var(--color-accent);">Contact us &rarr;</a></p>
+      <p style="margin-top:1rem;font-size:0.78rem;color:var(--color-white-dim);">Also available: Shopify store builds starting at $2,500. <a href="/contact/" style="color:var(--color-accent);">Contact us &rarr;</a></p>
     </div>
   </section>
 
@@ -1143,7 +1195,7 @@
             <div class="price-card__feature">Monthly backups</div>
             <div class="price-card__feature">Basic security</div>
           </div>
-          <a href="/contact-digital-marketing-agency/" class="btn btn-outline">Get Started</a>
+          <a href="/contact/" class="btn btn-outline">Get Started</a>
         </div>
         <div class="price-card price-card--dark">
           <div class="price-card__tier">WordPress</div>
@@ -1157,7 +1209,7 @@
             <div class="price-card__feature">Content updates</div>
             <div class="price-card__feature">Quarterly SEO audit</div>
           </div>
-          <a href="/contact-digital-marketing-agency/" class="btn btn-outline">Get Started</a>
+          <a href="/contact/" class="btn btn-outline">Get Started</a>
         </div>
         <div class="price-card price-card--dark">
           <div class="price-card__tier">Speed</div>
@@ -1171,7 +1223,7 @@
             <div class="price-card__feature">Caching config</div>
             <div class="price-card__feature">Core Web Vitals monitoring</div>
           </div>
-          <a href="/contact-digital-marketing-agency/" class="btn btn-outline">Get Started</a>
+          <a href="/contact/" class="btn btn-outline">Get Started</a>
         </div>
         <div class="price-card price-card--dark">
           <div class="price-card__tier">Speed</div>
@@ -1185,7 +1237,7 @@
             <div class="price-card__feature">CDN setup & management</div>
             <div class="price-card__feature">Monthly performance report</div>
           </div>
-          <a href="/contact-digital-marketing-agency/" class="btn btn-outline">Get Started</a>
+          <a href="/contact/" class="btn btn-outline">Get Started</a>
         </div>
       </div>
     </div>
@@ -1307,7 +1359,7 @@
           <h2>AI Strategy & Implementation</h2>
           <p>Custom-scoped per project. Every engagement starts with a free discovery call.</p>
         </div>
-        <a href="/ai-consulting-services/" class="pricing-block__link">Full AI Consulting Details →</a>
+        <a href="/ai-consulting/" class="pricing-block__link">Full AI Consulting Details →</a>
       </div>
 
       <div class="price-grid price-grid--3 reveal reveal-delay-1">
@@ -1339,7 +1391,7 @@
             <div class="price-card__feature">Reporting dashboard setup</div>
             <div class="price-card__feature">Team training & documentation</div>
           </div>
-          <a href="/contact-digital-marketing-agency/" class="btn btn-primary">Get a Quote →</a>
+          <a href="/contact/" class="btn btn-primary">Get a Quote →</a>
         </div>
         <div class="price-card">
           <div class="price-card__tier">One-On-One</div>
@@ -1353,7 +1405,7 @@
             <div class="price-card__feature">Clear prioritized action plan</div>
             <div class="price-card__feature">Recorded & documented</div>
           </div>
-          <a href="/contact-digital-marketing-agency/" class="btn btn-outline">Book Session</a>
+          <a href="/contact/" class="btn btn-outline">Book Session</a>
         </div>
       </div>
     </div>
@@ -1369,7 +1421,7 @@
           <h2>AI Lead Capture &amp; Follow-Up</h2>
           <p>Never lose a lead because you were on a job site. We build and run automated systems that respond to every inquiry in minutes — 24/7, even when you're knee deep in a project.</p>
         </div>
-        <a href="https://urbannicheco.com/ai-consulting-services/" class="pricing-block__link">Full AI Consulting Details &rarr;</a>
+        <a href="/ai-consulting/" class="pricing-block__link">Full AI Consulting Details &rarr;</a>
       </div>
       <div class="price-grid price-grid--3 reveal reveal-delay-1">
         <div class="price-card price-card--dark">
@@ -1384,7 +1436,7 @@
             <div class="price-card__feature">Basic CRM integration</div>
             <div class="price-card__feature">Monthly performance report</div>
           </div>
-          <a href="/contact-digital-marketing-agency/#audit" class="btn btn-outline">Get Started</a>
+          <a href="/contact/#audit" class="btn btn-outline">Get Started</a>
         </div>
         <div class="price-card price-card--featured price-card--dark">
           <div class="price-card__badge">Most Popular</div>
@@ -1400,7 +1452,7 @@
             <div class="price-card__feature">CRM integration &amp; management</div>
             <div class="price-card__feature">Bi-monthly performance report</div>
           </div>
-          <a href="/contact-digital-marketing-agency/#audit" class="btn btn-primary">Get Started</a>
+          <a href="/contact/#audit" class="btn btn-primary">Get Started</a>
         </div>
         <div class="price-card price-card--dark">
           <div class="price-card__tier">Authority</div>
@@ -1418,7 +1470,7 @@
             <div class="price-card__feature">Monthly strategy call</div>
             <div class="price-card__feature">Bi-monthly performance report</div>
           </div>
-          <a href="/contact-digital-marketing-agency/#audit" class="btn btn-outline">Get Started</a>
+          <a href="/contact/#audit" class="btn btn-outline">Get Started</a>
         </div>
       </div>
     </div>
@@ -1481,13 +1533,13 @@
           <div class="cta-option__icon">🔍</div>
           <h3>Get a Free Website Audit</h3>
           <p>We'll grade your site on speed, SEO, mobile, and conversion — and tell you exactly what we'd do first.</p>
-          <a href="/contact-digital-marketing-agency/#audit" class="btn btn-primary btn-lg">Claim Free Audit →</a>
+          <a href="/contact/#audit" class="btn btn-primary btn-lg">Claim Free Audit →</a>
         </div>
         <div class="cta-option reveal reveal-delay-2">
           <div class="cta-option__icon">💬</div>
           <h3>Just Want to Talk?</h3>
           <p>No audit needed. Tell us where you are and what you're trying to achieve — we'll point you in the right direction.</p>
-          <a href="/contact-digital-marketing-agency/" class="btn btn-outline btn-lg">Contact Our Team →</a>
+          <a href="/contact/" class="btn btn-outline btn-lg">Contact Our Team →</a>
         </div>
       </div>
     </div>
@@ -1497,7 +1549,72 @@
   <!-- ═══════════════════════════════════════════
        FOOTER
   ═══════════════════════════════════════════ -->
-  <?php include '/dom746073/wp-content/themes/divi-child/unc-footer.php'; ?>
+  <footer class="footer">
+  <div class="container">
+    <div class="footer__grid">
+      <div class="footer__brand">
+        <div class="footer__logo" style="display:flex;align-items:center;gap:10px;margin-bottom:12px;">
+          <img src="https://urbannicheco.com/wp-content/uploads/2026/04/99f521e4-9887-408b-b987-5822ba896f1d.png" alt="Urban Niche Co." style="height:36px;width:auto;">
+          <span style="font-family:'Syne',sans-serif;font-weight:800;font-size:18px;color:#fff;">Urban <span style="color:var(--color-accent)">Niche</span> Co.</span>
+        </div>
+        <p>Digital marketing built exclusively for contractors and home service businesses.</p>
+        <div class="footer__social">
+          <a href="https://www.facebook.com/UrbanNicheCo" aria-label="Facebook"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg></a>
+          <a href="https://www.instagram.com/urbanniche_co/" aria-label="Instagram"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg></a>
+          <a href="https://www.linkedin.com/company/urbannicheco" aria-label="LinkedIn"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg></a>
+          <a href="https://x.com/UrbanNiche_Co" aria-label="Twitter/X">&#120143;</a>
+        </div>
+      </div>
+      <div class="footer__col">
+        <h5>Services</h5>
+        <ul>
+          <li><a href="/seo/">SEO</a></li>
+          <li><a href="/ppc/">Pay Per Click</a></li>
+          <li><a href="/social-media/">Social Media</a></li>
+          <li><a href="/website-design/">Website Design</a></li>
+          <li><a href="/email-marketing/">Email Marketing</a></li>
+          <li><a href="/reputation-management/">Reputation Management</a></li>
+          <li><a href="/ai-consulting/">AI Consulting</a></li>
+        </ul>
+      </div>
+      <div class="footer__col">
+        <h5>Company</h5>
+        <ul>
+          <li><a href="/about/">About Us</a></li>
+          <li><a href="/blog/">Blog</a></li>
+          <li><a href="/pricing/">Pricing</a></li>
+          <li><a href="/faq/">FAQ</a></li>
+          <li><a href="/merchandise/">Merchandise</a></li>
+        </ul>
+      </div>
+      <div class="footer__col">
+        <h5>Get Started</h5>
+        <ul>
+          <li><a href="/contact/">Free Website Audit</a></li>
+          <li><a href="/contact/">Contact Us</a></li>
+          <li><a href="/pricing/">View Pricing</a></li>
+        </ul>
+        <div style="margin-top:20px;font-size:13px;color:rgba(255,255,255,0.4);line-height:1.8;">
+          <a href="sms:+15153444053" style="color:#e8651a;text-decoration:none;font-weight:500;">(515) 344-4053</a><br>
+          <span style="font-size:12px;">Text anytime &middot; No cold calls</span>
+        </div>
+        <div style="margin-top:1.5rem;">
+          <a href="/contact/" class="btn btn-primary btn-sm">Free Audit &#8594;</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <p>&copy; 2026 Urban Niche Co. All rights reserved.</p>
+      <div class="footer__bottom-links">
+        <a href="/privacy/">Privacy Policy</a>
+        <span> | </span>
+        <a href="/terms/">Terms of Service</a>
+        <span> | </span>
+        <a href="/sitemap/">Sitemap</a>
+      </div>
+    </div>
+  </div>
+</footer>
 
 
   <script>

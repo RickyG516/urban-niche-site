@@ -852,7 +852,7 @@ strong { font-weight: 500; color: var(--color-white); }
 }
 
 .hero__content h1 {
-  font-size: clamp(1.6rem, 3vw, 2.4rem);
+  font-size: clamp(2rem, 3.5vw, 3.2rem);
   margin-bottom: 1.5rem;
 }
 

@@ -190,7 +190,22 @@
     /* Why All-In-One */
     .all-in-one {
       background: var(--color-dark-2);
+      position: relative;
+      overflow: hidden;
     }
+
+    .all-in-one__bg {
+      position: absolute;
+      inset: 0;
+      background-image: url('/assets/images/john-kakuk-hfj5CG9dvuU-unsplash.jpg');
+      background-size: cover;
+      background-position: center;
+      filter: brightness(0.15);
+      animation: slowZoom 24s ease-in-out infinite alternate;
+      z-index: 0;
+    }
+    .all-in-one .container,
+    .all-in-one__inner { position: relative; z-index: 1; }
 
     .all-in-one__inner {
       display: grid;
@@ -474,7 +489,7 @@
     <div class="container">
       <div class="section-header section-header--center reveal">
         <span class="eyebrow">Our Services</span>
-        <h2>Six Ways We Grow Your Business.</h2>
+        <h2>Nine Ways We Grow Your Business.</h2>
         <p>Each service is built specifically for contractors. Not adapted, not repurposed — built from scratch for the trades.</p>
       </div>
 
@@ -522,6 +537,36 @@
             <div class="svc-card__include-item">Paid social ad campaigns</div>
             <div class="svc-card__include-item">Review generation strategy</div>
             <div class="svc-card__include-item">Engagement & community management</div>
+          </div>
+          <span class="svc-card__cta">Learn More →</span>
+        </a>
+
+        <!-- Email Marketing -->
+        <a href="/email-marketing/" class="svc-card reveal reveal-delay-1">
+          <div class="svc-card__icon">✉️</div>
+          <h3>Email Marketing</h3>
+          <p>Stay top-of-mind with past clients. Automated sequences that turn one-time jobs into repeat revenue — without you lifting a finger.</p>
+          <div class="svc-card__includes">
+            <div class="svc-card__include-item">Automated welcome &amp; nurture sequences</div>
+            <div class="svc-card__include-item">Re-engagement &amp; win-back campaigns</div>
+            <div class="svc-card__include-item">Seasonal campaign calendar</div>
+            <div class="svc-card__include-item">List building &amp; segmentation</div>
+            <div class="svc-card__include-item">Monthly performance reporting</div>
+          </div>
+          <span class="svc-card__cta">Learn More →</span>
+        </a>
+
+        <!-- Reputation Management -->
+        <a href="/reputation-management/" class="svc-card reveal reveal-delay-2">
+          <div class="svc-card__icon">⭐</div>
+          <h3>Reputation Management</h3>
+          <p>More 5-star Google reviews. Fewer landmines. We generate, monitor, and protect your online reputation so homeowners trust you before they ever call.</p>
+          <div class="svc-card__includes">
+            <div class="svc-card__include-item">Google review generation system</div>
+            <div class="svc-card__include-item">Automated review requests (SMS + email)</div>
+            <div class="svc-card__include-item">Negative review monitoring &amp; response</div>
+            <div class="svc-card__include-item">Review display widgets for your site</div>
+            <div class="svc-card__include-item">Monthly reputation health reports</div>
           </div>
           <span class="svc-card__cta">Learn More →</span>
         </a>
@@ -595,6 +640,7 @@
        WHY ALL-IN-ONE
   ═══════════════════════════════════════════ -->
   <section class="section all-in-one">
+    <div class="all-in-one__bg"></div>
     <div class="container">
       <div class="all-in-one__inner">
 

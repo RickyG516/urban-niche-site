@@ -26,6 +26,20 @@
       background: radial-gradient(circle, rgba(232,101,26,0.07) 0%, transparent 68%);
       pointer-events: none;
     }
+
+    .page-hero__bg {
+      position: absolute;
+      inset: 0;
+      background-image: url('/assets/images/scott-blake-x-ghf9LjrVg-unsplash.jpg');
+      background-size: cover;
+      background-position: center;
+      filter: brightness(0.4);
+      animation: slowZoom 22s ease-in-out infinite alternate;
+      z-index: 0;
+    }
+    .page-hero .container,
+    .page-hero__inner { position: relative; z-index: 1; }
+
     .page-hero__inner { position: relative; max-width: 640px; margin: 0 auto; }
     .page-hero h1 { margin: 0.75rem 0 1rem; }
     .page-hero p { font-size: 1rem; color: var(--color-white-dim); max-width: 52ch; margin: 0 auto; }
@@ -266,6 +280,7 @@
 </div>
 
 <section class="page-hero noise-overlay">
+    <div class="page-hero__bg"></div>
   <div class="container page-hero__inner">
     <span class="eyebrow reveal">Get in Touch</span>
     <h1 class="reveal reveal-delay-1">Let's Talk About<br><span class="text-accent">Growing Your Business.</span></h1>

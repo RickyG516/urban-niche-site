@@ -32,6 +32,20 @@
       pointer-events: none;
     }
 
+    /* Cinematic construction background */
+    .about-hero__bg {
+      position: absolute;
+      inset: 0;
+      background-image: url('/assets/images/frames-for-your-heart-VoI2jd75M6Q-unsplash.jpg');
+      background-size: cover;
+      background-position: center;
+      filter: brightness(0.35);
+      animation: slowZoom 22s ease-in-out infinite alternate;
+      z-index: 0;
+    }
+    .about-hero .container,
+    .about-hero__inner { position: relative; z-index: 1; }
+
     .about-hero__inner {
       display: grid;
       grid-template-columns: 1fr 1fr;
@@ -552,6 +566,7 @@
        HERO
   ═══════════════════════════════════════════ -->
   <section class="about-hero noise-overlay">
+    <div class="about-hero__bg"></div>
     <div class="container about-hero__inner">
 
       <div class="about-hero__left">

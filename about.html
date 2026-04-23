@@ -6,7 +6,7 @@
   <meta name="description" content="We're Urban Niche Co. — a Dubuque, Iowa digital marketing agency obsessed with helping contractors grow. Meet the team behind your results.">
   <title>About Us | Urban Niche Co.</title>
   <link rel="stylesheet" href="/style.css" />
-  <link rel="icon" type="image/png" hrefh="assets/favicon.png" />
+  <link rel="icon" type="image/png" href="/assets/favicon.png" />
 
   <style>
     /* ── About Page Specific Styles ─────────────────────── */
@@ -80,6 +80,10 @@
       color: var(--color-white-dim);
       max-width: 52ch;
       margin-bottom: 2.5rem;
+    }
+
+    .about-hero h1 {
+      font-size: clamp(2.2rem, 4vw, 3.6rem) \!important;
     }
 
     .about-hero__stats {
@@ -499,6 +503,46 @@
       .trades-grid { grid-template-columns: repeat(2, 1fr); }
     }
   </style>
+<!-- Canonical & Robots -->
+<link rel="canonical" href="https://urbannicheco.com/about/" />
+<meta name="robots" content="index, follow">
+<!-- Open Graph -->
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://urbannicheco.com/about/">
+<meta property="og:title" content="About Urban Niche Co. | Contractor Marketing Agency — Dubuque, Iowa">
+<meta property="og:description" content="Contractors build this country and deserve better marketing. Urban Niche Co. is a Dubuque, Iowa agency built exclusively for the trades.">
+<meta property="og:image" content="https://urbannicheco.com/assets/og-image.png">
+<meta property="og:site_name" content="Urban Niche Co.">
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@UrbanNiche_Co">
+<meta name="twitter:title" content="About Urban Niche Co. | Contractor Marketing Agency — Dubuque, Iowa">
+<meta name="twitter:description" content="Contractors build this country and deserve better marketing. Urban Niche Co. is a Dubuque, Iowa agency built exclusively for the trades.">
+<meta name="twitter:image" content="https://urbannicheco.com/assets/og-image.png">
+<!-- Schema -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "AboutPage",
+  "@id": "https://urbannicheco.com/about/",
+  "url": "https://urbannicheco.com/about/",
+  "name": "About Urban Niche Co.",
+  "description": "Urban Niche Co. is a Dubuque, Iowa digital marketing agency built exclusively for contractors and home service businesses.",
+  "publisher": {
+    "@type": "LocalBusiness",
+    "@id": "https://urbannicheco.com/#organization",
+    "name": "Urban Niche Co.",
+    "url": "https://urbannicheco.com",
+    "telephone": "(515) 344-4053",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Dubuque",
+      "addressRegion": "IA",
+      "addressCountry": "US"
+    }
+  }
+}
+</script>
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-MV891F39TH"></script>
 <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-MV891F39TH');</script>
 </head>
@@ -574,11 +618,11 @@
           <span>●</span> Our Story
         </div>
         <h1 class="reveal reveal-delay-1">
-          Midwest Contractor Marketing Agency — Built for the Trades.<br>
-          <span class="text-accent">Period.</span>
+          The People Who Build This Country<br>
+          <span class="text-accent">Deserve Better Marketing.</span>
         </h1>
         <p class="about-hero__sub reveal reveal-delay-2">
-          Urban Niche Co. isn't trying to be everything to everyone. We made a decision early on — go deep, not wide. Serve one industry, master it completely, and deliver results that generalist agencies never could.
+          Contractors are the most underserved businesses in digital marketing. They do the hardest work — keeping roofs over families, water running, lights on — and most agencies treat them like an afterthought. Urban Niche Co. exists to change that. We help contractors get more business, show off the work they're proud of, and build an online presence that matches the quality of what they actually do.
         </p>
         <div class="about-hero__stats reveal reveal-delay-3">
           <div class="about-hero__stat-item">
@@ -605,19 +649,19 @@
           <div class="about-identity-card__list">
             <div class="about-identity-card__item">
               <span class="about-identity-card__item-icon">→</span>
-              <span>Built every system from the ground up — no corporate playbook, no shortcuts</span>
+              <span>Contractors build this country — they deserve marketing that actually works for them</span>
             </div>
             <div class="about-identity-card__item">
               <span class="about-identity-card__item-icon">→</span>
-              <span>Obsessed with contractor marketing because it's the most underserved space in digital</span>
+              <span>The trades are underserved and undervalued by the marketing industry — that's the gap we exist to close</span>
             </div>
             <div class="about-identity-card__item">
               <span class="about-identity-card__item-icon">→</span>
-              <span>Deploying AI-powered outreach and automation that big agencies charge triple for</span>
+              <span>Every client's work deserves to be seen — we help you showcase it and turn it into booked jobs</span>
             </div>
             <div class="about-identity-card__item">
               <span class="about-identity-card__item-icon">→</span>
-              <span>Every client gets the same energy — whether you're just starting or ready to scale</span>
+              <span>Built by someone who respects the work — not a marketer who stumbled into the space looking for a niche</span>
             </div>
           </div>
           <div class="about-identity-card__bottom">
@@ -644,8 +688,8 @@
         <div class="mission__left reveal">
           <span class="eyebrow">Our Mission</span>
           <h2>Give Contractors the Marketing Firepower They've Always Deserved.</h2>
-          <p>The trades industry runs the world — roofers keep families dry, plumbers keep water flowing, electricians keep the lights on. These businesses deserve marketing that actually works, not cookie-cutter campaigns built for dentists and coffee shops.</p>
-          <p>We built Urban Niche Co. to close that gap. To bring real strategy, real systems, and real results to the people doing real work.</p>
+          <p>The trades industry doesn't get the credit it deserves. These are the people who built your neighborhood, fixed your pipes at midnight, and showed up in the middle of a storm to patch your roof. They work harder than most and they rarely get recognized for it — especially online.</p>
+          <p>We built Urban Niche Co. because that's wrong. Contractors deserve marketing built specifically for them — not recycled campaigns from some agency that doesn't know the difference between a soffit and a fascia. Real strategy. Real systems. For people doing real work.</p>
           <a href="/services/" class="btn btn-outline" style="margin-top: 2rem;">See Our Services →</a>
         </div>
 
@@ -795,6 +839,35 @@
           <p>Interior, exterior, commercial, cabinet refinishing</p>
         </div>
 
+        <div class="trade-card">
+          <div class="trade-card__icon">🧱</div>
+          <h5>Insulation</h5>
+          <p>Spray foam, blown-in, retrofits and new construction</p>
+        </div>
+
+        <div class="trade-card">
+          <div class="trade-card__icon">🪵</div>
+          <h5>Flooring</h5>
+          <p>Hardwood, LVP, tile, carpet installation and refinishing</p>
+        </div>
+
+        <div class="trade-card">
+          <div class="trade-card__icon">🐛</div>
+          <h5>Pest Control</h5>
+          <p>Residential and commercial treatment, seasonal plans</p>
+        </div>
+
+        <div class="trade-card">
+          <div class="trade-card__icon">🚿</div>
+          <h5>Pressure Washing</h5>
+          <p>Driveways, decks, siding, commercial exterior cleaning</p>
+        </div>
+
+        <div class="trade-card">
+          <div class="trade-card__icon">🌳</div>
+          <h5>Tree Service</h5>
+          <p>Removal, trimming, stump grinding, storm cleanup</p>
+        </div>
       </div>
     </div>
   </section>

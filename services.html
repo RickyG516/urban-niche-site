@@ -373,6 +373,15 @@
       .all-in-one__visual { grid-template-columns: 1fr 1fr; }
       .process__grid { grid-template-columns: 1fr 1fr; }
     }
+  
+    /* ── Hero visual animations ── */
+    .all-in-one__stat { animation: unc-stagger-in 0.7s ease-out both; }
+    .all-in-one__stat:nth-of-type(1) { animation-delay: 0.3s; }
+    .all-in-one__stat:nth-of-type(2) { animation-delay: 0.5s; }
+    .all-in-one__stat:nth-of-type(3) { animation-delay: 0.7s; }
+    .all-in-one__stat:nth-of-type(4) { animation-delay: 0.9s; }
+    .all-in-one__stat-val { display: inline-block; animation: unc-count-in 0.7s ease-out 0.9s both; }
+
   </style>
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-MV891F39TH"></script>
 <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-MV891F39TH');</script>

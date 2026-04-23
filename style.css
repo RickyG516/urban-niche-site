@@ -1450,3 +1450,137 @@ strong { font-weight: 500; color: var(--color-white); }
   0% { transform: scale(1); }
   100% { transform: scale(1.08); }
 }
+
+/* ══════════════════════════════════════════════
+   SERVICE HERO ANIMATIONS — Unified Motion Library
+   Applied across all service page hero visuals.
+   Subtle, cinematic, on-brand.
+   ══════════════════════════════════════════════ */
+
+@keyframes unc-stagger-in {
+  0%   { opacity: 0; transform: translateY(14px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes unc-pulse-glow {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(232,107,30,0.35); }
+  50%      { box-shadow: 0 0 0 10px rgba(232,107,30,0); }
+}
+
+@keyframes unc-live-blink {
+  0%, 100% { opacity: 1; }
+  50%      { opacity: 0.25; }
+}
+
+@keyframes unc-subtle-float {
+  0%, 100% { transform: translateY(0); }
+  50%      { transform: translateY(-4px); }
+}
+
+@keyframes unc-heart-beat {
+  0%, 100% { transform: scale(1); }
+  20%      { transform: scale(1.22); }
+  40%      { transform: scale(1); }
+  60%      { transform: scale(1.1); }
+  80%      { transform: scale(1); }
+}
+
+@keyframes unc-dash-flow {
+  to { background-position: 0 -16px; }
+}
+
+@keyframes unc-connector-pulse {
+  0%, 100% { opacity: 0.35; }
+  50%      { opacity: 1; }
+}
+
+@keyframes unc-count-in {
+  0%   { opacity: 0; transform: translateY(8px) scale(0.92); }
+  100% { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+/* ══════════════════════════════════════════════
+   PAGE-SPECIFIC HERO ANIMATIONS (reputation, email)
+   ══════════════════════════════════════════════ */
+
+/* Reputation Management — review mockup */
+.review-mockup-row { animation: unc-stagger-in 0.7s ease-out both; }
+.review-mockup-row:nth-of-type(1) { animation-delay: 0.25s; }
+.review-mockup-row:nth-of-type(2) { animation-delay: 0.4s; }
+.review-mockup-row:nth-of-type(3) { animation-delay: 0.55s; }
+.featured-review {
+  animation: unc-stagger-in 0.7s ease-out 0.25s both,
+             unc-pulse-glow 3s ease-in-out 1.3s infinite;
+  border-radius: 12px;
+}
+.featured-review .review-stars { display: inline-block; animation: unc-subtle-float 3s ease-in-out 1.5s infinite; }
+
+/* Email Marketing — new inbox mockup */
+.email-inbox-mockup {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  max-width: 520px;
+  margin: 2rem auto 0;
+}
+.inbox-label {
+  font-family: var(--font-display, 'Montserrat', sans-serif);
+  font-size: 0.68rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.45);
+  margin-bottom: 0.25rem;
+}
+.inbox-row {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+  padding: 0.9rem 1.1rem;
+  background: #1a1a1a;
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 10px;
+  animation: unc-stagger-in 0.7s ease-out both;
+}
+.inbox-row:nth-of-type(2) { animation-delay: 0.3s; }
+.inbox-row:nth-of-type(3) { animation-delay: 0.5s; }
+.inbox-row:nth-of-type(4) { animation-delay: 0.7s; }
+.inbox-row.featured-email {
+  border-color: #e36b1e;
+  animation: unc-stagger-in 0.7s ease-out 0.3s both,
+             unc-pulse-glow 3s ease-in-out 1.4s infinite;
+}
+.inbox-dot {
+  width: 8px; height: 8px;
+  border-radius: 50%;
+  background: #e36b1e;
+  flex-shrink: 0;
+  animation: unc-live-blink 1.8s ease-in-out infinite;
+}
+.inbox-avatar {
+  width: 36px; height: 36px;
+  border-radius: 50%;
+  background: #e36b1e;
+  color: #0f0f0f;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 13px;
+  flex-shrink: 0;
+}
+.inbox-avatar.dim { background: rgba(255,255,255,0.12); color: rgba(255,255,255,0.5); }
+.inbox-content { flex: 1; min-width: 0; }
+.inbox-sender { font-size: 14px; color: #fff; font-weight: 600; }
+.inbox-sender.dim { color: rgba(255,255,255,0.5); font-weight: 500; }
+.inbox-subject {
+  font-size: 13px;
+  color: rgba(255,255,255,0.7);
+  margin-top: 2px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.inbox-subject.dim { color: rgba(255,255,255,0.38); }
+.inbox-time { font-size: 11px; color: rgba(255,255,255,0.4); flex-shrink: 0; }
+.inbox-time.dim { color: rgba(255,255,255,0.25); }

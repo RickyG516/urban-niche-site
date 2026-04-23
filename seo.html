@@ -605,6 +605,15 @@
       .addons-grid { grid-template-columns: 1fr; }
       .pricing-tabs { flex-wrap: wrap; width: 100%; }
     }
+  
+    /* ── Hero visual animations ── */
+    .rank-card { animation: unc-stagger-in 0.7s ease-out both; }
+    .rank-card:nth-child(1) { animation-delay: 0.25s; }
+    .rank-card:nth-child(2) { animation-delay: 0.4s; }
+    .rank-card:nth-child(3) { animation-delay: 0.55s; }
+    .rank-card:nth-child(4) { animation-delay: 0.7s; }
+    .rank-card--top { animation: unc-stagger-in 0.7s ease-out 0.25s both, unc-pulse-glow 3s ease-in-out 1.3s infinite; }
+
   </style>
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-MV891F39TH"></script>
 <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-MV891F39TH');</script>

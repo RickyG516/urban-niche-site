@@ -522,6 +522,17 @@
       .trades-grid { grid-template-columns: repeat(2, 1fr); }
       .urgency-banner__inner { flex-direction: column; gap: 0.75rem; }
     }
+  
+    /* ── Hero visual animations ── */
+    .ai-flow__node { animation: unc-stagger-in 0.7s ease-out both; }
+    .ai-flow__node:nth-of-type(1) { animation-delay: 0.25s; }
+    .ai-flow__node:nth-of-type(2) { animation-delay: 0.55s; }
+    .ai-flow__node:nth-of-type(3) { animation-delay: 0.85s; }
+    .ai-flow__node:nth-of-type(4) { animation-delay: 1.15s; }
+    .ai-flow__node--active { animation: unc-stagger-in 0.7s ease-out 0.25s both, unc-pulse-glow 3.5s ease-in-out 1.5s infinite; }
+    .ai-flow__status--live { animation: unc-live-blink 1.4s ease-in-out infinite; }
+    .ai-flow__connector { animation: unc-connector-pulse 2s ease-in-out infinite; }
+
   </style>
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-MV891F39TH"></script>
 <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-MV891F39TH');</script>

@@ -492,6 +492,15 @@
       .social-stats { grid-template-columns: 1fr 1fr; }
       .results__grid { grid-template-columns: repeat(2, 1fr); }
     }
+  
+    /* ── Hero visual animations ── */
+    .feed-card { animation: unc-stagger-in 0.8s ease-out both; }
+    .feed-card:nth-of-type(1) { animation-delay: 0.25s; }
+    .feed-card:nth-of-type(2) { animation-delay: 0.5s; }
+    .feed-card:nth-of-type(3) { animation-delay: 0.75s; }
+    .feed-card:first-of-type { animation: unc-stagger-in 0.8s ease-out 0.25s both, unc-pulse-glow 4s ease-in-out 1.6s infinite; }
+    .feed-stat:first-of-type { display: inline-block; animation: unc-heart-beat 3s ease-in-out 2s infinite; }
+
   </style>
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-MV891F39TH"></script>
 <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-MV891F39TH');</script>

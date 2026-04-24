@@ -376,7 +376,9 @@
     /* Responsive */
     @media (max-width: 1024px) {
       .services-full-grid { grid-template-columns: repeat(2, 1fr); }
-      .all-in-one__inner { grid-template-columns: 1fr; }
+      .all-in-one__inner { grid-template-columns: minmax(0, 1fr); }
+      .all-in-one__left,
+      .all-in-one__right { min-width: 0; max-width: 100%; }
       .process__grid { grid-template-columns: repeat(2, 1fr); }
       .process__grid::before { display: none; }
       .industries-strip__inner { flex-direction: column; }

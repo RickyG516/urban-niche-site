@@ -1226,8 +1226,17 @@ strong { font-weight: 500; color: var(--color-white); }
 
 @media (max-width: 768px) {
   .hero__inner {
-    grid-template-columns: 1fr;
+    grid-template-columns: minmax(0, 1fr);
     text-align: center;
+  }
+  .hero__content,
+  .hero__visual {
+    min-width: 0;
+    max-width: 100%;
+  }
+  .hero__content h1 {
+    overflow-wrap: anywhere;
+    word-break: break-word;
   }
   .hero__sub { margin: 0 auto 1.5rem; }
   .hero__actions { justify-content: center; }

@@ -41,7 +41,7 @@
       --pill:         999px;
       --ease:         0.3s ease;
       --slow:         0.55s cubic-bezier(0.16,1,0.3,1);
-      --grad-hero:    linear-gradient(135deg, var(--pink) 0%, var(--purple) 55%, var(--cyan) 100%);
+      --grad-hero:    linear-gradient(135deg, var(--pink) 0%, var(--orange) 30%, var(--purple) 65%, var(--cyan) 100%);
       --grad-pink-cy: linear-gradient(90deg, var(--pink) 0%, var(--cyan) 100%);
       --grad-bg:      radial-gradient(ellipse at 30% 0%, rgba(114,9,183,0.35) 0%, transparent 55%), radial-gradient(ellipse at 80% 100%, rgba(255,0,110,0.22) 0%, transparent 60%), linear-gradient(180deg, var(--bg-1) 0%, var(--bg-deep) 100%);
     }
@@ -272,7 +272,7 @@
 
     /* ── TICKER ── */
     .ticker {
-      background: linear-gradient(90deg, var(--pink) 0%, var(--purple) 50%, var(--cyan) 100%);
+      background: linear-gradient(90deg, var(--pink) 0%, var(--orange) 30%, var(--purple) 60%, var(--cyan) 100%);
       padding: 14px 0;
       overflow: hidden;
       white-space: nowrap;
@@ -368,6 +368,8 @@
     .proof__content > p { font-size: 1rem; line-height: 1.8; margin-bottom: 1.25rem; max-width: 48ch; }
     .proof__list { display: flex; flex-direction: column; gap: 1.1rem; margin: 2rem 0; }
     .proof__item { display: flex; gap: 1rem; align-items: flex-start; }
+    .proof__item:nth-child(2) .proof__check { background: rgba(255,107,12,0.15); border-color: var(--orange); color: var(--orange); box-shadow: 0 0 12px var(--orange-glow); }
+    .proof__item:nth-child(4) .proof__check { background: rgba(255,107,12,0.15); border-color: var(--orange); color: var(--orange); box-shadow: 0 0 12px var(--orange-glow); }
     .proof__check {
       width: 28px; height: 28px;
       border-radius: 50%;
@@ -386,7 +388,7 @@
     .proof__item p { font-size: 0.875rem; margin: 0; line-height: 1.65; }
 
     /* ── STATS ── */
-    .stats { background: linear-gradient(90deg, var(--pink) 0%, var(--purple) 50%, var(--cyan) 100%); padding: 4.5rem 0; position: relative; overflow: hidden; }
+    .stats { background: linear-gradient(90deg, var(--pink) 0%, var(--orange) 28%, var(--purple) 60%, var(--cyan) 100%); padding: 4.5rem 0; position: relative; overflow: hidden; }
     .stats::before { content: ''; position: absolute; inset: 0; background-image: linear-gradient(rgba(255,255,255,0.06) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.06) 1px, transparent 1px); background-size: 40px 40px; pointer-events: none; }
     .stats__grid { display: grid; grid-template-columns: repeat(4,1fr); gap: 0; position: relative; z-index: 1; }
     .stat { padding: 2rem 1.5rem; text-align: center; border-right: 1px solid rgba(255,255,255,0.22); }
@@ -418,6 +420,10 @@
       transition: opacity var(--ease);
     }
     .who__card:hover { transform: translateY(-4px); border-color: var(--cyan); box-shadow: 0 10px 32px var(--cyan-soft); }
+    .who__card:nth-child(2):hover { border-color: var(--orange); box-shadow: 0 10px 32px var(--orange-glow); }
+    .who__card:nth-child(4):hover { border-color: var(--orange); box-shadow: 0 10px 32px var(--orange-glow); }
+    .who__card:nth-child(2) .who__icon { filter: drop-shadow(0 0 12px var(--orange-glow)); }
+    .who__card:nth-child(4) .who__icon { filter: drop-shadow(0 0 12px var(--orange-glow)); }
     .who__card:hover::before { opacity: 1; }
     .who__icon { font-size: 2rem; margin-bottom: 1rem; display: block; filter: drop-shadow(0 0 12px var(--cyan-glow)); position: relative; z-index: 1; }
     .who__card h5 { margin-bottom: 0.4rem; font-size: 0.95rem; text-transform: uppercase; color: var(--text); position: relative; z-index: 1; }
@@ -562,7 +568,7 @@
           <p class="hero__sub reveal d2">
             Your community is real. Your reach is real. But most creators are leaving massive revenue on the table because the business infrastructure behind the content doesn't exist. That's what we fix.
           </p>
-          <p class="hero__whisper reveal d2"><strong>&gt; ACCESS:</strong> Private link. If you have it, we think there's something worth building.</p>
+          <p class="hero__whisper reveal d2"><strong style="color: var(--orange);">&gt; ACCESS:</strong> Private link. If you have it, we think there's something worth building.</p>
           <div class="hero__actions reveal d3">
             <a href="#contact" class="btn btn-primary btn-lg">Let's Talk &rarr;</a>
             <a href="#services" class="btn btn-outline btn-lg">See the Stack</a>
@@ -650,7 +656,7 @@
           </div>
         </div>
         <div class="svc reveal d1">
-          <div class="svc__num">02 / SITE</div>
+          <div class="svc__num" style="color: var(--orange); text-shadow: 0 0 8px var(--orange-glow);">02 / SITE</div>
           <div class="svc__icon">&#127760;</div>
           <h3>Brand Site &amp; Community Hub</h3>
           <p>A real home base. Fast, custom-built around your brand &mdash; not a link-in-bio tool or a platform you don't own.</p>
@@ -674,7 +680,7 @@
           </div>
         </div>
         <div class="svc reveal">
-          <div class="svc__num">04 / SOCIAL</div>
+          <div class="svc__num" style="color: var(--orange); text-shadow: 0 0 8px var(--orange-glow);">04 / SOCIAL</div>
           <div class="svc__icon">&#128227;</div>
           <h3>Social &amp; Content Strategy</h3>
           <p>Clips don't market themselves. We build the off-platform strategy that converts viewers into buyers.</p>
@@ -698,7 +704,7 @@
           </div>
         </div>
         <div class="svc reveal d2">
-          <div class="svc__num">06 / AI</div>
+          <div class="svc__num" style="color: var(--orange); text-shadow: 0 0 8px var(--orange-glow);">06 / AI</div>
           <div class="svc__icon">&#129302;</div>
           <h3>AI &amp; Automation Systems</h3>
           <p>You can't respond to 10,000 DMs. AI-powered systems that handle the repetitive work so you stay focused on content.</p>
@@ -836,7 +842,7 @@
           <p>We learn your audience, platforms, goals, and where the biggest revenue gaps are. No fluff &mdash; just a real conversation.</p>
         </div>
         <div class="process__step reveal d1">
-          <div class="process__num">02</div>
+          <div class="process__num" style="background: linear-gradient(90deg, var(--orange) 0%, var(--pink) 100%); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;">02</div>
           <h4>Infrastructure Build</h4>
           <p>Brand site, drop system, email list, community assets. Fast. Most clients are live within 30 days.</p>
         </div>
@@ -846,7 +852,7 @@
           <p>Your first limited drop goes live with a full pre-drop hype sequence. We run execution. You post the announcement.</p>
         </div>
         <div class="process__step reveal d3">
-          <div class="process__num">04</div>
+          <div class="process__num" style="background: linear-gradient(90deg, var(--orange) 0%, var(--cyan) 100%); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;">04</div>
           <h4>Ongoing Growth</h4>
           <p>Monthly drops, email campaigns, audience growth strategy &mdash; managed for you so you stay focused on content.</p>
         </div>
@@ -880,7 +886,7 @@
         </div>
         <div class="reveal d1">
           <form class="form" action="mailto:ricky@urbannicheco.com" method="GET" enctype="text/plain">
-            <div class="form__title">&gt; Send a Message</div>
+            <div class="form__title"><span style="color: var(--orange); text-shadow: 0 0 8px var(--orange-glow);">&gt;</span> Send a Message</div>
             <div class="form__sub">Fill this out and it goes straight to Ricky. No middleman, no CRM queue.</div>
             <div class="form__row">
               <div class="form__group">

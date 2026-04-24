@@ -90,7 +90,7 @@
       gap: 0.75rem;
       margin-bottom: 1.5rem;
     }
-    .eyebrow::before { content: ''; display: block; width: 28px; height: 1px; background: var(--terra); opacity: 0.65; }
+    .eyebrow::before { content: ''; display: block; width: 28px; height: 1px; background: linear-gradient(90deg, var(--terra) 0%, var(--orange) 100%); opacity: 0.8; }
 
     /* Decorative leaf divider SVG (inline) */
     .leaf {
@@ -208,6 +208,7 @@
     .svc:hover::before { width: 100%; }
     .svc__num { font-family: var(--font-display); font-size: 0.85rem; font-weight: 500; letter-spacing: 0.1em; color: var(--terra); font-style: italic; margin-bottom: 1.25rem; }
     .svc__icon { width: 44px; height: 44px; border-radius: 50%; background: var(--terra-soft); border: 1px solid var(--border-terra); display: inline-flex; align-items: center; justify-content: center; margin-bottom: 1.1rem; font-size: 1.15rem; }
+    .svc:nth-child(4) .svc__icon { background: var(--orange-soft); border-color: rgba(232,101,26,0.28); }
     .svc h3 { font-size: 1.3rem; margin-bottom: 0.7rem; font-weight: 500; color: var(--walnut); }
     .svc p { font-size: 0.92rem; line-height: 1.75; margin-bottom: 1.5rem; color: var(--stone); }
     .svc__list { display: flex; flex-direction: column; gap: 0.55rem; padding-top: 1.1rem; border-top: 1px solid var(--border); }
@@ -271,6 +272,7 @@
     .process__step:hover { transform: translateY(-4px); border-color: var(--border-terra); box-shadow: var(--shadow); }
     .process__num { font-family: var(--font-display); font-style: italic; font-size: 3.5rem; font-weight: 300; color: var(--terra); opacity: 0.85; line-height: 1; margin-bottom: 1.25rem; letter-spacing: -0.04em; }
     .process__step:nth-child(even) .process__num { color: var(--sage-deep); }
+    .process__step:nth-child(3) .process__num { color: var(--orange); }
     .process__step h4 { margin-bottom: 0.5rem; color: var(--walnut); font-size: 1rem; }
     .process__step p { font-size: 0.88rem; line-height: 1.7; color: var(--stone); }
 
@@ -296,7 +298,7 @@
     .form__label { display: block; font-family: var(--font-body); font-size: 0.66rem; font-weight: 600; letter-spacing: 0.16em; text-transform: uppercase; color: var(--stone-2); margin-bottom: 0.45rem; }
     .form__input, .form__textarea { width: 100%; background: var(--cream); border: 1px solid var(--border); border-radius: var(--r); padding: 0.85rem 1.1rem; font-family: var(--font-body); font-size: 0.9rem; color: var(--walnut); outline: none; transition: all var(--ease); }
     .form__input::placeholder, .form__textarea::placeholder { color: var(--stone-2); opacity: 0.7; }
-    .form__input:focus, .form__textarea:focus { border-color: var(--terra); background: #fff; box-shadow: 0 0 0 3px var(--terra-soft); }
+    .form__input:focus, .form__textarea:focus { border-color: var(--orange); background: #fff; box-shadow: 0 0 0 3px var(--orange-soft); }
     .form__textarea { resize: vertical; min-height: 120px; }
     .form__submit { width: 100%; margin-top: 0.5rem; justify-content: center; }
     .form__note { text-align: center; font-size: 0.72rem; color: var(--stone-2); margin-top: 1rem; font-style: italic; }
@@ -406,7 +408,7 @@
           </div>
           <div class="hero__proof reveal d4">
             <div class="hero__proof-item">
-              <span class="hero__proof-val">30</span>
+              <span class="hero__proof-val" style="color: var(--orange);">30</span>
               <span class="hero__proof-label">Days to first results</span>
             </div>
             <div class="hero__proof-item">
@@ -460,7 +462,7 @@
             </div>
             <div class="bookcard__footer">
               <span class="bookcard__footer-label">3 booked &middot; 2 open</span>
-              <span class="bookcard__footer-value">Rebook rate: 87%</span>
+              <span class="bookcard__footer-value" style="color: var(--orange);">Rebook rate: 87%</span>
             </div>
           </div>
         </div>

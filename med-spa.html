@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="robots" content="noindex, nofollow" />
+  <link rel="icon" type="image/png" href="/assets/favicon.png" />
+  <title>For Med Spas &amp; Aesthetic Clinics | Urban Niche Co.</title>
+  <meta name="description" content="Private proposal for med spas and aesthetic clinics. Consultation-first pipelines, reputation engineering, and booking automation from Urban Niche Co." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,300;1,9..144,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --ivory:         #faf5ee;
+      --ivory-2:       #f3ece0;
+      --ivory-3:       #ebe0ce;
+      --pearl:         #fdfbf6;
+      --plum:          #582338;
+      --plum-deep:     #3e1728;
+      --plum-soft:     rgba(88,35,56,0.12);
+      --rose-gold:     #c48c78;
+      --rose-gold-2:   #a47265;
+      --rose-soft:     rgba(196,140,120,0.16);
+      --blush:         #eccfbf;
+      --orange:        #e8651a;
+      --orange-soft:   rgba(232,101,26,0.12);
+      --orange-glow:   rgba(232,101,26,0.3);
+      --ink:           #2a1a20;
+      --stone:         #6b5a5f;
+      --stone-2:       #8f7f83;
+      --border:        rgba(42,26,32,0.08);
+      --border-mid:    rgba(42,26,32,0.14);
+      --border-rose:   rgba(196,140,120,0.32);
+      --shadow-sm:     0 2px 14px rgba(42,26,32,0.04);
+      --shadow:        0 6px 28px rgba(42,26,32,0.08);
+      --shadow-lg:     0 18px 56px rgba(42,26,32,0.12);
+      --font-display:  'Fraunces', serif;
+      --font-body:     'Inter', sans-serif;
+      --nav-h:         76px;
+      --r:             10px;
+      --r-lg:          16px;
+      --pill:          999px;
+      --ease:          0.3s ease;
+      --slow:          0.6s cubic-bezier(0.16,1,0.3,1);
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body { font-family: var(--font-body); background: var(--ivory); color: var(--ink); line-height: 1.7; font-weight: 400; overflow-x: hidden; -webkit-font-smoothing: antialiased; }
+    img { max-width: 100%; height: auto; display: block; }
+    a { color: inherit; text-decoration: none; }
+    ul { list-style: none; }
+    h1,h2,h3,h4,h5 { font-family: var(--font-display); font-weight: 400; line-height: 1.08; letter-spacing: -0.015em; color: var(--ink); font-variation-settings: "opsz" 96, "SOFT" 50; }
+    h1 { font-size: clamp(3rem, 6.5vw, 6rem); font-weight: 300; letter-spacing: -0.025em; }
+    h2 { font-size: clamp(2.2rem, 4.2vw, 3.9rem); font-weight: 400; }
+    h3 { font-size: 1.35rem; font-weight: 500; }
+    h4 { font-size: 1rem; font-weight: 600; font-family: var(--font-body); letter-spacing: 0.01em; }
+    h5 { font-size: 0.95rem; font-weight: 600; font-family: var(--font-body); }
+    p { color: var(--stone); line-height: 1.75; }
+    em { color: var(--rose-gold-2); font-style: italic; font-weight: 500; }
+    .container { width: 100%; max-width: 1240px; margin: 0 auto; padding: 0 2rem; }
+    .section { padding: 7rem 0; position: relative; }
+    .eyebrow { font-family: var(--font-body); font-size: 0.7rem; font-weight: 600; letter-spacing: 0.24em; text-transform: uppercase; color: var(--rose-gold-2); display: inline-flex; align-items: center; gap: 0.75rem; margin-bottom: 1.5rem; }
+    .eyebrow::before { content: ''; display: block; width: 32px; height: 1px; background: linear-gradient(90deg, var(--rose-gold) 0%, var(--orange) 100%); opacity: 0.8; }
+
+    .btn { display: inline-flex; align-items: center; gap: 0.55rem; font-family: var(--font-body); font-size: 0.8rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; padding: 1rem 2.25rem; border-radius: var(--pill); transition: all var(--ease); white-space: nowrap; cursor: pointer; border: none; }
+    .btn-plum { background: var(--plum); color: var(--pearl); box-shadow: 0 3px 16px rgba(88,35,56,0.22); }
+    .btn-plum:hover { background: var(--plum-deep); transform: translateY(-2px); box-shadow: 0 8px 28px rgba(88,35,56,0.35); }
+    .btn-rose { background: var(--rose-gold); color: #fff; box-shadow: 0 3px 16px rgba(196,140,120,0.4); }
+    .btn-rose:hover { background: var(--rose-gold-2); transform: translateY(-2px); }
+    .btn-ghost { background: transparent; color: var(--ink); border: 1px solid var(--border-mid); }
+    .btn-ghost:hover { border-color: var(--rose-gold); color: var(--rose-gold-2); background: var(--ivory-2); }
+    .btn-lg { font-size: 0.84rem; padding: 1.15rem 2.6rem; }
+    .btn-sm { font-size: 0.72rem; padding: 0.65rem 1.4rem; }
+
+    .reveal { opacity: 0; transform: translateY(22px); transition: opacity 0.75s ease, transform 0.75s cubic-bezier(0.16,1,0.3,1); }
+    .reveal.visible { opacity: 1; transform: translateY(0); }
+    .d1 { transition-delay: 0.1s; } .d2 { transition-delay: 0.2s; } .d3 { transition-delay: 0.3s; } .d4 { transition-delay: 0.4s; }
+
+    .nav { position: fixed; top: 0; left: 0; right: 0; z-index: 1000; height: var(--nav-h); display: flex; align-items: center; background: transparent; transition: background var(--ease); }
+    .nav.scrolled { background: rgba(250,245,238,0.93); backdrop-filter: blur(18px); border-bottom: 1px solid var(--border); }
+    .nav__inner { display: flex; align-items: center; justify-content: space-between; width: 100%; max-width: 1240px; margin: 0 auto; padding: 0 2rem; }
+    .nav__logo { display: flex; align-items: center; gap: 0.7rem; font-family: var(--font-display); font-weight: 500; font-size: 1.2rem; color: var(--ink); }
+    .nav__logo img { height: 34px; width: auto; display: block; }
+    .nav__logo em { color: var(--orange); font-style: italic; font-weight: 500; }
+    .nav__links { display: flex; align-items: center; gap: 4px; }
+    .nav__link { font-family: var(--font-body); font-size: 0.74rem; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; color: var(--stone); padding: 0.5rem 0.9rem; border-radius: 4px; transition: color var(--ease); }
+    .nav__link:hover { color: var(--rose-gold-2); }
+    .nav__cta { display: flex; align-items: center; gap: 12px; }
+    .nav__phone { font-family: var(--font-body); font-size: 0.74rem; font-weight: 500; color: var(--stone); white-space: nowrap; }
+    .nav__phone:hover { color: var(--rose-gold-2); }
+    .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; padding: 4px; background: transparent; border: none; }
+    .hamburger span { display: block; width: 24px; height: 2px; background: var(--ink); border-radius: 2px; }
+    .mobile-nav { display: none; position: fixed; top: var(--nav-h); left: 0; right: 0; background: var(--ivory); border-bottom: 1px solid var(--border); padding: 1.5rem; z-index: 999; flex-direction: column; gap: 0.25rem; }
+    .mobile-nav.open { display: flex; }
+    .mobile-link { font-family: var(--font-body); font-size: 0.85rem; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; color: var(--stone); padding: 0.85rem 1rem; border-bottom: 1px solid var(--border); }
+    .mobile-cta { margin-top: 1rem; display: flex; flex-direction: column; gap: 0.75rem; }
+
+    /* HERO */
+    .hero { min-height: 100vh; position: relative; overflow: hidden; display: flex; align-items: center; padding-top: calc(var(--nav-h) + 3.5rem); padding-bottom: 3.5rem; background: var(--ivory); }
+    .hero::before { content: ''; position: absolute; top: -140px; right: -130px; width: 680px; height: 680px; border-radius: 50%; background: radial-gradient(circle, var(--rose-soft) 0%, transparent 65%); pointer-events: none; z-index: 0; }
+    .hero::after { content: ''; position: absolute; bottom: -200px; left: -160px; width: 600px; height: 600px; border-radius: 50%; background: radial-gradient(circle, var(--plum-soft) 0%, transparent 65%); pointer-events: none; z-index: 0; }
+    .hero__inner { position: relative; z-index: 2; width: 100%; display: grid; grid-template-columns: 1.05fr 0.95fr; gap: 5rem; align-items: center; }
+    .hero__tag { display: inline-flex; align-items: center; gap: 10px; background: var(--pearl); border: 1px solid var(--border-rose); border-radius: var(--pill); padding: 7px 18px; font-family: var(--font-body); font-size: 0.68rem; font-weight: 600; letter-spacing: 0.2em; text-transform: uppercase; color: var(--rose-gold-2); margin-bottom: 2rem; }
+    .hero__tag-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--orange); animation: pulse 2.2s ease-in-out infinite; }
+    @keyframes pulse { 0%,100% { opacity: 1; transform: scale(1); } 50% { opacity: 0.4; transform: scale(0.75); } }
+    .hero h1 { margin-bottom: 1.5rem; }
+    .hero h1 em { color: var(--rose-gold-2); font-style: italic; font-weight: 300; }
+    .hero__sub { font-size: 1.1rem; line-height: 1.7; color: var(--stone); max-width: 48ch; margin-bottom: 1rem; }
+    .hero__whisper { font-family: var(--font-body); font-size: 0.82rem; line-height: 1.7; color: var(--stone-2); font-style: italic; margin-bottom: 2.5rem; max-width: 46ch; padding-left: 1rem; border-left: 2px solid var(--orange); }
+    .hero__whisper strong { color: var(--ink); font-style: normal; font-weight: 600; }
+    .hero__actions { display: flex; gap: 0.9rem; flex-wrap: wrap; margin-bottom: 3rem; }
+    .hero__proof { display: flex; gap: 2.75rem; padding-top: 2.5rem; border-top: 1px solid var(--border); flex-wrap: wrap; }
+    .hero__proof-val { font-family: var(--font-display); font-size: 2.4rem; font-weight: 400; color: var(--rose-gold-2); line-height: 1; font-style: italic; }
+    .hero__proof-label { font-size: 0.7rem; color: var(--stone-2); margin-top: 5px; letter-spacing: 0.1em; text-transform: uppercase; }
+
+    /* TREATMENT MENU CARD */
+    .tmenu { background: var(--pearl); border: 1px solid var(--border); border-radius: var(--r-lg); padding: 1.75rem; box-shadow: var(--shadow-lg); position: relative; overflow: hidden; }
+    .tmenu::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 4px; background: linear-gradient(90deg, var(--plum) 0%, var(--rose-gold) 50%, var(--orange) 100%); }
+    .tmenu__header { display: flex; align-items: center; justify-content: space-between; padding-bottom: 1rem; border-bottom: 1px solid var(--border); margin-bottom: 1.25rem; }
+    .tmenu__title { font-family: var(--font-display); font-size: 1.15rem; font-weight: 500; color: var(--ink); font-style: italic; }
+    .tmenu__badge { font-family: var(--font-body); font-size: 0.6rem; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; color: var(--rose-gold-2); background: var(--rose-soft); padding: 5px 11px; border-radius: var(--pill); }
+    .tmenu__list { display: flex; flex-direction: column; gap: 0.6rem; margin-bottom: 1.25rem; }
+    .tmenurow { display: flex; align-items: center; gap: 0.9rem; padding: 0.85rem 1rem; border: 1px solid var(--border); border-radius: var(--r); background: var(--ivory); font-family: var(--font-body); font-size: 0.85rem; }
+    .tmenurow.booked { background: var(--rose-soft); border-color: var(--border-rose); }
+    .tmenurow.open { background: var(--orange-soft); border-color: rgba(232,101,26,0.28); }
+    .tmenurow__time { font-weight: 600; color: var(--ink); min-width: 56px; font-size: 0.82rem; }
+    .tmenurow__desc { flex: 1; color: var(--ink); font-weight: 500; line-height: 1.3; }
+    .tmenurow__price { font-family: var(--font-display); font-style: italic; font-weight: 500; color: var(--rose-gold-2); font-size: 0.95rem; }
+    .tmenurow.open .tmenurow__price { color: var(--orange); }
+    .tmenu__footer { display: flex; align-items: center; justify-content: space-between; padding-top: 1rem; border-top: 1px solid var(--border); font-family: var(--font-body); font-size: 0.78rem; }
+    .tmenu__footer-label { color: var(--stone-2); }
+    .tmenu__footer-value { color: var(--orange); font-weight: 600; }
+
+    /* TICKER */
+    .ticker { background: var(--plum); padding: 14px 0; overflow: hidden; white-space: nowrap; }
+    .ticker__track { display: inline-flex; animation: ticker 55s linear infinite; }
+    @keyframes ticker { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
+    .ticker__item { font-family: var(--font-display); font-style: italic; font-size: 1rem; color: var(--blush); padding: 0 2.25rem; display: inline-flex; align-items: center; gap: 1rem; }
+    .ticker__sep { color: var(--orange); font-style: normal; opacity: 0.85; font-size: 0.9rem; }
+
+    /* OFFNICHE */
+    .offniche { background: var(--ivory-2); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
+    .offniche__inner { display: grid; grid-template-columns: 1fr 1.1fr; gap: 5rem; align-items: center; }
+    .offniche__left h2 { margin: 0.5rem 0 1.5rem; font-weight: 300; font-style: italic; }
+    .offniche__left h2 em { color: var(--rose-gold-2); font-weight: 400; }
+    .offniche__left p { font-size: 1rem; line-height: 1.9; margin-bottom: 1.15rem; max-width: 48ch; }
+    .offniche__left p strong { color: var(--ink); font-weight: 600; }
+    .offniche__quote { background: var(--pearl); border: 1px solid var(--border-rose); border-radius: var(--r-lg); padding: 2.75rem 2.5rem; position: relative; box-shadow: var(--shadow); }
+    .offniche__quote::before { content: '"'; font-family: var(--font-display); font-size: 7rem; color: var(--rose-gold); opacity: 0.3; position: absolute; top: -1rem; left: 1.25rem; line-height: 1; }
+    .offniche__quote p { font-family: var(--font-display); font-size: 1.55rem; font-style: italic; color: var(--ink); line-height: 1.45; margin-bottom: 1.5rem; }
+    .offniche__quote-attr { font-size: 0.72rem; color: var(--rose-gold-2); letter-spacing: 0.14em; text-transform: uppercase; font-weight: 600; }
+
+    /* SERVICES */
+    .services { background: var(--ivory); }
+    .services__header { margin-bottom: 4.5rem; max-width: 58ch; }
+    .services__header h2 { margin: 0.6rem 0 1.25rem; font-weight: 300; }
+    .services__header h2 em { color: var(--rose-gold-2); font-weight: 400; }
+    .services__header p { font-size: 1rem; line-height: 1.85; }
+    .services__grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 1.5rem; }
+    .svc { background: var(--pearl); border: 1px solid var(--border); border-radius: var(--r-lg); padding: 2.5rem 2rem; position: relative; overflow: hidden; transition: all var(--ease); box-shadow: var(--shadow-sm); }
+    .svc::before { content: ''; position: absolute; top: 0; left: 0; width: 0; height: 2px; background: linear-gradient(90deg, var(--rose-gold) 0%, var(--orange) 100%); transition: width var(--slow); }
+    .svc:hover { transform: translateY(-4px); border-color: var(--border-rose); box-shadow: var(--shadow); }
+    .svc:hover::before { width: 100%; }
+    .svc__num { font-family: var(--font-display); font-size: 0.95rem; font-style: italic; color: var(--rose-gold-2); margin-bottom: 1.25rem; }
+    .svc__icon { width: 46px; height: 46px; border-radius: 50%; background: var(--rose-soft); border: 1px solid var(--border-rose); display: inline-flex; align-items: center; justify-content: center; margin-bottom: 1.1rem; font-size: 1.15rem; color: var(--rose-gold-2); }
+    .svc:nth-child(4) .svc__icon { background: var(--orange-soft); border-color: rgba(232,101,26,0.28); color: var(--orange); }
+    .svc h3 { margin-bottom: 0.7rem; color: var(--ink); }
+    .svc p { font-size: 0.92rem; line-height: 1.75; margin-bottom: 1.5rem; color: var(--stone); }
+    .svc__list { display: flex; flex-direction: column; gap: 0.55rem; padding-top: 1.1rem; border-top: 1px solid var(--border); }
+    .svc__item { font-size: 0.82rem; color: var(--stone); display: flex; gap: 0.65rem; align-items: flex-start; line-height: 1.55; }
+    .svc__item::before { content: '◦'; color: var(--rose-gold-2); font-size: 1rem; flex-shrink: 0; margin-top: 3px; line-height: 1; }
+
+    /* STATS */
+    .stats { background: var(--plum); padding: 4.5rem 0; position: relative; overflow: hidden; color: var(--pearl); }
+    .stats::before { content: ''; position: absolute; top: 50%; right: -200px; transform: translateY(-50%); width: 500px; height: 500px; background: radial-gradient(circle, rgba(236,207,191,0.1) 0%, transparent 65%); pointer-events: none; }
+    .stats__grid { display: grid; grid-template-columns: repeat(4,1fr); gap: 0; position: relative; z-index: 1; }
+    .stat { padding: 2.25rem 1.5rem; text-align: center; border-right: 1px solid rgba(253,251,246,0.15); }
+    .stat:last-child { border-right: none; }
+    .stat__val { font-family: var(--font-display); font-style: italic; font-weight: 400; font-size: clamp(2.6rem, 4.5vw, 3.8rem); color: var(--pearl); line-height: 1; display: block; }
+    .stat:nth-child(2) .stat__val { color: var(--orange); }
+    .stat__label { font-family: var(--font-body); font-size: 0.74rem; color: rgba(253,251,246,0.78); margin-top: 0.65rem; display: block; letter-spacing: 0.08em; text-transform: uppercase; }
+
+    /* WHO */
+    .who { background: var(--ivory-2); border-top: 1px solid var(--border); }
+    .who__header { margin-bottom: 4rem; text-align: center; max-width: 52ch; margin-left: auto; margin-right: auto; }
+    .who__header h2 em { color: var(--rose-gold-2); font-weight: 400; }
+    .who__grid { display: grid; grid-template-columns: repeat(4,1fr); gap: 1.25rem; }
+    .who__card { background: var(--pearl); border: 1px solid var(--border); border-radius: var(--r-lg); padding: 2.25rem 1.75rem; text-align: center; transition: all var(--ease); }
+    .who__card:hover { transform: translateY(-4px); border-color: var(--border-rose); box-shadow: var(--shadow); }
+    .who__icon { width: 56px; height: 56px; border-radius: 50%; background: var(--rose-soft); display: flex; align-items: center; justify-content: center; font-size: 1.4rem; margin: 0 auto 1rem; color: var(--rose-gold-2); border: 1px solid var(--border-rose); }
+    .who__card:nth-child(3) .who__icon { background: var(--orange-soft); border-color: rgba(232,101,26,0.28); color: var(--orange); }
+    .who__card h5 { margin-bottom: 0.5rem; font-size: 1rem; color: var(--ink); }
+    .who__card p { font-size: 0.85rem; color: var(--stone); line-height: 1.6; }
+
+    /* PROCESS */
+    .process { background: var(--ivory); }
+    .process__header { text-align: center; margin-bottom: 4rem; }
+    .process__header h2 em { color: var(--rose-gold-2); font-weight: 400; }
+    .process__steps { display: grid; grid-template-columns: repeat(4,1fr); gap: 1.25rem; }
+    .process__step { background: var(--pearl); border: 1px solid var(--border); border-radius: var(--r-lg); padding: 2.25rem 2rem; transition: all var(--ease); }
+    .process__step:hover { border-color: var(--border-rose); transform: translateY(-4px); box-shadow: var(--shadow); }
+    .process__num { font-family: var(--font-display); font-style: italic; font-size: 3.5rem; color: var(--rose-gold-2); line-height: 1; margin-bottom: 1.25rem; font-weight: 300; }
+    .process__step:nth-child(3) .process__num { color: var(--orange); }
+    .process__step h4 { margin-bottom: 0.5rem; color: var(--ink); }
+    .process__step p { font-size: 0.88rem; line-height: 1.7; color: var(--stone); }
+
+    /* CONTACT */
+    .contact { background: var(--ivory-2); border-top: 1px solid var(--border); position: relative; overflow: hidden; }
+    .contact::before { content: ''; position: absolute; right: -200px; top: 10%; width: 540px; height: 540px; background: radial-gradient(circle, var(--rose-soft) 0%, transparent 65%); pointer-events: none; }
+    .contact__inner { display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: start; position: relative; z-index: 2; }
+    .contact__left h2 em { color: var(--rose-gold-2); font-weight: 400; }
+    .contact__left > p { font-size: 1rem; line-height: 1.85; margin-bottom: 1.15rem; }
+    .contact__details { display: flex; flex-direction: column; gap: 1rem; margin-top: 2.5rem; }
+    .contact__detail { display: flex; align-items: center; gap: 1rem; font-size: 0.9rem; color: var(--stone); }
+    .contact__detail-icon { width: 40px; height: 40px; border-radius: 50%; background: var(--rose-soft); border: 1px solid var(--border-rose); display: flex; align-items: center; justify-content: center; font-size: 0.95rem; flex-shrink: 0; color: var(--rose-gold-2); }
+    .contact__detail a { color: var(--rose-gold-2); font-weight: 600; transition: color var(--ease); }
+    .contact__detail a:hover { color: var(--orange); }
+    .form { background: var(--pearl); border: 1px solid var(--border-rose); border-radius: var(--r-lg); padding: 2.75rem 2.5rem; box-shadow: var(--shadow-lg); }
+    .form__title { font-family: var(--font-display); font-size: 1.75rem; font-weight: 500; color: var(--ink); margin-bottom: 0.5rem; font-style: italic; }
+    .form__sub { font-size: 0.85rem; color: var(--stone-2); margin-bottom: 2rem; }
+    .form__group { margin-bottom: 1.15rem; }
+    .form__row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+    .form__label { display: block; font-family: var(--font-body); font-size: 0.66rem; font-weight: 600; letter-spacing: 0.16em; text-transform: uppercase; color: var(--stone-2); margin-bottom: 0.45rem; }
+    .form__input, .form__textarea { width: 100%; background: var(--ivory); border: 1px solid var(--border); border-radius: var(--r); padding: 0.85rem 1.1rem; font-family: var(--font-body); font-size: 0.9rem; color: var(--ink); outline: none; transition: all var(--ease); }
+    .form__input::placeholder, .form__textarea::placeholder { color: var(--stone-2); opacity: 0.7; }
+    .form__input:focus, .form__textarea:focus { border-color: var(--orange); background: var(--pearl); box-shadow: 0 0 0 3px var(--orange-soft); }
+    .form__textarea { resize: vertical; min-height: 120px; }
+    .form__submit { width: 100%; margin-top: 0.5rem; justify-content: center; }
+    .form__note { text-align: center; font-size: 0.72rem; color: var(--stone-2); margin-top: 1rem; font-style: italic; }
+
+    /* CTA */
+    .cta { background: var(--ivory-3); padding: 6.5rem 0; position: relative; overflow: hidden; text-align: center; border-top: 1px solid var(--border); }
+    .cta__inner { position: relative; z-index: 1; max-width: 680px; margin: 0 auto; }
+    .cta h2 { font-size: clamp(2.4rem, 4.5vw, 3.8rem); margin-bottom: 1.25rem; font-weight: 300; }
+    .cta h2 em { color: var(--rose-gold-2); font-style: italic; font-weight: 400; }
+    .cta p { font-size: 1.05rem; line-height: 1.75; max-width: 52ch; margin: 0 auto 2.5rem; }
+    .cta__actions { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
+
+    /* FOOTER */
+    .footer { background: var(--ivory-3); border-top: 1px solid var(--border); padding: 2.25rem 0; }
+    .footer__inner { display: flex; align-items: center; justify-content: space-between; gap: 2rem; flex-wrap: wrap; }
+    .footer__logo { display: flex; align-items: center; gap: 0.65rem; font-family: var(--font-display); font-weight: 500; font-size: 1.05rem; color: var(--ink); }
+    .footer__logo img { height: 26px; width: auto; opacity: 0.85; filter: drop-shadow(0 0 6px rgba(232,101,26,0.28)); }
+    .footer__logo em { color: var(--orange); font-style: italic; }
+    .footer__note { font-size: 0.72rem; color: var(--stone-2); letter-spacing: 0.04em; font-style: italic; }
+    .footer__copy { font-size: 0.72rem; color: var(--stone-2); }
+
+    @media (max-width: 1024px) {
+      .hero__inner { grid-template-columns: 1fr; gap: 3rem; }
+      .offniche__inner { grid-template-columns: 1fr; gap: 3rem; }
+      .services__grid { grid-template-columns: 1fr 1fr; }
+      .stats__grid { grid-template-columns: 1fr 1fr; }
+      .stat { border-right: none; border-bottom: 1px solid rgba(253,251,246,0.15); }
+      .stat:nth-child(odd) { border-right: 1px solid rgba(253,251,246,0.15); }
+      .stat:nth-last-child(-n+2) { border-bottom: none; }
+      .who__grid { grid-template-columns: 1fr 1fr; }
+      .process__steps { grid-template-columns: 1fr 1fr; }
+      .contact__inner { grid-template-columns: 1fr; gap: 3rem; }
+    }
+    @media (max-width: 768px) {
+      .nav__links, .nav__cta { display: none; }
+      .hamburger { display: flex; }
+      .services__grid { grid-template-columns: 1fr; }
+      .process__steps { grid-template-columns: 1fr; }
+      .form__row { grid-template-columns: 1fr; }
+      .footer__inner { flex-direction: column; text-align: center; gap: 1rem; }
+      .cta__actions { flex-direction: column; }
+      .section { padding: 5rem 0; }
+    }
+  </style>
+</head>
+<body>
+  <nav class="nav" id="mainNav">
+    <div class="nav__inner">
+      <a href="#" class="nav__logo"><img src="/assets/images/unc-logo-icon.webp" alt="Urban Niche Co." />Urban <em>Niche</em>&nbsp;Co.</a>
+      <ul class="nav__links">
+        <li><a href="#services" class="nav__link">Services</a></li>
+        <li><a href="#who" class="nav__link">Who</a></li>
+        <li><a href="#process" class="nav__link">Process</a></li>
+        <li><a href="#contact" class="nav__link">Contact</a></li>
+      </ul>
+      <div class="nav__cta">
+        <a href="sms:+15153444053" class="nav__phone">Text (515) 344-4053</a>
+        <a href="#contact" class="btn btn-plum btn-sm">Let's Talk</a>
+      </div>
+      <button class="hamburger" id="hamburger" aria-label="Open menu"><span></span><span></span><span></span></button>
+    </div>
+  </nav>
+  <div class="mobile-nav" id="mobileNav">
+    <a href="#services" class="mobile-link">Services</a><a href="#who" class="mobile-link">Who</a><a href="#process" class="mobile-link">Process</a><a href="#contact" class="mobile-link">Contact</a>
+    <div class="mobile-cta"><a href="#contact" class="btn btn-ghost">Contact</a><a href="#contact" class="btn btn-plum">Let's Talk</a></div>
+  </div>
+
+  <section class="hero">
+    <div class="container">
+      <div class="hero__inner">
+        <div>
+          <div class="hero__tag reveal"><div class="hero__tag-dot"></div>For Med Spas &amp; Aesthetic Clinics</div>
+          <h1 class="reveal d1">Book the<br>Consult. <em>Retain</em><br><em>the Client.</em></h1>
+          <p class="hero__sub reveal d2">High-ticket treatments deserve a high-touch pipeline. We build the consultation funnels, booking flows, and reputation engines that turn curious browsers into lifelong clients.</p>
+          <p class="hero__whisper reveal d2"><strong>This page isn't public.</strong> You have it because we reached out to you. Contractors are our main lane &mdash; but aesthetic medicine runs on systems we know inside out.</p>
+          <div class="hero__actions reveal d3">
+            <a href="#contact" class="btn btn-plum btn-lg">Schedule a Call &rarr;</a>
+            <a href="#services" class="btn btn-ghost btn-lg">See What We Build</a>
+          </div>
+          <div class="hero__proof reveal d4">
+            <div><span class="hero__proof-val" style="color:var(--orange);">30</span><div class="hero__proof-label">Days to first consults</div></div>
+            <div><span class="hero__proof-val">3x</span><div class="hero__proof-label">Retention with rebook systems</div></div>
+            <div><span class="hero__proof-val">0</span><div class="hero__proof-label">Long-term contracts</div></div>
+          </div>
+        </div>
+        <div class="reveal d2">
+          <div class="tmenu">
+            <div class="tmenu__header">
+              <div class="tmenu__title">This Week's Book</div>
+              <div class="tmenu__badge">Live</div>
+            </div>
+            <div class="tmenu__list">
+              <div class="tmenurow booked"><div class="tmenurow__time">9:30</div><div class="tmenurow__desc">Botox &amp; filler consult &mdash; new client</div><div class="tmenurow__price">$0</div></div>
+              <div class="tmenurow booked"><div class="tmenurow__time">11:00</div><div class="tmenurow__desc">Lip filler &mdash; returning</div><div class="tmenurow__price">$625</div></div>
+              <div class="tmenurow open"><div class="tmenurow__time">1:30</div><div class="tmenurow__desc">Morpheus8 consult &mdash; package</div><div class="tmenurow__price">Open</div></div>
+              <div class="tmenurow booked"><div class="tmenurow__time">3:00</div><div class="tmenurow__desc">Laser resurfacing &mdash; package 3/6</div><div class="tmenurow__price">$1,800</div></div>
+              <div class="tmenurow open"><div class="tmenurow__time">5:00</div><div class="tmenurow__desc">Hydrafacial &mdash; new</div><div class="tmenurow__price">Open</div></div>
+            </div>
+            <div class="tmenu__footer"><span class="tmenu__footer-label">18 consults this week</span><span class="tmenu__footer-value">67% conversion</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="ticker"><div class="ticker__track">
+    <span class="ticker__item">Consultation-First Funnels <span class="ticker__sep">&#10022;</span></span>
+    <span class="ticker__item">Reputation Engineering <span class="ticker__sep">&#10022;</span></span>
+    <span class="ticker__item">Instagram &amp; Reels Strategy <span class="ticker__sep">&#10022;</span></span>
+    <span class="ticker__item">Luxury Websites <span class="ticker__sep">&#10022;</span></span>
+    <span class="ticker__item">Rebook &amp; Retention Automation <span class="ticker__sep">&#10022;</span></span>
+    <span class="ticker__item">AI Front Desk <span class="ticker__sep">&#10022;</span></span>
+    <span class="ticker__item">Local SEO for Aesthetics <span class="ticker__sep">&#10022;</span></span>
+    <span class="ticker__item">Consultation-First Funnels <span class="ticker__sep">&#10022;</span></span>
+    <span class="ticker__item">Reputation Engineering <span class="ticker__sep">&#10022;</span></span>
+    <span class="ticker__item">Instagram &amp; Reels Strategy <span class="ticker__sep">&#10022;</span></span>
+    <span class="ticker__item">Luxury Websites <span class="ticker__sep">&#10022;</span></span>
+    <span class="ticker__item">Rebook &amp; Retention Automation <span class="ticker__sep">&#10022;</span></span>
+    <span class="ticker__item">AI Front Desk <span class="ticker__sep">&#10022;</span></span>
+    <span class="ticker__item">Local SEO for Aesthetics <span class="ticker__sep">&#10022;</span></span>
+  </div></div>
+
+  <section class="section offniche">
+    <div class="container">
+      <div class="offniche__inner">
+        <div class="offniche__left reveal">
+          <span class="eyebrow">Why You're Seeing This</span>
+          <h2>We Work With Contractors.<br>But <em>Booking Is Booking.</em></h2>
+          <p>Urban Niche Co. was built for home service trades. That's our home base. We're not another med spa marketing boutique.</p>
+          <p>But the systems that fill a consult calendar &mdash; <strong>luxury websites, funnel-built consults, reputation engines, retention automation, AI front desk</strong> &mdash; are systems we build every day. The treatment changes. The mechanics don't.</p>
+          <p>We don't chase every vertical. We stay focused. But when we see a clinic where one fix moves real consult volume, <strong>we reach out. You're one of those.</strong></p>
+        </div>
+        <div class="offniche__quote reveal d1">
+          <p>Aesthetic clinics don't have an acquisition problem. They have a retention problem and a rebooking problem. We build the systems that fix both.</p>
+          <div class="offniche__quote-attr">Ricky &mdash; Founder, Urban Niche Co.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section services" id="services">
+    <div class="container">
+      <div class="services__header reveal">
+        <span class="eyebrow">What We Build</span>
+        <h2>Full Pipeline. <em>Lifelong Clients.</em></h2>
+        <p>No vanity metrics. No generic retainers. Every service ties back to one number &mdash; consults on the book turning into lifetime value.</p>
+      </div>
+      <div class="services__grid">
+        <div class="svc reveal"><div class="svc__num">&mdash; I</div><div class="svc__icon">&#128221;</div><h3>Consultation Funnels</h3><p>Landing pages for each treatment &mdash; Botox, filler, Morpheus, lasers &mdash; that capture the consult, not just a form fill. Built to convert the curious.</p><div class="svc__list"><div class="svc__item">Treatment-specific landing pages</div><div class="svc__item">Consult booking above the fold</div><div class="svc__item">Before/after gallery integration</div><div class="svc__item">Financing &amp; package details</div><div class="svc__item">HIPAA-considerate intake flows</div></div></div>
+        <div class="svc reveal d1"><div class="svc__num">&mdash; II</div><div class="svc__icon">&#9733;</div><h3>Reputation Engineering</h3><p>In aesthetics, reviews are currency. Every happy client becomes a Google review, testimonial, and content piece on autopilot.</p><div class="svc__list"><div class="svc__item">Post-treatment review automation</div><div class="svc__item">Google, RealSelf, Yelp monitoring</div><div class="svc__item">Negative review response playbook</div><div class="svc__item">Video testimonial prompts</div><div class="svc__item">Review widgets on site</div></div></div>
+        <div class="svc reveal d2"><div class="svc__num">&mdash; III</div><div class="svc__icon">&#128247;</div><h3>Instagram &amp; Reels Strategy</h3><p>Aesthetic medicine lives on Instagram. Treatment journey content, before/after storytelling, provider spotlights &mdash; built to bring new clients in.</p><div class="svc__list"><div class="svc__item">Weekly content calendar</div><div class="svc__item">Before/after storytelling frameworks</div><div class="svc__item">Provider spotlight Reels</div><div class="svc__item">Paid social for new clients</div><div class="svc__item">Pinterest for high-intent search</div></div></div>
+        <div class="svc reveal"><div class="svc__num">&mdash; IV</div><div class="svc__icon">&#128276;</div><h3>Retention &amp; Rebook</h3><p>Botox wears off every 3-4 months. Fillers every 6-12. Laser packages span 6 visits. Retention automation keeps clients in the chair.</p><div class="svc__list"><div class="svc__item">Treatment-specific rebook nudges</div><div class="svc__item">Package progression reminders</div><div class="svc__item">Birthday &amp; anniversary campaigns</div><div class="svc__item">Seasonal treatment recommendations</div><div class="svc__item">Loyalty program integration</div></div></div>
+        <div class="svc reveal d1"><div class="svc__num">&mdash; V</div><div class="svc__icon">&#127760;</div><h3>Luxury Websites</h3><p>Med spa sites that actually look like med spas. Fast, mobile-first, treatment-organized, with real photography and booking that works in one tap.</p><div class="svc__list"><div class="svc__item">Custom luxury-brand design</div><div class="svc__item">Treatment menu with pricing</div><div class="svc__item">Provider bio pages</div><div class="svc__item">Photo galleries that load fast</div><div class="svc__item">Online scheduling integration</div></div></div>
+        <div class="svc reveal d2"><div class="svc__num">&mdash; VI</div><div class="svc__icon">&#129302;</div><h3>AI Front Desk</h3><p>The inquiries don't stop at 5 p.m. AI handles after-hours triage, answers treatment questions, and books consults so you never miss the 11 p.m. "is filler safe for me" question.</p><div class="svc__list"><div class="svc__item">24/7 AI phone + chat</div><div class="svc__item">Trained on your treatment menu</div><div class="svc__item">Automated consult scheduling</div><div class="svc__item">Package &amp; pricing Q&amp;A</div><div class="svc__item">Human handoff when needed</div></div></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="stats">
+    <div class="container">
+      <div class="stats__grid">
+        <div class="stat reveal"><span class="stat__val">30</span><span class="stat__label">Days to first new consults</span></div>
+        <div class="stat reveal d1"><span class="stat__val">3x</span><span class="stat__label">Retention with rebook automation</span></div>
+        <div class="stat reveal d2"><span class="stat__val">0</span><span class="stat__label">Long-term contracts</span></div>
+        <div class="stat reveal d3"><span class="stat__val">1</span><span class="stat__label">Agency &mdash; full stack</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section who" id="who">
+    <div class="container">
+      <div class="who__header reveal"><span class="eyebrow">Who We Work With</span><h2>If Your Clients <em>Book Consults, We Can Help.</em></h2></div>
+      <div class="who__grid">
+        <div class="who__card reveal"><div class="who__icon">&#128104;&#8205;&#9877;&#65039;</div><h5>Physician-Led Med Spas</h5><p>Plastic surgeons, derms, NPs running aesthetic practices. Trust signals matter most here.</p></div>
+        <div class="who__card reveal d1"><div class="who__icon">&#10024;</div><h5>Injector Studios</h5><p>Nurse injectors, PA-led boutiques. Heavy Instagram influence, rebook-driven economics.</p></div>
+        <div class="who__card reveal d2"><div class="who__icon">&#128295;</div><h5>Device &amp; Laser Clinics</h5><p>Morpheus8, CoolSculpting, IPL, RF. Package-heavy, consult-intensive, content-driven.</p></div>
+        <div class="who__card reveal d3"><div class="who__icon">&#128135;&#65039;</div><h5>Wellness Aesthetic</h5><p>IV therapy, weight-loss injections, hormone optimization. Newer vertical, huge growth runway.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section process" id="process">
+    <div class="container">
+      <div class="process__header reveal"><span class="eyebrow">How It Works</span><h2>From First Call to <em>First Full Book.</em></h2></div>
+      <div class="process__steps">
+        <div class="process__step reveal"><div class="process__num">I</div><h4>Discovery Call</h4><p>We review your current site, consult conversion, reviews, and retention. We surface the biggest gaps before proposing a single fix.</p></div>
+        <div class="process__step reveal d1"><div class="process__num">II</div><h4>System Build</h4><p>Site, consult funnels, review engine, retention flows, AI front desk. Most clinics are live within 30 days.</p></div>
+        <div class="process__step reveal d2"><div class="process__num">III</div><h4>Go Live</h4><p>Campaigns launch, AI catches after-hours inquiries, reviews roll in, consults start filling the calendar.</p></div>
+        <div class="process__step reveal d3"><div class="process__num">IV</div><h4>Refine &amp; Scale</h4><p>Monthly check-ins, campaign tuning, new treatment launches. We manage the pipeline so you focus on clinical.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section contact" id="contact">
+    <div class="container">
+      <div class="contact__inner">
+        <div class="contact__left reveal">
+          <span class="eyebrow">Let's Talk</span>
+          <h2>Tell Us About <em>Your Clinic.</em></h2>
+          <p>No pitch deck. No obligation. A straight conversation about where your pipeline is leaking and what we'd build. If we're not the right fit, we'll tell you that too.</p>
+          <p>We sent you this link because we see an opportunity. The conversation costs nothing.</p>
+          <div class="contact__details">
+            <div class="contact__detail"><div class="contact__detail-icon">&#9742;</div><div>Call or text &mdash; <a href="sms:+15153444053">(515) 344-4053</a></div></div>
+            <div class="contact__detail"><div class="contact__detail-icon">&#9993;</div><div><a href="mailto:ricky@urbannicheco.com">ricky@urbannicheco.com</a></div></div>
+            <div class="contact__detail"><div class="contact__detail-icon">&#9889;</div><div>Same-day response &mdash; guaranteed</div></div>
+          </div>
+        </div>
+        <div class="reveal d1">
+          <form class="form" action="mailto:ricky@urbannicheco.com" method="GET" enctype="text/plain">
+            <div class="form__title">Send a Message</div>
+            <div class="form__sub">Goes straight to Ricky &mdash; no middleman.</div>
+            <div class="form__row">
+              <div class="form__group"><label class="form__label" for="m-name">Your Name</label><input type="text" id="m-name" name="name" placeholder="First &amp; Last" required class="form__input" /></div>
+              <div class="form__group"><label class="form__label" for="m-clinic">Clinic Name</label><input type="text" id="m-clinic" name="clinic" placeholder="Your clinic" class="form__input" /></div>
+            </div>
+            <div class="form__group"><label class="form__label" for="m-type">Treatment Focus</label><input type="text" id="m-type" name="focus" placeholder="Injectables, laser, weight-loss, etc." class="form__input" /></div>
+            <div class="form__group"><label class="form__label" for="m-email">Email</label><input type="email" id="m-email" name="email" placeholder="you@clinic.com" required class="form__input" /></div>
+            <div class="form__group"><label class="form__label" for="m-phone">Phone (optional)</label><input type="tel" id="m-phone" name="phone" placeholder="(555) 000-0000" class="form__input" /></div>
+            <div class="form__group"><label class="form__label" for="m-msg">What's the biggest gap?</label><textarea id="m-msg" name="body" placeholder="Tell us about your clinic and where you'd like to grow." class="form__textarea"></textarea></div>
+            <button type="submit" class="btn btn-plum btn-lg form__submit">Send Message &rarr;</button>
+            <div class="form__note">Opens your email client. Sending takes 2 seconds.</div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta">
+    <div class="container">
+      <div class="cta__inner reveal">
+        <span class="eyebrow">Ready to Book Out?</span>
+        <h2>Let's Build the Clinic <em>Your Market Wants to Book With.</em></h2>
+        <p>No pitch deck. Just a conversation. If we're not the right fit, we'll tell you straight.</p>
+        <div class="cta__actions">
+          <a href="#contact" class="btn btn-plum btn-lg">Start the Conversation &rarr;</a>
+          <a href="sms:+15153444053" class="btn btn-ghost btn-lg">Text Ricky Directly</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__inner">
+        <div class="footer__logo"><img src="/assets/images/unc-logo-icon.webp" alt="Urban Niche Co." />Urban <em>Niche</em>&nbsp;Co.</div>
+        <div class="footer__note">This page is private and not indexed by search engines.</div>
+        <div class="footer__copy">&copy; 2026 Urban Niche Co. LLC &mdash; Dubuque, Iowa</div>
+      </div>
+    </div>
+  </footer>
+  <script>
+    const nav = document.getElementById('mainNav');
+    window.addEventListener('scroll', () => nav.classList.toggle('scrolled', window.scrollY > 40));
+    document.getElementById('hamburger').addEventListener('click', () => document.getElementById('mobileNav').classList.toggle('open'));
+    const observer = new IntersectionObserver(entries => entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); } }), { threshold: 0.12 });
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+  </script>
+</body>
+</html>

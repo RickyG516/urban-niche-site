@@ -71,6 +71,30 @@
 
 
 
+
+<!-- THANK YOU HERO -->
+<style>
+  .ty-hero{min-height:calc(100vh - 60px);display:flex;align-items:center;justify-content:center;background:var(--color-dark);padding:var(--space-xl) var(--space-md) var(--space-lg);position:relative;overflow:hidden}
+  .ty-hero::before{content:'';position:absolute;top:-200px;left:50%;transform:translateX(-50%);width:900px;height:900px;border-radius:50%;background:radial-gradient(circle,var(--color-accent-glow) 0%,transparent 70%);pointer-events:none;z-index:0}
+  .ty-hero__inner{position:relative;z-index:1;max-width:680px;text-align:center;margin:0 auto}
+  .ty-hero h1{font-family:var(--font-display);font-weight:800;color:var(--color-white);font-size:clamp(2.25rem,5vw,3.75rem);line-height:1.1;margin:0 0 1.25rem;letter-spacing:-0.02em}
+  .ty-hero h1 .accent{color:var(--color-accent)}
+  .ty-hero__sub{font-family:var(--font-body);font-weight:500;color:var(--color-white);font-size:clamp(1.1rem,2vw,1.375rem);line-height:1.5;margin:0 auto 1.5rem;max-width:52ch}
+  .ty-hero__body{font-family:var(--font-body);font-weight:400;color:var(--color-white-dim);font-size:1.0625rem;line-height:1.7;margin:0 auto 2.5rem;max-width:54ch}
+  .ty-hero__body a{color:var(--color-accent);text-decoration:none;font-weight:600}
+  .ty-hero__body a:hover{text-decoration:underline}
+  .ty-hero__trust{font-family:var(--font-body);font-size:0.8125rem;color:rgba(245,245,240,0.35);letter-spacing:0.04em;text-transform:uppercase;margin:0}
+  @media(max-width:640px){.ty-hero{min-height:calc(100vh - 56px);padding:var(--space-lg) var(--space-md)}}
+</style>
+<main class="ty-hero" role="main">
+  <div class="ty-hero__inner">
+    <h1>You're in <span class="accent">good hands.</span></h1>
+    <p class="ty-hero__sub">Our team got your submission and will be in touch within 24 hours with next steps.</p>
+    <p class="ty-hero__body">In the meantime, if you'd like to move faster &mdash; reply to the confirmation email we just sent or text us directly at <a href="sms:+15153444053">(515) 344-4053</a>.</p>
+    <p class="ty-hero__trust">Urban Niche Co. &mdash; Digital Marketing for Contractors</p>
+  </div>
+</main>
+
 <!-- FOOTER -->
 <footer class="footer">
   <div class="container">

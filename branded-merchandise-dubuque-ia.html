@@ -3,166 +3,60 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Branded merchandise for Midwest businesses. Urban Niche Co. offers custom screen printing, embroidery & promotional products. Request a quote today." />
-  <title>Branded Merchandise | Urban Niche Co.</title>
+  <meta name="description" content="Branded crew gear for contractors in Dubuque, Iowa. T-shirts, hoodies, hats, hi-vis, yard signs, truck decals. One point of contact. Design, print, ship." />
+  <title>Branded Contractor Merchandise in Dubuque, Iowa | Urban Niche Co.</title>
   <link rel="stylesheet" href="/style.css" />
-  <link rel="icon" type="image/png" href="/assets/favicon.png" />
-  <style>
-    .page-hero {h
-      padding-top: calc(var(--nav-height) + var(--space-xl));
-      padding-bottom: var(--space-xl);
-      background: var(--color-dark);
-      position: relative;
-      overflow: hidden;
-    }
-    .page-hero::before {
-      content: '';
-      position: absolute;
-      top: -200px; right: -150px;
-      width: 600px; height: 600px;
-      border-radius: 50%;
-      background: radial-gradient(circ/style.css0%);
-      pointer-events: none;
-    }
-    .page-hero__inner {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: var(--space-xl);
-      align-items: center;
-    }
-    .page-hero h1 { margin: 0.5rem 0 1.5rem; }
-    .page-hero__sub { font-size: 1.05rem; color: var(--color-white-dim); max-width: 50ch; margin-bottom: 2rem; line-height: 1.7; }
-    .page-hero__actions { display: flex; gap: 1rem; flex-wrap: wrap; }
-
-    /* Hero visual */
-    .merch-preview {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 0.75rem;
-    }
-    .merch-tile {
-      background: var(--color-dark-2);
-      border: 1px solid var(--color-border);
-      border-radius: var(--radius-md);
-      padding: 1.5rem;
-      text-align: center;
-      transition: all var(--transition-base);
-    }
-    .merch-tile:hover { border-color: var(--color-accent); transform: translateY(-3px); }
-    .merch-tile__icon { font-size: 2rem; margin-bottom: 0.5rem; }
-    .merch-tile h5 { font-size: 0.82rem; color: var(--color-white); }
-
-    /* Products grid */
-    .products { background: var(--color-black); }
-    .products__grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 1.25rem;
-      margin-top: var(--space-lg);
-    }
-    .product-card {
-      background: var(--color-dark-2);
-      border: 1px solid var(--color-border);
-      border-radius: var(--radius-md);
-      padding: 2rem 1.75rem;
-      transition: all var(--transition-base);
-      position: relative;
-      overflow: hidden;
-    }
-    .product-card::after {
-      content: '';
-      position: absolute;
-      bottom: 0; left: 0; right: 0;
-      height: 2px;
-      background: var(--color-accent);
-      transform: scaleX(0);
-      transform-origin: left;
-      transition: transform var(--transition-slow);
-    }
-    .product-card:hover::after { transform: scaleX(1); }
-    .product-card:hover { border-color: rgba(232,101,26,0.3); transform: translateY(-4px); }
-    .product-card__icon { font-size: 2rem; margin-bottom: 1rem; }
-    .product-card h4 { margin-bottom: 0.6rem; }
-    .product-card p  { font-size: 0.875rem; margin-bottom: 1rem; }
-    .product-card__items {
-      display: flex;
-      flex-direction: column;
-      gap: 0.35rem;
-    }
-    .product-card__item {
-      display: flex;
-      gap: 0.5rem;
-      font-size: 0.78rem;
-      color: var(--color-white-dim);
-    }
-    .product-card__item::before { content: '→'; color: var(--color-accent); font-size: 0.68rem; flex-shrink: 0; margin-top: 1px; }
-
-    /* Merchandise callout */
-    .iowa-callout { background: var(--color-dark-2); }
-    .iowa-callout__inner {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: var(--space-xl);
-      align-items: center;
-    }
-    .iowa-card {
-      background: var(--color-dark-3);
-      border: 1px solid rgba(232,101,26,0.3);
-      border-radius: var(--radius-lg);
-      padding: 2.5rem;
-      text-align: center;
-    }
-    .iowa-card__icon { font-size: 2.5rem; margin-bottom: 1rem; }
-    .iowa-card h3 { margin-bottom: 0.75rem; }
-    .iowa-card p  { font-size: 0.9rem; margin-bottom: 1.75rem; }
-
-    @media (max-width: 1024px) {
-      .page-hero__inner, .iowa-callout__inner { grid-template-columns: 1fr; }
-      .products__grid { grid-template-columns: 1fr 1fr; }
-    }
-    @media (max-width: 768px) {
-      .page-hero__actions { flex-direction: column; }
-      .products__grid { grid-template-columns: 1fr; }
-      .merch-preview { grid-template-columns: 1fr 1fr; }
-    }
-  </style>
-<!-- Canonical & Robots -->
-<link rel="canonical" href="https://urbannicheco.com/merchandise/" />
-<meta name="robots" content="index, follow">
-<!-- Open Graph -->
-<meta property="og:type" content="website">
-<meta property="og:url" content="https://urbannicheco.com/merchandise/">
-<meta property="og:title" content="Contractor Branded Merchandise & Gear | Urban Niche Co.">
-<meta property="og:description" content="Branded shirts, hats, workwear and promo products for contractors. Put your name on every job site. Designed, managed, and delivered by Urban Niche Co.">
-<meta property="og:image" content="https://urbannicheco.com/assets/og-image.png">
-<meta property="og:site_name" content="Urban Niche Co.">
-<!-- Twitter Card -->
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:site" content="@UrbanNiche_Co">
-<meta name="twitter:title" content="Contractor Branded Merchandise & Gear | Urban Niche Co.">
-<meta name="twitter:description" content="Branded shirts, hats, workwear and promo products for contractors. Put your name on every job site. Designed, managed, and delivered by Urban Niche Co.">
-<meta name="twitter:image" content="https://urbannicheco.com/assets/og-image.png">
-<!-- Schema -->
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "WebPage",
-  "@id": "https://urbannicheco.com/merchandise/",
-  "url": "https://urbannicheco.com/merchandise/",
-  "name": "Contractor Branded Merchandise & Gear",
-  "description": "Branded shirts, hats, workwear and promotional products for contractors and home service businesses. Designed, managed, and delivered by Urban Niche Co.",
-  "publisher": {"@type": "LocalBusiness", "@id": "https://urbannicheco.com/#organization", "name": "Urban Niche Co.", "telephone": "(515) 344-4053", "address": {"@type": "PostalAddress", "addressLocality": "Dubuque", "addressRegion": "IA", "addressCountry": "US"}}
-}
-</script>
+  <link rel="icon" type="image/png" href="assets/favicon.png" />
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-MV891F39TH"></script>
 <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-MV891F39TH');</script>
 <!-- Kobe 3.0 Chatbot CSS -->
 <style>
 #unc-launcher{position:fixed;bottom:28px;right:28px;width:62px;height:62px;border-radius:50%;background:#e36b1e;border:none;cursor:pointer;z-index:9999;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 24px rgba(227,107,30,0.5);transition:transform 0.2s ease,box-shadow 0.2s ease}#unc-launcher:hover{transform:scale(1.08);box-shadow:0 8px 32px rgba(227,107,30,0.65)}#unc-launcher svg{transition:transform 0.35s cubic-bezier(0.34,1.56,0.64,1)}#unc-launcher.open svg{transform:rotate(45deg)}#unc-launcher::after{content:'';position:absolute;top:4px;right:4px;width:13px;height:13px;border-radius:50%;background:#22c55e;border:2px solid #fff;animation:uncPulse 2.5s ease-in-out infinite}#unc-launcher.open::after{display:none}@keyframes uncPulse{0%,100%{box-shadow:0 0 0 0 rgba(34,197,94,0.5)}50%{box-shadow:0 0 0 5px rgba(34,197,94,0)}}#unc-promo{position:fixed;bottom:100px;right:28px;background:#1a1a1a;border:1px solid #333;border-radius:12px;padding:11px 14px;font-size:13px;color:#e5e5e5;z-index:9998;max-width:240px;line-height:1.5;box-shadow:0 4px 20px rgba(0,0,0,0.4);transform:translateY(8px);opacity:0;transition:all 0.3s cubic-bezier(0.34,1.56,0.64,1);pointer-events:none}#unc-promo.visible{transform:translateY(0);opacity:1;pointer-events:all}#unc-promo::after{content:'';position:absolute;bottom:-7px;right:22px;width:14px;height:7px;background:#1a1a1a;clip-path:polygon(0 0,100% 0,50% 100%)}#unc-promo-close{position:absolute;top:6px;right:8px;background:none;border:none;color:#6b7280;cursor:pointer;font-size:14px;line-height:1;padding:2px}#unc-promo-close:hover{color:#e5e5e5}#unc-chat{position:fixed;bottom:102px;right:28px;width:390px;max-height:620px;border-radius:18px;background:#111;border:1px solid #252525;display:flex;flex-direction:column;z-index:9998;overflow:hidden;transform:translateY(24px) scale(0.95);opacity:0;pointer-events:none;transition:all 0.3s cubic-bezier(0.34,1.56,0.64,1);box-shadow:0 12px 48px rgba(0,0,0,0.55)}#unc-chat.visible{transform:translateY(0) scale(1);opacity:1;pointer-events:all}.unc-header{background:linear-gradient(135deg,#1a1a1a 0%,#1f1a16 100%);border-bottom:1px solid #2a2a2a;padding:14px 16px;display:flex;align-items:center;gap:10px;flex-shrink:0}.unc-avatar{width:40px;height:40px;border-radius:50%;background:#e36b1e;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:16px;color:#fff;flex-shrink:0;position:relative}.unc-avatar::after{content:'';position:absolute;bottom:1px;right:1px;width:9px;height:9px;border-radius:50%;background:#22c55e;border:2px solid #1a1a1a}.unc-header-info{flex:1}.unc-header-name{font-size:14px;font-weight:600;color:#f5f5f5}.unc-header-sub{font-size:11px;color:#6b7280;margin-top:1px}.unc-header-actions{display:flex;align-items:center;gap:6px}.unc-icon-btn{background:none;border:none;color:#6b7280;cursor:pointer;font-size:18px;line-height:1;padding:4px;border-radius:6px;transition:color 0.15s,background 0.15s}.unc-icon-btn:hover{color:#f5f5f5;background:#252525}.unc-messages{flex:1;overflow-y:auto;padding:16px;display:flex;flex-direction:column;gap:10px;scroll-behavior:smooth}.unc-messages::-webkit-scrollbar{width:3px}.unc-messages::-webkit-scrollbar-thumb{background:#333;border-radius:2px}.unc-bubble{max-width:86%;padding:10px 14px;border-radius:16px;font-size:14px;line-height:1.6}.unc-bubble.kobe{background:#1e1e1e;border:1px solid #2a2a2a;color:#e0e0e0;align-self:flex-start;border-bottom-left-radius:4px}.unc-bubble.user{background:#e36b1e;color:#fff;align-self:flex-end;border-bottom-right-radius:4px;font-weight:500}.unc-bubble.kobe a{color:#e36b1e;text-decoration:underline}.unc-typing{display:flex;align-items:center;gap:5px;padding:12px 14px;background:#1e1e1e;border:1px solid #2a2a2a;border-radius:16px;border-bottom-left-radius:4px;align-self:flex-start;width:fit-content}.unc-typing span{width:6px;height:6px;border-radius:50%;background:#555;animation:uncBounce 1.3s infinite}.unc-typing span:nth-child(2){animation-delay:0.18s}.unc-typing span:nth-child(3){animation-delay:0.36s}@keyframes uncBounce{0%,60%,100%{transform:translateY(0);background:#555}30%{transform:translateY(-6px);background:#e36b1e}}.unc-kobe-badge{display:inline-block;font-size:10px;font-weight:600;color:#e36b1e;border:1px solid rgba(227,107,30,0.4);border-radius:4px;padding:1px 6px;margin-bottom:5px;letter-spacing:0.05em}.unc-choices{display:flex;flex-direction:column;gap:6px;padding:0 14px 12px;flex-shrink:0}.unc-choice{background:#181818;border:1px solid #2e2e2e;color:#d0d0d0;border-radius:9px;padding:9px 14px;font-size:13px;font-family:'DM Sans',sans-serif;text-align:left;cursor:pointer;transition:border-color 0.15s,color 0.15s,background 0.15s,transform 0.1s}.unc-choice:hover{border-color:#e36b1e;color:#fff;background:#1f1b18;transform:translateX(2px)}.unc-input-row{display:flex;gap:8px;padding:12px 14px;border-top:1px solid #222;background:#141414;flex-shrink:0}.unc-input{flex:1;background:#1e1e1e;border:1px solid #2e2e2e;border-radius:9px;color:#e5e5e5;font-family:'DM Sans',sans-serif;font-size:14px;padding:9px 12px;outline:none;transition:border-color 0.15s}.unc-input:focus{border-color:#e36b1e}.unc-input::placeholder{color:#444}.unc-send{background:#e36b1e;border:none;border-radius:9px;width:40px;height:40px;display:flex;align-items:center;justify-content:center;cursor:pointer;color:#fff;transition:background 0.15s,transform 0.1s;flex-shrink:0}.unc-send:hover{background:#c45d18}.unc-send:active{transform:scale(0.94)}.unc-form{display:flex;flex-direction:column;gap:8px;padding:0 14px 14px}.unc-field{display:flex;flex-direction:column;gap:3px}.unc-field label{font-size:11px;color:#6b7280;padding-left:2px;font-weight:500}.unc-field input{background:#1a1a1a;border:1px solid #2e2e2e;border-radius:9px;color:#e5e5e5;font-family:'DM Sans',sans-serif;font-size:14px;padding:9px 12px;outline:none;transition:border-color 0.15s}.unc-field input:focus{border-color:#e36b1e}.unc-field input.invalid{border-color:#ef4444}.unc-field input::placeholder{color:#3a3a3a}.unc-field-error{font-size:11px;color:#ef4444;padding-left:2px;display:none}.unc-field-error.show{display:block}.unc-submit{background:#e36b1e;border:none;border-radius:9px;color:#fff;font-family:'DM Sans',sans-serif;font-size:14px;font-weight:600;padding:11px;cursor:pointer;transition:background 0.15s,transform 0.1s;margin-top:4px}.unc-submit:hover{background:#c45d18}.unc-submit:active{transform:scale(0.98)}.unc-submit:disabled{background:#333;color:#555;cursor:not-allowed;transform:none}.unc-form-note{font-size:11px;color:#4b5563;text-align:center;margin-top:2px;line-height:1.4}@keyframes uncFormPulse{0%{border-color:#2e2e2e;box-shadow:none}40%{border-color:#e36b1e;box-shadow:0 0 0 3px rgba(227,107,30,0.15)}100%{border-color:#2e2e2e;box-shadow:none}}.unc-form.pulse-in .unc-field input{animation:uncFormPulse 1.2s ease forwards}.unc-success{text-align:center;padding:24px 20px;flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px}.unc-success-icon{width:56px;height:56px;border-radius:50%;background:rgba(34,197,94,0.12);display:flex;align-items:center;justify-content:center;margin:0 auto 4px}.unc-success h3{color:#f5f5f5;font-size:16px;font-weight:600;margin:0}.unc-success p{color:#9ca3af;font-size:13px;line-height:1.6;max-width:270px;margin:0}.unc-success-links{display:flex;gap:8px;flex-wrap:wrap;justify-content:center;margin-top:8px}.unc-success-link{background:#1e1e1e;border:1px solid #2e2e2e;color:#d0d0d0;border-radius:8px;padding:7px 12px;font-size:12px;text-decoration:none;transition:border-color 0.15s,color 0.15s}.unc-success-link:hover{border-color:#e36b1e;color:#fff}.unc-brand{padding:8px 16px;text-align:center;border-top:1px solid #1a1a1a;font-size:11px;color:#2d2d2d;letter-spacing:0.02em;flex-shrink:0}.unc-brand a{color:#e36b1e;text-decoration:none}.unc-brand a:hover{text-decoration:underline}@media(max-width:440px){#unc-chat{width:100vw;right:0;bottom:0;border-radius:20px 20px 0 0;max-height:90dvh}#unc-launcher{right:16px;bottom:16px}#unc-promo{right:16px}}
 </style>
+<link rel="canonical" href="https://urbannicheco.com/branded-merchandise-dubuque-ia/" />
+<meta name="robots" content="index, follow">
+<!-- Open Graph -->
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://urbannicheco.com/branded-merchandise-dubuque-ia/">
+<meta property="og:title" content="Branded Contractor Merchandise in Dubuque, Iowa | Urban Niche Co.">
+<meta property="og:description" content="Contractor crew gear for Dubuque and the Tri-State. T-shirts, hoodies, hats, hi-vis, yard signs. Design, manage, deliver.">
+<meta property="og:image" content="https://urbannicheco.com/assets/og-image.png">
+<meta property="og:site_name" content="Urban Niche Co.">
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@UrbanNiche_Co">
+<meta name="twitter:title" content="Branded Contractor Merchandise in Dubuque, Iowa | Urban Niche Co.">
+<meta name="twitter:description" content="Contractor crew gear for Dubuque and the Tri-State. T-shirts, hoodies, hats, hi-vis, yard signs. Design, manage, deliver.">
+<meta name="twitter:image" content="https://urbannicheco.com/assets/og-image.png">
+<!-- Schema -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "serviceType": "Branded Merchandise and Apparel",
+  "provider": {
+    "@type": "LocalBusiness",
+    "@id": "https://urbannicheco.com/#organization",
+    "name": "Urban Niche Co.",
+    "telephone": "(515) 344-4053",
+    "url": "https://urbannicheco.com",
+    "address": {"@type": "PostalAddress", "addressLocality": "Dubuque", "addressRegion": "IA", "postalCode": "52001", "addressCountry": "US"},
+    "geo": {"@type": "GeoCoordinates", "latitude": 42.5006, "longitude": -90.6646}
+  },
+  "areaServed": [
+    {"@type": "City", "name": "Dubuque", "sameAs": "https://en.wikipedia.org/wiki/Dubuque,_Iowa"},
+    {"@type": "City", "name": "Peosta"},
+    {"@type": "City", "name": "Asbury"},
+    {"@type": "City", "name": "Key West"},
+    {"@type": "AdministrativeArea", "name": "Dubuque County, Iowa"}
+  ],
+  "description": "Branded Merchandise and Apparel for contractors and home service businesses in Dubuque, Iowa and the Tri-State area.",
+  "offers": {"@type": "Offer", "priceCurrency": "USD", "price": "0", "description": "Custom contractor merchandise. Quote-based pricing. No markup on crew pricing."}
+}
+</script>
 </head>
 <body>
-  <nav class="nav" id="mainNav">
+<nav class="nav" id="mainNav">
   <div class="nav__inner">
     <a href="/" class="nav__logo">
       <img src="/assets/images/unc-logo-icon.webp" alt="Urban Niche Co." class="nav__logo-img" />
@@ -215,163 +109,136 @@
     <a href="/contact/" class="btn btn-primary">Free Website Audit</a>
   </div>
 </div>
+<!-- DUBUQUE MERCHANDISE PAGE CONTENT -->
+<style>
+  .city-hero{padding:calc(var(--nav-height) + var(--space-lg)) 0 var(--space-lg);background:var(--color-dark);position:relative;overflow:hidden}
+  .city-hero::before{content:'';position:absolute;top:-200px;right:-150px;width:720px;height:720px;border-radius:50%;background:radial-gradient(circle,rgba(232,101,26,0.08) 0%,transparent 70%);pointer-events:none;z-index:0}
+  .city-hero__inner{position:relative;z-index:1;max-width:820px}
+  .city-hero .breadcrumb{display:flex;align-items:center;gap:.5rem;font-size:.8125rem;color:var(--color-white-dim);margin-bottom:1.25rem;letter-spacing:.04em}
+  .city-hero .breadcrumb a{color:var(--color-white-dim);text-decoration:none;transition:color .15s}
+  .city-hero .breadcrumb a:hover{color:var(--color-accent)}
+  .city-hero .breadcrumb span{color:var(--color-accent)}
+  .city-hero .eyebrow{display:inline-block;font-family:var(--font-body);font-size:.75rem;letter-spacing:.14em;text-transform:uppercase;color:var(--color-accent);font-weight:600;margin-bottom:.75rem}
+  .city-hero h1{font-family:var(--font-display);font-weight:800;color:var(--color-white);font-size:clamp(2.5rem,5.5vw,4rem);line-height:1.05;margin:0 0 1.25rem;letter-spacing:-.02em}
+  .city-hero h1 .accent{color:var(--color-accent)}
+  .city-hero__sub{font-family:var(--font-body);font-size:1.125rem;line-height:1.5;color:var(--color-white-dim);max-width:52ch;margin:0 0 2rem}
+  .city-hero__actions{display:flex;gap:.75rem;flex-wrap:wrap}
+  .city-stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:1.25rem;margin-top:2.5rem;padding-top:2rem;border-top:1px solid var(--color-border)}
+  .city-stat__num{font-family:var(--font-display);font-size:1.75rem;font-weight:800;color:var(--color-accent);line-height:1;margin-bottom:.25rem}
+  .city-stat__label{font-size:.8125rem;color:var(--color-white-dim);letter-spacing:.02em}
+  .city-local{padding:var(--space-xl) 0;background:var(--color-dark-2)}
+  .city-local h2{font-family:var(--font-display);font-weight:800;color:var(--color-white);font-size:clamp(1.75rem,3.5vw,2.5rem);line-height:1.1;margin:0 0 1.5rem;letter-spacing:-.015em;max-width:22ch}
+  .city-local p{font-family:var(--font-body);font-size:1.0625rem;line-height:1.65;color:var(--color-white-dim);margin:0 0 1rem;max-width:62ch}
+  .city-local p strong{color:var(--color-white);font-weight:600}
+  .city-included{padding:var(--space-xl) 0;background:var(--color-dark)}
+  .city-included h2{font-family:var(--font-display);font-weight:800;color:var(--color-white);font-size:clamp(1.75rem,3.5vw,2.5rem);line-height:1.1;margin:0 0 2rem;letter-spacing:-.015em}
+  .city-included__grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1rem}
+  .city-tile{background:var(--color-dark-2);border:1px solid var(--color-border);border-radius:12px;padding:1.25rem;transition:border-color .2s,transform .2s}
+  .city-tile:hover{border-color:rgba(232,101,26,.35);transform:translateY(-3px)}
+  .city-tile h3{font-family:var(--font-display);font-weight:700;color:var(--color-white);font-size:1.0625rem;margin:0 0 .4rem}
+  .city-tile p{font-size:.9375rem;line-height:1.5;color:var(--color-white-dim);margin:0}
+  .city-faq{padding:var(--space-xl) 0;background:var(--color-dark-2)}
+  .city-faq h2{font-family:var(--font-display);font-weight:800;color:var(--color-white);font-size:clamp(1.75rem,3.5vw,2.5rem);margin:0 0 1.75rem}
+  .city-faq__item{padding:1.25rem 0;border-bottom:1px solid var(--color-border)}
+  .city-faq__item:last-child{border-bottom:none}
+  .city-faq__q{font-family:var(--font-display);font-weight:700;color:var(--color-white);font-size:1.0625rem;margin:0 0 .4rem}
+  .city-faq__a{font-family:var(--font-body);font-size:1rem;line-height:1.6;color:var(--color-white-dim);margin:0;max-width:62ch}
+  .city-cta{padding:var(--space-xl) 0;background:var(--color-dark);text-align:center}
+  .city-cta h2{font-family:var(--font-display);font-weight:800;color:var(--color-white);font-size:clamp(1.75rem,3.5vw,2.5rem);margin:0 0 .75rem;max-width:20ch;margin-left:auto;margin-right:auto;line-height:1.1}
+  .city-cta p{font-size:1.0625rem;color:var(--color-white-dim);max-width:46ch;margin:0 auto 2rem;line-height:1.5}
+  .city-cta .actions{display:inline-flex;gap:.75rem;flex-wrap:wrap;justify-content:center}
+  @media(max-width:700px){.city-hero__actions{flex-direction:column}.city-hero__actions .btn{width:100%}}
+</style>
 
-  <section class="page-hero noise-overlay">
-    <div class="container page-hero__inner">
-      <div class="reveal">
-        <span class="eyebrow">Branded Merchandise</span>
-        <h1>Branded Merchandise for Midwest Contractors — <br><span class="text-accent">On Every Job Site, Truck & Customer.</span></h1>
-        <p class="page-hero__sub">High-quality branded gear that turns your crew and clients into walking billboards. Custom apparel, vehicle decals, yard signs, and promotional products built for contractors.</p>
-        <div class="page-hero__actions">
-          <a href="/contact/" class="btn btn-primary btn-lg">Request a Quote</a>
-        </div>
-      </div>
-      <div class="reveal reveal-delay-2">
-        <div class="merch-preview">
-          <div class="merch-tile"><div class="merch-tile__icon">👕</div><h5>Apparel</h5></div>
-          <div class="merch-tile"><div class="merch-tile__icon">🧢</div><h5>Hats</h5></div>
-          <div class="merch-tile"><div class="merch-tile__icon">🚗</div><h5>Vehicle Decals</h5></div>
-          <div class="merch-tile"><div class="merch-tile__icon">🪧</div><h5>Yard Signs</h5></div>
-          <div class="merch-tile"><div class="merch-tile__icon">🎁</div><h5>Promo Items</h5></div>
-          <div class="merch-tile"><div class="merch-tile__icon">🎨</div><h5>Custom Design</h5></div>
-        </div>
-      </div>
+<section class="city-hero">
+  <div class="container city-hero__inner">
+    <div class="breadcrumb"><a href="/">Home</a> / <a href="/merchandise/">Merchandise</a> / <span>Dubuque, IA</span></div>
+    <span class="eyebrow">Branded Merchandise &middot; Dubuque, Iowa</span>
+    <h1>Crew Gear That <span class="accent">Books Jobs.</span> Dubuque.</h1>
+    <p class="city-hero__sub">Branded shirts, hoodies, hats, and hi-vis for contractors working the 563. Your logo. Your truck. Your crew. One point of contact.</p>
+    <div class="city-hero__actions">
+      <a href="/contact/" class="btn btn-primary btn-lg">Get Your Quote</a>
+      <a href="sms:+15153444053" class="btn btn-outline btn-lg">Text (515) 344-4053</a>
     </div>
-  </section>
-
-  <section class="section products">
-    <div class="container">
-      <div class="section-header section-header--center reveal">
-        <span class="eyebrow">What We Offer</span>
-        <h2>Branded Products Built<br>for the Trades.</h2>
-        <p>Everything designed to look sharp, represent your brand professionally, and hold up on the job site.</p>
-      </div>
-      <div class="products__grid">
-        <div class="product-card reveal reveal-delay-1">
-          <div class="product-card__icon">👕</div>
-          <h4>Shirts & Workwear</h4>
-          <p>Custom screen-printed and embroidered apparel your crew will actually want to wear — and that look professional on every job.</p>
-          <div class="product-card__items">
-            <div class="product-card__item">T-shirts & long sleeves</div>
-            <div class="product-card__item">Polo shirts</div>
-            <div class="product-card__item">Hoodies & sweatshirts</div>
-            <div class="product-card__item">Hi-vis safety shirts</div>
-            <div class="product-card__item">Performance work shirts</div>
-          </div>
-        </div>
-        <div class="product-card reveal reveal-delay-2">
-          <div class="product-card__icon">🧢</div>
-          <h4>Hats & Headwear</h4>
-          <p>Structured and unstructured caps with embroidered logos — one of the most visible and cost-effective ways to brand your crew.</p>
-          <div class="product-card__items">
-            <div class="product-card__item">Structured snapbacks</div>
-            <div class="product-card__item">Unstructured dad hats</div>
-            <div class="product-card__item">Beanies & winter hats</div>
-            <div class="product-card__item">Mesh trucker hats</div>
-          </div>
-        </div>
-        <div class="product-card reveal reveal-delay-3">
-          <div class="product-card__icon">🚗</div>
-          <h4>Vehicle Decals & Wraps</h4>
-          <p>Turn your work trucks into rolling billboards. Full vehicle wraps, partial wraps, door decals, and magnetic signs.</p>
-          <div class="product-card__items">
-            <div class="product-card__item">Full vehicle wraps</div>
-            <div class="product-card__item">Partial wraps</div>
-            <div class="product-card__item">Door & tailgate decals</div>
-            <div class="product-card__item">Magnetic signs</div>
-            <div class="product-card__item">Trailer graphics</div>
-          </div>
-        </div>
-        <div class="product-card reveal reveal-delay-1">
-          <div class="product-card__icon">🪧</div>
-          <h4>Yard Signs & Banners</h4>
-          <p>On-site branding that builds recognition in every neighborhood you work in. Every yard sign is free advertising.</p>
-          <div class="product-card__items">
-            <div class="product-card__item">Corrugated yard signs</div>
-            <div class="product-card__item">Job site banners</div>
-            <div class="product-card__item">Retractable banners</div>
-            <div class="product-card__item">A-frame signs</div>
-          </div>
-        </div>
-        <div class="product-card reveal reveal-delay-2">
-          <div class="product-card__icon">🎁</div>
-          <h4>Promotional Items</h4>
-          <p>Leave-behinds and giveaways that keep your brand in front of customers long after the job is done.</p>
-          <div class="product-card__items">
-            <div class="product-card__item">Branded pens & notebooks</div>
-            <div class="product-card__item">Water bottles & tumblers</div>
-            <div class="product-card__item">Keychains & magnets</div>
-            <div class="product-card__item">Tote bags & coolers</div>
-            <div class="product-card__item">Custom tape measures</div>
-          </div>
-        </div>
-        <div class="product-card reveal reveal-delay-3">
-          <div class="product-card__icon">🎨</div>
-          <h4>Custom Design</h4>
-          <p>Don't have a logo or need a refresh? Our design team creates professional branded assets that work across all your merchandise.</p>
-          <div class="product-card__items">
-            <div class="product-card__item">Logo design & refinement</div>
-            <div class="product-card__item">Brand color & font systems</div>
-            <div class="product-card__item">Print-ready artwork files</div>
-            <div class="product-card__item">Brand consistency across all items</div>
-          </div>
-        </div>
-      </div>
+    <div class="city-stats">
+      <div><div class="city-stat__num">563</div><div class="city-stat__label">Dubuque area code</div></div>
+      <div><div class="city-stat__num">Tri-State</div><div class="city-stat__label">IA &middot; IL &middot; WI</div></div>
+      <div><div class="city-stat__num">99K+</div><div class="city-stat__label">Dubuque County</div></div>
+      <div><div class="city-stat__num">Based Here</div><div class="city-stat__label">Dubuque HQ</div></div>
     </div>
-  </section>
-
-  <section class="section iowa-callout">
-    <div class="container">
-      <div class="iowa-callout__inner">
-        <div class="reveal">
-          <span class="eyebrow">A Decade Of Print Experience</span>
-          <h2>Backed by Real Print Experience.</h2>
-          <p style="margin-bottom:1.25rem;">Our founder has been in the screen printing and embroidery game since 2015 — running a full production operation out of Dubuque, Iowa for nearly a decade. Thousands of shirts, hats, hoodies, crew uniforms, and promo jobs for businesses across the Midwest.</p>
-          <p style="margin-bottom:1.5rem;">That same operational knowledge backs every merch order placed through Urban Niche Co. today. We know what looks good, what holds up, and what's worth the investment — because we've been in the shop.</p>
-          <a href="/contact/" class="btn btn-outline">Start Your Order →</a>
-        </div>
-        <div class="reveal reveal-delay-2">
-          <div class="iowa-card">
-            <div class="iowa-card__icon">🖨️</div>
-            <h3>Ready to Brand Your Business?</h3>
-            <p>Tell us what you need — quantity, items, and your logo — and we'll send you a quote. Fast turnaround, real quality.</p>
-            <a href="/contact/" class="btn btn-primary btn-lg" style="display:inline-flex;width:100%;justify-content:center;">Request a Quote →</a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="cta-banner noise-overlay">
-    <div class="container">
-      <div class="cta-banner__inner reveal">
-        <div>
-          <span class="eyebrow">Brand Every Job</span>
-          <h2>Get a Custom Merchandise Quote.</h2>
-          <p>Tell us what you need and we'll get you pricing fast. No minimums on custom quotes.</p>
-        </div>
-        <div class="cta-banner__actions">
-          <a href="/contact/" class="btn btn-primary btn-lg">Request a Quote</a>
-          <a href="/contact/#audit" class="btn btn-outline btn-lg">Free Website Audit</a>
-        </div>
-      </div>
-    </div>
-  </section>
-
-
-<\!-- City Service Areas -->
-<section style="padding:var(--space-lg) 0;background:var(--color-dark-2);border-top:1px solid var(--color-border);">
-  <div class="container" style="text-align:center;">
-    <h2 style="font-family:var(--font-display);font-weight:800;color:var(--color-white);font-size:clamp(1.5rem,3vw,2rem);margin:0 0 .75rem;">Service Areas</h2>
-    <p style="color:var(--color-white-dim);margin:0 0 1.5rem;max-width:46ch;margin-left:auto;margin-right:auto;font-size:1rem;line-height:1.5;">Locally-tuned Branded Merchandise pages. Based in Dubuque, serving the Tri-State and nationwide.</p>
-    <ul style="list-style:none;padding:0;margin:0;display:flex;flex-wrap:wrap;gap:.5rem;justify-content:center;">
-      <li><a href="/branded-merchandise-dubuque-ia/" style="display:inline-block;padding:.5rem 1rem;background:var(--color-dark);border:1px solid var(--color-border);border-radius:9px;color:var(--color-accent);text-decoration:none;font-size:.9375rem;font-weight:500;">Dubuque, IA &rarr;</a></li>
-    </ul>
-    <p style="color:var(--color-white-dim);margin:1.25rem 0 0;font-size:.8125rem;">Cedar Rapids &middot; Iowa City &middot; Des Moines &middot; Madison &middot; Milwaukee &middot; Chicago &middot; Minneapolis &middot; Omaha &middot; St. Louis &mdash; coming soon.</p>
   </div>
 </section>
 
-  <footer class="footer">
+<section class="city-local">
+  <div class="container">
+    <h2>Every Dubuque Job Site Is a Billboard.</h2>
+    <p>When your crew pulls up in a branded truck wearing matching hi-vis with your logo, the neighbor watches. The homeowner across the street watches. That's free marketing you never have to buy again &mdash; except for the shirts themselves.</p>
+    <p><strong>Been doing this since 2015.</strong> Thousands of shirts, hats, hoodies, crew uniforms, and promo jobs across the Tri-State. We know what holds up on a jobsite and what fades in a month.</p>
+    <p><strong>One point of contact.</strong> You tell us what you need. We handle the design, production, and ship it to your door. No design mockups back and forth with a promo company. No guessing on blanks.</p>
+    <p><strong>Logo design included if you need it.</strong> A lot of Dubuque contractors are still running a logo from 2011 that looks like clip art. We'll fix that too.</p>
+  </div>
+</section>
+
+<section class="city-included">
+  <div class="container">
+    <h2>What You Get.</h2>
+    <div class="city-included__grid">
+      <div class="city-tile">
+        <h3>T-Shirts &amp; Hoodies</h3>
+        <p>Screen-printed or embroidered. Crew colors. Your logo front-and-back. Built to survive a Dubuque winter and a Tri-State summer.</p>
+      </div>
+      <div class="city-tile">
+        <h3>Hats &amp; Beanies</h3>
+        <p>Caps, trucker hats, beanies, winter pulls. Embroidered. Your brand on every head, every job.</p>
+      </div>
+      <div class="city-tile">
+        <h3>Workwear &amp; Hi-Vis</h3>
+        <p>Class 2 and Class 3 hi-vis. Branded work pants. Jackets. Gear that meets jobsite specs and looks sharp.</p>
+      </div>
+      <div class="city-tile">
+        <h3>Signs, Decals &amp; Stickers</h3>
+        <p>Yard signs, truck decals, vinyl banners, hard hat stickers. The full rolling-billboard package.</p>
+      </div>
+    </div>
+    <p style="margin-top:2rem;font-size:1rem;color:var(--color-white-dim);text-align:center;">Want full pricing and plans? <a href="/merchandise/" style="color:var(--color-accent);font-weight:600;">See the full Merchandise page &rarr;</a></p>
+  </div>
+</section>
+
+<section class="city-faq">
+  <div class="container">
+    <h2>Straight Answers.</h2>
+    <div class="city-faq__item">
+      <h3 class="city-faq__q">What's the minimum order?</h3>
+      <p class="city-faq__a">Typically 12 pieces per design. Smaller runs possible for stickers, decals, and signs.</p>
+    </div>
+    <div class="city-faq__item">
+      <h3 class="city-faq__q">Turnaround time?</h3>
+      <p class="city-faq__a">Standard: 2&ndash;3 weeks from approved artwork. Rush jobs possible.</p>
+    </div>
+    <div class="city-faq__item">
+      <h3 class="city-faq__q">Rush jobs?</h3>
+      <p class="city-faq__a">Yes. If your crew needs gear for a big job next week, we'll find a way.</p>
+    </div>
+    <div class="city-faq__item">
+      <h3 class="city-faq__q">Do you do logo design?</h3>
+      <p class="city-faq__a">Yes. Fresh logos or cleanups included in the quote if you need it.</p>
+    </div>
+  </div>
+</section>
+
+<section class="city-cta">
+  <div class="container">
+    <h2>Brand Your Crew. Book More Jobs.</h2>
+    <p>Tell us what you need &mdash; quantity, items, and your logo. We'll send a quote fast.</p>
+    <div class="actions">
+      <a href="/contact/" class="btn btn-primary btn-lg">Get Your Quote</a>
+      <a href="sms:+15153444053" class="btn btn-outline btn-lg">Text (515) 344-4053</a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
   <div class="container">
     <div class="footer__grid">
       <div class="footer__brand">
@@ -438,12 +305,6 @@
   </div>
 </footer>
 
-  <script>
-    const nav = document.getElementById('mainNav');
-    window.addEventListener('scroll', () => { nav.classList.toggle('scrolled', window.scrollY > 40); });
-    document.getElementById('hamburger').addEventListener('click', () => { document.getElementById('mobileNav').classList.toggle('open'); });
-    document.querySelectorAll('.reveal').forEach(el => { new IntersectionObserver((e) => { e.forEach(x => { if(x.isIntersecting) x.target.classList.add('visible'); }); }, {threshold:0.12}).observe(el); });
-  </script>
 <!-- Kobe 3.0 Chatbot -->
 <div id="unc-promo"><button id="unc-promo-close" aria-label="Dismiss">&#x2715;</button>&#x1F44B; Competitors are taking your jobs. Takes 60 seconds to find out why.</div>
 <button id="unc-launcher" aria-label="Chat with Kobe" title="Chat with Kobe"><svg width="26" height="26" viewBox="0 0 24 24" fill="none"><path d="M12 2C6.477 2 2 6.018 2 11c0 2.56 1.111 4.874 2.906 6.562L4 22l4.934-1.641A10.6 10.6 0 0012 21c5.523 0 10-4.018 10-9s-4.477-10-10-10z" fill="white"/></svg></button>

@@ -23,4 +23,9 @@
     <url><loc>https://urbannicheco.com/sitemap/</loc><lastmod>2026-04-23</lastmod><changefreq>yearly</changefreq><priority>0.3</priority></url>
     <url><loc>https://urbannicheco.com/privacy/</loc><lastmod>2026-04-23</lastmod><changefreq>yearly</changefreq><priority>0.3</priority></url>
     <url><loc>https://urbannicheco.com/terms/</loc><lastmod>2026-04-23</lastmod><changefreq>yearly</changefreq><priority>0.3</priority></url>
+    <!-- Local SEO City Pages -->
+    <url><loc>https://urbannicheco.com/seo-dubuque-ia/</loc><lastmod>2026-04-24</lastmod><changefreq>monthly</changefreq><priority>0.75</priority></url>
+    <url><loc>https://urbannicheco.com/ppc-dubuque-ia/</loc><lastmod>2026-04-24</lastmod><changefreq>monthly</changefreq><priority>0.75</priority></url>
+    <url><loc>https://urbannicheco.com/website-design-dubuque-ia/</loc><lastmod>2026-04-24</lastmod><changefreq>monthly</changefreq><priority>0.75</priority></url>
+    <url><loc>https://urbannicheco.com/branded-merchandise-dubuque-ia/</loc><lastmod>2026-04-24</lastmod><changefreq>monthly</changefreq><priority>0.75</priority></url>
 </urlset>

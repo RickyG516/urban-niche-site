@@ -1,0 +1,488 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="robots" content="noindex, nofollow" />
+  <link rel="icon" type="image/png" href="/assets/favicon.png" />
+  <title>For Gyms, Studios &amp; Coaches | Urban Niche Co.</title>
+  <meta name="description" content="Private proposal for gyms, fitness studios, and personal trainers. Member acquisition pipelines, retention systems, and AI front desk from Urban Niche Co." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Barlow+Condensed:wght@500;600;700;800;900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --black:         #050505;
+      --dark:          #0c0c0c;
+      --dark-2:        #171717;
+      --dark-3:        #1f1f1f;
+      --steel:         #2a2a2a;
+      --lime:          #c7fb3a;
+      --lime-deep:     #a6d025;
+      --lime-soft:     rgba(199,251,58,0.14);
+      --lime-glow:     rgba(199,251,58,0.4);
+      --orange:        #e8651a;
+      --orange-soft:   rgba(232,101,26,0.15);
+      --orange-glow:   rgba(232,101,26,0.4);
+      --red:           #ff3d3d;
+      --white:         #f4f4f0;
+      --white-dim:     rgba(244,244,240,0.68);
+      --white-faint:   rgba(244,244,240,0.35);
+      --border:        rgba(244,244,240,0.08);
+      --border-bright: rgba(244,244,240,0.18);
+      --border-lime:   rgba(199,251,58,0.28);
+      --shadow:        0 8px 28px rgba(0,0,0,0.4);
+      --shadow-lg:     0 20px 56px rgba(0,0,0,0.55);
+      --font-display:  'Archivo Black', sans-serif;
+      --font-heavy:    'Barlow Condensed', sans-serif;
+      --font-body:     'Inter', sans-serif;
+      --nav-h:         70px;
+      --r:             6px;
+      --r-lg:          10px;
+      --pill:          999px;
+      --ease:          0.25s ease;
+      --slow:          0.5s cubic-bezier(0.16,1,0.3,1);
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body { font-family: var(--font-body); background: var(--black); color: var(--white); line-height: 1.6; font-weight: 400; overflow-x: hidden; -webkit-font-smoothing: antialiased; }
+    img { max-width: 100%; height: auto; display: block; }
+    a { color: inherit; text-decoration: none; }
+    ul { list-style: none; }
+    h1,h2,h3,h4,h5 { font-family: var(--font-display); font-weight: 900; line-height: 0.95; letter-spacing: -0.02em; color: var(--white); text-transform: uppercase; }
+    h1 { font-size: clamp(3rem, 8vw, 7rem); letter-spacing: -0.035em; }
+    h2 { font-size: clamp(2.2rem, 5vw, 4.5rem); }
+    h3 { font-family: var(--font-heavy); font-size: 1.35rem; font-weight: 800; letter-spacing: 0.01em; }
+    h4 { font-family: var(--font-heavy); font-size: 1.1rem; font-weight: 800; letter-spacing: 0.02em; text-transform: uppercase; }
+    h5 { font-family: var(--font-heavy); font-size: 1rem; font-weight: 800; letter-spacing: 0.02em; text-transform: uppercase; }
+    p { color: var(--white-dim); line-height: 1.6; }
+    em { color: var(--lime); font-style: normal; font-family: var(--font-display); }
+    .container { width: 100%; max-width: 1240px; margin: 0 auto; padding: 0 2rem; }
+    .section { padding: 6rem 0; position: relative; }
+    .eyebrow { font-family: var(--font-heavy); font-size: 0.85rem; font-weight: 800; letter-spacing: 0.2em; text-transform: uppercase; color: var(--lime); display: inline-flex; align-items: center; gap: 0.65rem; margin-bottom: 1.25rem; }
+    .eyebrow::before { content: '//'; color: var(--orange); font-family: var(--font-display); font-weight: 900; }
+
+    .btn { display: inline-flex; align-items: center; gap: 0.55rem; font-family: var(--font-display); font-size: 0.82rem; font-weight: 900; letter-spacing: 0.1em; text-transform: uppercase; padding: 1.05rem 2.1rem; border-radius: var(--r); transition: all var(--ease); white-space: nowrap; cursor: pointer; border: none; }
+    .btn-lime { background: var(--lime); color: var(--black); box-shadow: 0 4px 20px var(--lime-glow); }
+    .btn-lime:hover { background: #d9ff52; transform: translateY(-3px); box-shadow: 0 10px 32px var(--lime-glow); }
+    .btn-orange { background: var(--orange); color: #fff; box-shadow: 0 4px 20px var(--orange-glow); }
+    .btn-orange:hover { background: #c4540e; transform: translateY(-3px); box-shadow: 0 10px 32px var(--orange-glow); }
+    .btn-outline { background: transparent; color: var(--white); border: 2px solid var(--border-bright); }
+    .btn-outline:hover { border-color: var(--lime); color: var(--lime); transform: translateY(-3px); }
+    .btn-lg { font-size: 0.88rem; padding: 1.15rem 2.35rem; }
+    .btn-sm { font-size: 0.72rem; padding: 0.65rem 1.35rem; }
+
+    .reveal { opacity: 0; transform: translateY(22px); transition: opacity 0.6s ease, transform 0.6s cubic-bezier(0.16,1,0.3,1); }
+    .reveal.visible { opacity: 1; transform: translateY(0); }
+    .d1 { transition-delay: 0.08s; } .d2 { transition-delay: 0.16s; } .d3 { transition-delay: 0.24s; } .d4 { transition-delay: 0.32s; }
+
+    .nav { position: fixed; top: 0; left: 0; right: 0; z-index: 1000; height: var(--nav-h); display: flex; align-items: center; background: transparent; transition: background var(--ease); }
+    .nav.scrolled { background: rgba(5,5,5,0.94); backdrop-filter: blur(18px); border-bottom: 1px solid var(--border); }
+    .nav__inner { display: flex; align-items: center; justify-content: space-between; width: 100%; max-width: 1240px; margin: 0 auto; padding: 0 2rem; }
+    .nav__logo { display: flex; align-items: center; gap: 0.6rem; font-family: var(--font-display); font-size: 1rem; color: var(--white); letter-spacing: -0.01em; text-transform: uppercase; }
+    .nav__logo img { height: 30px; width: auto; display: block; filter: drop-shadow(0 0 6px var(--orange-glow)); }
+    .nav__logo em { color: var(--orange); font-family: var(--font-display); }
+    .nav__links { display: flex; align-items: center; gap: 2px; }
+    .nav__link { font-family: var(--font-heavy); font-size: 0.82rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: var(--white-dim); padding: 0.55rem 0.85rem; border-radius: 4px; transition: color var(--ease); }
+    .nav__link:hover { color: var(--lime); }
+    .nav__cta { display: flex; align-items: center; gap: 10px; }
+    .nav__phone { font-family: var(--font-heavy); font-size: 0.85rem; font-weight: 700; color: var(--white-dim); white-space: nowrap; letter-spacing: 0.04em; }
+    .nav__phone:hover { color: var(--lime); }
+    .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; padding: 4px; background: transparent; border: none; }
+    .hamburger span { display: block; width: 24px; height: 2px; background: var(--white); border-radius: 2px; }
+    .mobile-nav { display: none; position: fixed; top: var(--nav-h); left: 0; right: 0; background: var(--dark); border-bottom: 1px solid var(--border); padding: 1.5rem; z-index: 999; flex-direction: column; gap: 0.25rem; }
+    .mobile-nav.open { display: flex; }
+    .mobile-link { font-family: var(--font-heavy); font-size: 0.9rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: var(--white-dim); padding: 0.85rem 1rem; border-bottom: 1px solid var(--border); }
+    .mobile-cta { margin-top: 1rem; display: flex; flex-direction: column; gap: 0.75rem; }
+
+    /* HERO */
+    .hero { min-height: 100vh; position: relative; overflow: hidden; display: flex; align-items: center; padding-top: calc(var(--nav-h) + 3rem); padding-bottom: 3rem; background: var(--black); }
+    .hero::before { content: ''; position: absolute; top: -100px; left: -50px; width: 900px; height: 900px; background: radial-gradient(circle, var(--lime-soft) 0%, transparent 55%); pointer-events: none; z-index: 0; }
+    .hero::after { content: ''; position: absolute; bottom: -100px; right: -100px; width: 700px; height: 700px; background: radial-gradient(circle, var(--orange-soft) 0%, transparent 55%); pointer-events: none; z-index: 0; }
+    .hero__inner { position: relative; z-index: 2; width: 100%; display: grid; grid-template-columns: 1.15fr 0.85fr; gap: 4.5rem; align-items: center; }
+    .hero__tag { display: inline-flex; align-items: center; gap: 10px; background: rgba(199,251,58,0.08); border: 1px solid var(--border-lime); border-radius: var(--pill); padding: 6px 14px; font-family: var(--font-heavy); font-size: 0.78rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--lime); margin-bottom: 1.75rem; }
+    .hero__tag-dot { width: 7px; height: 7px; border-radius: 50%; background: var(--lime); box-shadow: 0 0 10px var(--lime); animation: pulse 1.2s ease-in-out infinite; }
+    @keyframes pulse { 0%,100% { opacity: 1; transform: scale(1); } 50% { opacity: 0.45; transform: scale(0.78); } }
+    .hero h1 { margin-bottom: 1.5rem; }
+    .hero h1 .dim { color: var(--white-faint); }
+    .hero__sub { font-size: 1.08rem; line-height: 1.65; color: var(--white-dim); max-width: 50ch; margin-bottom: 1rem; font-weight: 500; }
+    .hero__whisper { font-family: var(--font-heavy); font-size: 0.95rem; line-height: 1.55; color: var(--white-dim); margin-bottom: 2.25rem; max-width: 50ch; border-left: 3px solid var(--orange); padding: 0.75rem 1rem; background: var(--orange-soft); font-weight: 500; letter-spacing: 0.01em; }
+    .hero__whisper strong { color: var(--white); font-weight: 800; text-transform: uppercase; }
+    .hero__actions { display: flex; gap: 0.9rem; flex-wrap: wrap; margin-bottom: 2.5rem; }
+    .hero__proof { display: flex; gap: 2.5rem; padding-top: 2rem; border-top: 1px solid var(--border); flex-wrap: wrap; }
+    .hero__proof-val { font-family: var(--font-display); font-size: 2.2rem; color: var(--lime); line-height: 1; }
+    .hero__proof-val.orange { color: var(--orange); }
+    .hero__proof-val.white { color: var(--white); }
+    .hero__proof-label { font-family: var(--font-heavy); font-size: 0.78rem; font-weight: 700; color: var(--white-dim); margin-top: 5px; letter-spacing: 0.08em; text-transform: uppercase; }
+
+    /* CLASS SCHEDULE CARD */
+    .schedcard { background: var(--dark); border: 1px solid var(--border-bright); border-radius: var(--r-lg); padding: 1.5rem; box-shadow: var(--shadow-lg); position: relative; overflow: hidden; }
+    .schedcard::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 4px; background: linear-gradient(90deg, var(--lime) 0%, var(--orange) 100%); }
+    .schedcard__header { display: flex; align-items: center; justify-content: space-between; padding-bottom: 1rem; border-bottom: 1px solid var(--border); margin-bottom: 1.25rem; }
+    .schedcard__title { font-family: var(--font-display); font-size: 0.95rem; color: var(--white); text-transform: uppercase; letter-spacing: -0.01em; }
+    .schedcard__live { display: inline-flex; align-items: center; gap: 6px; font-family: var(--font-heavy); font-size: 0.72rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--lime); }
+    .schedcard__dot { width: 7px; height: 7px; border-radius: 50%; background: var(--lime); box-shadow: 0 0 10px var(--lime); animation: pulse 1.2s ease-in-out infinite; }
+    .schedcard__today { font-family: var(--font-heavy); font-size: 0.78rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--white-faint); margin-bottom: 0.7rem; }
+    .classrow { display: flex; align-items: center; gap: 0.75rem; padding: 0.85rem 1rem; background: var(--black); border: 1px solid var(--border); border-radius: var(--r); margin-bottom: 0.5rem; font-family: var(--font-body); font-size: 0.85rem; }
+    .classrow.full { border-color: var(--border-lime); background: rgba(199,251,58,0.06); }
+    .classrow.open { border-color: rgba(232,101,26,0.35); background: var(--orange-soft); }
+    .classrow__time { font-family: var(--font-heavy); font-weight: 800; color: var(--white); min-width: 54px; font-size: 0.88rem; letter-spacing: 0.02em; }
+    .classrow__name { flex: 1; color: var(--white); font-weight: 600; }
+    .classrow__cap { font-family: var(--font-heavy); font-size: 0.72rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; }
+    .classrow.full .classrow__cap { color: var(--lime); }
+    .classrow.open .classrow__cap { color: var(--orange); }
+    .schedcard__footer { display: flex; align-items: center; justify-content: space-between; padding-top: 1rem; border-top: 1px solid var(--border); font-family: var(--font-heavy); font-size: 0.85rem; }
+    .schedcard__footer-label { color: var(--white-dim); font-weight: 600; }
+    .schedcard__footer-value { color: var(--orange); font-weight: 800; text-transform: uppercase; letter-spacing: 0.04em; }
+
+    /* TICKER */
+    .ticker { background: var(--lime); padding: 14px 0; overflow: hidden; white-space: nowrap; }
+    .ticker__track { display: inline-flex; animation: ticker 35s linear infinite; }
+    @keyframes ticker { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
+    .ticker__item { font-family: var(--font-display); font-size: 0.82rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--black); padding: 0 2rem; display: inline-flex; align-items: center; gap: 1rem; }
+    .ticker__sep { color: var(--orange); }
+
+    /* OFFNICHE */
+    .offniche { background: var(--dark); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
+    .offniche__inner { display: grid; grid-template-columns: 1fr 1.1fr; gap: 5rem; align-items: center; }
+    .offniche__left h2 { margin: 0.5rem 0 1.5rem; }
+    .offniche__left h2 em { color: var(--lime); }
+    .offniche__left p { font-size: 1rem; line-height: 1.8; margin-bottom: 1.15rem; max-width: 48ch; }
+    .offniche__left p strong { color: var(--white); font-weight: 700; }
+    .offniche__quote { background: var(--black); border: 2px solid var(--lime); border-radius: var(--r-lg); padding: 2.5rem 2.25rem; position: relative; box-shadow: 0 0 40px var(--lime-soft); }
+    .offniche__quote::before { content: '"'; font-family: var(--font-display); font-size: 5rem; color: var(--lime); opacity: 0.32; position: absolute; top: -0.25rem; left: 1.25rem; line-height: 1; }
+    .offniche__quote p { font-family: var(--font-heavy); font-size: 1.4rem; color: var(--white); line-height: 1.4; margin-bottom: 1.25rem; font-weight: 600; letter-spacing: 0.01em; }
+    .offniche__quote-attr { font-family: var(--font-heavy); font-size: 0.78rem; color: var(--lime); letter-spacing: 0.14em; text-transform: uppercase; font-weight: 800; }
+
+    /* SERVICES */
+    .services { background: var(--black); }
+    .services__header { margin-bottom: 4rem; max-width: 60ch; }
+    .services__header h2 { margin: 0.5rem 0 1.25rem; }
+    .services__header h2 em { color: var(--lime); }
+    .services__header p { font-size: 1rem; line-height: 1.75; }
+    .services__grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 1.25rem; }
+    .svc { background: var(--dark); border: 1px solid var(--border); border-radius: var(--r-lg); padding: 2rem 1.75rem; position: relative; overflow: hidden; transition: all var(--ease); }
+    .svc::before { content: ''; position: absolute; top: 0; left: 0; width: 0; height: 4px; background: linear-gradient(90deg, var(--lime) 0%, var(--orange) 100%); transition: width var(--slow); }
+    .svc:hover { transform: translateY(-5px); border-color: var(--border-lime); box-shadow: var(--shadow); }
+    .svc:hover::before { width: 100%; }
+    .svc__num { font-family: var(--font-display); font-size: 0.78rem; letter-spacing: 0.1em; color: var(--lime); margin-bottom: 1rem; }
+    .svc__icon { width: 48px; height: 48px; border-radius: var(--r); background: var(--lime-soft); border: 1px solid var(--border-lime); display: inline-flex; align-items: center; justify-content: center; margin-bottom: 1rem; font-size: 1.25rem; color: var(--lime); }
+    .svc:nth-child(4) .svc__icon { background: var(--orange-soft); border-color: rgba(232,101,26,0.35); color: var(--orange); }
+    .svc h3 { margin-bottom: 0.55rem; color: var(--white); }
+    .svc p { font-size: 0.9rem; line-height: 1.65; margin-bottom: 1.25rem; color: var(--white-dim); }
+    .svc__list { display: flex; flex-direction: column; gap: 0.4rem; padding-top: 1rem; border-top: 1px solid var(--border); }
+    .svc__item { font-family: var(--font-heavy); font-size: 0.88rem; font-weight: 500; color: var(--white-dim); display: flex; gap: 0.55rem; align-items: flex-start; line-height: 1.45; letter-spacing: 0.01em; }
+    .svc__item::before { content: '//'; color: var(--lime); font-family: var(--font-display); font-weight: 900; flex-shrink: 0; font-size: 0.78rem; margin-top: 2px; }
+
+    /* STATS */
+    .stats { background: var(--lime); padding: 4.5rem 0; position: relative; overflow: hidden; border-top: 2px solid var(--black); border-bottom: 2px solid var(--black); }
+    .stats__grid { display: grid; grid-template-columns: repeat(4,1fr); gap: 0; }
+    .stat { padding: 2.25rem 1.5rem; text-align: center; border-right: 2px solid var(--black); }
+    .stat:last-child { border-right: none; }
+    .stat__val { font-family: var(--font-display); font-size: clamp(2.6rem, 4.5vw, 4rem); color: var(--black); line-height: 1; display: block; letter-spacing: -0.03em; }
+    .stat:nth-child(2) .stat__val { color: var(--orange); }
+    .stat__label { font-family: var(--font-heavy); font-size: 0.82rem; font-weight: 800; color: var(--black); margin-top: 0.65rem; display: block; letter-spacing: 0.06em; text-transform: uppercase; }
+
+    /* WHO */
+    .who { background: var(--dark); border-top: 1px solid var(--border); }
+    .who__header { margin-bottom: 3.5rem; text-align: center; max-width: 50ch; margin-left: auto; margin-right: auto; }
+    .who__header h2 em { color: var(--lime); }
+    .who__grid { display: grid; grid-template-columns: repeat(4,1fr); gap: 1rem; }
+    .who__card { background: var(--black); border: 1px solid var(--border); border-radius: var(--r-lg); padding: 1.75rem 1.5rem; text-align: center; transition: all var(--ease); }
+    .who__card:hover { transform: translateY(-5px); border-color: var(--border-lime); }
+    .who__icon { width: 52px; height: 52px; border-radius: var(--r); background: var(--lime-soft); display: flex; align-items: center; justify-content: center; font-size: 1.35rem; margin: 0 auto 1rem; color: var(--lime); }
+    .who__card:nth-child(3) .who__icon { background: var(--orange-soft); color: var(--orange); }
+    .who__card h5 { margin-bottom: 0.4rem; color: var(--white); }
+    .who__card p { font-size: 0.85rem; color: var(--white-dim); line-height: 1.55; }
+
+    /* PROCESS */
+    .process { background: var(--black); }
+    .process__header { text-align: center; margin-bottom: 3.5rem; }
+    .process__header h2 em { color: var(--lime); }
+    .process__steps { display: grid; grid-template-columns: repeat(4,1fr); gap: 1rem; }
+    .process__step { background: var(--dark); border: 1px solid var(--border); border-radius: var(--r-lg); padding: 2rem 1.75rem; transition: all var(--ease); }
+    .process__step:hover { border-color: var(--border-lime); transform: translateY(-5px); }
+    .process__num { font-family: var(--font-display); font-size: 3rem; color: var(--lime); line-height: 1; margin-bottom: 1rem; }
+    .process__step:nth-child(3) .process__num { color: var(--orange); }
+    .process__step h4 { margin-bottom: 0.5rem; color: var(--white); }
+    .process__step p { font-size: 0.9rem; color: var(--white-dim); line-height: 1.6; }
+
+    /* CONTACT */
+    .contact { background: var(--dark); border-top: 1px solid var(--border); position: relative; overflow: hidden; }
+    .contact::before { content: ''; position: absolute; right: -200px; top: 10%; width: 540px; height: 540px; background: radial-gradient(circle, var(--lime-soft) 0%, transparent 65%); pointer-events: none; }
+    .contact__inner { display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: start; position: relative; z-index: 2; }
+    .contact__left h2 em { color: var(--lime); }
+    .contact__left > p { font-size: 1rem; line-height: 1.8; margin-bottom: 1.1rem; }
+    .contact__details { display: flex; flex-direction: column; gap: 1rem; margin-top: 2.25rem; }
+    .contact__detail { display: flex; align-items: center; gap: 1rem; font-size: 0.88rem; color: var(--white-dim); }
+    .contact__detail-icon { width: 40px; height: 40px; border-radius: var(--r); background: var(--lime-soft); border: 1px solid var(--border-lime); display: flex; align-items: center; justify-content: center; font-size: 0.95rem; flex-shrink: 0; color: var(--lime); }
+    .contact__detail a { color: var(--lime); font-weight: 700; transition: color var(--ease); }
+    .contact__detail a:hover { color: var(--orange); }
+    .form { background: var(--black); border: 1px solid var(--border-lime); border-radius: var(--r-lg); padding: 2.5rem 2.25rem; box-shadow: 0 0 40px var(--lime-soft); }
+    .form__title { font-family: var(--font-display); font-size: 1.45rem; color: var(--white); margin-bottom: 0.5rem; text-transform: uppercase; }
+    .form__sub { font-family: var(--font-heavy); font-size: 0.9rem; color: var(--white-dim); margin-bottom: 1.75rem; font-weight: 500; }
+    .form__group { margin-bottom: 1.1rem; }
+    .form__row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+    .form__label { display: block; font-family: var(--font-heavy); font-size: 0.78rem; font-weight: 800; letter-spacing: 0.14em; text-transform: uppercase; color: var(--lime); margin-bottom: 0.45rem; }
+    .form__input, .form__textarea { width: 100%; background: var(--dark); border: 1px solid var(--border-bright); border-radius: var(--r); padding: 0.85rem 1.1rem; font-family: var(--font-body); font-size: 0.9rem; color: var(--white); outline: none; transition: all var(--ease); }
+    .form__input::placeholder, .form__textarea::placeholder { color: var(--white-faint); opacity: 0.85; }
+    .form__input:focus, .form__textarea:focus { border-color: var(--orange); box-shadow: 0 0 0 3px var(--orange-soft); }
+    .form__textarea { resize: vertical; min-height: 120px; }
+    .form__submit { width: 100%; margin-top: 0.5rem; justify-content: center; }
+    .form__note { font-family: var(--font-heavy); text-align: center; font-size: 0.8rem; color: var(--white-dim); margin-top: 1rem; font-weight: 500; }
+
+    /* CTA */
+    .cta { background: var(--black); padding: 7rem 0; position: relative; overflow: hidden; text-align: center; color: var(--white); border-top: 2px solid var(--lime); }
+    .cta::before { content: ''; position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%); width: 760px; height: 460px; background: radial-gradient(ellipse, var(--lime-soft) 0%, transparent 70%); pointer-events: none; }
+    .cta__inner { position: relative; z-index: 1; max-width: 720px; margin: 0 auto; }
+    .cta h2 { color: var(--white); font-size: clamp(2.6rem, 5.5vw, 4.5rem); margin-bottom: 1.25rem; }
+    .cta h2 em { color: var(--lime); }
+    .cta p { font-size: 1.05rem; line-height: 1.65; max-width: 54ch; margin: 0 auto 2.5rem; color: var(--white-dim); }
+    .cta__actions { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
+
+    /* FOOTER */
+    .footer { background: var(--black); border-top: 1px solid var(--border); padding: 2.25rem 0; }
+    .footer__inner { display: flex; align-items: center; justify-content: space-between; gap: 2rem; flex-wrap: wrap; }
+    .footer__logo { display: flex; align-items: center; gap: 0.6rem; font-family: var(--font-display); font-size: 0.9rem; color: var(--white); text-transform: uppercase; }
+    .footer__logo img { height: 26px; width: auto; opacity: 0.85; filter: drop-shadow(0 0 6px var(--orange-glow)); }
+    .footer__logo em { color: var(--orange); font-family: var(--font-display); }
+    .footer__note { font-family: var(--font-heavy); font-size: 0.82rem; color: var(--white-dim); letter-spacing: 0.06em; font-weight: 500; }
+    .footer__copy { font-family: var(--font-heavy); font-size: 0.82rem; color: var(--white-dim); font-weight: 500; }
+
+    @media (max-width: 1024px) {
+      .hero__inner { grid-template-columns: 1fr; gap: 3rem; }
+      .offniche__inner { grid-template-columns: 1fr; gap: 3rem; }
+      .services__grid { grid-template-columns: 1fr 1fr; }
+      .stats__grid { grid-template-columns: 1fr 1fr; }
+      .stat { border-right: none; border-bottom: 2px solid var(--black); }
+      .stat:nth-child(odd) { border-right: 2px solid var(--black); }
+      .stat:nth-last-child(-n+2) { border-bottom: none; }
+      .who__grid { grid-template-columns: 1fr 1fr; }
+      .process__steps { grid-template-columns: 1fr 1fr; }
+      .contact__inner { grid-template-columns: 1fr; gap: 3rem; }
+    }
+    @media (max-width: 768px) {
+      .nav__links, .nav__cta { display: none; }
+      .hamburger { display: flex; }
+      .services__grid { grid-template-columns: 1fr; }
+      .process__steps { grid-template-columns: 1fr; }
+      .form__row { grid-template-columns: 1fr; }
+      .footer__inner { flex-direction: column; text-align: center; gap: 1rem; }
+      .cta__actions { flex-direction: column; }
+      .section { padding: 5rem 0; }
+    }
+  </style>
+</head>
+<body>
+  <nav class="nav" id="mainNav">
+    <div class="nav__inner">
+      <a href="#" class="nav__logo"><img src="/assets/images/unc-logo-icon.webp" alt="Urban Niche Co." />Urban <em>Niche</em>&nbsp;Co.</a>
+      <ul class="nav__links">
+        <li><a href="#services" class="nav__link">Stack</a></li>
+        <li><a href="#who" class="nav__link">Who</a></li>
+        <li><a href="#process" class="nav__link">Process</a></li>
+        <li><a href="#contact" class="nav__link">Contact</a></li>
+      </ul>
+      <div class="nav__cta">
+        <a href="sms:+15153444053" class="nav__phone">Text 515.344.4053</a>
+        <a href="#contact" class="btn btn-lime btn-sm">Let's Go</a>
+      </div>
+      <button class="hamburger" id="hamburger" aria-label="Open menu"><span></span><span></span><span></span></button>
+    </div>
+  </nav>
+  <div class="mobile-nav" id="mobileNav">
+    <a href="#services" class="mobile-link">Stack</a>
+    <a href="#who" class="mobile-link">Who</a>
+    <a href="#process" class="mobile-link">Process</a>
+    <a href="#contact" class="mobile-link">Contact</a>
+    <div class="mobile-cta"><a href="#contact" class="btn btn-outline">Contact</a><a href="#contact" class="btn btn-lime">Let's Go</a></div>
+  </div>
+
+  <section class="hero">
+    <div class="container">
+      <div class="hero__inner">
+        <div>
+          <div class="hero__tag reveal"><div class="hero__tag-dot"></div>For Gyms, Studios &amp; Coaches</div>
+          <h1 class="reveal d1">Fill the<br>Classes. <em>Keep</em><br><em>the</em> Members.</h1>
+          <p class="hero__sub reveal d2">Most gyms are leaking members to churn while posting motivation quotes on Instagram. We build the member pipeline, retention systems, and AI front desk that turn a grind into a machine.</p>
+          <p class="hero__whisper reveal d2"><strong>Private link.</strong> You have this because we reached out to you specifically. Contractors are our main lane &mdash; but we know gym marketing systems. When we see one worth fixing, we move.</p>
+          <div class="hero__actions reveal d3">
+            <a href="#contact" class="btn btn-lime btn-lg">Let's Talk &rarr;</a>
+            <a href="#services" class="btn btn-outline btn-lg">See the Stack</a>
+          </div>
+          <div class="hero__proof reveal d4">
+            <div><span class="hero__proof-val orange">30</span><div class="hero__proof-label">Days to first members</div></div>
+            <div><span class="hero__proof-val">2x</span><div class="hero__proof-label">Retention lift average</div></div>
+            <div><span class="hero__proof-val white">0</span><div class="hero__proof-label">Long-term contracts</div></div>
+          </div>
+        </div>
+        <div class="reveal d2">
+          <div class="schedcard">
+            <div class="schedcard__header">
+              <div class="schedcard__title">Today's Schedule</div>
+              <div class="schedcard__live"><div class="schedcard__dot"></div>Live</div>
+            </div>
+            <div class="schedcard__today">Wed &middot; Mar 18</div>
+            <div class="classrow full"><div class="classrow__time">6:00</div><div class="classrow__name">HIIT Blast &mdash; Coach Jax</div><div class="classrow__cap">18/18</div></div>
+            <div class="classrow full"><div class="classrow__time">9:30</div><div class="classrow__name">Strong Foundations</div><div class="classrow__cap">20/20</div></div>
+            <div class="classrow open"><div class="classrow__time">12:00</div><div class="classrow__name">Lunch Burn Express</div><div class="classrow__cap">7/15 Open</div></div>
+            <div class="classrow full"><div class="classrow__time">5:30</div><div class="classrow__name">Cross Training &mdash; Coach Mia</div><div class="classrow__cap">22/22</div></div>
+            <div class="classrow open"><div class="classrow__time">7:00</div><div class="classrow__name">Power Yoga</div><div class="classrow__cap">11/18 Open</div></div>
+            <div class="schedcard__footer"><span class="schedcard__footer-label">214 check-ins today</span><span class="schedcard__footer-value">+28% vs last wk</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="ticker"><div class="ticker__track">
+    <span class="ticker__item">Member Acquisition Funnels <span class="ticker__sep">&#9679;</span></span>
+    <span class="ticker__item">Booking-First Websites <span class="ticker__sep">&#9679;</span></span>
+    <span class="ticker__item">Retention &amp; Churn Systems <span class="ticker__sep">&#9679;</span></span>
+    <span class="ticker__item">AI Front Desk <span class="ticker__sep">&#9679;</span></span>
+    <span class="ticker__item">Reels &amp; Content Engine <span class="ticker__sep">&#9679;</span></span>
+    <span class="ticker__item">Paid Ads for Trial Members <span class="ticker__sep">&#9679;</span></span>
+    <span class="ticker__item">Member Acquisition Funnels <span class="ticker__sep">&#9679;</span></span>
+    <span class="ticker__item">Booking-First Websites <span class="ticker__sep">&#9679;</span></span>
+    <span class="ticker__item">Retention &amp; Churn Systems <span class="ticker__sep">&#9679;</span></span>
+    <span class="ticker__item">AI Front Desk <span class="ticker__sep">&#9679;</span></span>
+    <span class="ticker__item">Reels &amp; Content Engine <span class="ticker__sep">&#9679;</span></span>
+    <span class="ticker__item">Paid Ads for Trial Members <span class="ticker__sep">&#9679;</span></span>
+  </div></div>
+
+  <section class="section offniche">
+    <div class="container">
+      <div class="offniche__inner">
+        <div class="reveal">
+          <span class="eyebrow">Why You're Seeing This</span>
+          <h2>We Work Contractors.<br>But <em>A Pipeline Is a Pipeline.</em></h2>
+          <p>Urban Niche Co. was built for home service trades. That's our lane. We're not a MindBody reseller or a gym-software vendor.</p>
+          <p>But the systems gyms need to grow and keep members &mdash; <strong>acquisition funnels, booking flows, retention sequences, AI front desk, Reels strategy</strong> &mdash; those are systems we build every day. The equipment changes. The mechanics don't.</p>
+          <p>We don't chase every vertical. But when a gym is bleeding members because follow-up sucks, <strong>we pay attention. That's you.</strong></p>
+        </div>
+        <div class="offniche__quote reveal d1">
+          <p>Most gyms don't have a membership problem. They have a retention problem disguised as a membership problem. We fix the retention.</p>
+          <div class="offniche__quote-attr">Ricky &mdash; Founder, Urban Niche Co.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section services" id="services">
+    <div class="container">
+      <div class="services__header reveal">
+        <span class="eyebrow">// The Stack</span>
+        <h2>Full Pipeline. <em>Full Membership.</em></h2>
+        <p>No vanity metrics. No motivational quotes pretending to be marketing. Every system ties to two numbers: new members in, retained members longer.</p>
+      </div>
+      <div class="services__grid">
+        <div class="svc reveal"><div class="svc__num">01 / ACQUISITION</div><div class="svc__icon">&#127947;&#65039;</div><h3>Member Funnels</h3><p>Trial offer pages that actually convert. Paid ad campaigns that hit the exact person who just searched "gym near me."</p><div class="svc__list"><div class="svc__item">7-day free trial landing pages</div><div class="svc__item">Facebook &amp; Instagram ads</div><div class="svc__item">Google Ads for local intent</div><div class="svc__item">No-contract offer pages</div><div class="svc__item">Ad spend direct to platforms</div></div></div>
+        <div class="svc reveal d1"><div class="svc__num">02 / WEB</div><div class="svc__icon">&#128241;</div><h3>Booking-First Sites</h3><p>Fast mobile sites that let you see the class, pick the time, and book in one thumb tap. Integrates with MindBody, Mariana Tek, Glofox, or anything you run.</p><div class="svc__list"><div class="svc__item">Class schedule above the fold</div><div class="svc__item">One-tap booking integration</div><div class="svc__item">Coach &amp; class-type pages</div><div class="svc__item">Member testimonial widgets</div><div class="svc__item">Instagram-connected galleries</div></div></div>
+        <div class="svc reveal d2"><div class="svc__num">03 / RETENTION</div><div class="svc__icon">&#128277;</div><h3>Churn Killers</h3><p>Your cheapest new member is the member you already have. Retention systems flag at-risk members early &mdash; skipped sessions, billing issues, silence &mdash; and re-engage before they cancel.</p><div class="svc__list"><div class="svc__item">Missed-session automation</div><div class="svc__item">Birthday &amp; anniversary campaigns</div><div class="svc__item">Milestone reward sequences</div><div class="svc__item">Billing recovery flows</div><div class="svc__item">Win-back campaigns for cancellations</div></div></div>
+        <div class="svc reveal"><div class="svc__num">04 / AI</div><div class="svc__icon">&#129302;</div><h3>AI Front Desk</h3><p>Nobody at the desk at 11 p.m. when a prospect wants to sign up. AI handles it &mdash; answers hours, pricing, class schedules, and books intros 24/7.</p><div class="svc__list"><div class="svc__item">24/7 chat + SMS on your site</div><div class="svc__item">Class schedule queries</div><div class="svc__item">Trial sign-up automation</div><div class="svc__item">Intro session booking</div><div class="svc__item">Integration with your gym software</div></div></div>
+        <div class="svc reveal d1"><div class="svc__num">05 / CONTENT</div><div class="svc__icon">&#127902;</div><h3>Reels Engine</h3><p>Fitness lives on short-form video. We build the content system that fills your feed with coach spotlights, member transformations, and workout clips that actually bring bodies in.</p><div class="svc__list"><div class="svc__item">Weekly content calendar</div><div class="svc__item">Coach spotlight Reels</div><div class="svc__item">Member transformation stories</div><div class="svc__item">Paid reach for top performers</div><div class="svc__item">TikTok + IG + YT Shorts crosspost</div></div></div>
+        <div class="svc reveal d2"><div class="svc__num">06 / REPUTATION</div><div class="svc__icon">&#9733;</div><h3>5-Star Engine</h3><p>Every happy member becomes a public Google review on autopilot. Bad reviews get handled fast. Social proof compounds.</p><div class="svc__list"><div class="svc__item">Post-session review requests</div><div class="svc__item">Google, Yelp, Facebook monitoring</div><div class="svc__item">Negative review response playbook</div><div class="svc__item">Review widgets on site</div><div class="svc__item">Monthly reputation reports</div></div></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="stats">
+    <div class="container">
+      <div class="stats__grid">
+        <div class="stat reveal"><span class="stat__val">30</span><span class="stat__label">Days to first members</span></div>
+        <div class="stat reveal d1"><span class="stat__val">2x</span><span class="stat__label">Average retention lift</span></div>
+        <div class="stat reveal d2"><span class="stat__val">0</span><span class="stat__label">Long-term contracts</span></div>
+        <div class="stat reveal d3"><span class="stat__val">1</span><span class="stat__label">Agency &mdash; full stack</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section who" id="who">
+    <div class="container">
+      <div class="who__header reveal"><span class="eyebrow">Who We Work With</span><h2>Built for Studios That <em>Want to Scale.</em></h2></div>
+      <div class="who__grid">
+        <div class="who__card reveal"><div class="who__icon">&#128170;</div><h5>CrossFit Boxes</h5><p>Affiliate boxes with a community identity. Retention and referral are the whole game.</p></div>
+        <div class="who__card reveal d1"><div class="who__icon">&#127947;&#65039;&#8205;&#9792;&#65039;</div><h5>Boutique Studios</h5><p>Pilates, yoga, spin, HIIT studios. Class-based bookings, membership tiers, experience-driven.</p></div>
+        <div class="who__card reveal d2"><div class="who__icon">&#127938;</div><h5>Globo &amp; 24/7 Gyms</h5><p>Big-box, unstaffed overnight, access-card gyms. AI front desk is the unfair advantage here.</p></div>
+        <div class="who__card reveal d3"><div class="who__icon">&#128176;</div><h5>Personal Trainers</h5><p>Solo coaches, online programs, hybrid models. Personal brand + pipeline = business.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section process" id="process">
+    <div class="container">
+      <div class="process__header reveal"><span class="eyebrow">How It Works</span><h2>From First Rep to <em>First 100 Members.</em></h2></div>
+      <div class="process__steps">
+        <div class="process__step reveal"><div class="process__num">01</div><h4>Audit Call</h4><p>We review your site, acquisition, retention, and content. Surface exactly where members are leaking. No charge.</p></div>
+        <div class="process__step reveal d1"><div class="process__num">02</div><h4>Build Phase</h4><p>Funnels, site, AI desk, retention automation, content engine. Most studios are live in 30 days.</p></div>
+        <div class="process__step reveal d2"><div class="process__num">03</div><h4>Go Live</h4><p>Ads turn on, AI catches after-hours leads, reviews compound, content runs. Members start showing up.</p></div>
+        <div class="process__step reveal d3"><div class="process__num">04</div><h4>Scale Monthly</h4><p>Monthly check-ins, campaign tuning, seasonal pushes. We manage the pipeline so you coach.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section contact" id="contact">
+    <div class="container">
+      <div class="contact__inner">
+        <div class="contact__left reveal">
+          <span class="eyebrow">Let's Talk</span>
+          <h2>Tell Us About <em>Your Box.</em></h2>
+          <p>No pitch deck. No obligation. A straight conversation about where you're leaking members and what we'd build. If it's not the right fit, we'll tell you that too.</p>
+          <p>We sent you this link because we see an opportunity here. The conversation costs nothing.</p>
+          <div class="contact__details">
+            <div class="contact__detail"><div class="contact__detail-icon">&#9742;</div><div>Call or text &mdash; <a href="sms:+15153444053">(515) 344-4053</a></div></div>
+            <div class="contact__detail"><div class="contact__detail-icon">&#9993;</div><div><a href="mailto:ricky@urbannicheco.com">ricky@urbannicheco.com</a></div></div>
+            <div class="contact__detail"><div class="contact__detail-icon">&#9889;</div><div>Same-day response &mdash; guaranteed</div></div>
+          </div>
+        </div>
+        <div class="reveal d1">
+          <form class="form" action="mailto:ricky@urbannicheco.com" method="GET" enctype="text/plain">
+            <div class="form__title">// Send a Message</div>
+            <div class="form__sub">Goes straight to Ricky. No middleman, no queue.</div>
+            <div class="form__row">
+              <div class="form__group"><label class="form__label" for="f-name">Your Name</label><input type="text" id="f-name" name="name" placeholder="First &amp; Last" required class="form__input" /></div>
+              <div class="form__group"><label class="form__label" for="f-gym">Gym / Studio Name</label><input type="text" id="f-gym" name="gym" placeholder="Your spot" class="form__input" /></div>
+            </div>
+            <div class="form__group"><label class="form__label" for="f-type">Type</label><input type="text" id="f-type" name="type" placeholder="CrossFit, boutique, big-box, PT, etc." class="form__input" /></div>
+            <div class="form__group"><label class="form__label" for="f-email">Email</label><input type="email" id="f-email" name="email" placeholder="you@yourgym.com" required class="form__input" /></div>
+            <div class="form__group"><label class="form__label" for="f-phone">Phone (optional)</label><input type="tel" id="f-phone" name="phone" placeholder="(555) 000-0000" class="form__input" /></div>
+            <div class="form__group"><label class="form__label" for="f-msg">What's the biggest gap?</label><textarea id="f-msg" name="body" placeholder="Where are members falling through? What's not working?" class="form__textarea"></textarea></div>
+            <button type="submit" class="btn btn-lime btn-lg form__submit">Send Message &rarr;</button>
+            <div class="form__note">Opens your email client. Sending takes 2 seconds.</div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta">
+    <div class="container">
+      <div class="cta__inner reveal">
+        <span class="eyebrow">Ready to Scale?</span>
+        <h2>Let's Build the <em>Gym That Wins.</em></h2>
+        <p>No pitch deck. A conversation about your studio, your members, and what we'd build. If we're not the fit, we'll tell you straight.</p>
+        <div class="cta__actions">
+          <a href="#contact" class="btn btn-lime btn-lg">Start the Conversation &rarr;</a>
+          <a href="sms:+15153444053" class="btn btn-orange btn-lg">Text Ricky Directly</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__inner">
+        <div class="footer__logo"><img src="/assets/images/unc-logo-icon.webp" alt="Urban Niche Co." />Urban <em>Niche</em>&nbsp;Co.</div>
+        <div class="footer__note">// This page is private and not indexed by search engines.</div>
+        <div class="footer__copy">&copy; 2026 Urban Niche Co. LLC &mdash; Dubuque, IA</div>
+      </div>
+    </div>
+  </footer>
+  <script>
+    const nav = document.getElementById('mainNav');
+    window.addEventListener('scroll', () => nav.classList.toggle('scrolled', window.scrollY > 40));
+    document.getElementById('hamburger').addEventListener('click', () => document.getElementById('mobileNav').classList.toggle('open'));
+    const observer = new IntersectionObserver(entries => entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); } }), { threshold: 0.1 });
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+  </script>
+</body>
+</html>

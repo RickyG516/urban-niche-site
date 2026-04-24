@@ -5,507 +5,507 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="robots" content="noindex, nofollow" />
   <link rel="icon" type="image/png" href="/assets/favicon.png" />
-  <meta name="description" content="Private proposal for streamers and content creators. Brand infrastructure, merch drops, email monetization, and community systems from Urban Niche Co." />
-  <title>For Streamers & Content Creators | Urban Niche Co.</title>
+  <title>For Streamers &amp; Content Creators | Urban Niche Co.</title>
+  <meta name="description" content="Private proposal for streamers and content creators. Merch drops, brand sites, email monetization, and community systems built for the RGB generation." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700;800;900&family=Space+Grotesk:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
   <style>
     :root {
-      --black: #0a0a0a;
-      --dark: #111318;
-      --dark-2: #1a1d24;
-      --dark-3: #22262f;
-      --accent: #e8651a;
-      --accent-glow: rgba(232,101,26,0.18);
-      --accent-soft: rgba(232,101,26,0.08);
-      --white: #f5f5f0;
-      --white-dim: rgba(245,245,240,0.6);
-      --white-faint: rgba(245,245,240,0.07);
-      --border: rgba(245,245,240,0.09);
-      --border-bright: rgba(245,245,240,0.18);
-      --font-display: 'Syne', sans-serif;
-      --font-body: 'DM Sans', sans-serif;
-      --nav-height: 72px;
-      --radius: 12px;
-      --radius-pill: 999px;
-      --shadow: 0 8px 32px rgba(0,0,0,0.4);
-      --shadow-lg: 0 24px 64px rgba(0,0,0,0.5);
-      --transition: 0.28s ease;
-      --slow: 0.45s cubic-bezier(0.16,1,0.3,1);
+      --bg-deep:      #05000f;
+      --bg-1:         #0a0118;
+      --bg-2:         #120428;
+      --bg-3:         #1a0638;
+      --bg-card:      #14042c;
+      --purple:       #7209b7;
+      --purple-deep:  #480aa8;
+      --pink:         #ff006e;
+      --pink-glow:    rgba(255,0,110,0.55);
+      --pink-soft:    rgba(255,0,110,0.12);
+      --cyan:         #00f0ff;
+      --cyan-glow:    rgba(0,240,255,0.45);
+      --cyan-soft:    rgba(0,240,255,0.10);
+      --orange:       #ff6b0c;
+      --orange-glow:  rgba(255,107,12,0.45);
+      --lime:         #b6ff2e;
+      --text:         #f0e9ff;
+      --text-dim:     rgba(240,233,255,0.62);
+      --text-faint:   rgba(240,233,255,0.25);
+      --border:       rgba(240,233,255,0.07);
+      --border-bright:rgba(240,233,255,0.18);
+      --font-display: 'Orbitron', sans-serif;
+      --font-body:    'Space Grotesk', sans-serif;
+      --font-mono:    'JetBrains Mono', monospace;
+      --nav-h:        72px;
+      --r:            6px;
+      --r-lg:         12px;
+      --pill:         999px;
+      --ease:         0.3s ease;
+      --slow:         0.55s cubic-bezier(0.16,1,0.3,1);
+      --grad-hero:    linear-gradient(135deg, var(--pink) 0%, var(--purple) 55%, var(--cyan) 100%);
+      --grad-pink-cy: linear-gradient(90deg, var(--pink) 0%, var(--cyan) 100%);
+      --grad-bg:      radial-gradient(ellipse at 30% 0%, rgba(114,9,183,0.35) 0%, transparent 55%), radial-gradient(ellipse at 80% 100%, rgba(255,0,110,0.22) 0%, transparent 60%), linear-gradient(180deg, var(--bg-1) 0%, var(--bg-deep) 100%);
     }
-
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     html { scroll-behavior: smooth; }
-    body { font-family: var(--font-body); background: var(--dark); color: var(--white); line-height: 1.65; font-weight: 300; overflow-x: hidden; -webkit-font-smoothing: antialiased; }
+    body {
+      font-family: var(--font-body);
+      background: var(--bg-deep);
+      color: var(--text);
+      line-height: 1.65;
+      font-weight: 400;
+      overflow-x: hidden;
+      -webkit-font-smoothing: antialiased;
+      position: relative;
+    }
+    /* Global synthwave background */
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background: var(--grad-bg);
+      z-index: -2;
+    }
+    /* Grid floor overlay */
+    body::after {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background-image:
+        linear-gradient(rgba(255,0,110,0.035) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0,240,255,0.035) 1px, transparent 1px);
+      background-size: 48px 48px;
+      pointer-events: none;
+      z-index: -1;
+    }
     img { max-width: 100%; height: auto; display: block; }
     a { color: inherit; text-decoration: none; }
     ul { list-style: none; }
-    p { color: var(--white-dim); }
 
-    h1,h2,h3,h4,h5 { font-family: var(--font-display); font-weight: 700; line-height: 1.1; letter-spacing: -0.02em; }
-    h1 { font-size: clamp(2.8rem,6vw,5.5rem); font-weight: 800; }
-    h2 { font-size: clamp(2rem,4vw,3.4rem); }
-    h3 { font-size: 1.3rem; }
-    h4 { font-size: 1.1rem; font-weight: 700; }
-    h5 { font-size: 0.95rem; font-weight: 700; }
+    h1,h2,h3,h4,h5 { font-family: var(--font-display); font-weight: 800; line-height: 1.05; letter-spacing: -0.01em; color: var(--text); text-transform: uppercase; }
+    h1 { font-size: clamp(2.8rem, 7vw, 6rem); font-weight: 900; letter-spacing: -0.02em; }
+    h2 { font-size: clamp(2rem, 4.5vw, 3.5rem); font-weight: 800; }
+    h3 { font-size: 1.15rem; font-weight: 700; letter-spacing: 0.02em; }
+    h4 { font-size: 1rem; font-weight: 700; letter-spacing: 0.04em; }
+    h5 { font-size: 0.9rem; font-weight: 700; letter-spacing: 0.04em; }
+    p { color: var(--text-dim); font-family: var(--font-body); }
 
-    .container { width: 100%; max-width: 1200px; margin: 0 auto; padding: 0 2rem; }
-    .section { padding: 7rem 0; }
-    .section--sm { padding: 4rem 0; }
-    .eyebrow { font-family: var(--font-display); font-size: 0.7rem; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; color: var(--accent); display: inline-block; margin-bottom: 1rem; }
+    .container { width: 100%; max-width: 1240px; margin: 0 auto; padding: 0 2rem; }
+    .section { padding: 6.5rem 0; position: relative; }
+
+    .eyebrow {
+      font-family: var(--font-mono);
+      font-size: 0.72rem;
+      font-weight: 600;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--cyan);
+      display: inline-flex;
+      align-items: center;
+      gap: 0.6rem;
+      margin-bottom: 1.25rem;
+      text-shadow: 0 0 12px var(--cyan-glow);
+    }
+    .eyebrow::before { content: '>'; color: var(--pink); font-weight: 700; text-shadow: 0 0 8px var(--pink-glow); }
+
+    .neon-text {
+      background: var(--grad-hero);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+      -webkit-text-fill-color: transparent;
+      filter: drop-shadow(0 0 18px rgba(255,0,110,0.35));
+    }
 
     /* Buttons */
-    .btn { display: inline-flex; align-items: center; gap: 0.5rem; font-family: var(--font-display); font-size: 0.875rem; font-weight: 700; letter-spacing: 0.04em; text-transform: uppercase; padding: 0.9rem 2rem; border-radius: var(--radius-pill); transition: all var(--transition); white-space: nowrap; }
-    .btn-primary { background: var(--accent); color: var(--white); box-shadow: 0 4px 24px rgba(232,101,26,0.35); }
-    .btn-primary:hover { background: #f07320; transform: translateY(-2px); box-shadow: 0 8px 32px rgba(232,101,26,0.5); }
-    .btn-outline { background: transparent; color: var(--white); border: 1.5px solid var(--border-bright); }
-    .btn-outline:hover { border-color: var(--accent); color: var(--accent); transform: translateY(-2px); }
-    .btn-ghost { background: var(--white-faint); color: var(--white); border: 1px solid var(--border); }
-    .btn-ghost:hover { background: rgba(245,245,240,0.11); }
-    .btn-lg { font-size: 0.95rem; padding: 1.05rem 2.5rem; }
-    .btn-sm { font-size: 0.75rem; padding: 0.6rem 1.4rem; }
-
-    /* Noise overlay */
-    .noise { position: relative; }
-    .noise::before { content: ''; position: absolute; inset: 0; background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E"); background-size: 200px; pointer-events: none; z-index: 0; opacity: 0.45; }
+    .btn { display: inline-flex; align-items: center; gap: 0.5rem; font-family: var(--font-display); font-size: 0.78rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; padding: 0.95rem 1.9rem; border-radius: var(--pill); transition: all var(--ease); white-space: nowrap; cursor: pointer; border: none; position: relative; }
+    .btn-primary {
+      background: var(--pink);
+      color: #fff;
+      box-shadow: 0 0 0 1px var(--pink), 0 4px 20px var(--pink-glow), inset 0 -2px 0 rgba(0,0,0,0.25);
+    }
+    .btn-primary:hover { background: #ff2e8a; transform: translateY(-2px); box-shadow: 0 0 0 1px var(--pink), 0 8px 32px var(--pink-glow), inset 0 -2px 0 rgba(0,0,0,0.25); }
+    .btn-outline {
+      background: transparent;
+      color: var(--cyan);
+      border: 1.5px solid var(--cyan);
+      box-shadow: 0 0 16px var(--cyan-soft), inset 0 0 16px var(--cyan-soft);
+    }
+    .btn-outline:hover { color: #fff; background: var(--cyan-soft); border-color: var(--cyan); transform: translateY(-2px); box-shadow: 0 0 24px var(--cyan-glow), inset 0 0 20px var(--cyan-soft); }
+    .btn-ghost { background: rgba(240,233,255,0.04); color: var(--text); border: 1px solid var(--border-bright); }
+    .btn-ghost:hover { background: rgba(240,233,255,0.08); border-color: var(--pink); }
+    .btn-lg { font-size: 0.82rem; padding: 1.1rem 2.3rem; }
+    .btn-sm { font-size: 0.7rem; padding: 0.6rem 1.3rem; }
 
     /* Reveal */
-    .reveal { opacity: 0; transform: translateY(24px); transition: opacity 0.65s ease, transform 0.65s cubic-bezier(0.16,1,0.3,1); }
+    .reveal { opacity: 0; transform: translateY(24px); transition: opacity 0.7s ease, transform 0.7s cubic-bezier(0.16,1,0.3,1); }
     .reveal.visible { opacity: 1; transform: translateY(0); }
     .d1 { transition-delay: 0.1s; } .d2 { transition-delay: 0.2s; } .d3 { transition-delay: 0.3s; } .d4 { transition-delay: 0.4s; }
 
     /* ── NAV ── */
-    .nav { position: fixed; top: 0; left: 0; right: 0; z-index: 1000; height: var(--nav-height); display: flex; align-items: center; background: transparent; transition: background var(--transition), box-shadow var(--transition); }
-    .nav.scrolled { background: rgba(17,19,24,0.94); backdrop-filter: blur(20px); box-shadow: 0 1px 0 var(--border); }
-    .nav__inner { display: flex; align-items: center; justify-content: space-between; width: 100%; max-width: 1200px; margin: 0 auto; padding: 0 2rem; }
-    .nav__logo { font-family: var(--font-display); font-size: 1.15rem; font-weight: 800; letter-spacing: -0.03em; display: flex; align-items: center; gap: 0.5rem; }
-    .nav__logo-mark { width: 34px; height: 34px; background: var(--accent); border-radius: 6px; display: flex; align-items: center; justify-content: center; font-size: 16px; font-weight: 900; color: #fff; flex-shrink: 0; }
-    .nav__logo-img { height: 34px; width: auto; display: block; flex-shrink: 0; }
-    .nav__logo span { color: var(--accent); }
-    .nav__links { display: flex; align-items: center; gap: 4px; }
-    .nav__link { font-family: var(--font-display); font-size: 12px; font-weight: 600; letter-spacing: 0.04em; text-transform: uppercase; color: var(--white-dim); padding: 0.5rem 0.85rem; border-radius: 6px; transition: all var(--transition); }
-    .nav__link:hover { color: var(--white); background: var(--white-faint); }
-    .nav__cta { display: flex; align-items: center; gap: 10px; }
-    .nav__phone { font-size: 12px; font-weight: 600; color: rgba(255,255,255,0.7); white-space: nowrap; }
-    .nav__phone:hover { color: var(--accent); }
-    .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; padding: 4px; }
-    .hamburger span { display: block; width: 24px; height: 2px; background: var(--white); border-radius: 2px; transition: all var(--transition); }
-    .mobile-nav { display: none; position: fixed; top: var(--nav-height); left: 0; right: 0; background: var(--dark-2); border-bottom: 1px solid var(--border); padding: 1.5rem; z-index: 999; flex-direction: column; gap: 0.25rem; }
+    .nav { position: fixed; top: 0; left: 0; right: 0; z-index: 1000; height: var(--nav-h); display: flex; align-items: center; background: transparent; transition: background var(--ease); }
+    .nav.scrolled { background: rgba(10,1,24,0.88); backdrop-filter: blur(22px); border-bottom: 1px solid var(--pink-soft); box-shadow: 0 4px 30px rgba(255,0,110,0.12); }
+    .nav__inner { display: flex; align-items: center; justify-content: space-between; width: 100%; max-width: 1240px; margin: 0 auto; padding: 0 2rem; }
+    .nav__logo { display: flex; align-items: center; gap: 0.65rem; font-family: var(--font-display); font-size: 1rem; font-weight: 800; letter-spacing: 0.01em; color: var(--text); text-transform: uppercase; }
+    .nav__logo img { height: 32px; width: auto; display: block; filter: drop-shadow(0 0 6px var(--orange-glow)); }
+    .nav__logo span { color: var(--orange); text-shadow: 0 0 10px var(--orange-glow); }
+    .nav__links { display: flex; align-items: center; gap: 2px; }
+    .nav__link { font-family: var(--font-mono); font-size: 0.72rem; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; color: var(--text-dim); padding: 0.5rem 0.85rem; border-radius: 4px; transition: all var(--ease); }
+    .nav__link:hover { color: var(--cyan); text-shadow: 0 0 10px var(--cyan-glow); }
+    .nav__cta { display: flex; align-items: center; gap: 12px; }
+    .nav__phone { font-family: var(--font-mono); font-size: 0.72rem; font-weight: 500; color: var(--text-dim); white-space: nowrap; }
+    .nav__phone:hover { color: var(--pink); }
+    .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; padding: 4px; background: transparent; border: none; }
+    .hamburger span { display: block; width: 24px; height: 2px; background: var(--text); border-radius: 2px; transition: all var(--ease); }
+    .mobile-nav { display: none; position: fixed; top: var(--nav-h); left: 0; right: 0; background: var(--bg-2); border-bottom: 1px solid var(--pink-soft); padding: 1.5rem; z-index: 999; flex-direction: column; gap: 0.25rem; }
     .mobile-nav.open { display: flex; }
-    .mobile-link { font-family: var(--font-display); font-size: 0.9rem; font-weight: 700; letter-spacing: 0.04em; text-transform: uppercase; color: var(--white-dim); padding: 0.85rem 1rem; border-bottom: 1px solid var(--border); }
-    .mobile-link:hover { color: var(--white); }
+    .mobile-link { font-family: var(--font-mono); font-size: 0.8rem; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; color: var(--text-dim); padding: 0.85rem 1rem; border-bottom: 1px solid var(--border); }
+    .mobile-link:hover { color: var(--cyan); }
     .mobile-cta { margin-top: 1rem; display: flex; flex-direction: column; gap: 0.75rem; }
 
     /* ── HERO ── */
-    .hero {
-      min-height: 100vh;
-      background: var(--black);
-      position: relative;
-      overflow: hidden;
-      display: flex;
-      align-items: center;
-    }
-    .hero__bg-img {
+    .hero { min-height: 100vh; position: relative; overflow: hidden; display: flex; align-items: center; padding-top: calc(var(--nav-h) + 3rem); padding-bottom: 3rem; }
+    .hero__sun {
       position: absolute;
-      inset: 0;
-      background-image: url('https://images.unsplash.com/photo-1593305841991-05c297ba4575?w=1600&q=80');
-      background-size: cover;
-      background-position: center 30%;
-      filter: brightness(0.25) saturate(0.8);
-      animation: zoom 25s ease-in-out infinite alternate;
-    }
-    @keyframes zoom { 0% { transform: scale(1); } 100% { transform: scale(1.06); } }
-    .hero__overlay {
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(to right, rgba(10,10,10,0.96) 0%, rgba(10,10,10,0.75) 55%, rgba(10,10,10,0.2) 100%);
-    }
-    .hero__glow {
-      position: absolute;
-      top: 20%; left: 0;
-      width: 600px; height: 600px;
-      background: radial-gradient(circle, rgba(232,101,26,0.1) 0%, transparent 65%);
+      bottom: -150px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 520px;
+      height: 520px;
+      border-radius: 50%;
+      background: linear-gradient(to top, var(--pink) 0%, #ff6b9c 40%, var(--orange) 75%, #ffd46b 100%);
+      box-shadow: 0 0 120px rgba(255,0,110,0.55), 0 0 240px rgba(114,9,183,0.35);
       pointer-events: none;
+      z-index: 0;
+      animation: sunPulse 6s ease-in-out infinite alternate;
     }
-    .hero__inner {
-      position: relative;
-      z-index: 2;
-      padding-top: var(--nav-height);
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 4rem;
-      align-items: center;
-      width: 100%;
-      max-width: 1200px;
-      margin: 0 auto;
-      padding-left: 2rem;
-      padding-right: 2rem;
-      padding-top: calc(var(--nav-height) + 4rem);
-      padding-bottom: 4rem;
+    @keyframes sunPulse { 0% { filter: brightness(1); } 100% { filter: brightness(1.15); } }
+    .hero__grid {
+      position: absolute;
+      bottom: 0;
+      left: 0; right: 0;
+      height: 40%;
+      background-image:
+        linear-gradient(var(--cyan) 1px, transparent 1px),
+        linear-gradient(90deg, var(--cyan) 1px, transparent 1px);
+      background-size: 44px 44px;
+      transform: perspective(400px) rotateX(60deg);
+      transform-origin: bottom;
+      opacity: 0.25;
+      mask-image: linear-gradient(to top, black, transparent);
+      -webkit-mask-image: linear-gradient(to top, black, transparent);
+      animation: gridMove 4s linear infinite;
+      pointer-events: none;
+      z-index: 0;
     }
+    @keyframes gridMove { 0% { background-position: 0 0; } 100% { background-position: 0 44px; } }
+    .hero__inner { position: relative; z-index: 2; width: 100%; display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 4rem; align-items: center; }
     .hero__tag {
       display: inline-flex;
       align-items: center;
       gap: 8px;
-      background: var(--accent-glow);
-      border: 1px solid rgba(232,101,26,0.3);
-      border-radius: var(--radius-pill);
+      background: var(--pink-soft);
+      border: 1px solid var(--pink);
+      border-radius: var(--pill);
       padding: 6px 14px;
-      font-family: var(--font-display);
+      font-family: var(--font-mono);
       font-size: 0.68rem;
-      font-weight: 700;
-      letter-spacing: 0.14em;
+      font-weight: 600;
+      letter-spacing: 0.16em;
       text-transform: uppercase;
-      color: var(--accent);
-      margin-bottom: 1.5rem;
+      color: var(--pink);
+      margin-bottom: 1.75rem;
+      box-shadow: 0 0 20px var(--pink-soft), inset 0 0 20px var(--pink-soft);
     }
-    .hero__tag-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--accent); animation: blink 1.5s ease-in-out infinite; }
-    @keyframes blink { 0%,100% { opacity: 1; } 50% { opacity: 0.2; } }
-    .hero h1 { margin-bottom: 1.5rem; }
-    .hero h1 em { color: var(--accent); font-style: normal; }
-    .hero__sub { font-size: 1.05rem; line-height: 1.8; color: var(--white-dim); max-width: 48ch; margin-bottom: 1rem; }
-    .hero__whisper { font-family: var(--font-display); font-size: 0.75rem; letter-spacing: 0.06em; color: var(--white-dim); opacity: 0.4; margin-bottom: 2.5rem; font-style: italic; }
+    .hero__tag-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--pink); box-shadow: 0 0 10px var(--pink); animation: blink 1.4s ease-in-out infinite; }
+    @keyframes blink { 0%,100% { opacity: 1; transform: scale(1); } 50% { opacity: 0.35; transform: scale(0.7); } }
+    .hero h1 { margin-bottom: 1.5rem; text-transform: uppercase; }
+    .hero h1 .line-cyan { color: var(--cyan); text-shadow: 0 0 24px var(--cyan-glow), 0 0 4px var(--cyan); display: inline-block; }
+    .hero h1 .line-pink { color: var(--pink); text-shadow: 0 0 24px var(--pink-glow), 0 0 4px var(--pink); display: inline-block; }
+    .hero h1 .line-grad { background: var(--grad-hero); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; display: inline-block; }
+    .hero__sub { font-size: 1.05rem; line-height: 1.75; color: var(--text-dim); max-width: 48ch; margin-bottom: 1rem; }
+    .hero__whisper { font-family: var(--font-mono); font-size: 0.74rem; letter-spacing: 0.05em; color: var(--text-faint); margin-bottom: 2.5rem; }
+    .hero__whisper strong { color: var(--cyan); font-weight: 500; }
     .hero__actions { display: flex; gap: 1rem; flex-wrap: wrap; margin-bottom: 3rem; }
-    .hero__proof { display: flex; gap: 2rem; }
+    .hero__proof { display: flex; gap: 2.5rem; flex-wrap: wrap; padding-top: 2.5rem; border-top: 1px solid var(--border); }
     .hero__proof-item { display: flex; flex-direction: column; }
-    .hero__proof-val { font-family: var(--font-display); font-size: 1.6rem; font-weight: 800; color: var(--accent); line-height: 1; }
-    .hero__proof-label { font-size: 0.72rem; color: var(--white-dim); opacity: 0.55; margin-top: 2px; font-family: var(--font-display); letter-spacing: 0.06em; text-transform: uppercase; }
+    .hero__proof-val { font-family: var(--font-display); font-size: 2rem; font-weight: 900; line-height: 1; }
+    .hero__proof-val.pink { color: var(--pink); text-shadow: 0 0 14px var(--pink-glow); }
+    .hero__proof-val.cyan { color: var(--cyan); text-shadow: 0 0 14px var(--cyan-glow); }
+    .hero__proof-val.orange { color: var(--orange); text-shadow: 0 0 14px var(--orange-glow); }
+    .hero__proof-label { font-family: var(--font-mono); font-size: 0.65rem; color: var(--text-faint); margin-top: 5px; letter-spacing: 0.1em; text-transform: uppercase; }
 
-    /* Hero right — image stack */
-    .hero__visual { display: flex; flex-direction: column; gap: 1rem; }
-    .hero__img-main {
-      width: 100%;
-      aspect-ratio: 16/10;
-      border-radius: var(--radius);
-      overflow: hidden;
-      border: 1px solid var(--border);
+    /* Stream overlay panel — right side */
+    .stream-panel {
+      background: rgba(20,4,44,0.78);
+      border: 1px solid var(--pink);
+      border-radius: var(--r-lg);
+      padding: 1.25rem;
+      backdrop-filter: blur(18px);
+      box-shadow: 0 0 40px rgba(255,0,110,0.35), inset 0 0 30px rgba(114,9,183,0.2);
       position: relative;
+      overflow: hidden;
     }
-    .hero__img-main img { width: 100%; height: 100%; object-fit: cover; filter: saturate(0.85); }
-    .hero__img-main::after {
+    .stream-panel::before {
       content: '';
       position: absolute;
-      inset: 0;
-      background: linear-gradient(135deg, rgba(232,101,26,0.15) 0%, transparent 60%);
+      top: 0; left: 0; right: 0;
+      height: 2px;
+      background: var(--grad-pink-cy);
+      animation: scanline 2.5s linear infinite;
     }
-    .hero__img-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
-    .hero__img-small {
-      aspect-ratio: 4/3;
-      border-radius: var(--radius);
-      overflow: hidden;
-      border: 1px solid var(--border);
-      position: relative;
-    }
-    .hero__img-small img { width: 100%; height: 100%; object-fit: cover; filter: saturate(0.8); }
-    .hero__img-small::after { content: ''; position: absolute; inset: 0; background: rgba(232,101,26,0.08); }
+    @keyframes scanline { 0% { transform: translateX(-100%); } 100% { transform: translateX(100%); } }
+    .stream-panel__header { display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem; padding-bottom: 0.75rem; border-bottom: 1px solid var(--border-bright); }
+    .stream-panel__live { display: inline-flex; align-items: center; gap: 6px; font-family: var(--font-mono); font-size: 0.68rem; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: var(--pink); }
+    .stream-panel__live-dot { width: 8px; height: 8px; border-radius: 50%; background: var(--pink); box-shadow: 0 0 10px var(--pink); animation: blink 1.4s ease-in-out infinite; }
+    .stream-panel__viewers { font-family: var(--font-mono); font-size: 0.68rem; color: var(--cyan); letter-spacing: 0.08em; }
+    .stream-panel__title { font-family: var(--font-display); font-size: 0.95rem; font-weight: 700; color: var(--text); margin-bottom: 0.75rem; text-transform: uppercase; letter-spacing: 0.02em; }
+    .stream-panel__chat { display: flex; flex-direction: column; gap: 0.55rem; }
+    .chat-msg { font-family: var(--font-mono); font-size: 0.78rem; line-height: 1.4; }
+    .chat-user { font-weight: 600; margin-right: 0.4rem; }
+    .chat-msg .cyan { color: var(--cyan); }
+    .chat-msg .pink { color: var(--pink); }
+    .chat-msg .lime { color: var(--lime); }
+    .chat-msg .orange { color: var(--orange); }
+    .chat-msg .purple { color: #c77dff; }
+    .chat-msg .text { color: var(--text-dim); }
+    .chat-msg .emoji { filter: saturate(1.3); }
 
     /* ── TICKER ── */
     .ticker {
-      background: var(--accent);
+      background: linear-gradient(90deg, var(--pink) 0%, var(--purple) 50%, var(--cyan) 100%);
       padding: 14px 0;
       overflow: hidden;
       white-space: nowrap;
+      position: relative;
+      border-top: 1px solid rgba(255,255,255,0.15);
+      border-bottom: 1px solid rgba(255,255,255,0.15);
+      box-shadow: 0 0 28px rgba(255,0,110,0.35);
     }
-    .ticker__track {
-      display: inline-flex;
-      gap: 0;
-      animation: ticker 30s linear infinite;
-    }
+    .ticker__track { display: inline-flex; animation: ticker 35s linear infinite; }
     @keyframes ticker { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
-    .ticker__item {
-      font-family: var(--font-display);
-      font-size: 0.75rem;
-      font-weight: 700;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      color: var(--white);
-      padding: 0 2.5rem;
-      display: inline-flex;
-      align-items: center;
-      gap: 1rem;
-    }
-    .ticker__sep { opacity: 0.4; font-size: 1.2rem; }
+    .ticker__item { font-family: var(--font-display); font-size: 0.74rem; font-weight: 800; letter-spacing: 0.14em; text-transform: uppercase; color: #fff; padding: 0 2.25rem; display: inline-flex; align-items: center; gap: 1rem; text-shadow: 0 0 10px rgba(0,0,0,0.25); }
+    .ticker__sep { opacity: 0.7; color: #fff; font-size: 1rem; }
 
-    /* ── WHAT WE BUILD ── */
-    .services { background: var(--black); }
+    /* ── SERVICES ── */
+    .services { background: transparent; }
     .services__header { margin-bottom: 4rem; }
     .services__header h2 { max-width: 18ch; margin-bottom: 1rem; }
-    .services__header p { font-size: 1rem; max-width: 52ch; }
-    .services__grid {
-      display: grid;
-      grid-template-columns: repeat(3,1fr);
-      gap: 1.5px;
-      background: var(--border);
-    }
+    .services__header p { font-size: 1rem; max-width: 54ch; line-height: 1.8; }
+    .services__grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 1.25rem; }
     .svc {
-      background: var(--dark);
-      padding: 2.5rem 2rem;
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--r-lg);
+      padding: 2.25rem 1.75rem;
       position: relative;
       overflow: hidden;
-      transition: background var(--transition);
+      transition: all var(--ease);
     }
-    .svc:hover { background: var(--dark-2); }
-    .svc::after {
+    .svc::before {
       content: '';
       position: absolute;
-      bottom: 0; left: 0; right: 0;
-      height: 2px;
-      background: var(--accent);
+      top: 0; left: 0; right: 0;
+      height: 3px;
+      background: var(--grad-pink-cy);
       transform: scaleX(0);
       transform-origin: left;
       transition: transform var(--slow);
     }
-    .svc:hover::after { transform: scaleX(1); }
-    .svc__num {
-      font-family: var(--font-display);
-      font-size: 0.65rem;
-      font-weight: 700;
-      letter-spacing: 0.15em;
-      color: var(--accent);
-      opacity: 0.5;
-      margin-bottom: 1.5rem;
-    }
-    .svc__icon { font-size: 2rem; margin-bottom: 1.25rem; }
-    .svc h3 { font-size: 1.1rem; margin-bottom: 0.75rem; }
-    .svc p { font-size: 0.875rem; line-height: 1.7; margin-bottom: 1.25rem; }
-    .svc__list { display: flex; flex-direction: column; gap: 0.4rem; padding-top: 1rem; border-top: 1px solid var(--border); }
-    .svc__item { font-size: 0.78rem; color: var(--white-dim); display: flex; gap: 0.5rem; align-items: flex-start; }
-    .svc__item::before { content: '→'; color: var(--accent); font-size: 0.7rem; margin-top: 2px; flex-shrink: 0; }
-
-    /* ── PROOF SECTION — image + text ── */
-    .proof { background: var(--dark-2); overflow: hidden; }
-    .proof__inner {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 0;
-      min-height: 600px;
-    }
-    .proof__image {
-      position: relative;
-      overflow: hidden;
-    }
-    .proof__image img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      filter: saturate(0.75) brightness(0.8);
-      transition: transform 8s ease;
-    }
-    .proof__image:hover img { transform: scale(1.04); }
-    .proof__image::after {
+    .svc::after {
       content: '';
       position: absolute;
       inset: 0;
-      background: linear-gradient(to right, transparent 60%, var(--dark-2) 100%);
+      background: radial-gradient(circle at top right, var(--pink-soft) 0%, transparent 60%);
+      opacity: 0;
+      transition: opacity var(--ease);
+      pointer-events: none;
     }
-    .proof__content {
-      padding: 5rem 4rem;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
+    .svc:hover { transform: translateY(-4px); border-color: var(--pink); box-shadow: 0 12px 40px rgba(255,0,110,0.18); }
+    .svc:hover::before { transform: scaleX(1); }
+    .svc:hover::after { opacity: 1; }
+    .svc__num { font-family: var(--font-mono); font-size: 0.7rem; font-weight: 600; letter-spacing: 0.16em; color: var(--cyan); margin-bottom: 1.25rem; text-shadow: 0 0 8px var(--cyan-glow); }
+    .svc__icon { font-size: 1.75rem; margin-bottom: 1.1rem; display: block; filter: drop-shadow(0 0 10px var(--pink-glow)); }
+    .svc h3 { font-size: 1.05rem; margin-bottom: 0.65rem; text-transform: uppercase; color: var(--text); }
+    .svc p { font-size: 0.875rem; line-height: 1.65; margin-bottom: 1.25rem; color: var(--text-dim); }
+    .svc__list { display: flex; flex-direction: column; gap: 0.45rem; padding-top: 1rem; border-top: 1px solid var(--border-bright); position: relative; z-index: 1; }
+    .svc__item { font-family: var(--font-mono); font-size: 0.75rem; color: var(--text-dim); display: flex; gap: 0.55rem; align-items: flex-start; line-height: 1.5; }
+    .svc__item::before { content: '>'; color: var(--pink); font-weight: 700; flex-shrink: 0; margin-top: 1px; }
+
+    /* ── PROOF ── */
+    .proof { background: linear-gradient(180deg, transparent 0%, rgba(114,9,183,0.08) 100%); border-top: 1px solid var(--border); overflow: hidden; }
+    .proof__inner { display: grid; grid-template-columns: 1fr 1fr; gap: 0; min-height: 580px; }
+    .proof__visual { position: relative; display: flex; align-items: center; justify-content: center; padding: 4rem 2rem; }
+    .proof__orb {
+      width: 360px;
+      height: 360px;
+      border-radius: 50%;
+      background: conic-gradient(from 180deg at 50% 50%, var(--pink) 0%, var(--purple) 33%, var(--cyan) 66%, var(--pink) 100%);
+      filter: blur(50px);
+      opacity: 0.7;
+      position: absolute;
+      top: 50%; left: 50%;
+      transform: translate(-50%, -50%);
+      animation: orbSpin 18s linear infinite;
     }
+    @keyframes orbSpin { 0% { transform: translate(-50%,-50%) rotate(0deg); } 100% { transform: translate(-50%,-50%) rotate(360deg); } }
+    .proof__card {
+      position: relative;
+      z-index: 2;
+      background: rgba(20,4,44,0.82);
+      border: 1px solid var(--pink);
+      border-radius: var(--r-lg);
+      padding: 2rem 1.75rem;
+      backdrop-filter: blur(18px);
+      box-shadow: 0 0 40px var(--pink-glow);
+      max-width: 380px;
+      text-align: center;
+    }
+    .proof__card-icon { width: 68px; height: 68px; margin: 0 auto 1rem; border-radius: 50%; background: var(--grad-pink-cy); display: flex; align-items: center; justify-content: center; font-size: 2rem; box-shadow: 0 0 28px var(--pink-glow); }
+    .proof__card h4 { font-size: 1.25rem; font-weight: 800; color: var(--text); margin-bottom: 0.5rem; letter-spacing: 0.02em; }
+    .proof__card p { font-family: var(--font-mono); font-size: 0.82rem; color: var(--cyan); letter-spacing: 0.08em; text-transform: uppercase; }
+    .proof__content { padding: 5rem 4rem; display: flex; flex-direction: column; justify-content: center; border-left: 1px solid var(--border); }
     .proof__content h2 { margin: 0.5rem 0 1.5rem; }
-    .proof__content p { font-size: 1rem; line-height: 1.8; margin-bottom: 1.25rem; max-width: 48ch; }
-    .proof__list { display: flex; flex-direction: column; gap: 1.25rem; margin: 2rem 0; }
+    .proof__content > p { font-size: 1rem; line-height: 1.8; margin-bottom: 1.25rem; max-width: 48ch; }
+    .proof__list { display: flex; flex-direction: column; gap: 1.1rem; margin: 2rem 0; }
     .proof__item { display: flex; gap: 1rem; align-items: flex-start; }
     .proof__check {
-      width: 26px; height: 26px;
+      width: 28px; height: 28px;
       border-radius: 50%;
-      background: var(--accent-glow);
-      border: 1px solid rgba(232,101,26,0.3);
-      color: var(--accent);
-      font-size: 0.75rem;
+      background: var(--pink-soft);
+      border: 1px solid var(--pink);
+      color: var(--pink);
+      font-size: 0.85rem;
       font-weight: 800;
       display: flex;
       align-items: center;
       justify-content: center;
       flex-shrink: 0;
-      margin-top: 1px;
+      box-shadow: 0 0 12px var(--pink-glow);
     }
-    .proof__item h5 { margin-bottom: 0.15rem; font-size: 0.95rem; }
-    .proof__item p { font-size: 0.85rem; margin: 0; max-width: none; }
+    .proof__item h5 { margin-bottom: 0.2rem; font-size: 0.95rem; text-transform: uppercase; color: var(--text); }
+    .proof__item p { font-size: 0.875rem; margin: 0; line-height: 1.65; }
 
-    /* ── WHO SECTION ── */
-    .who { background: var(--black); }
-    .who__grid {
-      display: grid;
-      grid-template-columns: repeat(4,1fr);
-      gap: 1.5px;
-      background: var(--border);
-      margin-top: 4rem;
-    }
+    /* ── STATS ── */
+    .stats { background: linear-gradient(90deg, var(--pink) 0%, var(--purple) 50%, var(--cyan) 100%); padding: 4.5rem 0; position: relative; overflow: hidden; }
+    .stats::before { content: ''; position: absolute; inset: 0; background-image: linear-gradient(rgba(255,255,255,0.06) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.06) 1px, transparent 1px); background-size: 40px 40px; pointer-events: none; }
+    .stats__grid { display: grid; grid-template-columns: repeat(4,1fr); gap: 0; position: relative; z-index: 1; }
+    .stat { padding: 2rem 1.5rem; text-align: center; border-right: 1px solid rgba(255,255,255,0.22); }
+    .stat:last-child { border-right: none; }
+    .stat__val { font-family: var(--font-display); font-size: clamp(2.4rem, 4.5vw, 3.6rem); font-weight: 900; color: #fff; line-height: 1; display: block; text-shadow: 0 0 20px rgba(0,0,0,0.3); }
+    .stat__label { font-family: var(--font-mono); font-size: 0.72rem; color: rgba(255,255,255,0.85); margin-top: 0.6rem; display: block; letter-spacing: 0.08em; text-transform: uppercase; }
+
+    /* ── WHO ── */
+    .who { background: transparent; }
+    .who__header { text-align: center; margin-bottom: 4rem; }
+    .who__header h2 { margin: 0.75rem auto 0; max-width: 22ch; }
+    .who__grid { display: grid; grid-template-columns: repeat(4,1fr); gap: 1rem; }
     .who__card {
-      background: var(--dark);
-      padding: 2.5rem 1.75rem;
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--r-lg);
+      padding: 1.75rem 1.5rem;
+      text-align: center;
       position: relative;
       overflow: hidden;
-      transition: background var(--transition);
+      transition: all var(--ease);
     }
-    .who__card:hover { background: var(--dark-2); }
     .who__card::before {
       content: '';
       position: absolute;
-      top: 0; left: 0; right: 0;
-      height: 2px;
-      background: var(--accent);
-      transform: scaleX(0);
-      transform-origin: left;
-      transition: transform var(--slow);
+      inset: 0;
+      background: linear-gradient(135deg, var(--pink-soft) 0%, transparent 50%, var(--cyan-soft) 100%);
+      opacity: 0;
+      transition: opacity var(--ease);
     }
-    .who__card:hover::before { transform: scaleX(1); }
-    .who__img {
-      width: 100%;
-      aspect-ratio: 16/9;
-      border-radius: 8px;
-      overflow: hidden;
-      margin-bottom: 1.5rem;
-      border: 1px solid var(--border);
-    }
-    .who__img img { width: 100%; height: 100%; object-fit: cover; filter: saturate(0.7) brightness(0.85); transition: filter var(--transition); }
-    .who__card:hover .who__img img { filter: saturate(1) brightness(0.9); }
-    .who__icon { font-size: 1.5rem; margin-bottom: 0.75rem; }
-    .who__card h5 { margin-bottom: 0.4rem; font-size: 0.95rem; }
-    .who__card p { font-size: 0.8rem; color: var(--white-dim); }
-
-    /* ── STATS ── */
-    .stats {
-      background: var(--accent);
-      padding: 5rem 0;
-      position: relative;
-      overflow: hidden;
-    }
-    .stats::before {
-      content: '';
-      position: absolute;
-      top: 50%; right: 0;
-      transform: translateY(-50%);
-      width: 500px; height: 500px;
-      background: radial-gradient(circle, rgba(255,255,255,0.08) 0%, transparent 65%);
-      pointer-events: none;
-    }
-    .stats__grid {
-      display: grid;
-      grid-template-columns: repeat(4,1fr);
-      gap: 2px;
-      background: rgba(255,255,255,0.15);
-      position: relative;
-      z-index: 1;
-    }
-    .stat {
-      background: var(--accent);
-      padding: 3rem 2rem;
-      text-align: center;
-    }
-    .stat__val { font-family: var(--font-display); font-size: clamp(2.5rem,5vw,4rem); font-weight: 800; color: var(--white); line-height: 1; display: block; }
-    .stat__label { font-size: 0.8rem; color: rgba(255,255,255,0.75); margin-top: 0.5rem; display: block; font-family: var(--font-display); letter-spacing: 0.05em; text-transform: uppercase; }
+    .who__card:hover { transform: translateY(-4px); border-color: var(--cyan); box-shadow: 0 10px 32px var(--cyan-soft); }
+    .who__card:hover::before { opacity: 1; }
+    .who__icon { font-size: 2rem; margin-bottom: 1rem; display: block; filter: drop-shadow(0 0 12px var(--cyan-glow)); position: relative; z-index: 1; }
+    .who__card h5 { margin-bottom: 0.4rem; font-size: 0.95rem; text-transform: uppercase; color: var(--text); position: relative; z-index: 1; }
+    .who__card p { font-size: 0.82rem; color: var(--text-dim); position: relative; z-index: 1; line-height: 1.55; }
 
     /* ── PROCESS ── */
-    .process { background: var(--dark-2); }
-    .process__steps {
-      display: grid;
-      grid-template-columns: repeat(4,1fr);
-      gap: 1.5px;
-      background: var(--border);
-      margin-top: 4rem;
-    }
+    .process { background: transparent; }
+    .process__header { text-align: center; margin-bottom: 4rem; }
+    .process__header h2 { margin: 0.75rem auto 0; max-width: 22ch; }
+    .process__steps { display: grid; grid-template-columns: repeat(4,1fr); gap: 1rem; }
     .process__step {
-      background: var(--dark);
-      padding: 2.5rem 2rem;
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--r-lg);
+      padding: 2rem 1.6rem;
       position: relative;
-      transition: background var(--transition);
+      transition: all var(--ease);
     }
-    .process__step:hover { background: var(--dark-3); }
-    .process__num {
-      font-family: var(--font-display);
-      font-size: 4rem;
-      font-weight: 800;
-      color: var(--accent);
-      opacity: 0.12;
-      line-height: 1;
-      margin-bottom: 1.5rem;
-    }
-    .process__step h4 { margin-bottom: 0.5rem; }
-    .process__step p { font-size: 0.875rem; line-height: 1.7; max-width: none; }
+    .process__step:hover { border-color: var(--pink); transform: translateY(-4px); box-shadow: 0 10px 30px var(--pink-soft); }
+    .process__num { font-family: var(--font-display); font-size: 3.2rem; font-weight: 900; line-height: 1; margin-bottom: 1rem; background: var(--grad-pink-cy); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; }
+    .process__step h4 { margin-bottom: 0.5rem; text-transform: uppercase; color: var(--text); font-size: 0.95rem; }
+    .process__step p { font-size: 0.85rem; line-height: 1.7; color: var(--text-dim); }
+
+    /* ── CONTACT ── */
+    .contact { background: linear-gradient(180deg, transparent 0%, rgba(255,0,110,0.04) 100%); border-top: 1px solid var(--border); }
+    .contact__inner { display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: start; }
+    .contact__left h2 { margin: 0.75rem 0 1.5rem; }
+    .contact__left > p { font-size: 1rem; line-height: 1.8; margin-bottom: 1.25rem; }
+    .contact__details { display: flex; flex-direction: column; gap: 1rem; margin-top: 2.5rem; }
+    .contact__detail { display: flex; align-items: center; gap: 1rem; font-size: 0.9rem; color: var(--text-dim); }
+    .contact__detail-icon { width: 40px; height: 40px; border-radius: 50%; background: var(--pink-soft); border: 1px solid var(--pink); display: flex; align-items: center; justify-content: center; font-size: 1rem; flex-shrink: 0; box-shadow: 0 0 14px var(--pink-soft); }
+    .contact__detail a { color: var(--cyan); font-weight: 600; transition: text-shadow var(--ease); }
+    .contact__detail a:hover { text-shadow: 0 0 10px var(--cyan-glow); }
+
+    .form { background: var(--bg-card); border: 1px solid var(--pink); border-radius: var(--r-lg); padding: 2.5rem; box-shadow: 0 0 40px rgba(255,0,110,0.2), inset 0 0 40px rgba(114,9,183,0.08); }
+    .form__title { font-family: var(--font-display); font-size: 1.5rem; font-weight: 800; color: var(--text); margin-bottom: 0.5rem; text-transform: uppercase; letter-spacing: 0.02em; }
+    .form__sub { font-family: var(--font-mono); font-size: 0.78rem; color: var(--text-faint); margin-bottom: 2rem; letter-spacing: 0.04em; }
+    .form__group { margin-bottom: 1.1rem; }
+    .form__row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+    .form__label { display: block; font-family: var(--font-mono); font-size: 0.65rem; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: var(--cyan); margin-bottom: 0.5rem; }
+    .form__input, .form__textarea { width: 100%; background: var(--bg-2); border: 1px solid var(--border-bright); border-radius: var(--r); padding: 0.85rem 1.1rem; font-family: var(--font-body); font-size: 0.9rem; color: var(--text); outline: none; transition: all var(--ease); }
+    .form__input::placeholder, .form__textarea::placeholder { color: var(--text-faint); }
+    .form__input:focus, .form__textarea:focus { border-color: var(--pink); box-shadow: 0 0 0 3px var(--pink-soft); }
+    .form__textarea { resize: vertical; min-height: 110px; }
+    .form__submit { width: 100%; margin-top: 0.5rem; justify-content: center; }
+    .form__note { font-family: var(--font-mono); text-align: center; font-size: 0.7rem; color: var(--text-faint); margin-top: 1rem; letter-spacing: 0.04em; }
 
     /* ── CTA ── */
-    .cta {
-      background: var(--black);
-      padding: 8rem 0;
-      position: relative;
-      overflow: hidden;
-      text-align: center;
-    }
-    .cta__bg {
-      position: absolute;
-      inset: 0;
-      background-image: url('https://images.unsplash.com/photo-1593305841991-05c297ba4575?w=1600&q=80');
-      background-size: cover;
-      background-position: center;
-      filter: brightness(0.08) saturate(0.5);
-    }
-    .cta__glow {
-      position: absolute;
-      top: 50%; left: 50%;
-      transform: translate(-50%,-50%);
-      width: 700px; height: 500px;
-      background: radial-gradient(ellipse, rgba(232,101,26,0.12) 0%, transparent 70%);
-      pointer-events: none;
-    }
-    .cta__inner { position: relative; z-index: 1; max-width: 700px; margin: 0 auto; }
-    .cta h2 { font-size: clamp(2.5rem,5vw,4.5rem); margin-bottom: 1.5rem; }
-    .cta p { font-size: 1.05rem; line-height: 1.8; max-width: 52ch; margin: 0 auto 3rem; }
+    .cta { background: transparent; padding: 7rem 0; position: relative; overflow: hidden; text-align: center; }
+    .cta__glow { position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%); width: 800px; height: 500px; background: radial-gradient(ellipse, var(--pink-soft) 0%, transparent 70%); pointer-events: none; }
+    .cta__inner { position: relative; z-index: 1; max-width: 720px; margin: 0 auto; }
+    .cta h2 { font-size: clamp(2.4rem, 5vw, 4rem); margin-bottom: 1.5rem; }
+    .cta p { font-size: 1.05rem; line-height: 1.75; max-width: 52ch; margin: 0 auto 2.5rem; }
     .cta__actions { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
 
     /* ── FOOTER ── */
-    .footer { background: var(--black); border-top: 1px solid var(--border); padding: 2.5rem 0; }
-    .footer__grid { display: grid; grid-template-columns: 1.4fr 1fr 1fr 1fr; gap: 3rem; margin-bottom: 3rem; }
-    .footer__brand p { font-size: 0.9rem; margin: 1rem 0 1.5rem; max-width: 28ch; color: var(--white-dim); }
-    .footer__logo { font-family: var(--font-display); font-size: 1.1rem; font-weight: 800; display: flex; align-items: center; gap: 0.5rem; }
-    .footer__logo span { color: var(--accent); }
-    .footer__col h6 { font-family: var(--font-display); font-size: 0.68rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--white-dim); margin-bottom: 1rem; font-weight: 700; }
-    .footer__col ul { display: flex; flex-direction: column; gap: 0.6rem; }
-    .footer__col a { font-size: 0.875rem; color: var(--white-dim); transition: color var(--transition); }
-    .footer__col a:hover { color: var(--accent); }
-    .footer__bottom { display: flex; align-items: center; justify-content: space-between; padding-top: 2rem; border-top: 1px solid var(--border); }
-    .footer__bottom p { font-size: 0.78rem; color: var(--white-dim); opacity: 0.45; }
-    .footer__bottom-links { display: flex; gap: 2rem; }
-    .footer__bottom-links a { font-size: 0.78rem; color: var(--white-dim); opacity: 0.45; transition: opacity var(--transition); }
-    .footer__bottom-links a:hover { opacity: 1; color: var(--accent); }
-    .footer__social { display: flex; gap: 0.75rem; margin-top: 0; }
-    .footer__social a { width: 36px; height: 36px; border-radius: 50%; border: 1px solid var(--border); display: flex; align-items: center; justify-content: center; color: var(--white-dim); font-size: 0.85rem; transition: all var(--transition); }
-    .footer__social a:hover { border-color: var(--accent); color: var(--accent); background: var(--accent-glow); }
-    .footer__phone { margin-top: 1.25rem; font-size: 13px; color: rgba(255,255,255,0.35); line-height: 1.8; }
-    .footer__phone a { color: var(--accent); font-weight: 500; }
+    .footer { background: rgba(10,1,24,0.6); border-top: 1px solid var(--pink-soft); padding: 2.25rem 0; }
+    .footer__inner { display: flex; align-items: center; justify-content: space-between; gap: 2rem; flex-wrap: wrap; }
+    .footer__logo { display: flex; align-items: center; gap: 0.55rem; font-family: var(--font-display); font-size: 0.85rem; font-weight: 800; color: var(--text); text-transform: uppercase; letter-spacing: 0.02em; }
+    .footer__logo img { height: 26px; width: auto; opacity: 0.8; filter: drop-shadow(0 0 4px var(--orange-glow)); }
+    .footer__logo span { color: var(--orange); }
+    .footer__note { font-family: var(--font-mono); font-size: 0.7rem; color: var(--text-faint); letter-spacing: 0.06em; }
+    .footer__copy { font-family: var(--font-mono); font-size: 0.7rem; color: var(--text-faint); letter-spacing: 0.04em; }
 
     /* ── RESPONSIVE ── */
     @media (max-width: 1024px) {
-      .hero__inner { grid-template-columns: 1fr; }
-      .hero__visual { display: none; }
+      .hero__inner { grid-template-columns: 1fr; gap: 3rem; }
       .services__grid { grid-template-columns: 1fr 1fr; }
-      .proof__inner { grid-template-columns: 1fr; }
-      .proof__image { min-height: 300px; }
-      .who__grid { grid-template-columns: 1fr 1fr; }
+      .proof__inner { grid-template-columns: 1fr; min-height: auto; }
+      .proof__content { border-left: none; border-top: 1px solid var(--border); padding: 4rem 2rem; }
+      .proof__visual { min-height: 420px; }
       .stats__grid { grid-template-columns: 1fr 1fr; }
+      .stat { border-right: none; border-bottom: 1px solid rgba(255,255,255,0.22); }
+      .stat:nth-child(odd) { border-right: 1px solid rgba(255,255,255,0.22); }
+      .stat:nth-last-child(-n+2) { border-bottom: none; }
+      .who__grid { grid-template-columns: 1fr 1fr; }
       .process__steps { grid-template-columns: 1fr 1fr; }
-      .footer__grid { grid-template-columns: 1fr 1fr; gap: 2rem; }
+      .contact__inner { grid-template-columns: 1fr; gap: 3rem; }
     }
     @media (max-width: 768px) {
       .nav__links, .nav__cta { display: none; }
       .hamburger { display: flex; }
       .services__grid { grid-template-columns: 1fr; }
       .who__grid { grid-template-columns: 1fr 1fr; }
-      .stats__grid { grid-template-columns: 1fr 1fr; }
       .process__steps { grid-template-columns: 1fr; }
-      .footer__grid { grid-template-columns: 1fr; }
-      .contact__inner { grid-template-columns: 1fr !important; gap: 3rem !important; }
-      .footer__bottom { flex-direction: column; gap: 1rem; text-align: center; }
-      .footer__inner { flex-direction: column; gap: 1rem; text-align: center; }
-      .cta__actions { flex-direction: column; align-items: center; }
-    }
-    @media (max-width: 480px) {
-      .who__grid { grid-template-columns: 1fr; }
-      .stats__grid { grid-template-columns: 1fr 1fr; }
-      .hero__proof { gap: 1.25rem; }
+      .form__row { grid-template-columns: 1fr; }
+      .footer__inner { flex-direction: column; text-align: center; gap: 1rem; }
+      .cta__actions { flex-direction: column; }
     }
   </style>
 </head>
@@ -515,31 +515,28 @@
   <nav class="nav" id="mainNav">
     <div class="nav__inner">
       <a href="#" class="nav__logo">
-        <img src="/assets/images/unc-logo-icon.webp" alt="Urban Niche Co." class="nav__logo-img" />
-        Urban<span>Niche</span>&nbsp;Co.
+        <img src="/assets/images/unc-logo-icon.webp" alt="Urban Niche Co." />
+        Urban <span>Niche</span>&nbsp;Co.
       </a>
       <ul class="nav__links">
-        <li><a href="#" class="nav__link">Home</a></li>
-        <li><a href="#services" class="nav__link">What We Build</a></li>
-        <li><a href="#who" class="nav__link">Who It's For</a></li>
-        <li><a href="#process" class="nav__link">How It Works</a></li>
+        <li><a href="#services" class="nav__link">Stack</a></li>
+        <li><a href="#who" class="nav__link">Who</a></li>
+        <li><a href="#process" class="nav__link">Process</a></li>
+        <li><a href="#contact" class="nav__link">Contact</a></li>
       </ul>
       <div class="nav__cta">
-        <a href="sms:+15153444053" class="nav__phone">Text (515) 344-4053</a>
-        <a href="#contact" class="btn btn-ghost btn-sm">Contact</a>
+        <a href="sms:+15153444053" class="nav__phone">Text 515.344.4053</a>
         <a href="#contact" class="btn btn-primary btn-sm">Let's Talk</a>
       </div>
-      <button class="hamburger" id="hamburger" aria-label="Open menu">
-        <span></span><span></span><span></span>
-      </button>
+      <button class="hamburger" id="hamburger" aria-label="Open menu"><span></span><span></span><span></span></button>
     </div>
   </nav>
 
   <div class="mobile-nav" id="mobileNav">
-    <a href="#" class="mobile-link">Home</a>
-    <a href="#services" class="mobile-link">What We Build</a>
-    <a href="#who" class="mobile-link">Who It's For</a>
-    <a href="#process" class="mobile-link">How It Works</a>
+    <a href="#services" class="mobile-link">Stack</a>
+    <a href="#who" class="mobile-link">Who</a>
+    <a href="#process" class="mobile-link">Process</a>
+    <a href="#contact" class="mobile-link">Contact</a>
     <div class="mobile-cta">
       <a href="#contact" class="btn btn-outline">Contact</a>
       <a href="#contact" class="btn btn-primary">Let's Talk</a>
@@ -547,54 +544,62 @@
   </div>
 
   <!-- HERO -->
-  <section class="hero noise">
-    <div class="hero__bg-img"></div>
-    <div class="hero__overlay"></div>
-    <div class="hero__glow"></div>
-    <div class="hero__inner">
-      <div>
-        <div class="hero__tag reveal">
-          <div class="hero__tag-dot"></div>
-          For Streamers &amp; Content Creators
-        </div>
-        <h1 class="reveal d1">
-          You Built<br>
-          the Audience.<br>
-          <em>We Build the Business.</em>
-        </h1>
-        <p class="hero__sub reveal d2">
-          Your community is real. Your reach is real. But most creators are leaving massive revenue on the table because the business infrastructure behind the content doesn't exist. That's what we fix.
-        </p>
-        <p class="hero__whisper reveal d2">This page isn't public. If you have the link, we think there's something worth building here.</p>
-        <div class="hero__actions reveal d3">
-          <a href="#contact" class="btn btn-primary btn-lg">Let's Talk &rarr;</a>
-          <a href="#services" class="btn btn-outline btn-lg">See What We Build</a>
-        </div>
-        <div class="hero__proof reveal d4">
-          <div class="hero__proof-item">
-            <span class="hero__proof-val">30</span>
-            <span class="hero__proof-label">Days to first drop live</span>
+  <section class="hero">
+    <div class="hero__sun"></div>
+    <div class="hero__grid"></div>
+    <div class="container">
+      <div class="hero__inner">
+        <div>
+          <div class="hero__tag reveal">
+            <div class="hero__tag-dot"></div>
+            For Streamers &amp; Content Creators
           </div>
-          <div class="hero__proof-item">
-            <span class="hero__proof-val">100%</span>
-            <span class="hero__proof-label">Audience ownership</span>
+          <h1 class="reveal d1">
+            <span class="line-cyan">You Built</span><br>
+            <span class="line-pink">the Audience.</span><br>
+            <span class="line-grad">We Build the Business.</span>
+          </h1>
+          <p class="hero__sub reveal d2">
+            Your community is real. Your reach is real. But most creators are leaving massive revenue on the table because the business infrastructure behind the content doesn't exist. That's what we fix.
+          </p>
+          <p class="hero__whisper reveal d2"><strong>&gt; ACCESS:</strong> Private link. If you have it, we think there's something worth building.</p>
+          <div class="hero__actions reveal d3">
+            <a href="#contact" class="btn btn-primary btn-lg">Let's Talk &rarr;</a>
+            <a href="#services" class="btn btn-outline btn-lg">See the Stack</a>
           </div>
-          <div class="hero__proof-item">
-            <span class="hero__proof-val">0%</span>
-            <span class="hero__proof-label">Platform cut on your email revenue</span>
+          <div class="hero__proof reveal d4">
+            <div class="hero__proof-item">
+              <span class="hero__proof-val pink">30</span>
+              <span class="hero__proof-label">Days to first drop</span>
+            </div>
+            <div class="hero__proof-item">
+              <span class="hero__proof-val cyan">100%</span>
+              <span class="hero__proof-label">Audience ownership</span>
+            </div>
+            <div class="hero__proof-item">
+              <span class="hero__proof-val orange">0%</span>
+              <span class="hero__proof-label">Platform cut on your list</span>
+            </div>
           </div>
         </div>
-      </div>
-      <div class="hero__visual reveal d2">
-        <div class="hero__img-main">
-          <img src="https://images.unsplash.com/photo-1542751371-adc38448a05e?w=800&q=80" alt="Streaming setup" loading="lazy" />
-        </div>
-        <div class="hero__img-row">
-          <div class="hero__img-small">
-            <img src="https://images.unsplash.com/photo-1598550476439-6847785fcea6?w=400&q=80" alt="Creator studio" loading="lazy" />
-          </div>
-          <div class="hero__img-small">
-            <img src="https://images.unsplash.com/photo-1607853202273-797f1c22a38e?w=400&q=80" alt="Gaming setup" loading="lazy" />
+        <div class="reveal d2">
+          <div class="stream-panel">
+            <div class="stream-panel__header">
+              <div class="stream-panel__live">
+                <div class="stream-panel__live-dot"></div>
+                LIVE &middot; Chat
+              </div>
+              <div class="stream-panel__viewers">2.4K watching</div>
+            </div>
+            <div class="stream-panel__title">&gt; Drop day is here</div>
+            <div class="stream-panel__chat">
+              <div class="chat-msg"><span class="chat-user cyan">ninjakai_</span><span class="text">site looks clean af bro</span></div>
+              <div class="chat-msg"><span class="chat-user pink">lvlupLex</span><span class="text">just got the email 10 min ago</span></div>
+              <div class="chat-msg"><span class="chat-user lime">moth_knight</span><span class="text">sold out already?? &#128293;</span></div>
+              <div class="chat-msg"><span class="chat-user orange">prismhunter</span><span class="text">merch drops hit different when u own the store</span></div>
+              <div class="chat-msg"><span class="chat-user purple">velvet.wolf</span><span class="text">who builds this for u</span></div>
+              <div class="chat-msg"><span class="chat-user pink">lvlupLex</span><span class="text">&gt; UNC, look them up</span></div>
+            </div>
           </div>
         </div>
       </div>
@@ -604,39 +609,39 @@
   <!-- TICKER -->
   <div class="ticker">
     <div class="ticker__track">
-      <span class="ticker__item">Merch Drop Systems <span class="ticker__sep">✦</span></span>
-      <span class="ticker__item">Brand Sites You Own <span class="ticker__sep">✦</span></span>
-      <span class="ticker__item">Email Monetization <span class="ticker__sep">✦</span></span>
-      <span class="ticker__item">Sponsorship Kits <span class="ticker__sep">✦</span></span>
-      <span class="ticker__item">Community Hubs <span class="ticker__sep">✦</span></span>
-      <span class="ticker__item">AI Automation <span class="ticker__sep">✦</span></span>
-      <span class="ticker__item">Social Strategy <span class="ticker__sep">✦</span></span>
-      <span class="ticker__item">Limited Drop Infrastructure <span class="ticker__sep">✦</span></span>
-      <span class="ticker__item">Merch Drop Systems <span class="ticker__sep">✦</span></span>
-      <span class="ticker__item">Brand Sites You Own <span class="ticker__sep">✦</span></span>
-      <span class="ticker__item">Email Monetization <span class="ticker__sep">✦</span></span>
-      <span class="ticker__item">Sponsorship Kits <span class="ticker__sep">✦</span></span>
-      <span class="ticker__item">Community Hubs <span class="ticker__sep">✦</span></span>
-      <span class="ticker__item">AI Automation <span class="ticker__sep">✦</span></span>
-      <span class="ticker__item">Social Strategy <span class="ticker__sep">✦</span></span>
-      <span class="ticker__item">Limited Drop Infrastructure <span class="ticker__sep">✦</span></span>
+      <span class="ticker__item">Merch Drop Systems <span class="ticker__sep">&#10022;</span></span>
+      <span class="ticker__item">Brand Sites You Own <span class="ticker__sep">&#10022;</span></span>
+      <span class="ticker__item">Email Monetization <span class="ticker__sep">&#10022;</span></span>
+      <span class="ticker__item">Sponsorship Kits <span class="ticker__sep">&#10022;</span></span>
+      <span class="ticker__item">Community Hubs <span class="ticker__sep">&#10022;</span></span>
+      <span class="ticker__item">AI Automation <span class="ticker__sep">&#10022;</span></span>
+      <span class="ticker__item">Social Strategy <span class="ticker__sep">&#10022;</span></span>
+      <span class="ticker__item">Limited Drop Infrastructure <span class="ticker__sep">&#10022;</span></span>
+      <span class="ticker__item">Merch Drop Systems <span class="ticker__sep">&#10022;</span></span>
+      <span class="ticker__item">Brand Sites You Own <span class="ticker__sep">&#10022;</span></span>
+      <span class="ticker__item">Email Monetization <span class="ticker__sep">&#10022;</span></span>
+      <span class="ticker__item">Sponsorship Kits <span class="ticker__sep">&#10022;</span></span>
+      <span class="ticker__item">Community Hubs <span class="ticker__sep">&#10022;</span></span>
+      <span class="ticker__item">AI Automation <span class="ticker__sep">&#10022;</span></span>
+      <span class="ticker__item">Social Strategy <span class="ticker__sep">&#10022;</span></span>
+      <span class="ticker__item">Limited Drop Infrastructure <span class="ticker__sep">&#10022;</span></span>
     </div>
   </div>
 
-  <!-- WHAT WE BUILD -->
+  <!-- SERVICES -->
   <section class="section services" id="services">
     <div class="container">
       <div class="services__header reveal">
         <span class="eyebrow">What We Build</span>
         <h2>The Full Stack Your Brand Actually Needs.</h2>
-        <p>Not a single tool. Not a template. A complete digital operation built around your community — so you own it, control it, and make money from it.</p>
+        <p>Not a single tool. Not a template. A complete digital operation built around your community &mdash; so you own it, control it, and make money from it.</p>
       </div>
       <div class="services__grid">
         <div class="svc reveal">
-          <div class="svc__num">01</div>
-          <div class="svc__icon">👕</div>
+          <div class="svc__num">01 / MERCH</div>
+          <div class="svc__icon">&#128085;</div>
           <h3>Merch Drop Infrastructure</h3>
-          <p>Limited drops that sell out. We build the complete system — storefront, drop page, pre-drop hype sequence, and fulfillment pipeline.</p>
+          <p>Limited drops that sell out. Complete system &mdash; storefront, drop page, pre-drop hype sequence, and fulfillment pipeline.</p>
           <div class="svc__list">
             <div class="svc__item">Custom drop landing page per release</div>
             <div class="svc__item">Email + SMS hype sequence pre-drop</div>
@@ -645,34 +650,34 @@
           </div>
         </div>
         <div class="svc reveal d1">
-          <div class="svc__num">02</div>
-          <div class="svc__icon">🌐</div>
+          <div class="svc__num">02 / SITE</div>
+          <div class="svc__icon">&#127760;</div>
           <h3>Brand Site &amp; Community Hub</h3>
-          <p>A real home base. Fast, custom-built around your brand — not a link-in-bio tool or a platform you don't own.</p>
+          <p>A real home base. Fast, custom-built around your brand &mdash; not a link-in-bio tool or a platform you don't own.</p>
           <div class="svc__list">
             <div class="svc__item">Custom domain site built from scratch</div>
-            <div class="svc__item">Merch, links, schedule, and content in one place</div>
+            <div class="svc__item">Merch, links, schedule, content in one place</div>
             <div class="svc__item">Discord and social integrations</div>
-            <div class="svc__item">You own everything — no platform risk</div>
+            <div class="svc__item">You own everything &mdash; no platform risk</div>
           </div>
         </div>
         <div class="svc reveal d2">
-          <div class="svc__num">03</div>
-          <div class="svc__icon">📧</div>
+          <div class="svc__num">03 / EMAIL</div>
+          <div class="svc__icon">&#128231;</div>
           <h3>Email &amp; Community Monetization</h3>
-          <p>The algorithm kills reach overnight. An email list doesn't. We build the list, the sequences, and the strategy to monetize it without platform dependency.</p>
+          <p>The algorithm kills reach overnight. An email list doesn't. We build the list, the sequences, and the strategy.</p>
           <div class="svc__list">
             <div class="svc__item">Email list building and opt-in strategy</div>
             <div class="svc__item">Automated welcome and nurture sequences</div>
             <div class="svc__item">Drop early access and announcement flows</div>
-            <div class="svc__item">Revenue from your list — no ad split</div>
+            <div class="svc__item">Revenue from your list &mdash; no ad split</div>
           </div>
         </div>
         <div class="svc reveal">
-          <div class="svc__num">04</div>
-          <div class="svc__icon">📣</div>
+          <div class="svc__num">04 / SOCIAL</div>
+          <div class="svc__icon">&#128227;</div>
           <h3>Social &amp; Content Strategy</h3>
-          <p>Clips don't market themselves. We build the off-platform strategy that converts viewers into buyers and subscribers into community.</p>
+          <p>Clips don't market themselves. We build the off-platform strategy that converts viewers into buyers.</p>
           <div class="svc__list">
             <div class="svc__item">Cross-platform content repurposing system</div>
             <div class="svc__item">Short-form strategy for TikTok, YT Shorts, Reels</div>
@@ -681,10 +686,10 @@
           </div>
         </div>
         <div class="svc reveal d1">
-          <div class="svc__num">05</div>
-          <div class="svc__icon">🎨</div>
+          <div class="svc__num">05 / BRAND</div>
+          <div class="svc__icon">&#127912;</div>
           <h3>Brand Identity &amp; Sponsorship Kit</h3>
-          <p>Sponsors pay more when you look like a real business. We build the media kit, rate card, and pitch deck that gets you taken seriously in the room.</p>
+          <p>Sponsors pay more when you look like a real business. Media kit, rate card, and pitch deck that gets you taken seriously.</p>
           <div class="svc__list">
             <div class="svc__item">Professional media kit with analytics</div>
             <div class="svc__item">Brand guidelines and asset library</div>
@@ -693,10 +698,10 @@
           </div>
         </div>
         <div class="svc reveal d2">
-          <div class="svc__num">06</div>
-          <div class="svc__icon">🤖</div>
+          <div class="svc__num">06 / AI</div>
+          <div class="svc__icon">&#129302;</div>
           <h3>AI &amp; Automation Systems</h3>
-          <p>You can't respond to 10,000 DMs. We build the AI-powered systems that handle the repetitive work — so you stay focused on content.</p>
+          <p>You can't respond to 10,000 DMs. AI-powered systems that handle the repetitive work so you stay focused on content.</p>
           <div class="svc__list">
             <div class="svc__item">AI chatbot for your site and Discord</div>
             <div class="svc__item">Automated drop alert and hype sequences</div>
@@ -708,41 +713,46 @@
     </div>
   </section>
 
-  <!-- PROOF / WHY US -->
+  <!-- PROOF -->
   <section class="proof" id="why">
     <div class="proof__inner">
-      <div class="proof__image">
-        <img src="https://images.unsplash.com/photo-1598550476439-6847785fcea6?w=900&q=80" alt="Creator studio setup" loading="lazy" />
+      <div class="proof__visual">
+        <div class="proof__orb"></div>
+        <div class="proof__card reveal">
+          <div class="proof__card-icon">&#9889;</div>
+          <h4>You Built It. You Own It.</h4>
+          <p>&gt; Every system. Every list. Every dollar.</p>
+        </div>
       </div>
       <div class="proof__content">
         <span class="eyebrow reveal">Why Urban Niche Co.</span>
         <h2 class="reveal d1">We're Operators.<br>Not Order Takers.</h2>
-        <p class="reveal d1">Most agencies hand you a template and call it a brand. We build systems — ones that survive algorithm changes, grow with your audience, and generate real revenue outside of platform cuts.</p>
+        <p class="reveal d1">Most agencies hand you a template and call it a brand. We build systems &mdash; ones that survive algorithm changes, grow with your audience, and generate real revenue outside platform cuts.</p>
         <p class="reveal d1">We're selective. We don't work with everyone. If you have this link, it means we see something worth building.</p>
         <div class="proof__list reveal d2">
           <div class="proof__item">
-            <div class="proof__check">✓</div>
+            <div class="proof__check">&#10003;</div>
             <div>
               <h5>You Own Everything</h5>
               <p>Your site, your list, your store. No platform can take it from you.</p>
             </div>
           </div>
           <div class="proof__item">
-            <div class="proof__check">✓</div>
+            <div class="proof__check">&#10003;</div>
             <div>
               <h5>Built for Revenue, Not Aesthetics</h5>
-              <p>Every deliverable ties back to a monetization outcome — not just how it looks.</p>
+              <p>Every deliverable ties back to a monetization outcome &mdash; not just how it looks.</p>
             </div>
           </div>
           <div class="proof__item">
-            <div class="proof__check">✓</div>
+            <div class="proof__check">&#10003;</div>
             <div>
               <h5>No Long-Term Contracts</h5>
-              <p>We earn your business every month. Results keep you. Not clauses.</p>
+              <p>We earn your business every month. Results keep you &mdash; not clauses.</p>
             </div>
           </div>
           <div class="proof__item">
-            <div class="proof__check">✓</div>
+            <div class="proof__check">&#10003;</div>
             <div>
               <h5>AI-Powered from Day One</h5>
               <p>We use tools most agencies don't know exist yet. Your advantage is built in.</p>
@@ -766,7 +776,7 @@
         </div>
         <div class="stat reveal d1">
           <span class="stat__val">100%</span>
-          <span class="stat__label">Owned audience — your list, your store</span>
+          <span class="stat__label">Owned audience &mdash; your list, your store</span>
         </div>
         <div class="stat reveal d2">
           <span class="stat__val">0%</span>
@@ -774,7 +784,7 @@
         </div>
         <div class="stat reveal d3">
           <span class="stat__val">1</span>
-          <span class="stat__label">Agency — everything in one place</span>
+          <span class="stat__label">Agency &mdash; everything in one place</span>
         </div>
       </div>
     </div>
@@ -783,42 +793,30 @@
   <!-- WHO IT'S FOR -->
   <section class="section who" id="who">
     <div class="container">
-      <div class="section-header reveal" style="margin-bottom:0;">
+      <div class="who__header reveal">
         <span class="eyebrow">Who We Work With</span>
         <h2>If You Have an Audience,<br>You Have a Business.</h2>
       </div>
       <div class="who__grid">
         <div class="who__card reveal">
-          <div class="who__img">
-            <img src="https://images.unsplash.com/photo-1542751371-adc38448a05e?w=400&q=80" alt="Streamer" loading="lazy" />
-          </div>
-          <div class="who__icon">🎮</div>
+          <div class="who__icon">&#127918;</div>
           <h5>Streamers</h5>
-          <p>Twitch, Kick, YouTube Live — any platform, any size. If your chat is alive, we can build around it.</p>
+          <p>Twitch, Kick, YouTube Live &mdash; any platform, any size. If your chat is alive, we can build around it.</p>
         </div>
         <div class="who__card reveal d1">
-          <div class="who__img">
-            <img src="https://images.unsplash.com/photo-1611162617213-7d7a39e9b1d7?w=400&q=80" alt="Content Creator" loading="lazy" />
-          </div>
-          <div class="who__icon">📱</div>
+          <div class="who__icon">&#128250;</div>
           <h5>Content Creators</h5>
-          <p>YouTube, TikTok, Instagram — short or long form. Audience is audience. We build the business around it.</p>
+          <p>YouTube, TikTok, Instagram &mdash; short or long form. Audience is audience. We build the business.</p>
         </div>
         <div class="who__card reveal d2">
-          <div class="who__img">
-            <img src="https://images.unsplash.com/photo-1478737270239-2f02b77fc618?w=400&q=80" alt="Podcaster" loading="lazy" />
-          </div>
-          <div class="who__icon">🎙️</div>
+          <div class="who__icon">&#127908;</div>
           <h5>Podcasters</h5>
-          <p>Audio-first, video, or hybrid — if your audience shows up for you every week, there's revenue we're not capturing yet.</p>
+          <p>Audio, video, or hybrid &mdash; if your audience shows up for you weekly, there's revenue we're not capturing yet.</p>
         </div>
         <div class="who__card reveal d3">
-          <div class="who__img">
-            <img src="https://images.unsplash.com/photo-1607853202273-797f1c22a38e?w=400&q=80" alt="Gaming personality" loading="lazy" />
-          </div>
-          <div class="who__icon">🏆</div>
+          <div class="who__icon">&#127942;</div>
           <h5>Gaming Personalities</h5>
-          <p>Players, coaches, analysts, orgs — the community is there. The brand infrastructure usually isn't.</p>
+          <p>Players, coaches, analysts, orgs &mdash; the community is there. The brand infrastructure usually isn't.</p>
         </div>
       </div>
     </div>
@@ -827,7 +825,7 @@
   <!-- PROCESS -->
   <section class="section process" id="process">
     <div class="container">
-      <div class="section-header section--center reveal" style="text-align:center;margin-bottom:0;">
+      <div class="process__header reveal">
         <span class="eyebrow">How It Works</span>
         <h2>From First Call to First Drop. Fast.</h2>
       </div>
@@ -835,80 +833,79 @@
         <div class="process__step reveal">
           <div class="process__num">01</div>
           <h4>Strategy Call</h4>
-          <p>We learn your audience, your platforms, your goals, and where the biggest revenue gaps are right now. No fluff, no pitch deck — just a real conversation.</p>
+          <p>We learn your audience, platforms, goals, and where the biggest revenue gaps are. No fluff &mdash; just a real conversation.</p>
         </div>
         <div class="process__step reveal d1">
           <div class="process__num">02</div>
           <h4>Infrastructure Build</h4>
-          <p>We build your brand site, drop system, email list, and community assets. Fast. Most clients are live within 30 days.</p>
+          <p>Brand site, drop system, email list, community assets. Fast. Most clients are live within 30 days.</p>
         </div>
         <div class="process__step reveal d2">
           <div class="process__num">03</div>
           <h4>First Drop Launch</h4>
-          <p>Your first limited drop goes live with a full pre-drop hype sequence behind it. We run the execution. You post the announcement.</p>
+          <p>Your first limited drop goes live with a full pre-drop hype sequence. We run execution. You post the announcement.</p>
         </div>
         <div class="process__step reveal d3">
           <div class="process__num">04</div>
           <h4>Ongoing Growth</h4>
-          <p>Monthly drops, email campaigns, and audience growth strategy — managed for you so you stay focused on the content that built the community in the first place.</p>
+          <p>Monthly drops, email campaigns, audience growth strategy &mdash; managed for you so you stay focused on content.</p>
         </div>
       </div>
     </div>
   </section>
 
-  
   <!-- CONTACT -->
-  <section class="section" id="contact" style="background: var(--dark-2); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border);">
+  <section class="section contact" id="contact">
     <div class="container">
-      <div style="display:grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: start;" class="contact__inner">
-        <div class="reveal">
+      <div class="contact__inner">
+        <div class="contact__left reveal">
           <span class="eyebrow">Let's Talk</span>
-          <h2 style="margin: 0.75rem 0 1.5rem;">Tell Us About<br>Your Brand.</h2>
-          <p style="font-size: 1rem; line-height: 1.85; margin-bottom: 1.5rem;">No pitch deck. No obligation. Just a straight conversation about your audience and what we&rsquo;d build. If it&rsquo;s not the right fit, we&rsquo;ll tell you that too.</p>
-          <p style="font-size: 1rem; line-height: 1.85; margin-bottom: 2rem;">We sent you this link because we think there's something worth building. The conversation costs nothing.</p>
-          <div style="display:flex; flex-direction:column; gap: 1rem; margin-top: 2.5rem;">
-            <div style="display:flex; align-items:center; gap: 1rem; font-size: 0.9rem; color: var(--white-dim);">
-              <div style="width:38px; height:38px; border-radius: 50%; background: var(--accent-glow); border: 1px solid rgba(232,101,26,0.3); display:flex; align-items:center; justify-content:center; font-size:0.95rem; flex-shrink: 0;">&#9742;</div>
-              <div>Call or text anytime &mdash; <a href="sms:+15153444053" style="color: var(--accent); font-weight: 600;">(515) 344-4053</a></div>
+          <h2>Tell Us About<br>Your Brand.</h2>
+          <p>No pitch deck. No obligation. Just a straight conversation about your audience and what we'd build. If it's not the right fit, we'll tell you that too.</p>
+          <p>We sent you this link because we think there's something worth building. The conversation costs nothing.</p>
+          <div class="contact__details">
+            <div class="contact__detail">
+              <div class="contact__detail-icon">&#9742;</div>
+              <div>Call or text anytime &mdash; <a href="sms:+15153444053">(515) 344-4053</a></div>
             </div>
-            <div style="display:flex; align-items:center; gap: 1rem; font-size: 0.9rem; color: var(--white-dim);">
-              <div style="width:38px; height:38px; border-radius: 50%; background: var(--accent-glow); border: 1px solid rgba(232,101,26,0.3); display:flex; align-items:center; justify-content:center; font-size:0.95rem; flex-shrink: 0;">&#9993;</div>
-              <div><a href="mailto:ricky@urbannicheco.com" style="color: var(--accent); font-weight: 600;">ricky@urbannicheco.com</a></div>
+            <div class="contact__detail">
+              <div class="contact__detail-icon">&#9993;</div>
+              <div><a href="mailto:ricky@urbannicheco.com">ricky@urbannicheco.com</a></div>
             </div>
-            <div style="display:flex; align-items:center; gap: 1rem; font-size: 0.9rem; color: var(--white-dim);">
-              <div style="width:38px; height:38px; border-radius: 50%; background: var(--accent-glow); border: 1px solid rgba(232,101,26,0.3); display:flex; align-items:center; justify-content:center; font-size:0.95rem; flex-shrink: 0;">&#9889;</div>
+            <div class="contact__detail">
+              <div class="contact__detail-icon">&#9889;</div>
               <div>Usually respond within a few hours &mdash; same day guaranteed</div>
             </div>
           </div>
         </div>
         <div class="reveal d1">
-          <form action="mailto:ricky@urbannicheco.com" method="GET" enctype="text/plain" style="background: var(--dark); border: 1px solid rgba(232,101,26,0.3); border-radius: var(--radius); padding: 3rem; box-shadow: var(--shadow-lg);">
-            <div style="font-family: var(--font-display); font-size: 1.6rem; font-weight: 700; color: var(--white); margin-bottom: 0.5rem;">Send a Message</div>
-            <div style="font-size: 0.82rem; color: var(--white-dim); opacity: 0.7; margin-bottom: 2rem;">Fill this out and it goes straight to Ricky &mdash; no middleman, no CRM queue.</div>
-            <div style="display:grid; grid-template-columns: 1fr 1fr; gap: 1rem;" class="form__row">
-              <div style="margin-bottom: 1.25rem;">
-                <label style="display:block; font-family: var(--font-display); font-size: 0.62rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--white-dim); margin-bottom: 0.5rem;" for="s-name">Your Name</label>
-                <input type="text" id="s-name" name="name" placeholder="First &amp; Last" required style="width:100%; background: var(--dark-2); border: 1px solid var(--border); border-radius: 6px; padding: 0.85rem 1.1rem; font-family: var(--font-body); font-size: 0.9rem; color: var(--white); outline: none; transition: border-color 0.2s;" />
+          <form class="form" action="mailto:ricky@urbannicheco.com" method="GET" enctype="text/plain">
+            <div class="form__title">&gt; Send a Message</div>
+            <div class="form__sub">Fill this out and it goes straight to Ricky. No middleman, no CRM queue.</div>
+            <div class="form__row">
+              <div class="form__group">
+                <label class="form__label" for="s-name">Your Name</label>
+                <input type="text" id="s-name" name="name" placeholder="First &amp; Last" required class="form__input" />
               </div>
-              <div style="margin-bottom: 1.25rem;">
-                <label style="display:block; font-family: var(--font-display); font-size: 0.62rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--white-dim); margin-bottom: 0.5rem;" for="s-handle">Handle / Channel</label>
-                <input type="text" id="s-handle" name="handle" placeholder="@yourhandle" style="width:100%; background: var(--dark-2); border: 1px solid var(--border); border-radius: 6px; padding: 0.85rem 1.1rem; font-family: var(--font-body); font-size: 0.9rem; color: var(--white); outline: none;" />
+              <div class="form__group">
+                <label class="form__label" for="s-handle">Handle / Channel</label>
+                <input type="text" id="s-handle" name="handle" placeholder="@yourhandle" class="form__input" />
               </div>
             </div>
-            <div style="margin-bottom: 1.25rem;">
-              <label style="display:block; font-family: var(--font-display); font-size: 0.62rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--white-dim); margin-bottom: 0.5rem;" for="s-platform">Primary Platform</label>
-              <input type="text" id="s-platform" name="platform" placeholder="Twitch, YouTube, TikTok, etc." style="width:100%; background: var(--dark-2); border: 1px solid var(--border); border-radius: 6px; padding: 0.85rem 1.1rem; font-family: var(--font-body); font-size: 0.9rem; color: var(--white); outline: none;" />
+            <div class="form__group">
+              <label class="form__label" for="s-platform">Primary Platform</label>
+              <input type="text" id="s-platform" name="platform" placeholder="Twitch, YouTube, TikTok, etc." class="form__input" />
             </div>
-            <div style="margin-bottom: 1.25rem;">
-              <label style="display:block; font-family: var(--font-display); font-size: 0.62rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--white-dim); margin-bottom: 0.5rem;" for="s-email">Email Address</label>
-              <input type="email" id="s-email" name="email" placeholder="you@youremail.com" required style="width:100%; background: var(--dark-2); border: 1px solid var(--border); border-radius: 6px; padding: 0.85rem 1.1rem; font-family: var(--font-body); font-size: 0.9rem; color: var(--white); outline: none;" />
+            <div class="form__group">
+              <label class="form__label" for="s-email">Email Address</label>
+              <input type="email" id="s-email" name="email" placeholder="you@youremail.com" required class="form__input" />
             </div>
-            <div style="margin-bottom: 1.25rem;">
-              <label style="display:block; font-family: var(--font-display); font-size: 0.62rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--white-dim); margin-bottom: 0.5rem;" for="s-msg">What do you want to build?</label>
-              <textarea id="s-msg" name="body" placeholder="Tell us a bit about your audience, what you've tried before, and what you're hoping to build next." style="width:100%; background: var(--dark-2); border: 1px solid var(--border); border-radius: 6px; padding: 0.85rem 1.1rem; font-family: var(--font-body); font-size: 0.9rem; color: var(--white); outline: none; resize: vertical; min-height: 120px;"></textarea>
+            <div class="form__group">
+              <label class="form__label" for="s-msg">What do you want to build?</label>
+              <textarea id="s-msg" name="body" placeholder="Tell us a bit about your audience, what you've tried before, and what you're hoping to build." class="form__textarea"></textarea>
             </div>
-            <button type="submit" class="btn btn-primary btn-lg" style="width: 100%; justify-content: center;">Send Message &rarr;</button>
-            <div style="text-align: center; font-size: 0.72rem; color: var(--white-dim); opacity: 0.55; margin-top: 1rem;">Opens your email client. Sending takes 2 seconds.</div>
+            <button type="submit" class="btn btn-primary btn-lg form__submit">Send Message &rarr;</button>
+            <div class="form__note">Opens your email client. Sending takes 2 seconds.</div>
           </form>
         </div>
       </div>
@@ -916,13 +913,12 @@
   </section>
 
   <!-- CTA -->
-  <section class="cta noise">
-    <div class="cta__bg"></div>
+  <section class="cta">
     <div class="cta__glow"></div>
     <div class="container">
       <div class="cta__inner reveal">
         <span class="eyebrow">Ready to Build?</span>
-        <h2>Let's Talk About What Your Brand Could Be.</h2>
+        <h2 class="neon-text">Let's Talk About What<br>Your Brand Could Be.</h2>
         <p>No pitch deck. No obligation. Just a straight conversation about your audience and what we can build together. If it's not the right fit, we'll tell you that too.</p>
         <div class="cta__actions">
           <a href="#contact" class="btn btn-primary btn-lg">Start the Conversation &rarr;</a>
@@ -935,30 +931,27 @@
   <!-- FOOTER -->
   <footer class="footer">
     <div class="container">
-      <div class="footer__inner" style="display:flex; align-items:center; justify-content:space-between; gap:2rem;">
-        <img src="/assets/images/unc-logo-icon.webp" alt="Urban Niche Co." style="height:28px;width:auto;opacity:0.65;" />
-        <div style="font-size:0.7rem;color:var(--white-dim);opacity:0.55;font-style:italic;letter-spacing:0.06em;">This page is private and not indexed by search engines.</div>
-        <div style="font-size:0.72rem;color:var(--white-dim);opacity:0.45;">&copy; 2026 Urban Niche Co. LLC &mdash; Dubuque, Iowa</div>
+      <div class="footer__inner">
+        <div class="footer__logo">
+          <img src="/assets/images/unc-logo-icon.webp" alt="Urban Niche Co." />
+          Urban <span>Niche</span>&nbsp;Co.
+        </div>
+        <div class="footer__note">&gt; This page is private and not indexed by search engines.</div>
+        <div class="footer__copy">&copy; 2026 Urban Niche Co. LLC &mdash; Dubuque, Iowa</div>
       </div>
     </div>
   </footer>
 
   <script>
-    // Nav scroll
     const nav = document.getElementById('mainNav');
     window.addEventListener('scroll', () => nav.classList.toggle('scrolled', window.scrollY > 40));
-
-    // Hamburger
     document.getElementById('hamburger').addEventListener('click', () => {
       document.getElementById('mobileNav').classList.toggle('open');
     });
-
-    // Reveals
     const observer = new IntersectionObserver(entries => {
-      entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+      entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); } });
     }, { threshold: 0.1 });
     document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
   </script>
-
 </body>
 </html>

@@ -13,11 +13,11 @@
 <style>
 #unc-launcher{position:fixed;bottom:28px;right:28px;width:62px;height:62px;border-radius:50%;background:#e36b1e;border:none;cursor:pointer;z-index:9999;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 24px rgba(227,107,30,0.5);transition:transform 0.2s ease,box-shadow 0.2s ease}#unc-launcher:hover{transform:scale(1.08);box-shadow:0 8px 32px rgba(227,107,30,0.65)}#unc-launcher svg{transition:transform 0.35s cubic-bezier(0.34,1.56,0.64,1)}#unc-launcher.open svg{transform:rotate(45deg)}#unc-launcher::after{content:'';position:absolute;top:4px;right:4px;width:13px;height:13px;border-radius:50%;background:#22c55e;border:2px solid #fff;animation:uncPulse 2.5s ease-in-out infinite}#unc-launcher.open::after{display:none}@keyframes uncPulse{0%,100%{box-shadow:0 0 0 0 rgba(34,197,94,0.5)}50%{box-shadow:0 0 0 5px rgba(34,197,94,0)}}#unc-promo{position:fixed;bottom:100px;right:28px;background:#1a1a1a;border:1px solid #333;border-radius:12px;padding:11px 14px;font-size:13px;color:#e5e5e5;z-index:9998;max-width:240px;line-height:1.5;box-shadow:0 4px 20px rgba(0,0,0,0.4);transform:translateY(8px);opacity:0;transition:all 0.3s cubic-bezier(0.34,1.56,0.64,1);pointer-events:none}#unc-promo.visible{transform:translateY(0);opacity:1;pointer-events:all}#unc-promo::after{content:'';position:absolute;bottom:-7px;right:22px;width:14px;height:7px;background:#1a1a1a;clip-path:polygon(0 0,100% 0,50% 100%)}#unc-promo-close{position:absolute;top:6px;right:8px;background:none;border:none;color:#6b7280;cursor:pointer;font-size:14px;line-height:1;padding:2px}#unc-promo-close:hover{color:#e5e5e5}#unc-chat{position:fixed;bottom:102px;right:28px;width:390px;max-height:620px;border-radius:18px;background:#111;border:1px solid #252525;display:flex;flex-direction:column;z-index:9998;overflow:hidden;transform:translateY(24px) scale(0.95);opacity:0;pointer-events:none;transition:all 0.3s cubic-bezier(0.34,1.56,0.64,1);box-shadow:0 12px 48px rgba(0,0,0,0.55)}#unc-chat.visible{transform:translateY(0) scale(1);opacity:1;pointer-events:all}.unc-header{background:linear-gradient(135deg,#1a1a1a 0%,#1f1a16 100%);border-bottom:1px solid #2a2a2a;padding:14px 16px;display:flex;align-items:center;gap:10px;flex-shrink:0}.unc-avatar{width:40px;height:40px;border-radius:50%;background:#e36b1e;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:16px;color:#fff;flex-shrink:0;position:relative}.unc-avatar::after{content:'';position:absolute;bottom:1px;right:1px;width:9px;height:9px;border-radius:50%;background:#22c55e;border:2px solid #1a1a1a}.unc-header-info{flex:1}.unc-header-name{font-size:14px;font-weight:600;color:#f5f5f5}.unc-header-sub{font-size:11px;color:#6b7280;margin-top:1px}.unc-header-actions{display:flex;align-items:center;gap:6px}.unc-icon-btn{background:none;border:none;color:#6b7280;cursor:pointer;font-size:18px;line-height:1;padding:4px;border-radius:6px;transition:color 0.15s,background 0.15s}.unc-icon-btn:hover{color:#f5f5f5;background:#252525}.unc-messages{flex:1;overflow-y:auto;padding:16px;display:flex;flex-direction:column;gap:10px;scroll-behavior:smooth}.unc-messages::-webkit-scrollbar{width:3px}.unc-messages::-webkit-scrollbar-thumb{background:#333;border-radius:2px}.unc-bubble{max-width:86%;padding:10px 14px;border-radius:16px;font-size:14px;line-height:1.6}.unc-bubble.kobe{background:#1e1e1e;border:1px solid #2a2a2a;color:#e0e0e0;align-self:flex-start;border-bottom-left-radius:4px}.unc-bubble.user{background:#e36b1e;color:#fff;align-self:flex-end;border-bottom-right-radius:4px;font-weight:500}.unc-bubble.kobe a{color:#e36b1e;text-decoration:underline}.unc-typing{display:flex;align-items:center;gap:5px;padding:12px 14px;background:#1e1e1e;border:1px solid #2a2a2a;border-radius:16px;border-bottom-left-radius:4px;align-self:flex-start;width:fit-content}.unc-typing span{width:6px;height:6px;border-radius:50%;background:#555;animation:uncBounce 1.3s infinite}.unc-typing span:nth-child(2){animation-delay:0.18s}.unc-typing span:nth-child(3){animation-delay:0.36s}@keyframes uncBounce{0%,60%,100%{transform:translateY(0);background:#555}30%{transform:translateY(-6px);background:#e36b1e}}.unc-kobe-badge{display:inline-block;font-size:10px;font-weight:600;color:#e36b1e;border:1px solid rgba(227,107,30,0.4);border-radius:4px;padding:1px 6px;margin-bottom:5px;letter-spacing:0.05em}.unc-choices{display:flex;flex-direction:column;gap:6px;padding:0 14px 12px;flex-shrink:0}.unc-choice{background:#181818;border:1px solid #2e2e2e;color:#d0d0d0;border-radius:9px;padding:9px 14px;font-size:13px;font-family:'DM Sans',sans-serif;text-align:left;cursor:pointer;transition:border-color 0.15s,color 0.15s,background 0.15s,transform 0.1s}.unc-choice:hover{border-color:#e36b1e;color:#fff;background:#1f1b18;transform:translateX(2px)}.unc-input-row{display:flex;gap:8px;padding:12px 14px;border-top:1px solid #222;background:#141414;flex-shrink:0}.unc-input{flex:1;background:#1e1e1e;border:1px solid #2e2e2e;border-radius:9px;color:#e5e5e5;font-family:'DM Sans',sans-serif;font-size:14px;padding:9px 12px;outline:none;transition:border-color 0.15s}.unc-input:focus{border-color:#e36b1e}.unc-input::placeholder{color:#444}.unc-send{background:#e36b1e;border:none;border-radius:9px;width:40px;height:40px;display:flex;align-items:center;justify-content:center;cursor:pointer;color:#fff;transition:background 0.15s,transform 0.1s;flex-shrink:0}.unc-send:hover{background:#c45d18}.unc-send:active{transform:scale(0.94)}.unc-form{display:flex;flex-direction:column;gap:8px;padding:0 14px 14px}.unc-field{display:flex;flex-direction:column;gap:3px}.unc-field label{font-size:11px;color:#6b7280;padding-left:2px;font-weight:500}.unc-field input{background:#1a1a1a;border:1px solid #2e2e2e;border-radius:9px;color:#e5e5e5;font-family:'DM Sans',sans-serif;font-size:14px;padding:9px 12px;outline:none;transition:border-color 0.15s}.unc-field input:focus{border-color:#e36b1e}.unc-field input.invalid{border-color:#ef4444}.unc-field input::placeholder{color:#3a3a3a}.unc-field-error{font-size:11px;color:#ef4444;padding-left:2px;display:none}.unc-field-error.show{display:block}.unc-submit{background:#e36b1e;border:none;border-radius:9px;color:#fff;font-family:'DM Sans',sans-serif;font-size:14px;font-weight:600;padding:11px;cursor:pointer;transition:background 0.15s,transform 0.1s;margin-top:4px}.unc-submit:hover{background:#c45d18}.unc-submit:active{transform:scale(0.98)}.unc-submit:disabled{background:#333;color:#555;cursor:not-allowed;transform:none}.unc-form-note{font-size:11px;color:#4b5563;text-align:center;margin-top:2px;line-height:1.4}@keyframes uncFormPulse{0%{border-color:#2e2e2e;box-shadow:none}40%{border-color:#e36b1e;box-shadow:0 0 0 3px rgba(227,107,30,0.15)}100%{border-color:#2e2e2e;box-shadow:none}}.unc-form.pulse-in .unc-field input{animation:uncFormPulse 1.2s ease forwards}.unc-success{text-align:center;padding:24px 20px;flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px}.unc-success-icon{width:56px;height:56px;border-radius:50%;background:rgba(34,197,94,0.12);display:flex;align-items:center;justify-content:center;margin:0 auto 4px}.unc-success h3{color:#f5f5f5;font-size:16px;font-weight:600;margin:0}.unc-success p{color:#9ca3af;font-size:13px;line-height:1.6;max-width:270px;margin:0}.unc-success-links{display:flex;gap:8px;flex-wrap:wrap;justify-content:center;margin-top:8px}.unc-success-link{background:#1e1e1e;border:1px solid #2e2e2e;color:#d0d0d0;border-radius:8px;padding:7px 12px;font-size:12px;text-decoration:none;transition:border-color 0.15s,color 0.15s}.unc-success-link:hover{border-color:#e36b1e;color:#fff}.unc-brand{padding:8px 16px;text-align:center;border-top:1px solid #1a1a1a;font-size:11px;color:#2d2d2d;letter-spacing:0.02em;flex-shrink:0}.unc-brand a{color:#e36b1e;text-decoration:none}.unc-brand a:hover{text-decoration:underline}@media(max-width:440px){#unc-chat{width:100vw;right:0;bottom:0;border-radius:20px 20px 0 0;max-height:90dvh}#unc-launcher{right:16px;bottom:16px}#unc-promo{right:16px}}
 </style>
-<link rel="canonical" href="https://urbannicheco.com/ai-consulting-dubuque-ia/" />
+<link rel="canonical" href="https://urbannicheco.com/ai-consulting-dubuque-ia" />
 <meta name="robots" content="index, follow">
 <!-- Open Graph -->
 <meta property="og:type" content="website">
-<meta property="og:url" content="https://urbannicheco.com/ai-consulting-dubuque-ia/">
+<meta property="og:url" content="https://urbannicheco.com/ai-consulting-dubuque-ia">
 <meta property="og:title" content="AI Consulting for Contractors in Dubuque, Iowa | Urban Niche Co.">
 <meta property="og:description" content="AI automation for Dubuque contractors. Book jobs while you sleep.">
 <meta property="og:image" content="https://urbannicheco.com/assets/og-image.png">
@@ -65,26 +65,26 @@
     <ul class="nav__links">
       <li><a href="/" class="nav__link">Home</a></li>
       <li class="nav__dropdown">
-        <a href="/services/" class="nav__link">Services &#9662;</a>
+        <a href="/services" class="nav__link">Services &#9662;</a>
         <div class="nav__dropdown-menu">
-          <a href="/services/" class="nav__dropdown-item">All Services</a>
-          <a href="/seo/" class="nav__dropdown-item">Search Engine Optimization</a>
-          <a href="/ppc/" class="nav__dropdown-item">Pay Per Click</a>
-          <a href="/social-media/" class="nav__dropdown-item">Social Media Marketing</a>
-          <a href="/website-design/" class="nav__dropdown-item">Website Design &amp; Dev</a>
-          <a href="/email-marketing/" class="nav__dropdown-item">Email Marketing</a>
-          <a href="/reputation-management/" class="nav__dropdown-item">Reputation Management</a>
-          <a href="/ai-consulting/" class="nav__dropdown-item">AI Consulting</a>
+          <a href="/services" class="nav__dropdown-item">All Services</a>
+          <a href="/seo" class="nav__dropdown-item">Search Engine Optimization</a>
+          <a href="/ppc" class="nav__dropdown-item">Pay Per Click</a>
+          <a href="/social-media" class="nav__dropdown-item">Social Media Marketing</a>
+          <a href="/website-design" class="nav__dropdown-item">Website Design &amp; Dev</a>
+          <a href="/email-marketing" class="nav__dropdown-item">Email Marketing</a>
+          <a href="/reputation-management" class="nav__dropdown-item">Reputation Management</a>
+          <a href="/ai-consulting" class="nav__dropdown-item">AI Consulting</a>
         </div>
       </li>
-      <li><a href="/pricing/" class="nav__link">Pricing</a></li>
-      <li><a href="/about/" class="nav__link">About</a></li>
-      <li><a href="/blog/" class="nav__link">Blog</a></li>
+      <li><a href="/pricing" class="nav__link">Pricing</a></li>
+      <li><a href="/about" class="nav__link">About</a></li>
+      <li><a href="/blog" class="nav__link">Blog</a></li>
     </ul>
     <div class="nav__cta">
       <a href="sms:+15153444053" class="unc-nav-text">Text (515) 344-4053</a>
-      <a href="/contact/" class="btn btn-ghost btn-sm">Contact Us</a>
-      <a href="/contact/" class="btn btn-primary btn-sm">Free Website Audit</a>
+      <a href="/contact" class="btn btn-ghost btn-sm">Contact Us</a>
+      <a href="/contact" class="btn btn-primary btn-sm">Free Website Audit</a>
     </div>
     <button class="nav__hamburger" id="hamburger" aria-label="Open menu">
       <span></span><span></span><span></span>
@@ -93,20 +93,20 @@
 </nav>
 <div class="nav__mobile" id="mobileNav">
   <a href="/" class="nav__mobile-link">Home</a>
-  <a href="/services/" class="nav__mobile-link">Services</a>
-  <a href="/seo/" class="nav__mobile-link nav__mobile-sub">&#8627; SEO</a>
-  <a href="/ppc/" class="nav__mobile-link nav__mobile-sub">&#8627; Pay Per Click</a>
-  <a href="/social-media/" class="nav__mobile-link nav__mobile-sub">&#8627; Social Media</a>
-  <a href="/website-design/" class="nav__mobile-link nav__mobile-sub">&#8627; Website Design &amp; Dev</a>
-  <a href="/email-marketing/" class="nav__mobile-link nav__mobile-sub">&#8627; Email Marketing</a>
-  <a href="/reputation-management/" class="nav__mobile-link nav__mobile-sub">&#8627; Reputation Management</a>
-  <a href="/ai-consulting/" class="nav__mobile-link nav__mobile-sub">&#8627; AI Consulting</a>
-  <a href="/pricing/" class="nav__mobile-link">Pricing</a>
-  <a href="/about/" class="nav__mobile-link">About</a>
-  <a href="/blog/" class="nav__mobile-link">Blog</a>
+  <a href="/services" class="nav__mobile-link">Services</a>
+  <a href="/seo" class="nav__mobile-link nav__mobile-sub">&#8627; SEO</a>
+  <a href="/ppc" class="nav__mobile-link nav__mobile-sub">&#8627; Pay Per Click</a>
+  <a href="/social-media" class="nav__mobile-link nav__mobile-sub">&#8627; Social Media</a>
+  <a href="/website-design" class="nav__mobile-link nav__mobile-sub">&#8627; Website Design &amp; Dev</a>
+  <a href="/email-marketing" class="nav__mobile-link nav__mobile-sub">&#8627; Email Marketing</a>
+  <a href="/reputation-management" class="nav__mobile-link nav__mobile-sub">&#8627; Reputation Management</a>
+  <a href="/ai-consulting" class="nav__mobile-link nav__mobile-sub">&#8627; AI Consulting</a>
+  <a href="/pricing" class="nav__mobile-link">Pricing</a>
+  <a href="/about" class="nav__mobile-link">About</a>
+  <a href="/blog" class="nav__mobile-link">Blog</a>
   <div class="nav__mobile-cta">
-    <a href="/contact/" class="btn btn-outline">Contact Us</a>
-    <a href="/contact/" class="btn btn-primary">Free Website Audit</a>
+    <a href="/contact" class="btn btn-outline">Contact Us</a>
+    <a href="/contact" class="btn btn-primary">Free Website Audit</a>
   </div>
 </div>
 <!-- DUBUQUE AI CONSULTING PAGE CONTENT -->
@@ -152,12 +152,12 @@
 
 <section class="city-hero">
   <div class="container city-hero__inner">
-    <div class="breadcrumb"><a href="/">Home</a> / <a href="/ai-consulting/">AI Consulting</a> / <span>Dubuque, IA</span></div>
+    <div class="breadcrumb"><a href="/">Home</a> / <a href="/ai-consulting">AI Consulting</a> / <span>Dubuque, IA</span></div>
     <span class="eyebrow">AI Consulting &middot; Dubuque, Iowa</span>
     <h1>AI That Books Jobs. <span class="accent">While You Sleep.</span> Dubuque.</h1>
     <p class="city-hero__sub">Custom AI tools built for contractors working the 563. Answer leads at 11 p.m. Send estimates while you're on the roof. Never miss a lead again.</p>
     <div class="city-hero__actions">
-      <a href="/contact/" class="btn btn-primary btn-lg">Free AI Audit</a>
+      <a href="/contact" class="btn btn-primary btn-lg">Free AI Audit</a>
       <a href="sms:+15153444053" class="btn btn-outline btn-lg">Text (515) 344-4053</a>
     </div>
     <div class="city-stats">
@@ -200,7 +200,7 @@
         <p>Cold leads get 3-touch automated nudges that sound like a human wrote them. Most contractors never follow up. You outwork them while you sleep.</p>
       </div>
     </div>
-    <p style="margin-top:2rem;font-size:1rem;color:var(--color-white-dim);text-align:center;">Want full pricing and plans? <a href="/ai-consulting/" style="color:var(--color-accent);font-weight:600;">See the full AI Consulting page &rarr;</a></p>
+    <p style="margin-top:2rem;font-size:1rem;color:var(--color-white-dim);text-align:center;">Want full pricing and plans? <a href="/ai-consulting" style="color:var(--color-accent);font-weight:600;">See the full AI Consulting page &rarr;</a></p>
   </div>
 </section>
 
@@ -231,7 +231,7 @@
     <h2>Stop Missing Calls. Start Banking Leads.</h2>
     <p>Free audit of your current lead-handling and response times. We'll show you exactly how many leads are leaking &mdash; and what AI can catch.</p>
     <div class="actions">
-      <a href="/contact/" class="btn btn-primary btn-lg">Free AI Audit</a>
+      <a href="/contact" class="btn btn-primary btn-lg">Free AI Audit</a>
       <a href="sms:+15153444053" class="btn btn-outline btn-lg">Text (515) 344-4053</a>
     </div>
   </div>
@@ -257,49 +257,49 @@
       <div class="footer__col">
         <h5>Services</h5>
         <ul>
-          <li><a href="/seo/">SEO</a></li>
-          <li><a href="/ppc/">Pay Per Click</a></li>
-          <li><a href="/social-media/">Social Media</a></li>
-          <li><a href="/website-design/">Website Design</a></li>
-          <li><a href="/email-marketing/">Email Marketing</a></li>
-          <li><a href="/reputation-management/">Reputation Management</a></li>
-          <li><a href="/ai-consulting/">AI Consulting</a></li>
+          <li><a href="/seo">SEO</a></li>
+          <li><a href="/ppc">Pay Per Click</a></li>
+          <li><a href="/social-media">Social Media</a></li>
+          <li><a href="/website-design">Website Design</a></li>
+          <li><a href="/email-marketing">Email Marketing</a></li>
+          <li><a href="/reputation-management">Reputation Management</a></li>
+          <li><a href="/ai-consulting">AI Consulting</a></li>
         </ul>
       </div>
       <div class="footer__col">
         <h5>Company</h5>
         <ul>
-          <li><a href="/about/">About Us</a></li>
-          <li><a href="/blog/">Blog</a></li>
-          <li><a href="/pricing/">Pricing</a></li>
-          <li><a href="/faq/">FAQ</a></li>
-          <li><a href="/merchandise/">Merchandise</a></li>
+          <li><a href="/about">About Us</a></li>
+          <li><a href="/blog">Blog</a></li>
+          <li><a href="/pricing">Pricing</a></li>
+          <li><a href="/faq">FAQ</a></li>
+          <li><a href="/merchandise">Merchandise</a></li>
         </ul>
       </div>
       <div class="footer__col">
         <h5>Get Started</h5>
         <ul>
-          <li><a href="/contact/">Free Website Audit</a></li>
-          <li><a href="/contact/">Contact Us</a></li>
-          <li><a href="/pricing/">View Pricing</a></li>
+          <li><a href="/contact">Free Website Audit</a></li>
+          <li><a href="/contact">Contact Us</a></li>
+          <li><a href="/pricing">View Pricing</a></li>
         </ul>
         <div style="margin-top:20px;font-size:13px;color:rgba(255,255,255,0.4);line-height:1.8;">
           <a href="sms:+15153444053" style="color:#e8651a;text-decoration:none;font-weight:500;">(515) 344-4053</a><br>
           <span style="font-size:12px;">Text anytime &middot; No cold calls</span>
         </div>
         <div style="margin-top:1.5rem;">
-          <a href="/contact/" class="btn btn-primary btn-sm">Free Audit &#8594;</a>
+          <a href="/contact" class="btn btn-primary btn-sm">Free Audit &#8594;</a>
         </div>
       </div>
     </div>
     <div class="footer__bottom">
       <p>&copy; 2026 Urban Niche Co. All rights reserved.</p>
       <div class="footer__bottom-links">
-        <a href="/privacy/">Privacy Policy</a>
+        <a href="/privacy">Privacy Policy</a>
         <span> | </span>
-        <a href="/terms/">Terms of Service</a>
+        <a href="/terms">Terms of Service</a>
         <span> | </span>
-        <a href="/sitemap/">Sitemap</a>
+        <a href="/sitemap">Sitemap</a>
       </div>
     </div>
   </div>

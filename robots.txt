@@ -1,0 +1,18 @@
+# Urban Niche Co. — https://urbannicheco.com
+User-agent: *
+Allow: /
+
+# Private industry landing pages — for direct outreach only, not for public indexing
+Disallow: /attorneys
+Disallow: /auto-repair
+Disallow: /car-dealerships
+Disallow: /chiropractic-wellness
+Disallow: /dentists
+Disallow: /fitness
+Disallow: /med-spa
+Disallow: /real-estate
+Disallow: /restaurants
+Disallow: /salon-spa
+Disallow: /streamers
+
+Sitemap: https://urbannicheco.com/sitemap.xml

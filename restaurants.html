@@ -1,0 +1,624 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="robots" content="noindex, nofollow" />
+  <title>For Restaurants &amp; Hospitality | Urban Niche Co.</title>
+  <link rel="icon" type="image/png" href="/assets/favicon.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400;1,600&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --cream:      #faf7f2;
+      --cream-2:    #fdfbf5;
+      --cream-3:    #f3ede0;
+      --cream-4:    #ede5d4;
+      --walnut:     #2a1f18;
+      --walnut-2:   #3a2c20;
+      --stone:      #6e5d4a;
+      --stone-2:    #8a7862;
+      --gold:       #c9a84c;
+      --gold-2:     #b8892e;
+      --gold-dim:   rgba(201,168,76,0.14);
+      --gold-glow:  rgba(201,168,76,0.08);
+      --terra:      #c05621;
+      --terra-2:    #a84618;
+      --border:     rgba(42,31,24,0.10);
+      --border-gold: rgba(201,168,76,0.28);
+      --shadow-sm:  0 2px 12px rgba(42,31,24,0.04);
+      --shadow:     0 6px 28px rgba(42,31,24,0.06);
+      --shadow-lg:  0 16px 48px rgba(42,31,24,0.08);
+      --font-display: 'Cormorant Garamond', serif;
+      --font-body: 'DM Sans', sans-serif;
+      --nav-h: 76px;
+      --r: 4px;
+      --r-lg: 8px;
+      --pill: 999px;
+      --ease: 0.3s ease;
+      --slow: 0.6s cubic-bezier(0.16,1,0.3,1);
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: var(--font-body);
+      background: var(--cream);
+      color: var(--walnut);
+      line-height: 1.7;
+      font-weight: 400;
+      overflow-x: hidden;
+      -webkit-font-smoothing: antialiased;
+    }
+    img { max-width: 100%; height: auto; display: block; }
+    a { color: inherit; text-decoration: none; }
+    ul { list-style: none; }
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 512 512' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='g'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23g)' opacity='0.04'/%3E%3C/svg%3E");
+      background-size: 220px;
+      pointer-events: none;
+      z-index: 9999;
+      opacity: 0.5;
+      mix-blend-mode: multiply;
+    }
+    h1,h2,h3,h4,h5 { font-family: var(--font-display); font-weight: 500; line-height: 1.08; letter-spacing: -0.01em; color: var(--walnut); }
+    h1 { font-size: clamp(3.5rem, 7vw, 6.5rem); font-weight: 400; letter-spacing: -0.02em; }
+    h2 { font-size: clamp(2.4rem, 4.5vw, 4rem); font-weight: 400; }
+    h3 { font-size: clamp(1.4rem, 2vw, 1.8rem); font-weight: 500; }
+    h4 { font-size: 1.1rem; font-weight: 600; letter-spacing: 0.01em; font-family: var(--font-body); }
+    h5 { font-size: 0.95rem; font-weight: 600; font-family: var(--font-body); }
+    p { color: var(--stone); line-height: 1.8; }
+    .container { width: 100%; max-width: 1240px; margin: 0 auto; padding: 0 2rem; }
+    .section { padding: 7rem 0; }
+    .section--sm { padding: 4.5rem 0; }
+    .eyebrow { font-family: var(--font-body); font-size: 0.65rem; font-weight: 600; letter-spacing: 0.22em; text-transform: uppercase; color: var(--gold-2); display: inline-flex; align-items: center; gap: 0.6rem; margin-bottom: 1.25rem; }
+    .eyebrow::before { content: ''; display: block; width: 24px; height: 1px; background: var(--gold-2); opacity: 0.7; }
+    .btn { display: inline-flex; align-items: center; gap: 0.6rem; font-family: var(--font-body); font-size: 0.8rem; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; padding: 1rem 2.25rem; border-radius: var(--pill); transition: all var(--ease); white-space: nowrap; cursor: pointer; border: none; }
+    .btn-gold { background: var(--walnut); color: var(--cream); box-shadow: 0 4px 20px rgba(42,31,24,0.18); }
+    .btn-gold:hover { background: var(--terra); transform: translateY(-2px); box-shadow: 0 8px 28px rgba(192,86,33,0.28); }
+    .btn-ghost { background: transparent; color: var(--walnut); border: 1px solid var(--border); }
+    .btn-ghost:hover { border-color: var(--gold-2); color: var(--gold-2); transform: translateY(-2px); background: var(--cream-2); }
+    .btn-lg { font-size: 0.85rem; padding: 1.15rem 2.75rem; }
+    .reveal { opacity: 0; transform: translateY(28px); transition: opacity 0.75s ease, transform 0.75s cubic-bezier(0.16,1,0.3,1); }
+    .reveal.visible { opacity: 1; transform: translateY(0); }
+    .d1 { transition-delay: 0.12s; } .d2 { transition-delay: 0.24s; } .d3 { transition-delay: 0.36s; } .d4 { transition-delay: 0.48s; }
+    .nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; height: var(--nav-h); display: flex; align-items: center; transition: background var(--ease), border-color var(--ease); }
+    .nav.scrolled { background: rgba(250,247,242,0.92); backdrop-filter: blur(20px); border-bottom: 1px solid var(--border); }
+    .nav__inner { display: flex; align-items: center; justify-content: space-between; width: 100%; max-width: 1240px; margin: 0 auto; padding: 0 2rem; }
+    .nav__logo { display: flex; align-items: center; gap: 0.65rem; font-family: var(--font-display); font-weight: 600; font-size: 1.15rem; color: var(--walnut); letter-spacing: -0.01em; }
+    .nav__logo img { height: 34px; width: auto; display: block; }
+    .nav__logo span { color: var(--terra); font-weight: 600; }
+    .hero { position: relative; min-height: 100vh; display: flex; align-items: center; padding-top: calc(var(--nav-h) + 4rem); padding-bottom: 4rem; overflow: hidden; background: var(--cream); }
+    .hero::before { content: ''; position: absolute; top: -240px; right: -180px; width: 820px; height: 820px; border-radius: 50%; background: radial-gradient(circle, rgba(201,168,76,0.12) 0%, transparent 65%); pointer-events: none; z-index: 0; }
+    .hero::after { content: ''; position: absolute; bottom: -300px; left: -200px; width: 700px; height: 700px; border-radius: 50%; background: radial-gradient(circle, rgba(192,86,33,0.07) 0%, transparent 65%); pointer-events: none; z-index: 0; }
+    .hero__inner { position: relative; z-index: 2; width: 100%; }
+    .hero__tag { display: inline-flex; align-items: center; gap: 10px; background: var(--gold-dim); border: 1px solid var(--border-gold); border-radius: var(--pill); padding: 7px 16px; font-family: var(--font-body); font-size: 0.65rem; font-weight: 600; letter-spacing: 0.18em; text-transform: uppercase; color: var(--gold-2); margin-bottom: 2rem; }
+    .hero__tag-dot { width: 5px; height: 5px; border-radius: 50%; background: var(--gold-2); animation: pulse 2s ease-in-out infinite; }
+    @keyframes pulse { 0%,100% { opacity:1; transform:scale(1); } 50% { opacity:0.3; transform:scale(0.7); } }
+    .hero h1 { max-width: 16ch; margin-bottom: 2rem; line-height: 1.0; color: var(--walnut); }
+    .hero h1 em { color: var(--terra); font-style: italic; font-weight: 400; }
+    .hero__sub { font-size: 1.05rem; line-height: 1.8; color: var(--stone); max-width: 52ch; margin-bottom: 1rem; }
+    .hero__note { font-size: 0.8rem; color: var(--stone-2); font-style: italic; margin-bottom: 2.5rem; max-width: 48ch; line-height: 1.7; }
+    .hero__note strong { color: var(--walnut); font-style: normal; font-weight: 600; }
+    .hero__actions { display: flex; gap: 1rem; flex-wrap: wrap; margin-bottom: 4rem; }
+    .hero__proof { display: flex; gap: 3rem; padding-top: 3rem; border-top: 1px solid var(--border); flex-wrap: wrap; }
+    .hero__proof-item { display: flex; flex-direction: column; }
+    .hero__proof-val { font-family: var(--font-display); font-size: 2.6rem; font-weight: 400; color: var(--gold-2); line-height: 1; letter-spacing: -0.02em; }
+    .hero__proof-label { font-size: 0.68rem; color: var(--stone-2); margin-top: 5px; font-family: var(--font-body); letter-spacing: 0.1em; text-transform: uppercase; }
+    .hero__card { position: absolute; right: 4rem; bottom: 6rem; background: var(--cream-2); border: 1px solid var(--border); border-radius: var(--r-lg); padding: 1.5rem 1.75rem; box-shadow: var(--shadow-lg); width: 280px; z-index: 3; animation: cardFloat 5s ease-in-out infinite; }
+    @keyframes cardFloat { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-8px); } }
+    .hero__card-stars { color: var(--gold-2); font-size: 0.9rem; letter-spacing: 2px; margin-bottom: 0.75rem; }
+    .hero__card-text { font-family: var(--font-display); font-size: 1.05rem; font-style: italic; color: var(--walnut); line-height: 1.55; margin-bottom: 1rem; }
+    .hero__card-meta { display: flex; align-items: center; gap: 0.6rem; }
+    .hero__card-avatar { width: 32px; height: 32px; border-radius: 50%; background: var(--gold-dim); border: 1px solid var(--border-gold); display: flex; align-items: center; justify-content: center; font-size: 0.8rem; color: var(--gold-2); font-weight: 700; font-family: var(--font-display); }
+    .hero__card-name { font-size: 0.78rem; color: var(--walnut); font-weight: 500; }
+    .hero__card-platform { font-size: 0.65rem; color: var(--stone-2); }
+    .ticker { background: var(--walnut); border-top: 1px solid var(--border-gold); border-bottom: 1px solid var(--border-gold); padding: 14px 0; overflow: hidden; white-space: nowrap; }
+    .ticker__track { display: inline-flex; animation: ticker 45s linear infinite; }
+    @keyframes ticker { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
+    .ticker__item { font-family: var(--font-body); font-size: 0.68rem; font-weight: 600; letter-spacing: 0.18em; text-transform: uppercase; color: var(--gold); padding: 0 2.5rem; display: inline-flex; align-items: center; gap: 1rem; }
+    .ticker__sep { color: var(--terra); opacity: 0.9; }
+    .offniche { background: var(--cream-2); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); position: relative; overflow: hidden; }
+    .offniche::before { content: ''; position: absolute; left: -200px; top: 50%; transform: translateY(-50%); width: 600px; height: 600px; background: radial-gradient(circle, rgba(201,168,76,0.08) 0%, transparent 65%); pointer-events: none; }
+    .offniche__inner { display: grid; grid-template-columns: 1fr 1.2fr; gap: 6rem; align-items: center; position: relative; z-index: 1; }
+    .offniche__left h2 { margin: 0.75rem 0 1.5rem; font-style: italic; }
+    .offniche__left p { font-size: 1rem; line-height: 1.9; margin-bottom: 1.25rem; max-width: 48ch; color: var(--stone); }
+    .offniche__left p strong { color: var(--walnut); font-weight: 600; }
+    .offniche__quote { background: var(--cream); border: 1px solid var(--border-gold); border-radius: var(--r-lg); padding: 2.75rem 2.5rem; position: relative; box-shadow: var(--shadow); }
+    .offniche__quote::before { content: '"'; font-family: var(--font-display); font-size: 6.5rem; font-weight: 400; color: var(--gold-2); opacity: 0.22; position: absolute; top: -0.5rem; left: 1.5rem; line-height: 1; }
+    .offniche__quote p { font-family: var(--font-display); font-size: 1.5rem; font-style: italic; font-weight: 400; color: var(--walnut); line-height: 1.55; margin-bottom: 1.5rem; }
+    .offniche__quote-attr { font-size: 0.72rem; color: var(--gold-2); letter-spacing: 0.14em; text-transform: uppercase; font-weight: 600; }
+    .problem { background: var(--cream); }
+    .problem__header { margin-bottom: 4.5rem; max-width: 60ch; }
+    .problem__header h2 { margin: 0.75rem 0 1.5rem; }
+    .problem__header p { font-size: 1.05rem; line-height: 1.85; color: var(--stone); }
+    .problem__grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
+    .problem__item { background: var(--cream-2); border: 1px solid var(--border); border-radius: var(--r-lg); padding: 2.5rem 2.25rem; transition: all var(--ease); box-shadow: var(--shadow-sm); }
+    .problem__item:hover { background: var(--cream-3); border-color: var(--border-gold); transform: translateY(-4px); box-shadow: var(--shadow); }
+    .problem__num { font-family: var(--font-display); font-size: 3.5rem; font-weight: 400; color: var(--gold-2); opacity: 0.35; line-height: 1; margin-bottom: 1.25rem; letter-spacing: -0.02em; }
+    .problem__item h4 { color: var(--walnut); margin-bottom: 0.6rem; font-size: 1.05rem; }
+    .problem__item p { font-size: 0.9rem; line-height: 1.75; color: var(--stone); }
+    .problem__stats { display: grid; grid-template-columns: repeat(4,1fr); gap: 0; margin-top: 4.5rem; border: 1px solid var(--border-gold); border-radius: var(--r-lg); overflow: hidden; background: var(--cream-2); }
+    .problem__stat { padding: 2.5rem 2rem; text-align: center; border-right: 1px solid var(--border-gold); }
+    .problem__stat:last-child { border-right: none; }
+    .problem__stat-val { font-family: var(--font-display); font-size: clamp(2.2rem, 3.5vw, 3.5rem); font-weight: 400; color: var(--gold-2); line-height: 1; display: block; margin-bottom: 0.6rem; }
+    .problem__stat-label { font-size: 0.75rem; color: var(--stone-2); line-height: 1.5; display: block; letter-spacing: 0.03em; }
+    .services { background: var(--cream-3); }
+    .services__header { margin-bottom: 4.5rem; }
+    .services__header h2 { margin: 0.75rem 0 1.25rem; max-width: 20ch; }
+    .services__header p { font-size: 1rem; max-width: 52ch; color: var(--stone); }
+    .services__grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; }
+    .svc { background: var(--cream-2); border: 1px solid var(--border); border-radius: var(--r-lg); padding: 2.75rem 2.5rem; position: relative; transition: all var(--ease); overflow: hidden; box-shadow: var(--shadow-sm); }
+    .svc::after { content: ''; position: absolute; top: 0; left: 0; width: 3px; height: 0; background: var(--gold-2); transition: height var(--slow); }
+    .svc:hover { background: var(--cream); border-color: var(--border-gold); transform: translateY(-4px); box-shadow: var(--shadow); }
+    .svc:hover::after { height: 100%; }
+    .svc__icon { font-size: 1.75rem; margin-bottom: 1.5rem; display: block; }
+    .svc h3 { font-size: 1.45rem; font-weight: 500; margin-bottom: 0.85rem; color: var(--walnut); }
+    .svc > p { font-size: 0.9rem; line-height: 1.8; margin-bottom: 1.75rem; color: var(--stone); }
+    .svc__list { display: flex; flex-direction: column; gap: 0.5rem; padding-top: 1.25rem; border-top: 1px solid var(--border); }
+    .svc__item { font-size: 0.8rem; color: var(--stone); display: flex; gap: 0.65rem; align-items: flex-start; line-height: 1.55; }
+    .svc__item::before { content: '→'; color: var(--gold-2); font-size: 0.8rem; flex-shrink: 0; margin-top: 1px; opacity: 0.85; }
+    .proof { background: var(--cream); position: relative; overflow: hidden; }
+    .proof::before { content: ''; position: absolute; right: -200px; top: 50%; transform: translateY(-50%); width: 700px; height: 700px; background: radial-gradient(circle, rgba(201,168,76,0.07) 0%, transparent 65%); pointer-events: none; }
+    .proof__inner { display: grid; grid-template-columns: 1fr 1fr; gap: 6rem; align-items: center; position: relative; z-index: 1; }
+    .proof__image-wrap { position: relative; }
+    .proof__image { border-radius: var(--r-lg); overflow: hidden; aspect-ratio: 4/5; position: relative; box-shadow: var(--shadow-lg); }
+    .proof__image img { width: 100%; height: 100%; object-fit: cover; filter: saturate(1.02); transition: transform 8s ease; }
+    .proof__image:hover img { transform: scale(1.04); }
+    .proof__badge { position: absolute; bottom: -1.5rem; right: -1.5rem; background: var(--walnut); color: var(--cream); border-radius: var(--r-lg); padding: 1.5rem 2rem; font-family: var(--font-display); font-size: 1.1rem; font-weight: 500; text-align: center; box-shadow: 0 16px 40px rgba(42,31,24,0.22); min-width: 160px; }
+    .proof__badge-num { font-size: 2.6rem; font-weight: 400; line-height: 1; display: block; margin-bottom: 0.25rem; color: var(--gold); }
+    .proof__badge-label { font-size: 0.8rem; font-style: italic; color: var(--cream); }
+    .proof__content h2 { margin: 0.75rem 0 1.5rem; }
+    .proof__content > p { font-size: 1rem; line-height: 1.9; margin-bottom: 1.25rem; color: var(--stone); }
+    .proof__list { display: flex; flex-direction: column; gap: 1.25rem; margin: 2.5rem 0; }
+    .proof__item { display: flex; gap: 1.1rem; align-items: flex-start; }
+    .proof__check { width: 28px; height: 28px; border-radius: 50%; background: var(--gold-dim); border: 1px solid var(--border-gold); color: var(--gold-2); font-size: 0.8rem; font-weight: 700; display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 2px; }
+    .proof__item h5 { color: var(--walnut); margin-bottom: 0.2rem; font-size: 0.95rem; }
+    .proof__item p { font-size: 0.875rem; margin: 0; color: var(--stone); }
+    .process { background: var(--cream-3); }
+    .process__header { text-align: center; margin-bottom: 4.5rem; }
+    .process__header h2 { margin: 0.75rem auto 1.25rem; max-width: 20ch; }
+    .process__steps { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.25rem; }
+    .process__step { background: var(--cream-2); border: 1px solid var(--border); border-radius: var(--r-lg); padding: 2.5rem 2rem; position: relative; transition: all var(--ease); box-shadow: var(--shadow-sm); }
+    .process__step:hover { background: var(--cream); border-color: var(--border-gold); transform: translateY(-4px); box-shadow: var(--shadow); }
+    .process__num { font-family: var(--font-display); font-size: 4.5rem; font-weight: 400; color: var(--gold-2); opacity: 0.3; line-height: 1; margin-bottom: 1.5rem; letter-spacing: -0.04em; }
+    .process__step h4 { color: var(--walnut); margin-bottom: 0.6rem; font-size: 1rem; font-weight: 600; }
+    .process__step p { font-size: 0.85rem; line-height: 1.75; color: var(--stone); }
+    .contact { background: var(--cream); position: relative; overflow: hidden; }
+    .contact::before { content: ''; position: absolute; left: -250px; bottom: -200px; width: 700px; height: 700px; background: radial-gradient(circle, rgba(201,168,76,0.09) 0%, transparent 65%); pointer-events: none; }
+    .contact::after { content: ''; position: absolute; right: -200px; top: -200px; width: 600px; height: 600px; background: radial-gradient(circle, rgba(192,86,33,0.06) 0%, transparent 65%); pointer-events: none; }
+    .contact__inner { position: relative; z-index: 2; display: grid; grid-template-columns: 1fr 1fr; gap: 6rem; align-items: start; }
+    .contact__left h2 { margin: 0.75rem 0 1.5rem; }
+    .contact__left > p { font-size: 1rem; line-height: 1.9; margin-bottom: 1.25rem; color: var(--stone); }
+    .contact__details { display: flex; flex-direction: column; gap: 1rem; }
+    .contact__detail { display: flex; align-items: center; gap: 1rem; font-size: 0.9rem; color: var(--stone); }
+    .contact__detail-icon { width: 38px; height: 38px; border-radius: 50%; background: var(--gold-dim); border: 1px solid var(--border-gold); display: flex; align-items: center; justify-content: center; font-size: 0.95rem; flex-shrink: 0; }
+    .contact__detail a { color: var(--terra); font-weight: 600; transition: opacity var(--ease); }
+    .contact__detail a:hover { opacity: 0.75; }
+    .form { background: var(--cream-2); border: 1px solid var(--border-gold); border-radius: var(--r-lg); padding: 3rem; box-shadow: var(--shadow-lg); }
+    .form__title { font-family: var(--font-display); font-size: 1.7rem; font-weight: 500; color: var(--walnut); margin-bottom: 0.5rem; }
+    .form__sub { font-size: 0.85rem; color: var(--stone-2); margin-bottom: 2.25rem; }
+    .form__group { margin-bottom: 1.25rem; }
+    .form__label { display: block; font-size: 0.65rem; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: var(--stone-2); margin-bottom: 0.5rem; }
+    .form__input, .form__textarea { width: 100%; background: var(--cream); border: 1px solid var(--border); border-radius: var(--r); padding: 0.9rem 1.1rem; font-family: var(--font-body); font-size: 0.9rem; font-weight: 400; color: var(--walnut); outline: none; transition: border-color var(--ease); }
+    .form__input::placeholder, .form__textarea::placeholder { color: var(--stone-2); opacity: 0.75; }
+    .form__input:focus, .form__textarea:focus { border-color: var(--gold-2); }
+    .form__textarea { resize: vertical; min-height: 120px; }
+    .form__row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+    .form__submit { width: 100%; margin-top: 0.5rem; justify-content: center; }
+    .form__note { text-align: center; font-size: 0.72rem; color: var(--stone-2); margin-top: 1rem; }
+    .footer { background: var(--cream-4); border-top: 1px solid var(--border); padding: 2.5rem 0; }
+    .footer__inner { display: flex; align-items: center; justify-content: space-between; gap: 2rem; }
+    .footer__copy { font-size: 0.75rem; color: var(--stone-2); }
+    .footer__tagline { font-size: 0.7rem; color: var(--stone-2); font-style: italic; letter-spacing: 0.06em; }
+    @media (max-width: 1024px) {
+      .offniche__inner { grid-template-columns: 1fr; gap: 3rem; }
+      .problem__grid { grid-template-columns: 1fr; }
+      .problem__stats { grid-template-columns: 1fr 1fr; }
+      .services__grid { grid-template-columns: 1fr; }
+      .proof__inner { grid-template-columns: 1fr; gap: 4rem; }
+      .proof__badge { right: 0; }
+      .process__steps { grid-template-columns: 1fr 1fr; }
+      .contact__inner { grid-template-columns: 1fr; gap: 4rem; }
+      .hero__card { display: none; }
+    }
+    @media (max-width: 768px) {
+      h1 { font-size: clamp(3rem, 10vw, 4rem); }
+      h2 { font-size: clamp(2rem, 7vw, 3rem); }
+      .section { padding: 5rem 0; }
+      .hero { padding-bottom: 5rem; }
+      .hero__proof { gap: 1.5rem; flex-wrap: wrap; }
+      .problem__stats { grid-template-columns: 1fr 1fr; }
+      .process__steps { grid-template-columns: 1fr; }
+      .footer__inner { flex-direction: column; text-align: center; }
+      .form__row { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+  <nav class="nav" id="mainNav">
+    <div class="nav__inner">
+      <a href="#" class="nav__logo">
+        <img src="/assets/images/unc-logo-icon.webp" alt="Urban Niche Co." />
+        Urban<span>Niche</span>&nbsp;Co.
+      </a>
+      <a href="#contact" class="btn btn-gold" style="font-size:0.72rem;padding:0.7rem 1.6rem;">
+        Let's Talk &rarr;
+      </a>
+    </div>
+  </nav>
+  <section class="hero">
+    <div class="container">
+      <div class="hero__inner">
+        <div class="hero__tag reveal">
+          <div class="hero__tag-dot"></div>
+          For Restaurants &amp; Hospitality
+        </div>
+        <h1 class="reveal d1">
+          Full Tables.<br>
+          More Reviews.<br>
+          <em>Less Guessing.</em>
+        </h1>
+        <p class="hero__sub reveal d2">
+          Great food deserves marketing that actually works. We help restaurants dominate local search, build a social presence worth following, and turn first-time guests into regulars &mdash; without you spending every free hour on your phone.
+        </p>
+        <p class="hero__note reveal d2">
+          <strong>This page isn't public.</strong> You have this link because we reached out to you specifically. We normally work with contractors &mdash; but when we see a business we know we can move the needle for, we do. This is one of those times.
+        </p>
+        <div class="hero__actions reveal d3">
+          <a href="#contact" class="btn btn-gold btn-lg">Start the Conversation &rarr;</a>
+          <a href="#services" class="btn btn-ghost btn-lg">See What We Do</a>
+        </div>
+        <div class="hero__proof reveal d4">
+          <div class="hero__proof-item">
+            <span class="hero__proof-val">5&#9733;</span>
+            <span class="hero__proof-label">Review systems</span>
+          </div>
+          <div class="hero__proof-item">
+            <span class="hero__proof-val">30</span>
+            <span class="hero__proof-label">Days to first results</span>
+          </div>
+          <div class="hero__proof-item">
+            <span class="hero__proof-val">0</span>
+            <span class="hero__proof-label">Long-term contracts</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="hero__card reveal d3">
+      <div class="hero__card-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+      <div class="hero__card-text">"Completely transformed how new customers find us. Three-month wait for weekend reservations now."</div>
+      <div class="hero__card-meta">
+        <div class="hero__card-avatar">M</div>
+        <div>
+          <div class="hero__card-name">Marco D. &mdash; Restaurant Owner</div>
+          <div class="hero__card-platform">Google Review</div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <div class="ticker">
+    <div class="ticker__track">
+      <span class="ticker__item">Google Rankings <span class="ticker__sep">&#10022;</span></span>
+      <span class="ticker__item">5-Star Review Systems <span class="ticker__sep">&#10022;</span></span>
+      <span class="ticker__item">Social That Fills Tables <span class="ticker__sep">&#10022;</span></span>
+      <span class="ticker__item">Email &amp; SMS Campaigns <span class="ticker__sep">&#10022;</span></span>
+      <span class="ticker__item">Paid Ads for Restaurants <span class="ticker__sep">&#10022;</span></span>
+      <span class="ticker__item">Reputation Management <span class="ticker__sep">&#10022;</span></span>
+      <span class="ticker__item">AI-Powered Follow-Up <span class="ticker__sep">&#10022;</span></span>
+      <span class="ticker__item">Website Design <span class="ticker__sep">&#10022;</span></span>
+      <span class="ticker__item">Google Rankings <span class="ticker__sep">&#10022;</span></span>
+      <span class="ticker__item">5-Star Review Systems <span class="ticker__sep">&#10022;</span></span>
+      <span class="ticker__item">Social That Fills Tables <span class="ticker__sep">&#10022;</span></span>
+      <span class="ticker__item">Email &amp; SMS Campaigns <span class="ticker__sep">&#10022;</span></span>
+      <span class="ticker__item">Paid Ads for Restaurants <span class="ticker__sep">&#10022;</span></span>
+      <span class="ticker__item">Reputation Management <span class="ticker__sep">&#10022;</span></span>
+      <span class="ticker__item">AI-Powered Follow-Up <span class="ticker__sep">&#10022;</span></span>
+      <span class="ticker__item">Website Design <span class="ticker__sep">&#10022;</span></span>
+    </div>
+  </div>
+  <section class="section offniche">
+    <div class="container">
+      <div class="offniche__inner">
+        <div class="offniche__left reveal">
+          <span class="eyebrow">Why You're Seeing This</span>
+          <h2>We Work With Contractors.<br>But Systems Don't Care<br>What Industry You're In.</h2>
+          <p>Urban Niche Co. was built to serve the home improvement trades &mdash; roofers, HVAC, plumbers, electricians. That's our home base and we're good at it.</p>
+          <p>But the systems we build &mdash; <strong>local SEO infrastructure, reputation engines, social proof machines, automated follow-up sequences</strong> &mdash; those work for any local business trying to get found, get trusted, and get more customers.</p>
+          <p>We don't chase every industry. We stay focused. But when we come across a restaurant or hospitality business where we can genuinely move the needle &mdash; we reach out. <strong>You're one of those.</strong></p>
+        </div>
+        <div class="offniche__quote reveal d1">
+          <p>We're not trying to be everybody's agency. We're trying to find the businesses where we know we can do real work &mdash; and then do it better than anyone else in the room.</p>
+          <div class="offniche__quote-attr">Ricky &mdash; Founder, Urban Niche Co.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="section problem" id="problem">
+    <div class="container">
+      <div class="problem__header reveal">
+        <span class="eyebrow">The Reality</span>
+        <h2>Most Restaurants Market<br>Like It's 2014.</h2>
+        <p>A Facebook page that hasn't been posted to in three weeks. A Google listing sitting at 3.8 stars with no response to the negative reviews. A website that loads slow on mobile and doesn't even show the menu clearly. You're not alone &mdash; and it's a fixable problem.</p>
+      </div>
+      <div class="problem__grid">
+        <div class="problem__item reveal">
+          <div class="problem__num">01</div>
+          <h4>Your Google presence isn't working for you</h4>
+          <p>If you're not in the Google Map Pack for your neighborhood's top searches, you're invisible to hungry people who are ready to spend money right now.</p>
+        </div>
+        <div class="problem__item reveal d1">
+          <div class="problem__num">02</div>
+          <h4>Your reviews are stagnant &mdash; or worse</h4>
+          <p>Every satisfied guest who doesn't leave a review is a missed conversion. Every unanswered negative review is actively costing you new customers.</p>
+        </div>
+        <div class="problem__item reveal d2">
+          <div class="problem__num">03</div>
+          <h4>Your social isn't turning followers into covers</h4>
+          <p>Posting inconsistently, no strategy behind it, no paid reach behind it. Your food looks incredible in person but nobody outside your regulars is seeing it.</p>
+        </div>
+      </div>
+      <div class="problem__stats reveal">
+        <div class="problem__stat">
+          <span class="problem__stat-val">87%</span>
+          <span class="problem__stat-label">of diners check Google before choosing where to eat</span>
+        </div>
+        <div class="problem__stat">
+          <span class="problem__stat-val">94%</span>
+          <span class="problem__stat-label">say online reviews impact which restaurant they choose</span>
+        </div>
+        <div class="problem__stat">
+          <span class="problem__stat-val">3&times;</span>
+          <span class="problem__stat-label">more likely to visit restaurants with active social presence</span>
+        </div>
+        <div class="problem__stat">
+          <span class="problem__stat-val">72%</span>
+          <span class="problem__stat-label">of local mobile searches result in a visit within 24 hours</span>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="section services" id="services">
+    <div class="container">
+      <div class="services__header reveal">
+        <span class="eyebrow">What We Do</span>
+        <h2>Marketing That<br>Actually Fills Seats.</h2>
+        <p>No vanity metrics. No fluff. Every service ties back to one outcome &mdash; more covers, more revenue, more regulars. We handle execution so you can stay in the kitchen.</p>
+      </div>
+      <div class="services__grid">
+        <div class="svc reveal">
+          <span class="svc__icon">&#128205;</span>
+          <h3>Local SEO &amp; Google Rankings</h3>
+          <p>When someone searches "best pizza near me" or "date night restaurant in [your city]" &mdash; you need to be in the top three results. We get you there and keep you there month after month.</p>
+          <div class="svc__list">
+            <div class="svc__item">Google Business Profile build-out and optimization</div>
+            <div class="svc__item">Local keyword strategy for your cuisine and neighborhood</div>
+            <div class="svc__item">Google Map Pack ranking campaigns</div>
+            <div class="svc__item">Citation building across dining directories</div>
+            <div class="svc__item">Monthly ranking and traffic reports</div>
+          </div>
+        </div>
+        <div class="svc reveal d1">
+          <span class="svc__icon">&#11088;</span>
+          <h3>Review Generation &amp; Reputation</h3>
+          <p>More 5-star reviews on autopilot. We catch happy guests at exactly the right moment and turn their experience into public proof that converts new customers.</p>
+          <div class="svc__list">
+            <div class="svc__item">Automated SMS and email review requests post-visit</div>
+            <div class="svc__item">Google, Yelp, and TripAdvisor monitoring</div>
+            <div class="svc__item">Negative review response strategy</div>
+            <div class="svc__item">Review widgets for your website</div>
+            <div class="svc__item">Monthly reputation health reports</div>
+          </div>
+        </div>
+        <div class="svc reveal">
+          <span class="svc__icon">&#128241;</span>
+          <h3>Social Media That Fills Tables</h3>
+          <p>Content that makes people stop scrolling, call their friend, and say "we need to go here." Food is visual &mdash; your social presence should reflect the experience you actually deliver.</p>
+          <div class="svc__list">
+            <div class="svc__item">Instagram and Facebook content strategy</div>
+            <div class="svc__item">Specials, events, and seasonal promotions</div>
+            <div class="svc__item">Paid social targeting local diners</div>
+            <div class="svc__item">Reels and Stories strategy for organic reach</div>
+            <div class="svc__item">Community management and engagement</div>
+          </div>
+        </div>
+        <div class="svc reveal d1">
+          <span class="svc__icon">&#127919;</span>
+          <h3>Google &amp; Meta Ads</h3>
+          <p>Get in front of people searching right now. Targeted campaigns reaching hungry people in your zip code with the right offer at the right moment &mdash; not wasted spend on the wrong audience.</p>
+          <div class="svc__list">
+            <div class="svc__item">Google Search ads for high-intent local searches</div>
+            <div class="svc__item">Meta ads targeting your ideal diner demographic</div>
+            <div class="svc__item">Event and limited-time offer campaigns</div>
+            <div class="svc__item">Retargeting visitors who didn't convert</div>
+            <div class="svc__item">Weekly performance reporting in plain language</div>
+          </div>
+        </div>
+        <div class="svc reveal">
+          <span class="svc__icon">&#128231;</span>
+          <h3>Email &amp; SMS Campaigns</h3>
+          <p>Your past guests are your cheapest new customers. We build the list and the campaigns that bring them back &mdash; birthdays, anniversaries, slow Tuesday promos &mdash; all on autopilot.</p>
+          <div class="svc__list">
+            <div class="svc__item">Guest email list building and segmentation</div>
+            <div class="svc__item">Birthday and anniversary automation</div>
+            <div class="svc__item">Weekly specials and event newsletters</div>
+            <div class="svc__item">SMS campaigns for same-day and last-minute promos</div>
+            <div class="svc__item">Loyalty program email integration</div>
+          </div>
+        </div>
+        <div class="svc reveal d1">
+          <span class="svc__icon">&#127760;</span>
+          <h3>Website Design &amp; Online Presence</h3>
+          <p>A restaurant website should load fast, show your menu clearly, and make it effortless to book or order. Most don't. We build sites that actually convert the traffic you're already getting.</p>
+          <div class="svc__list">
+            <div class="svc__item">Fast, mobile-first website design and build</div>
+            <div class="svc__item">Online menu integration and SEO structure</div>
+            <div class="svc__item">Reservation and online ordering system setup</div>
+            <div class="svc__item">SEO-ready from launch day</div>
+            <div class="svc__item">Ongoing maintenance and content updates</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="section proof" id="why">
+    <div class="container">
+      <div class="proof__inner">
+        <div class="proof__image-wrap reveal">
+          <div class="proof__image">
+            <img src="https://images.unsplash.com/photo-1559339352-11d035aa65de?w=900&q=80" alt="Restaurant" loading="lazy" />
+          </div>
+          <div class="proof__badge">
+            <span class="proof__badge-num">30</span>
+            <span class="proof__badge-label">days to first results</span>
+          </div>
+        </div>
+        <div class="proof__content">
+          <span class="eyebrow reveal">Why Urban Niche Co.</span>
+          <h2 class="reveal d1">We Earn Your Business<br>Every Single Month.</h2>
+          <p class="reveal d1">Most agencies sign you to a 12-month contract and go quiet. You get a monthly report full of numbers that don't mean anything and wonder where the money went. We don't work like that.</p>
+          <p class="reveal d1">Month-to-month. No lock-in. If the tables are filling and the reviews are climbing &mdash; you'll stick around because it's working. That's the only retention strategy we need.</p>
+          <div class="proof__list reveal d2">
+            <div class="proof__item">
+              <div class="proof__check">&#10003;</div>
+              <div>
+                <h5>No Long-Term Contracts</h5>
+                <p>Month-to-month. We earn it with results, not paperwork.</p>
+              </div>
+            </div>
+            <div class="proof__item">
+              <div class="proof__check">&#10003;</div>
+              <div>
+                <h5>Real Reporting, Plain Language</h5>
+                <p>You'll always know what your money is doing. No vanity metrics, no jargon.</p>
+              </div>
+            </div>
+            <div class="proof__item">
+              <div class="proof__check">&#10003;</div>
+              <div>
+                <h5>AI-Powered Systems That Scale</h5>
+                <p>We use automation to do more for your restaurant than a traditional agency ever could at this price point.</p>
+              </div>
+            </div>
+            <div class="proof__item">
+              <div class="proof__check">&#10003;</div>
+              <div>
+                <h5>Industry-Agnostic Infrastructure</h5>
+                <p>Our systems were built for contractors, but the fundamentals of local search and reputation don't change by industry. We know this works.</p>
+              </div>
+            </div>
+          </div>
+          <div class="reveal d3">
+            <a href="#contact" class="btn btn-gold btn-lg">Start the Conversation &rarr;</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="section process" id="process">
+    <div class="container">
+      <div class="process__header reveal">
+        <span class="eyebrow">How It Works</span>
+        <h2>From First Call to<br>First Results. Fast.</h2>
+      </div>
+      <div class="process__steps">
+        <div class="process__step reveal">
+          <div class="process__num">01</div>
+          <h4>Free Audit Call</h4>
+          <p>We look at your Google presence, reviews, social, and website. We tell you exactly what's working, what isn't, and what we'd fix first. No pitch, no pressure &mdash; just clarity.</p>
+        </div>
+        <div class="process__step reveal d1">
+          <div class="process__num">02</div>
+          <h4>Custom Strategy</h4>
+          <p>We build a plan around your restaurant specifically &mdash; your cuisine, your neighborhood, your goals. Nothing copy-pasted from another client.</p>
+        </div>
+        <div class="process__step reveal d2">
+          <div class="process__num">03</div>
+          <h4>We Execute</h4>
+          <p>Campaigns go live, reviews start coming in, your Google ranking climbs. You focus on running the restaurant &mdash; we handle everything else.</p>
+        </div>
+        <div class="process__step reveal d3">
+          <div class="process__num">04</div>
+          <h4>Measure &amp; Scale</h4>
+          <p>Real reporting every month &mdash; what's driving covers, what's bringing people back, and what we're doubling down on next.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="section contact" id="contact">
+    <div class="container">
+      <div class="contact__inner">
+        <div class="contact__left reveal">
+          <span class="eyebrow">Let's Talk</span>
+          <h2>Tell Us About<br>Your Restaurant.</h2>
+          <p>No pitch deck. No obligation. Just a straight conversation about where your marketing is falling short and what we'd do about it. If it's not the right fit, we'll tell you that too.</p>
+          <p>We sent you this link because we think there's an opportunity here. The conversation costs nothing.</p>
+          <div class="contact__details" style="margin-top:2.5rem;">
+            <div class="contact__detail">
+              <div class="contact__detail-icon">&#9742;</div>
+              <div>Call or text anytime &mdash; <a href="tel:+15153444053">(515) 344-4053</a></div>
+            </div>
+            <div class="contact__detail">
+              <div class="contact__detail-icon">&#9993;</div>
+              <div><a href="mailto:ricky@urbannicheco.com">ricky@urbannicheco.com</a></div>
+            </div>
+            <div class="contact__detail">
+              <div class="contact__detail-icon">&#9889;</div>
+              <div>Usually respond within a few hours &mdash; same day guaranteed</div>
+            </div>
+          </div>
+        </div>
+        <div class="reveal d1">
+          <form class="form" action="mailto:ricky@urbannicheco.com" method="GET" enctype="text/plain">
+            <div class="form__title">Send a Message</div>
+            <div class="form__sub">Fill this out and it goes straight to Ricky &mdash; no middleman, no CRM queue.</div>
+            <div class="form__row">
+              <div class="form__group">
+                <label class="form__label" for="name">Your Name</label>
+                <input class="form__input" type="text" id="name" name="name" placeholder="First &amp; Last" required />
+              </div>
+              <div class="form__group">
+                <label class="form__label" for="restaurant">Restaurant Name</label>
+                <input class="form__input" type="text" id="restaurant" name="restaurant" placeholder="Your business name" />
+              </div>
+            </div>
+            <div class="form__group">
+              <label class="form__label" for="email">Email Address</label>
+              <input class="form__input" type="email" id="email" name="email" placeholder="you@youremail.com" required />
+            </div>
+            <div class="form__group">
+              <label class="form__label" for="phone">Phone (optional)</label>
+              <input class="form__input" type="tel" id="phone" name="phone" placeholder="(555) 000-0000" />
+            </div>
+            <div class="form__group">
+              <label class="form__label" for="message">What's going on / what do you need?</label>
+              <textarea class="form__textarea" id="message" name="body" placeholder="Tell us a bit about your restaurant, what you've tried before, and what you're hoping to improve."></textarea>
+            </div>
+            <button type="submit" class="btn btn-gold btn-lg form__submit">Send Message &rarr;</button>
+            <div class="form__note">Opens your email client. Sending takes 2 seconds.</div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__inner">
+        <img src="/assets/images/unc-logo-icon.webp" alt="Urban Niche Co." style="height:28px;width:auto;opacity:0.75;" />
+        <div class="footer__tagline">This page is private and not indexed by search engines.</div>
+        <div class="footer__copy">&copy; 2026 Urban Niche Co. LLC &mdash; Dubuque, Iowa</div>
+      </div>
+    </div>
+  </footer>
+  <script>
+    const nav = document.getElementById('mainNav');
+    window.addEventListener('scroll', () => { nav.classList.toggle('scrolled', window.scrollY > 60); });
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); } });
+    }, { threshold: 0.12 });
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+  </script>
+</body>
+</html>

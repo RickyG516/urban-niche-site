@@ -1,0 +1,872 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="robots" content="noindex, nofollow" />
+  <link rel="icon" type="image/png" href="/assets/favicon.png" />
+  <title>For Salons, Spas &amp; Beauty Professionals | Urban Niche Co.</title>
+  <meta name="description" content="Private proposal for salons, spas, and beauty professionals. Booking-first websites, reputation engines, Instagram strategy, and retention systems from Urban Niche Co." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,300;1,9..144,400;1,9..144,500&family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --cream:         #f8f3ea;
+      --cream-2:       #f1ebde;
+      --cream-3:       #ebe3d0;
+      --shell:         #e5dbc4;
+      --walnut:        #3a2c22;
+      --walnut-2:      #4d3a2d;
+      --stone:         #7a6a5a;
+      --stone-2:       #9c8d7a;
+      --terra:         #c4623d;
+      --terra-deep:    #a74e30;
+      --terra-soft:    rgba(196,98,61,0.12);
+      --clay:          #e2a88c;
+      --clay-soft:     rgba(226,168,140,0.20);
+      --sage:          #8fa283;
+      --sage-deep:     #5f7353;
+      --sage-soft:     rgba(143,162,131,0.14);
+      --orange:        #e8651a;
+      --orange-soft:   rgba(232,101,26,0.11);
+      --border:        rgba(58,44,34,0.08);
+      --border-mid:    rgba(58,44,34,0.14);
+      --border-terra:  rgba(196,98,61,0.25);
+      --shadow-sm:     0 2px 14px rgba(58,44,34,0.04);
+      --shadow:        0 6px 28px rgba(58,44,34,0.07);
+      --shadow-lg:     0 18px 56px rgba(58,44,34,0.10);
+      --font-display:  'Fraunces', serif;
+      --font-body:     'DM Sans', sans-serif;
+      --nav-h:         74px;
+      --r:             10px;
+      --r-lg:          18px;
+      --pill:          999px;
+      --ease:          0.3s ease;
+      --slow:          0.6s cubic-bezier(0.16,1,0.3,1);
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: var(--font-body);
+      background: var(--cream);
+      color: var(--walnut);
+      line-height: 1.7;
+      font-weight: 400;
+      overflow-x: hidden;
+      -webkit-font-smoothing: antialiased;
+    }
+    img { max-width: 100%; height: auto; display: block; }
+    a { color: inherit; text-decoration: none; }
+    ul { list-style: none; }
+
+    h1,h2,h3,h4,h5 {
+      font-family: var(--font-display);
+      font-weight: 400;
+      line-height: 1.08;
+      letter-spacing: -0.015em;
+      color: var(--walnut);
+      font-variation-settings: "opsz" 96, "SOFT" 50;
+    }
+    h1 { font-size: clamp(3rem, 6.5vw, 6.25rem); font-weight: 300; letter-spacing: -0.025em; }
+    h2 { font-size: clamp(2.2rem, 4.2vw, 4rem); font-weight: 400; }
+    h3 { font-size: 1.35rem; font-weight: 500; }
+    h4 { font-size: 1.05rem; font-weight: 600; font-family: var(--font-body); letter-spacing: 0.01em; }
+    h5 { font-size: 0.95rem; font-weight: 600; font-family: var(--font-body); }
+    p { color: var(--stone); line-height: 1.75; }
+    em { color: var(--terra); font-style: italic; font-weight: 500; }
+
+    .container { width: 100%; max-width: 1240px; margin: 0 auto; padding: 0 2rem; }
+    .section { padding: 7rem 0; position: relative; }
+
+    .eyebrow {
+      font-family: var(--font-body);
+      font-size: 0.7rem;
+      font-weight: 600;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--terra);
+      display: inline-flex;
+      align-items: center;
+      gap: 0.75rem;
+      margin-bottom: 1.5rem;
+    }
+    .eyebrow::before { content: ''; display: block; width: 28px; height: 1px; background: var(--terra); opacity: 0.65; }
+
+    /* Decorative leaf divider SVG (inline) */
+    .leaf {
+      display: inline-block;
+      width: 14px; height: 14px;
+      opacity: 0.6;
+      vertical-align: middle;
+    }
+
+    /* Buttons */
+    .btn { display: inline-flex; align-items: center; gap: 0.55rem; font-family: var(--font-body); font-size: 0.82rem; font-weight: 600; letter-spacing: 0.09em; text-transform: uppercase; padding: 1rem 2.25rem; border-radius: var(--pill); transition: all var(--ease); white-space: nowrap; cursor: pointer; border: none; }
+    .btn-primary { background: var(--walnut); color: var(--cream); box-shadow: 0 3px 16px rgba(58,44,34,0.18); }
+    .btn-primary:hover { background: var(--terra); transform: translateY(-2px); box-shadow: 0 8px 28px rgba(196,98,61,0.28); }
+    .btn-terra { background: var(--terra); color: #fff; box-shadow: 0 3px 16px rgba(196,98,61,0.22); }
+    .btn-terra:hover { background: var(--terra-deep); transform: translateY(-2px); box-shadow: 0 8px 28px rgba(196,98,61,0.32); }
+    .btn-ghost { background: transparent; color: var(--walnut); border: 1px solid var(--border-mid); }
+    .btn-ghost:hover { border-color: var(--terra); color: var(--terra); transform: translateY(-2px); background: var(--cream-2); }
+    .btn-lg { font-size: 0.86rem; padding: 1.15rem 2.6rem; }
+    .btn-sm { font-size: 0.74rem; padding: 0.65rem 1.45rem; }
+
+    .reveal { opacity: 0; transform: translateY(24px); transition: opacity 0.75s ease, transform 0.75s cubic-bezier(0.16,1,0.3,1); }
+    .reveal.visible { opacity: 1; transform: translateY(0); }
+    .d1 { transition-delay: 0.12s; } .d2 { transition-delay: 0.24s; } .d3 { transition-delay: 0.36s; } .d4 { transition-delay: 0.48s; }
+
+    /* ── NAV ── */
+    .nav { position: fixed; top: 0; left: 0; right: 0; z-index: 1000; height: var(--nav-h); display: flex; align-items: center; background: transparent; transition: background var(--ease), border-color var(--ease); }
+    .nav.scrolled { background: rgba(248,243,234,0.92); backdrop-filter: blur(18px); border-bottom: 1px solid var(--border); }
+    .nav__inner { display: flex; align-items: center; justify-content: space-between; width: 100%; max-width: 1240px; margin: 0 auto; padding: 0 2rem; }
+    .nav__logo { display: flex; align-items: center; gap: 0.7rem; font-family: var(--font-display); font-weight: 500; font-size: 1.15rem; color: var(--walnut); letter-spacing: -0.01em; }
+    .nav__logo img { height: 34px; width: auto; display: block; }
+    .nav__logo span { color: var(--orange); font-style: italic; }
+    .nav__links { display: flex; align-items: center; gap: 4px; }
+    .nav__link { font-family: var(--font-body); font-size: 0.75rem; font-weight: 500; letter-spacing: 0.06em; text-transform: uppercase; color: var(--stone); padding: 0.55rem 0.85rem; border-radius: 6px; transition: color var(--ease); }
+    .nav__link:hover { color: var(--terra); }
+    .nav__cta { display: flex; align-items: center; gap: 10px; }
+    .nav__phone { font-family: var(--font-body); font-size: 0.75rem; font-weight: 500; color: var(--stone); white-space: nowrap; }
+    .nav__phone:hover { color: var(--terra); }
+    .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; padding: 4px; background: transparent; border: none; }
+    .hamburger span { display: block; width: 24px; height: 2px; background: var(--walnut); border-radius: 2px; }
+    .mobile-nav { display: none; position: fixed; top: var(--nav-h); left: 0; right: 0; background: var(--cream); border-bottom: 1px solid var(--border); padding: 1.5rem; z-index: 999; flex-direction: column; gap: 0.25rem; }
+    .mobile-nav.open { display: flex; }
+    .mobile-link { font-family: var(--font-body); font-size: 0.85rem; font-weight: 500; letter-spacing: 0.06em; text-transform: uppercase; color: var(--stone); padding: 0.85rem 1rem; border-bottom: 1px solid var(--border); }
+    .mobile-cta { margin-top: 1rem; display: flex; flex-direction: column; gap: 0.75rem; }
+
+    /* ── HERO ── */
+    .hero { min-height: 100vh; position: relative; overflow: hidden; display: flex; align-items: center; padding-top: calc(var(--nav-h) + 3.5rem); padding-bottom: 3.5rem; background: var(--cream); }
+    .hero::before { content: ''; position: absolute; top: -160px; right: -120px; width: 680px; height: 680px; border-radius: 50%; background: radial-gradient(circle, var(--terra-soft) 0%, transparent 65%); pointer-events: none; z-index: 0; }
+    .hero::after { content: ''; position: absolute; bottom: -220px; left: -180px; width: 620px; height: 620px; border-radius: 50%; background: radial-gradient(circle, var(--sage-soft) 0%, transparent 65%); pointer-events: none; z-index: 0; }
+    .hero__inner { position: relative; z-index: 2; width: 100%; display: grid; grid-template-columns: 1.05fr 0.95fr; gap: 5rem; align-items: center; }
+    .hero__tag { display: inline-flex; align-items: center; gap: 10px; background: var(--cream-2); border: 1px solid var(--border-terra); border-radius: var(--pill); padding: 8px 18px; font-family: var(--font-body); font-size: 0.68rem; font-weight: 600; letter-spacing: 0.2em; text-transform: uppercase; color: var(--terra); margin-bottom: 2rem; }
+    .hero__tag-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--terra); animation: pulse 2.2s ease-in-out infinite; }
+    @keyframes pulse { 0%,100% { opacity: 1; transform: scale(1); } 50% { opacity: 0.35; transform: scale(0.75); } }
+    .hero h1 { margin-bottom: 1.5rem; }
+    .hero h1 .term { font-family: var(--font-display); font-style: italic; font-weight: 300; color: var(--terra); }
+    .hero h1 .ampersand { font-family: var(--font-display); font-style: italic; color: var(--sage-deep); font-weight: 300; }
+    .hero__sub { font-size: 1.08rem; line-height: 1.75; color: var(--stone); max-width: 46ch; margin-bottom: 1rem; }
+    .hero__whisper { font-family: var(--font-body); font-size: 0.82rem; line-height: 1.65; color: var(--stone-2); font-style: italic; margin-bottom: 2.5rem; max-width: 46ch; }
+    .hero__whisper strong { color: var(--walnut); font-style: normal; font-weight: 600; }
+    .hero__actions { display: flex; gap: 0.9rem; flex-wrap: wrap; margin-bottom: 3.5rem; }
+    .hero__proof { display: flex; gap: 2.5rem; padding-top: 2.5rem; border-top: 1px solid var(--border); flex-wrap: wrap; }
+    .hero__proof-item { display: flex; flex-direction: column; }
+    .hero__proof-val { font-family: var(--font-display); font-size: 2.4rem; font-weight: 400; color: var(--terra); line-height: 1; letter-spacing: -0.02em; font-style: italic; }
+    .hero__proof-label { font-size: 0.7rem; color: var(--stone-2); margin-top: 5px; font-family: var(--font-body); letter-spacing: 0.08em; text-transform: uppercase; }
+
+    /* ── BOOKING CALENDAR MOCK (hero right) ── */
+    .bookcard { background: #fff; border: 1px solid var(--border); border-radius: var(--r-lg); padding: 1.75rem; box-shadow: var(--shadow-lg); position: relative; overflow: hidden; }
+    .bookcard::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 5px; background: linear-gradient(90deg, var(--terra) 0%, var(--sage) 50%, var(--clay) 100%); }
+    .bookcard__header { display: flex; align-items: center; justify-content: space-between; padding-bottom: 1rem; border-bottom: 1px solid var(--border); margin-bottom: 1.25rem; }
+    .bookcard__title { font-family: var(--font-display); font-size: 1.1rem; font-weight: 500; color: var(--walnut); letter-spacing: -0.01em; }
+    .bookcard__badge { font-family: var(--font-body); font-size: 0.62rem; font-weight: 600; letter-spacing: 0.16em; text-transform: uppercase; color: var(--sage-deep); background: var(--sage-soft); padding: 4px 10px; border-radius: var(--pill); display: inline-flex; align-items: center; gap: 5px; }
+    .bookcard__badge-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--sage-deep); }
+    .bookcard__date { font-family: var(--font-display); font-size: 0.82rem; font-weight: 500; color: var(--stone); margin-bottom: 1rem; letter-spacing: 0.02em; text-transform: uppercase; }
+    .bookcard__slots { display: flex; flex-direction: column; gap: 0.55rem; margin-bottom: 1.25rem; }
+    .slot { display: flex; align-items: center; gap: 0.9rem; padding: 0.75rem 0.9rem; border: 1px solid var(--border); border-radius: var(--r); background: var(--cream); font-family: var(--font-body); font-size: 0.82rem; transition: all var(--ease); }
+    .slot.booked { background: var(--terra-soft); border-color: var(--border-terra); color: var(--terra-deep); }
+    .slot.open { border-color: var(--sage); }
+    .slot__time { font-weight: 600; min-width: 62px; }
+    .slot__name { flex: 1; color: var(--walnut); font-weight: 500; }
+    .slot__status { font-size: 0.68rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; }
+    .slot.booked .slot__status { color: var(--terra); }
+    .slot.open .slot__status { color: var(--sage-deep); }
+    .bookcard__footer { display: flex; align-items: center; justify-content: space-between; padding-top: 1rem; border-top: 1px solid var(--border); font-family: var(--font-body); font-size: 0.78rem; }
+    .bookcard__footer-label { color: var(--stone-2); }
+    .bookcard__footer-value { color: var(--terra); font-weight: 600; }
+
+    /* ── TICKER (soft) ── */
+    .ticker { background: var(--cream-3); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); padding: 16px 0; overflow: hidden; white-space: nowrap; }
+    .ticker__track { display: inline-flex; animation: ticker 50s linear infinite; }
+    @keyframes ticker { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
+    .ticker__item { font-family: var(--font-display); font-style: italic; font-size: 0.92rem; font-weight: 400; color: var(--walnut); padding: 0 2.25rem; display: inline-flex; align-items: center; gap: 0.85rem; }
+    .ticker__sep { color: var(--terra); font-size: 0.75rem; opacity: 0.75; font-style: normal; }
+
+    /* ── OFFNICHE (why you're seeing this) ── */
+    .offniche { background: var(--cream-2); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); position: relative; overflow: hidden; }
+    .offniche::before { content: ''; position: absolute; left: -150px; top: 50%; transform: translateY(-50%); width: 520px; height: 520px; background: radial-gradient(circle, var(--sage-soft) 0%, transparent 65%); pointer-events: none; }
+    .offniche__inner { display: grid; grid-template-columns: 1fr 1.15fr; gap: 5rem; align-items: center; position: relative; z-index: 1; }
+    .offniche__left h2 { margin: 0.5rem 0 1.5rem; font-style: italic; font-weight: 300; }
+    .offniche__left p { font-size: 1rem; line-height: 1.9; margin-bottom: 1.15rem; max-width: 46ch; }
+    .offniche__left p strong { color: var(--walnut); font-weight: 600; }
+    .offniche__quote { background: #fff; border: 1px solid var(--border); border-radius: var(--r-lg); padding: 2.75rem 2.5rem; position: relative; box-shadow: var(--shadow); }
+    .offniche__quote::before { content: '"'; font-family: var(--font-display); font-size: 7rem; font-weight: 400; color: var(--terra); opacity: 0.25; position: absolute; top: -1rem; left: 1.5rem; line-height: 1; }
+    .offniche__quote p { font-family: var(--font-display); font-size: 1.55rem; font-style: italic; font-weight: 400; color: var(--walnut); line-height: 1.45; margin-bottom: 1.5rem; }
+    .offniche__quote-attr { font-size: 0.72rem; color: var(--terra); letter-spacing: 0.14em; text-transform: uppercase; font-weight: 600; }
+
+    /* ── SERVICES ── */
+    .services { background: var(--cream); }
+    .services__header { margin-bottom: 4.5rem; max-width: 56ch; }
+    .services__header h2 { margin: 0.6rem 0 1.25rem; font-weight: 300; }
+    .services__header h2 em { font-family: var(--font-display); font-style: italic; font-weight: 400; color: var(--terra); }
+    .services__header p { font-size: 1rem; line-height: 1.8; }
+    .services__grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 1.5rem; }
+    .svc { background: #fff; border: 1px solid var(--border); border-radius: var(--r-lg); padding: 2.5rem 2rem; position: relative; overflow: hidden; transition: all var(--ease); box-shadow: var(--shadow-sm); }
+    .svc::before { content: ''; position: absolute; top: 0; left: 0; width: 0; height: 3px; background: var(--terra); transition: width var(--slow); }
+    .svc:hover { transform: translateY(-4px); border-color: var(--border-terra); box-shadow: var(--shadow); }
+    .svc:hover::before { width: 100%; }
+    .svc__num { font-family: var(--font-display); font-size: 0.85rem; font-weight: 500; letter-spacing: 0.1em; color: var(--terra); font-style: italic; margin-bottom: 1.25rem; }
+    .svc__icon { width: 44px; height: 44px; border-radius: 50%; background: var(--terra-soft); border: 1px solid var(--border-terra); display: inline-flex; align-items: center; justify-content: center; margin-bottom: 1.1rem; font-size: 1.15rem; }
+    .svc h3 { font-size: 1.3rem; margin-bottom: 0.7rem; font-weight: 500; color: var(--walnut); }
+    .svc p { font-size: 0.92rem; line-height: 1.75; margin-bottom: 1.5rem; color: var(--stone); }
+    .svc__list { display: flex; flex-direction: column; gap: 0.55rem; padding-top: 1.1rem; border-top: 1px solid var(--border); }
+    .svc__item { font-size: 0.82rem; color: var(--stone); display: flex; gap: 0.65rem; align-items: flex-start; line-height: 1.55; }
+    .svc__item::before { content: '◦'; color: var(--terra); font-size: 1rem; flex-shrink: 0; line-height: 1; margin-top: 3px; }
+
+    /* ── BEFORE / AFTER (transformation section) ── */
+    .transform { background: var(--cream-2); overflow: hidden; }
+    .transform__header { text-align: center; margin-bottom: 4.5rem; max-width: 54ch; margin-left: auto; margin-right: auto; }
+    .transform__header h2 { font-weight: 300; margin: 0.6rem 0 1rem; }
+    .transform__header h2 em { color: var(--terra); font-style: italic; font-weight: 400; }
+    .transform__grid { display: grid; grid-template-columns: 1fr auto 1fr; gap: 2.5rem; align-items: stretch; }
+    .transform__card { background: #fff; border: 1px solid var(--border); border-radius: var(--r-lg); padding: 2.5rem 2.25rem; box-shadow: var(--shadow-sm); }
+    .transform__card.before { background: var(--shell); }
+    .transform__card.after { background: #fff; border: 1px solid var(--border-terra); box-shadow: var(--shadow); position: relative; }
+    .transform__card.after::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 4px; background: linear-gradient(90deg, var(--terra) 0%, var(--sage) 100%); border-radius: var(--r-lg) var(--r-lg) 0 0; }
+    .transform__label { font-family: var(--font-body); font-size: 0.68rem; font-weight: 700; letter-spacing: 0.22em; text-transform: uppercase; margin-bottom: 1rem; }
+    .transform__card.before .transform__label { color: var(--stone-2); }
+    .transform__card.after .transform__label { color: var(--terra); }
+    .transform__card h3 { font-family: var(--font-display); font-size: 1.5rem; font-weight: 400; line-height: 1.2; margin-bottom: 1.5rem; color: var(--walnut); font-style: italic; }
+    .transform__list { display: flex; flex-direction: column; gap: 0.9rem; }
+    .transform__item { display: flex; gap: 0.75rem; align-items: flex-start; font-size: 0.92rem; line-height: 1.55; color: var(--stone); }
+    .transform__item .dot { width: 18px; height: 18px; border-radius: 50%; display: inline-flex; align-items: center; justify-content: center; font-size: 0.7rem; font-weight: 700; flex-shrink: 0; margin-top: 3px; }
+    .transform__card.before .dot { background: var(--shell); color: var(--stone); border: 1px solid var(--border-mid); }
+    .transform__card.after .dot { background: var(--sage-soft); color: var(--sage-deep); }
+    .transform__divider { display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 0.5rem; }
+    .transform__arrow { font-family: var(--font-display); font-size: 2.5rem; color: var(--terra); font-style: italic; font-weight: 300; line-height: 1; }
+    .transform__arrow-label { font-family: var(--font-body); font-size: 0.65rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--terra); font-weight: 600; }
+
+    /* ── STATS (soft terracotta band) ── */
+    .stats { background: var(--terra); position: relative; overflow: hidden; padding: 5rem 0; }
+    .stats::before { content: ''; position: absolute; top: 50%; right: -200px; transform: translateY(-50%); width: 520px; height: 520px; background: radial-gradient(circle, rgba(255,255,255,0.08) 0%, transparent 65%); pointer-events: none; }
+    .stats__grid { display: grid; grid-template-columns: repeat(4,1fr); gap: 0; position: relative; z-index: 1; }
+    .stat { padding: 2.25rem 1.5rem; text-align: center; border-right: 1px solid rgba(255,255,255,0.22); }
+    .stat:last-child { border-right: none; }
+    .stat__val { font-family: var(--font-display); font-style: italic; font-weight: 400; font-size: clamp(2.6rem, 4.2vw, 3.8rem); color: #fff; line-height: 1; display: block; }
+    .stat__label { font-family: var(--font-body); font-size: 0.72rem; color: rgba(255,255,255,0.85); margin-top: 0.65rem; display: block; letter-spacing: 0.08em; text-transform: uppercase; line-height: 1.5; }
+
+    /* ── WHO IT'S FOR ── */
+    .who { background: var(--cream); }
+    .who__header { margin-bottom: 4rem; text-align: center; max-width: 50ch; margin-left: auto; margin-right: auto; }
+    .who__header h2 { font-weight: 300; margin: 0.6rem 0 0; }
+    .who__header h2 em { color: var(--sage-deep); font-style: italic; font-weight: 400; }
+    .who__grid { display: grid; grid-template-columns: repeat(4,1fr); gap: 1.25rem; }
+    .who__card { background: #fff; border: 1px solid var(--border); border-radius: var(--r-lg); padding: 2.25rem 1.75rem; text-align: center; transition: all var(--ease); box-shadow: var(--shadow-sm); position: relative; overflow: hidden; }
+    .who__card:hover { transform: translateY(-4px); border-color: var(--border-terra); box-shadow: var(--shadow); }
+    .who__card:nth-child(2):hover { border-color: var(--sage); }
+    .who__card:nth-child(4):hover { border-color: var(--sage); }
+    .who__icon { width: 56px; height: 56px; border-radius: 50%; background: var(--cream-2); display: flex; align-items: center; justify-content: center; font-size: 1.5rem; margin: 0 auto 1.1rem; border: 1px solid var(--border); }
+    .who__card:nth-child(even) .who__icon { background: var(--sage-soft); }
+    .who__card h5 { margin-bottom: 0.5rem; font-size: 1rem; font-weight: 600; color: var(--walnut); }
+    .who__card p { font-size: 0.85rem; color: var(--stone); line-height: 1.6; }
+
+    /* ── PROCESS ── */
+    .process { background: var(--cream-2); border-top: 1px solid var(--border); }
+    .process__header { text-align: center; margin-bottom: 4rem; }
+    .process__header h2 { font-weight: 300; margin: 0.6rem 0 0; max-width: 22ch; margin-left: auto; margin-right: auto; }
+    .process__header h2 em { color: var(--terra); font-style: italic; font-weight: 400; }
+    .process__steps { display: grid; grid-template-columns: repeat(4,1fr); gap: 1.25rem; }
+    .process__step { background: #fff; border: 1px solid var(--border); border-radius: var(--r-lg); padding: 2.25rem 2rem; position: relative; transition: all var(--ease); box-shadow: var(--shadow-sm); }
+    .process__step:hover { transform: translateY(-4px); border-color: var(--border-terra); box-shadow: var(--shadow); }
+    .process__num { font-family: var(--font-display); font-style: italic; font-size: 3.5rem; font-weight: 300; color: var(--terra); opacity: 0.85; line-height: 1; margin-bottom: 1.25rem; letter-spacing: -0.04em; }
+    .process__step:nth-child(even) .process__num { color: var(--sage-deep); }
+    .process__step h4 { margin-bottom: 0.5rem; color: var(--walnut); font-size: 1rem; }
+    .process__step p { font-size: 0.88rem; line-height: 1.7; color: var(--stone); }
+
+    /* ── CONTACT ── */
+    .contact { background: var(--cream); position: relative; overflow: hidden; border-top: 1px solid var(--border); }
+    .contact::before { content: ''; position: absolute; right: -180px; top: 10%; width: 540px; height: 540px; background: radial-gradient(circle, var(--terra-soft) 0%, transparent 65%); pointer-events: none; }
+    .contact::after { content: ''; position: absolute; left: -200px; bottom: 0; width: 500px; height: 500px; background: radial-gradient(circle, var(--sage-soft) 0%, transparent 65%); pointer-events: none; }
+    .contact__inner { display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: start; position: relative; z-index: 2; }
+    .contact__left h2 { font-weight: 300; margin: 0.6rem 0 1.5rem; }
+    .contact__left h2 em { color: var(--terra); font-style: italic; font-weight: 400; }
+    .contact__left > p { font-size: 1rem; line-height: 1.85; margin-bottom: 1.15rem; }
+    .contact__details { display: flex; flex-direction: column; gap: 1rem; margin-top: 2.5rem; }
+    .contact__detail { display: flex; align-items: center; gap: 1rem; font-size: 0.9rem; color: var(--stone); }
+    .contact__detail-icon { width: 40px; height: 40px; border-radius: 50%; background: var(--terra-soft); border: 1px solid var(--border-terra); display: flex; align-items: center; justify-content: center; font-size: 0.95rem; flex-shrink: 0; }
+    .contact__detail a { color: var(--terra); font-weight: 600; transition: opacity var(--ease); }
+    .contact__detail a:hover { opacity: 0.75; }
+
+    .form { background: #fff; border: 1px solid var(--border); border-radius: var(--r-lg); padding: 2.75rem 2.5rem; box-shadow: var(--shadow-lg); }
+    .form__title { font-family: var(--font-display); font-size: 1.7rem; font-weight: 500; color: var(--walnut); margin-bottom: 0.5rem; font-style: italic; }
+    .form__sub { font-size: 0.85rem; color: var(--stone-2); margin-bottom: 2rem; }
+    .form__group { margin-bottom: 1.15rem; }
+    .form__row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+    .form__label { display: block; font-family: var(--font-body); font-size: 0.66rem; font-weight: 600; letter-spacing: 0.16em; text-transform: uppercase; color: var(--stone-2); margin-bottom: 0.45rem; }
+    .form__input, .form__textarea { width: 100%; background: var(--cream); border: 1px solid var(--border); border-radius: var(--r); padding: 0.85rem 1.1rem; font-family: var(--font-body); font-size: 0.9rem; color: var(--walnut); outline: none; transition: all var(--ease); }
+    .form__input::placeholder, .form__textarea::placeholder { color: var(--stone-2); opacity: 0.7; }
+    .form__input:focus, .form__textarea:focus { border-color: var(--terra); background: #fff; box-shadow: 0 0 0 3px var(--terra-soft); }
+    .form__textarea { resize: vertical; min-height: 120px; }
+    .form__submit { width: 100%; margin-top: 0.5rem; justify-content: center; }
+    .form__note { text-align: center; font-size: 0.72rem; color: var(--stone-2); margin-top: 1rem; font-style: italic; }
+
+    /* ── CTA ── */
+    .cta { background: var(--cream-3); padding: 6.5rem 0; position: relative; overflow: hidden; text-align: center; border-top: 1px solid var(--border); }
+    .cta__inner { position: relative; z-index: 1; max-width: 680px; margin: 0 auto; }
+    .cta h2 { font-size: clamp(2.4rem, 4.5vw, 3.8rem); margin-bottom: 1.25rem; font-weight: 300; }
+    .cta h2 em { color: var(--terra); font-style: italic; font-weight: 400; }
+    .cta p { font-size: 1.05rem; line-height: 1.75; max-width: 52ch; margin: 0 auto 2.5rem; }
+    .cta__actions { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
+
+    /* ── FOOTER ── */
+    .footer { background: var(--shell); border-top: 1px solid var(--border); padding: 2.25rem 0; }
+    .footer__inner { display: flex; align-items: center; justify-content: space-between; gap: 2rem; flex-wrap: wrap; }
+    .footer__logo { display: flex; align-items: center; gap: 0.65rem; font-family: var(--font-display); font-weight: 500; font-size: 1rem; color: var(--walnut); }
+    .footer__logo img { height: 26px; width: auto; opacity: 0.85; }
+    .footer__logo span { color: var(--orange); font-style: italic; }
+    .footer__note { font-size: 0.72rem; color: var(--stone-2); letter-spacing: 0.04em; font-style: italic; }
+    .footer__copy { font-size: 0.72rem; color: var(--stone-2); }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 1024px) {
+      .hero__inner { grid-template-columns: 1fr; gap: 3rem; }
+      .offniche__inner { grid-template-columns: 1fr; gap: 3rem; }
+      .services__grid { grid-template-columns: 1fr 1fr; }
+      .transform__grid { grid-template-columns: 1fr; gap: 1.5rem; }
+      .transform__divider { flex-direction: row; gap: 1rem; }
+      .transform__arrow { transform: rotate(90deg); }
+      .stats__grid { grid-template-columns: 1fr 1fr; }
+      .stat { border-right: none; border-bottom: 1px solid rgba(255,255,255,0.22); }
+      .stat:nth-child(odd) { border-right: 1px solid rgba(255,255,255,0.22); }
+      .stat:nth-last-child(-n+2) { border-bottom: none; }
+      .who__grid { grid-template-columns: 1fr 1fr; }
+      .process__steps { grid-template-columns: 1fr 1fr; }
+      .contact__inner { grid-template-columns: 1fr; gap: 3rem; }
+    }
+    @media (max-width: 768px) {
+      .nav__links, .nav__cta { display: none; }
+      .hamburger { display: flex; }
+      .services__grid { grid-template-columns: 1fr; }
+      .process__steps { grid-template-columns: 1fr; }
+      .form__row { grid-template-columns: 1fr; }
+      .footer__inner { flex-direction: column; text-align: center; gap: 1rem; }
+      .cta__actions { flex-direction: column; }
+      .section { padding: 5rem 0; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav class="nav" id="mainNav">
+    <div class="nav__inner">
+      <a href="#" class="nav__logo">
+        <img src="/assets/images/unc-logo-icon.webp" alt="Urban Niche Co." />
+        Urban <span>Niche</span>&nbsp;Co.
+      </a>
+      <ul class="nav__links">
+        <li><a href="#services" class="nav__link">Services</a></li>
+        <li><a href="#transform" class="nav__link">Before / After</a></li>
+        <li><a href="#who" class="nav__link">Who</a></li>
+        <li><a href="#process" class="nav__link">Process</a></li>
+      </ul>
+      <div class="nav__cta">
+        <a href="sms:+15153444053" class="nav__phone">Text (515) 344-4053</a>
+        <a href="#contact" class="btn btn-primary btn-sm">Let's Talk</a>
+      </div>
+      <button class="hamburger" id="hamburger" aria-label="Open menu"><span></span><span></span><span></span></button>
+    </div>
+  </nav>
+
+  <div class="mobile-nav" id="mobileNav">
+    <a href="#services" class="mobile-link">Services</a>
+    <a href="#transform" class="mobile-link">Before / After</a>
+    <a href="#who" class="mobile-link">Who</a>
+    <a href="#process" class="mobile-link">Process</a>
+    <div class="mobile-cta">
+      <a href="#contact" class="btn btn-ghost">Contact</a>
+      <a href="#contact" class="btn btn-primary">Let's Talk</a>
+    </div>
+  </div>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="container">
+      <div class="hero__inner">
+        <div>
+          <div class="hero__tag reveal">
+            <div class="hero__tag-dot"></div>
+            For Salons, Spas &amp; Beauty Pros
+          </div>
+          <h1 class="reveal d1">
+            Book the Chair.<br>
+            Keep the <span class="term">Regulars.</span><br>
+            Grow the <span class="term">Dream.</span>
+          </h1>
+          <p class="hero__sub reveal d2">
+            Your chair shouldn't sit empty when there are hundreds of people within a mile searching for exactly what you do. We build the marketing infrastructure that fills the book, keeps the regulars, and turns your space into a brand.
+          </p>
+          <p class="hero__whisper reveal d2">
+            <strong>This page isn't public.</strong> You have this link because we reached out to you specifically. We work with contractors as our main lane &mdash; but when we see a salon or spa where we know the systems will move the needle, we pay attention.
+          </p>
+          <div class="hero__actions reveal d3">
+            <a href="#contact" class="btn btn-terra btn-lg">Start the Conversation &rarr;</a>
+            <a href="#services" class="btn btn-ghost btn-lg">See What We Build</a>
+          </div>
+          <div class="hero__proof reveal d4">
+            <div class="hero__proof-item">
+              <span class="hero__proof-val">30</span>
+              <span class="hero__proof-label">Days to first results</span>
+            </div>
+            <div class="hero__proof-item">
+              <span class="hero__proof-val">5&#9734;</span>
+              <span class="hero__proof-label">Review engines on autopilot</span>
+            </div>
+            <div class="hero__proof-item">
+              <span class="hero__proof-val">0</span>
+              <span class="hero__proof-label">Long-term contracts</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Booking calendar mock -->
+        <div class="reveal d2">
+          <div class="bookcard">
+            <div class="bookcard__header">
+              <div class="bookcard__title">Today&rsquo;s Book</div>
+              <div class="bookcard__badge">
+                <div class="bookcard__badge-dot"></div>
+                Synced
+              </div>
+            </div>
+            <div class="bookcard__date">Fri &middot; Oct 16</div>
+            <div class="bookcard__slots">
+              <div class="slot booked">
+                <div class="slot__time">10:00</div>
+                <div class="slot__name">Balayage &mdash; Sienna R.</div>
+                <div class="slot__status">Booked</div>
+              </div>
+              <div class="slot booked">
+                <div class="slot__time">12:30</div>
+                <div class="slot__name">Gel Mani + Pedi</div>
+                <div class="slot__status">Booked</div>
+              </div>
+              <div class="slot open">
+                <div class="slot__time">2:30</div>
+                <div class="slot__name">Keratin Treatment</div>
+                <div class="slot__status">Open &rarr;</div>
+              </div>
+              <div class="slot booked">
+                <div class="slot__time">4:00</div>
+                <div class="slot__name">Cut &amp; Style &mdash; Amelia D.</div>
+                <div class="slot__status">Booked</div>
+              </div>
+              <div class="slot open">
+                <div class="slot__time">5:30</div>
+                <div class="slot__name">Deep Cleanse Facial</div>
+                <div class="slot__status">Open &rarr;</div>
+              </div>
+            </div>
+            <div class="bookcard__footer">
+              <span class="bookcard__footer-label">3 booked &middot; 2 open</span>
+              <span class="bookcard__footer-value">Rebook rate: 87%</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TICKER -->
+  <div class="ticker">
+    <div class="ticker__track">
+      <span class="ticker__item">Booking-First Websites <span class="ticker__sep">&#10022;</span></span>
+      <span class="ticker__item">Google Reviews on Autopilot <span class="ticker__sep">&#10022;</span></span>
+      <span class="ticker__item">Instagram That Converts <span class="ticker__sep">&#10022;</span></span>
+      <span class="ticker__item">Text Reminders &amp; Rebooking <span class="ticker__sep">&#10022;</span></span>
+      <span class="ticker__item">Local SEO for &ldquo;Near Me&rdquo; <span class="ticker__sep">&#10022;</span></span>
+      <span class="ticker__item">Loyalty &amp; Retention Systems <span class="ticker__sep">&#10022;</span></span>
+      <span class="ticker__item">Brand Identity Refresh <span class="ticker__sep">&#10022;</span></span>
+      <span class="ticker__item">AI-Powered Front Desk <span class="ticker__sep">&#10022;</span></span>
+      <span class="ticker__item">Booking-First Websites <span class="ticker__sep">&#10022;</span></span>
+      <span class="ticker__item">Google Reviews on Autopilot <span class="ticker__sep">&#10022;</span></span>
+      <span class="ticker__item">Instagram That Converts <span class="ticker__sep">&#10022;</span></span>
+      <span class="ticker__item">Text Reminders &amp; Rebooking <span class="ticker__sep">&#10022;</span></span>
+      <span class="ticker__item">Local SEO for &ldquo;Near Me&rdquo; <span class="ticker__sep">&#10022;</span></span>
+      <span class="ticker__item">Loyalty &amp; Retention Systems <span class="ticker__sep">&#10022;</span></span>
+      <span class="ticker__item">Brand Identity Refresh <span class="ticker__sep">&#10022;</span></span>
+      <span class="ticker__item">AI-Powered Front Desk <span class="ticker__sep">&#10022;</span></span>
+    </div>
+  </div>
+
+  <!-- OFFNICHE -->
+  <section class="section offniche">
+    <div class="container">
+      <div class="offniche__inner">
+        <div class="offniche__left reveal">
+          <span class="eyebrow">Why You&rsquo;re Seeing This</span>
+          <h2>We Work With Contractors.<br>But the Right Systems<br>Move the Right Rooms.</h2>
+          <p>Urban Niche Co. was built for the home improvement trades &mdash; roofers, HVAC, plumbers, electricians. That&rsquo;s our home base.</p>
+          <p>But the infrastructure we build &mdash; <strong>local SEO, review engines, retention automation, booking-first websites, AI systems</strong> &mdash; works for any local business where a trusted reputation and a full calendar are the whole game. That&rsquo;s every salon and spa we&rsquo;ve ever walked into.</p>
+          <p>We don&rsquo;t chase every industry. We stay focused. But when we come across a space where we know we can genuinely help, <strong>we reach out. That&rsquo;s you.</strong></p>
+        </div>
+        <div class="offniche__quote reveal d1">
+          <p>We&rsquo;re not trying to be everybody&rsquo;s agency. We&rsquo;re trying to find the businesses where we know we can do real work &mdash; and then do it better than anyone else in the room.</p>
+          <div class="offniche__quote-attr">Ricky &mdash; Founder, Urban Niche Co.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICES -->
+  <section class="section services" id="services">
+    <div class="container">
+      <div class="services__header reveal">
+        <span class="eyebrow">What We Build</span>
+        <h2>Everything Your Space Needs to<br>Fill the Book <em>and Keep It Full.</em></h2>
+        <p>No vanity metrics. No template deck. Every service ties back to one outcome &mdash; more appointments on the book, more regulars rebooking, and a brand worth following.</p>
+      </div>
+      <div class="services__grid">
+        <div class="svc reveal">
+          <div class="svc__num">&mdash; 01</div>
+          <div class="svc__icon">&#128197;</div>
+          <h3>Booking-First Websites</h3>
+          <p>Sites that make it effortless to see your menu, your availability, and book in under 30 seconds &mdash; on a phone, with one thumb.</p>
+          <div class="svc__list">
+            <div class="svc__item">Fast, mobile-first design</div>
+            <div class="svc__item">Square, Vagaro, Fresha, Booker integration</div>
+            <div class="svc__item">Service menu with pricing &amp; duration</div>
+            <div class="svc__item">Photo gallery that loads fast</div>
+            <div class="svc__item">SEO-ready from launch day</div>
+          </div>
+        </div>
+        <div class="svc reveal d1">
+          <div class="svc__num">&mdash; 02</div>
+          <div class="svc__icon">&#11088;</div>
+          <h3>Review &amp; Reputation Engine</h3>
+          <p>Automated review requests after every appointment. Real-time monitoring. Negative review response strategy so one bad night doesn&rsquo;t cost you a month of bookings.</p>
+          <div class="svc__list">
+            <div class="svc__item">SMS + email review request automation</div>
+            <div class="svc__item">Google, Yelp, Facebook monitoring</div>
+            <div class="svc__item">Negative review response playbook</div>
+            <div class="svc__item">Review showcase widgets for your site</div>
+            <div class="svc__item">Monthly reputation health reports</div>
+          </div>
+        </div>
+        <div class="svc reveal d2">
+          <div class="svc__num">&mdash; 03</div>
+          <div class="svc__icon">&#128247;</div>
+          <h3>Instagram &amp; Pinterest Strategy</h3>
+          <p>Your work is visual &mdash; your marketing should be too. Content that stops the scroll and brings the client who&rsquo;s been looking for exactly what you do.</p>
+          <div class="svc__list">
+            <div class="svc__item">Content calendar built for beauty feeds</div>
+            <div class="svc__item">Reels strategy for organic reach</div>
+            <div class="svc__item">Pinterest pins for high-intent search</div>
+            <div class="svc__item">Before/after storytelling frameworks</div>
+            <div class="svc__item">Paid social for targeted local reach</div>
+          </div>
+        </div>
+        <div class="svc reveal">
+          <div class="svc__num">&mdash; 04</div>
+          <div class="svc__icon">&#128172;</div>
+          <h3>Text &amp; Email Retention</h3>
+          <p>Regulars are the business. We build the text and email systems that bring them back &mdash; birthdays, &ldquo;time for a refresh,&rdquo; slow-Tuesday specials &mdash; all on autopilot.</p>
+          <div class="svc__list">
+            <div class="svc__item">Client list building and segmentation</div>
+            <div class="svc__item">Birthday and anniversary automation</div>
+            <div class="svc__item">Rebook nudges based on service type</div>
+            <div class="svc__item">SMS for last-minute open slots</div>
+            <div class="svc__item">Seasonal and promo campaigns</div>
+          </div>
+        </div>
+        <div class="svc reveal d1">
+          <div class="svc__num">&mdash; 05</div>
+          <div class="svc__icon">&#128205;</div>
+          <h3>Local SEO &amp; &ldquo;Near Me&rdquo;</h3>
+          <p>When someone searches &ldquo;lash lift near me&rdquo; or &ldquo;balayage [your city]&rdquo; &mdash; you need to be in the top three. We get you there and keep you there.</p>
+          <div class="svc__list">
+            <div class="svc__item">Google Business Profile optimization</div>
+            <div class="svc__item">Service-based keyword strategy</div>
+            <div class="svc__item">Local citations across beauty directories</div>
+            <div class="svc__item">Google Map Pack ranking campaigns</div>
+            <div class="svc__item">Monthly rankings and traffic reports</div>
+          </div>
+        </div>
+        <div class="svc reveal d2">
+          <div class="svc__num">&mdash; 06</div>
+          <div class="svc__icon">&#129302;</div>
+          <h3>AI-Powered Front Desk</h3>
+          <p>An AI system that answers questions, routes booking inquiries, and handles the repetitive DMs so you stay behind the chair, not behind a phone.</p>
+          <div class="svc__list">
+            <div class="svc__item">AI chatbot trained on your menu &amp; policies</div>
+            <div class="svc__item">DM auto-responder for Instagram &amp; Facebook</div>
+            <div class="svc__item">FAQ automation (hours, pricing, availability)</div>
+            <div class="svc__item">Smart booking routing</div>
+            <div class="svc__item">Human handoff when it matters</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TRANSFORM (BEFORE / AFTER) -->
+  <section class="section transform" id="transform">
+    <div class="container">
+      <div class="transform__header reveal">
+        <span class="eyebrow">Before / After</span>
+        <h2>What Changes When<br>the Systems <em>Actually Work.</em></h2>
+      </div>
+      <div class="transform__grid">
+        <div class="transform__card before reveal">
+          <div class="transform__label">Before</div>
+          <h3>&ldquo;We&rsquo;re booked on reputation alone.&rdquo;</h3>
+          <div class="transform__list">
+            <div class="transform__item">
+              <span class="dot">&#8211;</span>
+              <span>Chair goes empty on slow Tuesdays with no plan to fix it</span>
+            </div>
+            <div class="transform__item">
+              <span class="dot">&#8211;</span>
+              <span>Google reviews trickle in by accident, not by system</span>
+            </div>
+            <div class="transform__item">
+              <span class="dot">&#8211;</span>
+              <span>Instagram posts when there&rsquo;s time &mdash; usually there isn&rsquo;t</span>
+            </div>
+            <div class="transform__item">
+              <span class="dot">&#8211;</span>
+              <span>Clients disappear after one visit with no follow-up</span>
+            </div>
+            <div class="transform__item">
+              <span class="dot">&#8211;</span>
+              <span>DMs pile up between appointments, half go unanswered</span>
+            </div>
+            <div class="transform__item">
+              <span class="dot">&#8211;</span>
+              <span>&ldquo;Near me&rdquo; searches show three competitors, not you</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="transform__divider reveal d1">
+          <div class="transform__arrow">&rarr;</div>
+          <div class="transform__arrow-label">30 Days</div>
+        </div>
+
+        <div class="transform__card after reveal d2">
+          <div class="transform__label">After</div>
+          <h3>&ldquo;Booked out two weeks. Every single week.&rdquo;</h3>
+          <div class="transform__list">
+            <div class="transform__item">
+              <span class="dot">&#10003;</span>
+              <span>Slow slots auto-filled by SMS to regulars who want that window</span>
+            </div>
+            <div class="transform__item">
+              <span class="dot">&#10003;</span>
+              <span>Review requests go out after every appointment &mdash; new 5-stars every week</span>
+            </div>
+            <div class="transform__item">
+              <span class="dot">&#10003;</span>
+              <span>Content calendar running itself &mdash; Reels, posts, Pinterest pins</span>
+            </div>
+            <div class="transform__item">
+              <span class="dot">&#10003;</span>
+              <span>Rebook sequences bringing clients back on schedule</span>
+            </div>
+            <div class="transform__item">
+              <span class="dot">&#10003;</span>
+              <span>AI handles 80% of DM questions so you stay behind the chair</span>
+            </div>
+            <div class="transform__item">
+              <span class="dot">&#10003;</span>
+              <span>Top-3 Google results for your services in your neighborhood</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- STATS -->
+  <section class="stats">
+    <div class="container">
+      <div class="stats__grid">
+        <div class="stat reveal">
+          <span class="stat__val">30</span>
+          <span class="stat__label">Days to first results</span>
+        </div>
+        <div class="stat reveal d1">
+          <span class="stat__val">2&times;</span>
+          <span class="stat__label">Average rebook rate lift</span>
+        </div>
+        <div class="stat reveal d2">
+          <span class="stat__val">0</span>
+          <span class="stat__label">Long-term contracts</span>
+        </div>
+        <div class="stat reveal d3">
+          <span class="stat__val">1</span>
+          <span class="stat__label">Agency &mdash; everything in one place</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHO IT'S FOR -->
+  <section class="section who" id="who">
+    <div class="container">
+      <div class="who__header reveal">
+        <span class="eyebrow">Who We Work With</span>
+        <h2>If Your Clients Book an Appointment,<br><em>We Can Help.</em></h2>
+      </div>
+      <div class="who__grid">
+        <div class="who__card reveal">
+          <div class="who__icon">&#128113;&#127996;&#8205;&#9792;&#65039;</div>
+          <h5>Hair Salons</h5>
+          <p>Stylists, color specialists, full-service salons. Keep the chair booked and the regulars on schedule.</p>
+        </div>
+        <div class="who__card reveal d1">
+          <div class="who__icon">&#128133;</div>
+          <h5>Nail &amp; Lash Studios</h5>
+          <p>Gel, acrylic, extensions, lash lifts. Visual work, visual platforms. Let&rsquo;s make them match.</p>
+        </div>
+        <div class="who__card reveal d2">
+          <div class="who__icon">&#127807;</div>
+          <h5>Day Spas &amp; Wellness</h5>
+          <p>Massage, facials, bodywork, wellness studios. Calm spaces, calm systems doing the heavy lifting behind the scenes.</p>
+        </div>
+        <div class="who__card reveal d3">
+          <div class="who__icon">&#10024;</div>
+          <h5>Med Spas &amp; Aesthetics</h5>
+          <p>Injectables, lasers, advanced treatments. Higher ticket, longer consult. We handle the inquiries so you handle the clients.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROCESS -->
+  <section class="section process" id="process">
+    <div class="container">
+      <div class="process__header reveal">
+        <span class="eyebrow">How It Works</span>
+        <h2>From First Call to <em>First Full Week.</em></h2>
+      </div>
+      <div class="process__steps">
+        <div class="process__step reveal">
+          <div class="process__num">01</div>
+          <h4>Discovery Call</h4>
+          <p>We learn your space, your services, your regulars, and where the biggest gaps are. No pitch deck &mdash; just a real conversation about what you need.</p>
+        </div>
+        <div class="process__step reveal d1">
+          <div class="process__num">02</div>
+          <h4>System Build</h4>
+          <p>Site, booking flow, review engine, retention automation. We build it fast. Most salons are live within 30 days.</p>
+        </div>
+        <div class="process__step reveal d2">
+          <div class="process__num">03</div>
+          <h4>Go Live</h4>
+          <p>Systems turn on, reviews start coming in, Google rankings climb, regulars start getting the right texts at the right times.</p>
+        </div>
+        <div class="process__step reveal d3">
+          <div class="process__num">04</div>
+          <h4>Refine &amp; Grow</h4>
+          <p>Monthly check-ins, campaign tuning, seasonal pushes. We manage it so you stay focused on the work that built the business in the first place.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section class="section contact" id="contact">
+    <div class="container">
+      <div class="contact__inner">
+        <div class="contact__left reveal">
+          <span class="eyebrow">Let&rsquo;s Talk</span>
+          <h2>Tell Us About <em>Your Space.</em></h2>
+          <p>No pitch deck. No obligation. Just a straight conversation about where your marketing is falling short and what we&rsquo;d actually do about it. If it&rsquo;s not the right fit, we&rsquo;ll tell you that too.</p>
+          <p>We sent you this link because we think there&rsquo;s an opportunity here. The conversation costs nothing.</p>
+          <div class="contact__details">
+            <div class="contact__detail">
+              <div class="contact__detail-icon">&#9742;</div>
+              <div>Call or text anytime &mdash; <a href="sms:+15153444053">(515) 344-4053</a></div>
+            </div>
+            <div class="contact__detail">
+              <div class="contact__detail-icon">&#9993;</div>
+              <div><a href="mailto:ricky@urbannicheco.com">ricky@urbannicheco.com</a></div>
+            </div>
+            <div class="contact__detail">
+              <div class="contact__detail-icon">&#9889;</div>
+              <div>Usually respond within a few hours &mdash; same day guaranteed</div>
+            </div>
+          </div>
+        </div>
+        <div class="reveal d1">
+          <form class="form" action="mailto:ricky@urbannicheco.com" method="GET" enctype="text/plain">
+            <div class="form__title">Send a Message</div>
+            <div class="form__sub">Fill this out and it goes straight to Ricky &mdash; no middleman, no CRM queue.</div>
+            <div class="form__row">
+              <div class="form__group">
+                <label class="form__label" for="s-name">Your Name</label>
+                <input type="text" id="s-name" name="name" placeholder="First &amp; Last" required class="form__input" />
+              </div>
+              <div class="form__group">
+                <label class="form__label" for="s-biz">Salon / Spa Name</label>
+                <input type="text" id="s-biz" name="business" placeholder="Your business name" class="form__input" />
+              </div>
+            </div>
+            <div class="form__group">
+              <label class="form__label" for="s-type">Service Focus</label>
+              <input type="text" id="s-type" name="focus" placeholder="Hair, nails, lashes, massage, med spa, etc." class="form__input" />
+            </div>
+            <div class="form__group">
+              <label class="form__label" for="s-email">Email Address</label>
+              <input type="email" id="s-email" name="email" placeholder="you@yoursalon.com" required class="form__input" />
+            </div>
+            <div class="form__group">
+              <label class="form__label" for="s-phone">Phone (optional)</label>
+              <input type="tel" id="s-phone" name="phone" placeholder="(555) 000-0000" class="form__input" />
+            </div>
+            <div class="form__group">
+              <label class="form__label" for="s-msg">What&rsquo;s on your mind?</label>
+              <textarea id="s-msg" name="body" placeholder="Tell us about your space, what you&rsquo;ve tried before, and what you&rsquo;re hoping to improve." class="form__textarea"></textarea>
+            </div>
+            <button type="submit" class="btn btn-terra btn-lg form__submit">Send Message &rarr;</button>
+            <div class="form__note">Opens your email client. Sending takes 2 seconds.</div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta">
+    <div class="container">
+      <div class="cta__inner reveal">
+        <span class="eyebrow">Ready to Fill the Chair?</span>
+        <h2>Let&rsquo;s Build the Space <em>Your Clients Already Love</em> &mdash; But Better.</h2>
+        <p>No pitch deck. No obligation. Just a straight conversation about your space and what we can build together. If it&rsquo;s not the right fit, we&rsquo;ll tell you that too.</p>
+        <div class="cta__actions">
+          <a href="#contact" class="btn btn-terra btn-lg">Start the Conversation &rarr;</a>
+          <a href="sms:+15153444053" class="btn btn-ghost btn-lg">Text Ricky Directly</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__inner">
+        <div class="footer__logo">
+          <img src="/assets/images/unc-logo-icon.webp" alt="Urban Niche Co." />
+          Urban <span>Niche</span>&nbsp;Co.
+        </div>
+        <div class="footer__note">This page is private and not indexed by search engines.</div>
+        <div class="footer__copy">&copy; 2026 Urban Niche Co. LLC &mdash; Dubuque, Iowa</div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const nav = document.getElementById('mainNav');
+    window.addEventListener('scroll', () => nav.classList.toggle('scrolled', window.scrollY > 40));
+    document.getElementById('hamburger').addEventListener('click', () => {
+      document.getElementById('mobileNav').classList.toggle('open');
+    });
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); } });
+    }, { threshold: 0.12 });
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+  </script>
+</body>
+</html>
